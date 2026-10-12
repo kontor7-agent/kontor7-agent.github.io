@@ -1,0 +1,84 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora de vencimiento de facturas y recordatorios | Blixwerk</title><meta name="description" content="Calcula la fecha de vencimiento de tu factura, los días que faltan o de retraso y un calendario amable de recordatorios. Gratis y en tu navegador.">
+<link rel="canonical" href="https://kontor7-agent.github.io/es/calculadoras/calculadora-vencimiento-factura-recordatorio"><meta property="og:title" content="Calculadora de vencimiento de facturas y recordatorios | Blixwerk">
+<meta property="og:description" content="Calcula la fecha de vencimiento de tu factura, los días que faltan o de retraso y un calendario amable de recordatorios. Gratis y en tu navegador."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/freelancer-project-invoice-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "\u00bfC\u00f3mo se calcula la fecha de vencimiento de una factura?", "acceptedAnswer": {"@type": "Answer", "text": "Se suma el plazo de pago, en d\u00edas naturales, a la fecha de la factura. Una factura del 01/03 con plazo de 30 d\u00edas vence el 31/03. Si tu contrato o presupuesto indica otra forma de contar, por ejemplo desde la recepci\u00f3n, usa esa fecha como inicio."}}, {"@type": "Question", "name": "\u00bfQu\u00e9 plazo de pago debo poner?", "acceptedAnswer": {"@type": "Answer", "text": "El que hayas acordado con tu cliente por escrito: en el presupuesto, el contrato o la propia factura. Los plazos de 15, 30 y 60 d\u00edas son habituales, pero con la opci\u00f3n \u00abLibre\u00bb puedes indicar cualquier n\u00famero de d\u00edas."}}, {"@type": "Question", "name": "\u00bfCu\u00e1ndo es buen momento para enviar el primer recordatorio?", "acceptedAnswer": {"@type": "Answer", "text": "La calculadora propone el d\u00eda siguiente al vencimiento, con un tono amable: muchas veces es un simple descuido. El segundo aviso se sugiere a los 7 d\u00edas y el final a los 15. Son solo sugerencias; ad\u00e1ptalas a tu relaci\u00f3n con cada cliente."}}, {"@type": "Question", "name": "\u00bfQu\u00e9 pasa si el vencimiento cae en s\u00e1bado o domingo?", "acceptedAnswer": {"@type": "Answer", "text": "La calculadora te lo indica. Si la fecha cae en fin de semana, puede que el pago llegue el siguiente d\u00eda laborable, y quiz\u00e1 prefieras enviar el mensaje el lunes. Los festivos locales no se tienen en cuenta."}}, {"@type": "Question", "name": "\u00bfCalcula intereses de demora o reclamaciones?", "acceptedAnswer": {"@type": "Answer", "text": "No. Esta herramienta solo ayuda a organizar fechas. No calcula intereses ni da asesoramiento legal. Si necesitas reclamar formalmente un impago, consulta con tu asesor, gestor o un profesional del derecho."}}, {"@type": "Question", "name": "\u00bfSe guardan los datos que introduzco?", "acceptedAnswer": {"@type": "Answer", "text": "No. Todo se calcula en tu navegador. No se env\u00eda nada a ning\u00fan servidor y no se guarda ninguna informaci\u00f3n al cerrar la p\u00e1gina."}}]}</script><script src="/tools/js/calculadora-vencimiento-factura-recordatorio.js" defer></script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Calculadora de vencimiento de facturas y recordatorios</h1><p>Enviaste la factura hace unas semanas y ahora, a las 22:40, te preguntas: ¿vencía el día 10 o el 15? ¿Escribo hoy o espero un poco? Reclamar un pago incomoda, y la duda lo empeora. Pon la fecha de la factura y el plazo, y verás cuándo vence, cuántos días faltan o llevan de retraso, y un calendario sereno de recordatorios para escribir sin prisa ni vergüenza.</p><div class='cta'><div id="cvf-tool" style="max-width:640px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;">
+    <div>
+      <label for="cvf-fecha"><strong>Fecha de la factura</strong></label><br>
+      <input id="cvf-fecha" type="date" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;">
+    </div>
+    <div>
+      <label for="cvf-plazo"><strong>Plazo de pago</strong></label><br>
+      <select id="cvf-plazo" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;">
+        <option value="15">15 días</option>
+        <option value="30" selected>30 días</option>
+        <option value="60">60 días</option>
+        <option value="libre">Libre (otro número de días)</option>
+      </select>
+    </div>
+    <div id="cvf-libre-wrap" style="display:none;">
+      <label for="cvf-dias"><strong>Días de plazo</strong></label><br>
+      <input id="cvf-dias" type="number" min="0" max="3650" step="1" value="45" inputmode="numeric" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;">
+    </div>
+    <div>
+      <label for="cvf-importe"><strong>Importe (opcional)</strong></label><br>
+      <input id="cvf-importe" type="text" inputmode="decimal" value="" placeholder="Ej.: 1.250,00" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;">
+    </div>
+    <div>
+      <label for="cvf-moneda"><strong>Moneda</strong></label><br>
+      <select id="cvf-moneda" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;">
+        <option value="€" selected>Euro (€)</option>
+        <option value="$">Dólar ($)</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="cvf-resultado" aria-live="polite" style="margin-top:24px;padding:18px;border:1px solid #ccc;border-radius:10px;">
+    <p id="cvf-hint" class="muted" style="margin:0 0 8px 0;"></p>
+    <div id="cvf-salida">
+      <p class="muted" style="margin:0;">Fecha de vencimiento</p>
+      <p id="cvf-vence" class="price" style="font-size:2rem;font-weight:700;margin:4px 0 2px 0;">–</p>
+      <p id="cvf-semana" class="muted" style="margin:0 0 16px 0;"></p>
+
+      <p class="muted" style="margin:0;" id="cvf-estado-label">Estado</p>
+      <p id="cvf-estado" class="price" style="font-size:1.6rem;font-weight:700;margin:4px 0 2px 0;">–</p>
+      <p id="cvf-importe-txt" class="muted" style="margin:0 0 16px 0;"></p>
+
+      <h2 style="font-size:1.15rem;margin:8px 0;">Tu calendario de recordatorios</h2>
+      <ol id="cvf-lista" style="padding-left:20px;margin:0;"></ol>
+      <p id="cvf-aviso-finde" class="muted" style="margin:12px 0 0 0;"></p>
+    </div>
+  </div>
+
+  <p class="muted" style="margin-top:14px;font-size:0.9rem;">
+    Los resultados son estimaciones: una ayuda de organización que no sustituye a tu asesor o gestor, no ofrece asesoramiento legal y no calcula intereses de demora. Los recordatorios se proponen a 1, 7 y 15 días tras el vencimiento; ajústalos a lo que hayas pactado con tu cliente.
+  </p>
+</div>
+</div><div class='cta'>Si quieres saber de un vistazo quién te debe dinero y cuándo escribirle, el Freelancer Calm Kit reúne todo en un solo lugar. <p><a class='btn' href='/p/freelancer-project-invoice-tracker-xlsx'>Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker (Excel)</a></p></div><h2>Preguntas frecuentes</h2><h3>¿Cómo se calcula la fecha de vencimiento de una factura?</h3><p>Se suma el plazo de pago, en días naturales, a la fecha de la factura. Una factura del 01/03 con plazo de 30 días vence el 31/03. Si tu contrato o presupuesto indica otra forma de contar, por ejemplo desde la recepción, usa esa fecha como inicio.</p><h3>¿Qué plazo de pago debo poner?</h3><p>El que hayas acordado con tu cliente por escrito: en el presupuesto, el contrato o la propia factura. Los plazos de 15, 30 y 60 días son habituales, pero con la opción «Libre» puedes indicar cualquier número de días.</p><h3>¿Cuándo es buen momento para enviar el primer recordatorio?</h3><p>La calculadora propone el día siguiente al vencimiento, con un tono amable: muchas veces es un simple descuido. El segundo aviso se sugiere a los 7 días y el final a los 15. Son solo sugerencias; adáptalas a tu relación con cada cliente.</p><h3>¿Qué pasa si el vencimiento cae en sábado o domingo?</h3><p>La calculadora te lo indica. Si la fecha cae en fin de semana, puede que el pago llegue el siguiente día laborable, y quizá prefieras enviar el mensaje el lunes. Los festivos locales no se tienen en cuenta.</p><h3>¿Calcula intereses de demora o reclamaciones?</h3><p>No. Esta herramienta solo ayuda a organizar fechas. No calcula intereses ni da asesoramiento legal. Si necesitas reclamar formalmente un impago, consulta con tu asesor, gestor o un profesional del derecho.</p><h3>¿Se guardan los datos que introduzco?</h3><p>No. Todo se calcula en tu navegador. No se envía nada a ningún servidor y no se guarda ninguna información al cerrar la página.</p><p class='muted'>Funciona por completo en tu navegador: no se envía ni se guarda nada.</p></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
