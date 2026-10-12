@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Client Asked About Hours: Track Freelance Projects in Excel | Blixwerk</title><meta name="description" content="A client asks how many hours the project took and you start digging. A calmer way to keep projects, hours and invoices in one Excel file.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/how-to-track-freelance-projects-hours-and-invoices-in-excel"><meta property="og:title" content="The Client Asked About Hours: Track Freelance Projects in Excel | Blixwerk">
+<meta property="og:description" content="A client asks how many hours the project took and you start digging. A calmer way to keep projects, hours and invoices in one Excel file."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/freelancer-project-invoice-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="rg3DDxFCt-g7Vnf7swJIOmoFqYNI4Jo5IcYNBQUIHPU"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "The Client Asked About Hours: Track Freelance Projects in Excel", "description": "A client asks how many hours the project took and you start digging. A calmer way to keep projects, hours and invoices in one Excel file.", "datePublished": "2026-10-12", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/freelancer-project-invoice-tracker-xlsx.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/how-to-track-freelance-projects-hours-and-invoices-in-excel"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a></nav></header>
+<main><article><h1>The Client Asked About Hours: Track Freelance Projects in Excel</h1><p class='muted'>2026-10-12</p><p>It's 4:40 on a Thursday afternoon, and an email has just landed from a client you like.</p>
+<p><em>Quick question: could you send me a summary of the hours on the website project so far? Our finance person is asking.</em></p>
+<p>Simple question. Friendly tone. And your stomach drops anyway.</p>
+<p>Because you know what "the hours so far" means. Some of them are in the timer app, the ones you remembered to start. Some are in the paper notebook next to your keyboard, in handwriting you can only half read. A few are only in your head: the long call on Tuesday, the two rounds of revisions you did on the train.</p>
+<p>And the invoices? One is in a folder called <em>Invoices_NEW</em>. One is in <em>Invoices_final</em>. You think there was a third, but you're not sure whether it was ever sent.</p>
+<p>You open a blank spreadsheet and stare at it. The cursor blinks. You haven't typed anything yet, and you already feel a little bit like a fraud.</p>
+<h2>The quiet tax of "I'll sort it out later"</h2>
+<p>Nobody warns you about this part of freelancing.</p>
+<p>The work itself is fine. You're good at the work. It's the <em>remembering around</em> the work that wears you down: which project is at what stage, how many hours went into it, what has been billed, what hasn't, and what is due when.</p>
+<p>So you keep it all in your head, and your head quietly becomes a very busy office with no filing cabinet.</p>
+<p>The cost doesn't arrive as one big bill. It comes in small pieces:</p>
+<ul>
+<li>The Sunday evening you spend rebuilding last month from bank statements and calendar entries.</li>
+<li>The invoice that goes out a week late because you weren't sure of the number.</li>
+<li>The moment a client asks a perfectly normal question and you answer, "Let me get back to you," because you can't answer honestly right now.</li>
+<li>The faint suspicion that you worked more than you billed, but no way to prove it, so you let it go.</li>
+</ul>
+<p>That last one is the loudest. Not because of one missing invoice, but because you can't tell. Not knowing is its own kind of weight.</p>
+<h2>Forty minutes you didn't plan on</h2>
+<p>Back on Thursday. You do what you always do. You dig.</p>
+<p>You export the timer data. You open the notebook and squint. You scroll your sent emails looking for the word "invoice." You find one. Then another. You add up numbers on your phone calculator and get two different answers, so you do it again.</p>
+<p>Forty minutes later you have a number. You think it's right. You write the reply, delete a sentence that sounds defensive, and add "approximately" in two places. You hit send.</p>
+<p>Then you sit there, and the thought arrives, the one you try not to look at directly:</p>
+<p><em>I run a business. Why does it feel like I'm guessing?</em></p>
+<p>It isn't that you're disorganised. You're someone who is doing the work of five roles, with the tools of none of them.</p>
+<h2>The moment it clicks</h2>
+<p>The turning point is rarely dramatic. It's usually small.</p>
+<p>Maybe it's a friend, also freelance, who mentions in passing that she just "looks at the sheet." That's all. She doesn't dig, she doesn't reconstruct. When a client asks about hours, she has the answer before her coffee cools.</p>
+<p>You realise she isn't more disciplined than you. She isn't working harder. She simply has one place where everything lives: clients, projects, hours, invoices, side by side. A place that remembers so she doesn't have to.</p>
+<p>And you think: <em>It doesn't have to be like this.</em></p>
+<p>Not a giant software suite with a monthly fee and forty menus. Not an accounting course. Just one quiet, ordinary spreadsheet that knows what you've done and what you're owed.</p>
+<h2>What a normal Monday feels like after</h2>
+<p>Picture a different Monday.</p>
+<p>It's 9:15. You make tea, open one file, and look at it for about a minute. It tells you which projects are active, how many hours have gone into each, and which invoices are out in the world. Anything that has slipped past its due date is simply visible, with no detective work required.</p>
+<p>There's no little knot in your stomach when you open it. Nothing in there is going to surprise you.</p>
+<p>At 11:00 a client writes, <em>"Can you tell me where we are on hours?"</em> You answer in two minutes, with a real number, and you mean it. No "approximately." No "let me get back to you."</p>
+<p>The end of the month stops being an event. It's just the month ending. The invoice goes out when the work is done, with the next number already waiting, and your Sunday evenings go back to being yours.</p>
+<p>The work is the same. You are the same person. But you feel like someone who runs a business, and it turns out that feeling was mostly about knowing where things stand.</p>
+<h2>If you saw yourself in that Thursday</h2>
+<p>If any of this sounded familiar, the notebook, the three folders, the "approximately," you don't need to become a different kind of person. You just need somewhere to put things.</p>
+<p>That's what we built the <strong>Freelancer Project, Time &amp; Invoice Tracker</strong> for. It's an Excel file for your clients, projects, hours and invoices, with automatic invoice numbers, due dates, overdue flags and a simple dashboard. It comes with sample data so you can see how it looks when it's filled in, and a PDF guide for when you want it.</p>
+<p>It's small on purpose. It won't run your business for you, and it isn't tax or legal advice. It just gives your head a filing cabinet.</p>
+<p>If you'd like to take a look, it's here: <a href="https://blixwerk-shop.kontor7-agent.deno.net/p/freelancer-project-invoice-tracker-xlsx">Freelancer Project, Time &amp; Invoice Tracker (Excel)</a></p>
+<p>And if you're not ready, that's fine too. Maybe just notice how it feels the next time a client asks a simple question. That feeling is worth listening to.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker (Excel) – Excel tracker for clients, projects, hours and invoices: auto invoice numbers, due dates, overdue flags, dashboard. Sample data + PDF guide. <p><a class='btn' href='/p/freelancer-project-invoice-tracker-xlsx'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>

@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Duplicates and Dates Gone Wrong: A CSV, pandas, and 11 pm | Blixwerk</title><meta name="description" content="It&#x27;s 11 pm, the CSV has the same customer three times and dates that mean two things. A short story about cleaning it up without losing the evening.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/remove-duplicates-fix-date-formats-csv-python-pandas"><meta property="og:title" content="Duplicates and Dates Gone Wrong: A CSV, pandas, and 11 pm | Blixwerk">
+<meta property="og:description" content="It&#x27;s 11 pm, the CSV has the same customer three times and dates that mean two things. A short story about cleaning it up without losing the evening."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="rg3DDxFCt-g7Vnf7swJIOmoFqYNI4Jo5IcYNBQUIHPU"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Duplicates and Dates Gone Wrong: A CSV, pandas, and 11 pm", "description": "It's 11 pm, the CSV has the same customer three times and dates that mean two things. A short story about cleaning it up without losing the evening.", "datePublished": "2026-10-12", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/remove-duplicates-fix-date-formats-csv-python-pandas"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a></nav></header>
+<main><article><h1>Duplicates and Dates Gone Wrong: A CSV, pandas, and 11 pm</h1><p class='muted'>2026-10-12</p><p>It's 10:47 on a Tuesday night, and the cursor in your terminal has been blinking at you for a while now.</p>
+<p>On the left monitor: a CSV export with 4,812 rows. On the right: a half-written Python script, three Stack Overflow tabs, and a cold cup of tea you made around eight.</p>
+<p>You only wanted to send a clean customer list to the newsletter tool. That was the whole plan. Twenty minutes, maybe.</p>
+<p>Then you scrolled.</p>
+<h2>The same person, three times</h2>
+<p>There's Anna Keller. And there's anna.keller@ with a capital K. And there's "Keller, Anna" with a trailing space you can't see but the computer can.</p>
+<p>They are obviously one person. To the file, they are three strangers.</p>
+<p>You think: <em>fine, I'll drop the duplicates.</em> You write the line, run it, and the row count barely moves. Of course it doesn't. The rows aren't identical. They're only identical to a human who squints.</p>
+<p>So you squint. You sort by name, scroll, and scroll some more. Somewhere around row 900 you realise you've been staring at the same four people for ten minutes.</p>
+<h2>03/04/2026</h2>
+<p>Then you spot the dates.</p>
+<p>Some say 03/04/2026. Some say 2026-04-03. A few say 3 Apr 26. One, for reasons no one will ever explain, says 04.03.2026.</p>
+<p>Is the first one March or April? It depends on who typed it, which tool exported it, and which country that tool thought it was in. You could guess. You could be right most of the time.</p>
+<p>But "most of the time" is a strange standard for something that decides who gets an invoice reminder, or a "happy anniversary" email, or a follow-up that is suddenly three months late.</p>
+<p>You rub your eyes. It's 11:30.</p>
+<h2>What it quietly costs</h2>
+<p>Nobody talks about this part. The file isn't really the problem. The problem is the small, low-grade dread attached to it.</p>
+<p>The dread of sending the wrong thing to the wrong person. Of a client noticing the same name twice in a report and wondering, just for a second, how careful you really are. Of hitting "import" and not knowing what the other system will quietly do to your dates.</p>
+<p>It costs evenings, obviously. But it also costs that feeling of being on top of your work. You're a competent person. You run a business, or you freelance, or you keep someone else's business running. And yet here you are, at midnight, hand-fixing rows like it's 2009.</p>
+<p>You also know it will happen again. Next month's export will arrive with the same quirks, plus a few new ones. The script you're writing tonight is tied to tonight's mess. You'll probably rewrite half of it in four weeks.</p>
+<p>That's the part that actually stings.</p>
+<h2>The small moment of "wait"</h2>
+<p>Around midnight you stop. You don't find a clever trick. You just lean back and ask a plainer question.</p>
+<p><em>Why am I solving this from scratch every time?</em></p>
+<p>Because surely this isn't a unique problem. Duplicates that differ by a capital letter. Dates in four moods. Phone numbers with and without spaces. Everyone who touches exports meets the same handful of gremlins, in the same order.</p>
+<p>It doesn't have to be a fresh puzzle each month. It could be something you set up once, run on a file, and look over. Something that shows you what it would change <em>before</em> it changes anything, and hands you a short list of what it did afterwards.</p>
+<p>That's it. That's the whole shift. Less heroics, more routine.</p>
+<h2>A different Monday</h2>
+<p>Picture it a few weeks from now.</p>
+<p>It's Monday, 9:15. Coffee is still hot. The new export lands in your downloads folder, and you feel nothing in particular, which is exactly the point.</p>
+<p>You point your tools at the file. You glance at a summary: this many duplicates found, these dates standardised, these three rows flagged because they genuinely look odd. You check the flagged ones with your own eyes, because those are the ones worth your attention.</p>
+<p>Then you save the clean file and move on to the work you actually get paid to think about.</p>
+<p>No midnight. No cold tea. No quiet worry that something slipped through. Just a tidy file and a Monday that stays yours.</p>
+<h2>If this sounded familiar</h2>
+<p>If you recognised yourself somewhere in that 11 pm scene, we put together the <strong>CSV &amp; Excel Data Cleaning Toolkit</strong>: a set of Python scripts for the usual suspects in messy exports. Duplicates, date formats, phone numbers, encoding trouble, splitting and merging files, and validation. It does a dry run first and gives you a change report, so you can see what happens before anything is touched.</p>
+<p>It's there if you'd like it, no rush: <a href="https://blixwerk-shop.kontor7-agent.deno.net/p/csv-cleaning-toolkit-python">CSV &amp; Excel Data Cleaning Toolkit</a>.</p>
+<p>And if you'd rather keep wrestling with your own script for now, that's fine too. Just maybe go to bed first. The file will still be there tomorrow, and it will look a little less personal in daylight.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>

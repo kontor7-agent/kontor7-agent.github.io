@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Project That Paid Less Than You Thought: Your Real Hourly Rate | Blixwerk</title><meta name="description" content="The invoice said €2,400. Your gut says something is off. A quiet evening story about finding your effective hourly rate as a freelancer in Excel.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/how-to-calculate-effective-hourly-rate-freelancer-excel"><meta property="og:title" content="The Project That Paid Less Than You Thought: Your Real Hourly Rate | Blixwerk">
+<meta property="og:description" content="The invoice said €2,400. Your gut says something is off. A quiet evening story about finding your effective hourly rate as a freelancer in Excel."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/freelancer-project-invoice-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="rg3DDxFCt-g7Vnf7swJIOmoFqYNI4Jo5IcYNBQUIHPU"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "The Project That Paid Less Than You Thought: Your Real Hourly Rate", "description": "The invoice said \u20ac2,400. Your gut says something is off. A quiet evening story about finding your effective hourly rate as a freelancer in Excel.", "datePublished": "2026-10-12", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/freelancer-project-invoice-tracker-xlsx.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/how-to-calculate-effective-hourly-rate-freelancer-excel"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a></nav></header>
+<main><article><h1>The Project That Paid Less Than You Thought: Your Real Hourly Rate</h1><p class='muted'>2026-10-12</p><p>It's 9:40 on a Thursday evening. The kitchen is quiet, the tea has gone lukewarm, and on your screen sits the invoice you sent this afternoon: €2,400. A good number. A round, respectable number.</p>
+<p>You should feel pleased. Instead there's a small knot just under your ribs.</p>
+<p>Because you remember the project. The kickoff call that ran long. The "quick" revision round that turned into three. The Saturday morning you told yourself was only an hour. The dozen emails that each took ten minutes and never showed up anywhere.</p>
+<p>You open a blank spreadsheet, stare at it, and think: <em>what did I actually earn per hour on this one?</em></p>
+<p>You don't know. And somehow, not knowing feels worse than the answer might.</p>
+<h2>The number nobody puts on the invoice</h2>
+<p>There's an hourly rate you quote, and there's the one you actually live on. They are rarely the same person.</p>
+<p>The quoted rate is tidy. It sits on your website and in your proposals. The real one is quieter. It's what is left after the unbilled calls, the admin, the time spent chasing a file, the revision that wasn't in the scope but felt rude to refuse.</p>
+<p>Most freelancers never look at it directly. Not because they're careless, but because looking means you might have to act. If the real number is lower than you hoped, you'd have to have a conversation, with a client or with yourself, and at 9:40 on a Thursday neither sounds appealing.</p>
+<p>So you keep a vague feeling instead. <em>It was probably fine.</em> <em>Busy month, anyway.</em> The feeling costs nothing today. It costs quite a lot over a year.</p>
+<h2>What the guessing quietly costs</h2>
+<p>It shows up in small ways.</p>
+<p>You quote a new project at the same price as the last one, because you don't know that the last one swallowed twice the hours you remembered.</p>
+<p>You say yes to the client who always "just has one more thing," because you can't point to a figure that says otherwise.</p>
+<p>You work Sunday afternoon and tell yourself it's temporary. It has been temporary for a while now.</p>
+<p>And there's the awkward moment when someone asks, "So how many hours did that take?" and you hear yourself say, "Oh, roughly forty?" with the confidence of a person reading a weather forecast.</p>
+<p>None of it is dramatic. That's the trouble. It's a slow, polite leak, and you only notice it when you're tired.</p>
+<h2>The evening it turned</h2>
+<p>Imagine a designer named Mara. She's made up, but you may know her. She is sitting exactly where you are, with the same lukewarm tea and a project that felt bigger than its invoice.</p>
+<p>She doesn't build anything clever that night. She does something much smaller. She gathers what she has: what the client paid, and the time the project really took, including the parts she'd been quietly pretending didn't count.</p>
+<p>Then she divides one by the other.</p>
+<p>The result isn't a disaster, and it isn't a triumph. It's just a number. Plain and a bit humbling, and strangely, a relief. The knot loosens, because a number you can see is so much lighter than a number you fear.</p>
+<p>What changes for her isn't the arithmetic. It's that she now has something to stand on. The next quote isn't a hopeful guess. The next "can we add one small thing?" has a calm, friendly answer ready.</p>
+<h2>What a normal Monday looks like after that</h2>
+<p>Picture a Monday where this is simply handled.</p>
+<p>You open your laptop with coffee, not dread. The projects you're running sit in one place, each with its hours and its invoice beside it. You don't reconstruct anything from memory, from calendar scraps, or from the inbox archaeology you used to do.</p>
+<p>A prospect writes asking for a price. You glance at what similar work has really taken you, and you answer in ten minutes, not ten anxious days. The number you give feels like yours.</p>
+<p>When a client asks how long something took, you just tell them. Warmly, without flinching.</p>
+<p>And Thursday evening at 9:40? You're not in the kitchen with a blank spreadsheet. You're doing whatever people do when their work has stayed where it belongs.</p>
+<p>Nothing about this needs a bigger client list or a dramatic rebrand. It mostly needs your hours, your invoices and your clients living side by side, so the picture is already there when you look.</p>
+<h2>If you saw yourself in that kitchen</h2>
+<p>If the knot under your ribs felt familiar, you're not behind and you're not bad at business. You were just carrying the whole picture in your head, which is a lot to ask of a head.</p>
+<p>We made the <strong>Freelancer Project, Time &amp; Invoice Tracker</strong> for exactly that. It's an Excel workbook that keeps your clients, projects, hours and invoices together, with automatic invoice numbers, due dates, overdue flags and a dashboard. It comes with sample data and a PDF guide, so you can see how it feels before you put your own work in.</p>
+<p>No pressure, and no clock ticking. If it sounds like the quieter Monday you'd like, you can have a look here:</p>
+<p><a href="https://blixwerk-shop.kontor7-agent.deno.net/p/freelancer-project-invoice-tracker-xlsx">Freelancer Project, Time &amp; Invoice Tracker (Excel)</a></p>
+<p>Either way, tonight, maybe finish the tea while it's still warm.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker (Excel) – Excel tracker for clients, projects, hours and invoices: auto invoice numbers, due dates, overdue flags, dashboard. Sample data + PDF guide. <p><a class='btn' href='/p/freelancer-project-invoice-tracker-xlsx'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
