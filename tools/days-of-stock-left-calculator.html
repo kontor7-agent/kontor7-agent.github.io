@@ -1,0 +1,106 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Days of Stock Left &amp; Reorder Date Calculator | Blixwerk</title><meta name="description" content="Free calculator for small shops: see how many days of stock you have left, when you run out, your latest reorder date and how much to order.">
+<link rel="canonical" href="https://kontor7-agent.github.io/tools/days-of-stock-left-calculator"><meta property="og:title" content="Days of Stock Left &amp; Reorder Date Calculator | Blixwerk">
+<meta property="og:description" content="Free calculator for small shops: see how many days of stock you have left, when you run out, your latest reorder date and how much to order."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/small-business-inventory-reorder-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is the number of days of stock left calculated?", "acceptedAnswer": {"@type": "Answer", "text": "It is your current stock divided by your average daily sales. With 120 units and 4 sales a day, you have 30 days. It assumes sales stay roughly steady."}}, {"@type": "Question", "name": "What are safety days?", "acceptedAnswer": {"@type": "Answer", "text": "Safety days are a buffer for surprises, such as a late delivery or a sales spike. The calculator adds them to the lead time, so you reorder earlier than the bare minimum. A few days is common for steady sellers. Choose more for items that are hard to get."}}, {"@type": "Question", "name": "How do I find my average daily sales?", "acceptedAnswer": {"@type": "Answer", "text": "Add up the units sold over a period you trust, such as the last 30 days, and divide by the number of days. Or choose the 'units sold in the last 30 days' option and the calculator divides by 30 for you. Count only days you were open for sale if you had stock-outs."}}, {"@type": "Question", "name": "What does the reorder point mean?", "acceptedAnswer": {"@type": "Answer", "text": "It is the stock level at which you should place an order: average daily sales times lead time plus safety days. When your shelf count drops to that number, it is time to reorder."}}, {"@type": "Question", "name": "How is the suggested order quantity worked out?", "acceptedAnswer": {"@type": "Answer", "text": "It is average daily sales times 7 times the number of weeks you want the order to cover. Check it against supplier minimums, pack sizes, storage space and the cash you have available."}}, {"@type": "Question", "name": "What if my sales are seasonal or uneven?", "acceptedAnswer": {"@type": "Answer", "text": "Use a sales speed that matches the coming weeks, not the past year. Before a peak season, enter a higher daily figure. After a slow period, check again, since an old average can mislead you."}}]}</script><script src="/tools/js/days-of-stock-left-calculator.js" defer></script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a></nav></header>
+<main><article><h1>Days of Stock Left &amp; Reorder Date Calculator</h1><p>It's Tuesday evening and the shelf looks thinner than last week. You think there's enough, but your supplier needs three weeks and a busy weekend is coming. Guessing feels risky, and over-ordering ties up cash you'd rather keep. Enter your stock, how fast it sells and how long your supplier takes. In a few seconds you'll see how many days you have left, the day you run out and the latest day to reorder.</p><div class='cta'><div id="dsl-tool" style="max-width:640px;margin:0 auto;">
+  <form id="dsl-form" novalidatestyle="display:block;">
+    <div style="margin-bottom:14px;">
+      <label for="dsl-stock"><strong>Current stock (units)</strong></label><br>
+      <input id="dsl-stock" type="number" inputmode="decimal" min="0" step="1" value="120" style="width:100%;box-sizing:border-box;padding:10px;font-size:1.1em;">
+    </div>
+
+    <div style="margin-bottom:14px;">
+      <label for="dsl-mode"><strong>How do you know your sales speed?</strong></label><br>
+      <select id="dsl-mode" style="width:100%;box-sizing:border-box;padding:10px;font-size:1.1em;">
+        <option value="daily" selected>I know my average daily sales</option>
+        <option value="month">I know units sold in the last 30 days</option>
+      </select>
+    </div>
+
+    <div id="dsl-daily-wrap" style="margin-bottom:14px;">
+      <label for="dsl-daily"><strong>Average daily sales (units per day)</strong></label><br>
+      <input id="dsl-daily" type="number" inputmode="decimal" min="0" step="0.1" value="4" style="width:100%;box-sizing:border-box;padding:10px;font-size:1.1em;">
+    </div>
+
+    <div id="dsl-month-wrap" style="margin-bottom:14px;" hidden>
+      <label for="dsl-month"><strong>Units sold in the last 30 days</strong></label><br>
+      <input id="dsl-month" type="number" inputmode="decimal" min="0" step="1" value="120" style="width:100%;box-sizing:border-box;padding:10px;font-size:1.1em;">
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:14px;">
+      <div style="flex:1 1 180px;">
+        <label for="dsl-lead"><strong>Supplier lead time (days)</strong></label><br>
+        <input id="dsl-lead" type="number" inputmode="numeric" min="0" step="1" value="14" style="width:100%;box-sizing:border-box;padding:10px;font-size:1.1em;">
+      </div>
+      <div style="flex:1 1 180px;">
+        <label for="dsl-safety"><strong>Safety days (buffer)</strong></label><br>
+        <input id="dsl-safety" type="number" inputmode="numeric" min="0" step="1" value="5" style="width:100%;box-sizing:border-box;padding:10px;font-size:1.1em;">
+      </div>
+      <div style="flex:1 1 180px;">
+        <label for="dsl-weeks"><strong>Order should cover (weeks)</strong></label><br>
+        <input id="dsl-weeks" type="number" inputmode="decimal" min="1" step="1" value="6" style="width:100%;box-sizing:border-box;padding:10px;font-size:1.1em;">
+      </div>
+    </div>
+  </form>
+
+  <p id="dsl-hint" class="muted" role="alert" style="min-height:1.4em;margin:0 0 10px;"></p>
+
+  <div id="dsl-result" aria-live="polite" style="border:1px solid #ccc;border-radius:8px;padding:16px;">
+    <div style="margin-bottom:16px;">
+      <div class="muted">Days of stock left</div>
+      <div id="dsl-days" class="price" style="font-size:2.4em;font-weight:bold;line-height:1.2;">–</div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:16px;">
+      <div style="flex:1 1 200px;">
+        <div class="muted">You run out on</div>
+        <div id="dsl-runout" class="price" style="font-size:1.4em;font-weight:bold;">–</div>
+      </div>
+      <div style="flex:1 1 200px;">
+        <div class="muted">Latest reorder date</div>
+        <div id="dsl-reorder" class="price" style="font-size:1.4em;font-weight:bold;">–</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;">
+      <div style="flex:1 1 200px;">
+        <div class="muted">Suggested order quantity</div>
+        <div id="dsl-qty" class="price" style="font-size:1.4em;font-weight:bold;">–</div>
+      </div>
+      <div style="flex:1 1 200px;">
+        <div class="muted">Reorder point (units)</div>
+        <div id="dsl-rop" class="price" style="font-size:1.4em;font-weight:bold;">–</div>
+      </div>
+    </div>
+    <p id="dsl-status" style="margin:16px 0 0;"></p>
+  </div>
+
+  <p class="muted" style="margin-top:12px;font-size:0.9em;">
+    The reorder date is today plus the days of stock left, minus lead time and safety days. The order quantity is average daily sales times the weeks you want to cover. Results are estimates and assume steady sales. This is a planning aid and does not replace a tax professional or accountant.
+  </p>
+</div>
+</div><div class='cta'>Want a calmer shelf all year? Take a look at our stock tracking templates and stop being surprised by empty shelves. <p><a class='btn' href='/p/small-business-inventory-reorder-tracker-xlsx'>Never Sold Out by Surprise – Inventory &amp; Reorder Tracker (Excel)</a></p></div><h2>FAQ</h2><h3>How is the number of days of stock left calculated?</h3><p>It is your current stock divided by your average daily sales. With 120 units and 4 sales a day, you have 30 days. It assumes sales stay roughly steady.</p><h3>What are safety days?</h3><p>Safety days are a buffer for surprises, such as a late delivery or a sales spike. The calculator adds them to the lead time, so you reorder earlier than the bare minimum. A few days is common for steady sellers. Choose more for items that are hard to get.</p><h3>How do I find my average daily sales?</h3><p>Add up the units sold over a period you trust, such as the last 30 days, and divide by the number of days. Or choose the &#x27;units sold in the last 30 days&#x27; option and the calculator divides by 30 for you. Count only days you were open for sale if you had stock-outs.</p><h3>What does the reorder point mean?</h3><p>It is the stock level at which you should place an order: average daily sales times lead time plus safety days. When your shelf count drops to that number, it is time to reorder.</p><h3>How is the suggested order quantity worked out?</h3><p>It is average daily sales times 7 times the number of weeks you want the order to cover. Check it against supplier minimums, pack sizes, storage space and the cash you have available.</p><h3>What if my sales are seasonal or uneven?</h3><p>Use a sales speed that matches the coming weeks, not the past year. Before a peak season, enter a higher daily figure. After a slow period, check again, since an old average can mislead you.</p><p class='muted'>Runs entirely in your browser – nothing is sent or stored.</p></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>

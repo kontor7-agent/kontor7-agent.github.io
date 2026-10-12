@@ -1,0 +1,116 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Freelance Project Quote Calculator (Free, with Buffer) | Blixwerk</title><meta name="description" content="Free project quote calculator for freelancers: add tasks, hourly rate and buffer, see your price, deposit and real hourly rate if it overruns.">
+<link rel="canonical" href="https://kontor7-agent.github.io/tools/freelance-project-quote-calculator"><meta property="og:title" content="Freelance Project Quote Calculator (Free, with Buffer) | Blixwerk">
+<meta property="og:description" content="Free project quote calculator for freelancers: add tasks, hourly rate and buffer, see your price, deposit and real hourly rate if it overruns."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/freelancer-project-invoice-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I estimate hours for each task?", "acceptedAnswer": {"@type": "Answer", "text": "Split the project into small tasks, such as kickoff call, first draft, revisions and handover. Estimate each one on its own. If you have done similar work before, look at how long it really took, not how long you remember it taking."}}, {"@type": "Question", "name": "How big should my buffer be?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on how clear the brief is and how many people give feedback. A well-defined project with one decision-maker may need a small buffer. A vague brief or a committee usually needs more. The calculator lets you try different values and see the effect on the price."}}, {"@type": "Question", "name": "What does the 'effective hourly rate if it runs over' show?", "acceptedAnswer": {"@type": "Answer", "text": "It shows what you would earn per hour if the work takes longer than your buffered estimate, while the price stays the same. Fixed costs are left out because they are not payment for your time. It helps you see how much overrun the quote can absorb."}}, {"@type": "Question", "name": "How much deposit should I ask for?", "acceptedAnswer": {"@type": "Answer", "text": "Many freelancers use 30 % to 50 % up front, and the rest on delivery or in stages. The right amount depends on the project size, the client and your own cash flow. Put it in writing before you start."}}, {"@type": "Question", "name": "Where do fixed costs go?", "acceptedAnswer": {"@type": "Answer", "text": "Enter anything you must pay for this specific project, such as stock photos, licences, fonts or a plugin. They are added to the price once, without a buffer, and are not counted as your earnings per hour."}}, {"@type": "Question", "name": "Does this include taxes?", "acceptedAnswer": {"@type": "Answer", "text": "No. The result is a planning estimate before any taxes or VAT. Ask a tax professional or accountant how to handle them in your situation."}}]}</script><script src="/tools/js/freelance-project-quote-calculator.js" defer></script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a></nav></header>
+<main><article><h1>Freelance Project Quote Calculator</h1><p>The client has just written: "Can you send me a quote by tomorrow?" You open a blank document and the doubt starts. Is 20 hours enough? What if they ask for three rounds of changes? You do not want to guess low and resent the project by week two. List your tasks, add a buffer, and see a price you can say out loud, plus the deposit to ask for and what happens to your hourly rate if the work runs over.</p><div class='cta'><div id="pq-tool" style="max-width:720px;margin:0 auto;">
+  <h2 style="font-size:1.2rem;margin:0 0 .5rem;">1. Tasks and estimated hours</h2>
+  <p class="muted" style="margin:0 0 .75rem;">List each task and how many hours you think it takes. Be honest, not heroic.</p>
+  <div id="pq-rows">
+    <div class="pq-row" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.5rem;align-items:center;">
+      <input type="text" class="pq-name" aria-label="Task name" value="Discovery and planning" style="flex:1 1 180px;min-width:0;padding:.5rem;box-sizing:border-box;">
+      <input type="text" inputmode="decimal" class="pq-hours" aria-label="Estimated hours for this task" value="4" style="width:90px;padding:.5rem;box-sizing:border-box;">
+      <span class="muted">hours</span>
+      <button type="button" class="btn pq-remove" aria-label="Remove this task">Remove</button>
+    </div>
+    <div class="pq-row" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.5rem;align-items:center;">
+      <input type="text" class="pq-name" aria-label="Task name" value="Design / main work" style="flex:1 1 180px;min-width:0;padding:.5rem;box-sizing:border-box;">
+      <input type="text" inputmode="decimal" class="pq-hours" aria-label="Estimated hours for this task" value="16" style="width:90px;padding:.5rem;box-sizing:border-box;">
+      <span class="muted">hours</span>
+      <button type="button" class="btn pq-remove" aria-label="Remove this task">Remove</button>
+    </div>
+    <div class="pq-row" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.5rem;align-items:center;">
+      <input type="text" class="pq-name" aria-label="Task name" value="Client feedback and delivery" style="flex:1 1 180px;min-width:0;padding:.5rem;box-sizing:border-box;">
+      <input type="text" inputmode="decimal" class="pq-hours" aria-label="Estimated hours for this task" value="6" style="width:90px;padding:.5rem;box-sizing:border-box;">
+      <span class="muted">hours</span>
+      <button type="button" class="btn pq-remove" aria-label="Remove this task">Remove</button>
+    </div>
+  </div>
+  <p style="margin:.5rem 0 1.25rem;"><button type="button" class="btn" id="pq-add">+ Add task</button></p>
+
+  <h2 style="font-size:1.2rem;margin:0 0 .5rem;">2. Rate, buffer and costs</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:1.25rem;">
+    <div>
+      <label for="pq-currency" style="display:block;font-weight:600;">Currency symbol</label>
+      <input id="pq-currency" type="text" value="$" maxlength="4" style="width:100%;padding:.5rem;box-sizing:border-box;">
+    </div>
+    <div>
+      <label for="pq-rate" style="display:block;font-weight:600;">Hourly rate</label>
+      <input id="pq-rate" type="text" inputmode="decimal" value="60" style="width:100%;padding:.5rem;box-sizing:border-box;">
+    </div>
+    <div>
+      <label for="pq-buffer" style="display:block;font-weight:600;">Buffer for revisions and unknowns (%)</label>
+      <input id="pq-buffer" type="text" inputmode="decimal" value="20" style="width:100%;padding:.5rem;box-sizing:border-box;">
+    </div>
+    <div>
+      <label for="pq-fixed" style="display:block;font-weight:600;">Fixed costs (optional)</label>
+      <input id="pq-fixed" type="text" inputmode="decimal" value="0" style="width:100%;padding:.5rem;box-sizing:border-box;">
+      <span class="muted">Stock images, fonts, plugins, software</span>
+    </div>
+    <div>
+      <label for="pq-overrun" style="display:block;font-weight:600;">What if it runs over by (%)</label>
+      <input id="pq-overrun" type="text" inputmode="decimal" value="25" style="width:100%;padding:.5rem;box-sizing:border-box;">
+      <span class="muted">Extra time beyond your buffered hours</span>
+    </div>
+    <div>
+      <label for="pq-deposit" style="display:block;font-weight:600;">Deposit (%)</label>
+      <input id="pq-deposit" type="text" inputmode="decimal" value="30" style="width:100%;padding:.5rem;box-sizing:border-box;">
+    </div>
+  </div>
+
+  <div id="pq-hint" role="alert" class="muted" style="min-height:1.2em;margin-bottom:.5rem;"></div>
+
+  <div id="pq-result" aria-live="polite" style="border:1px solid #ccc;border-radius:8px;padding:1rem;margin-bottom:.75rem;">
+    <p class="muted" style="margin:0;">Your project price</p>
+    <p class="price" id="pq-price" style="font-size:2.2rem;font-weight:700;margin:.1rem 0 .75rem;">–</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem;">
+      <div>
+        <p class="muted" style="margin:0;">Deposit to request up front</p>
+        <p id="pq-deposit-out" style="font-size:1.4rem;font-weight:700;margin:0;">–</p>
+        <p class="muted" id="pq-balance" style="margin:0;"></p>
+      </div>
+      <div>
+        <p class="muted" style="margin:0;">Hours planned (with buffer)</p>
+        <p id="pq-hours-out" style="font-size:1.4rem;font-weight:700;margin:0;">–</p>
+        <p class="muted" id="pq-base-hours" style="margin:0;"></p>
+      </div>
+      <div>
+        <p class="muted" style="margin:0;">Effective hourly rate if it runs over</p>
+        <p id="pq-eff" style="font-size:1.4rem;font-weight:700;margin:0;">–</p>
+        <p class="muted" id="pq-eff-note" style="margin:0;"></p>
+      </div>
+    </div>
+  </div>
+  <p class="muted" style="margin:0 0 1.25rem;">These figures are estimates and a planning aid. They do not replace a tax professional or accountant.</p>
+
+  <h2 style="font-size:1.2rem;margin:0 0 .5rem;">3. Quote summary</h2>
+  <label for="pq-summary" style="display:block;font-weight:600;">Plain-text summary</label>
+  <textarea id="pq-summary" readonly rows="10" style="width:100%;padding:.5rem;box-sizing:border-box;font-family:monospace;"></textarea>
+  <p style="margin:.5rem 0 0;"><button type="button" class="btn cta" id="pq-copy">Copy summary</button> <span class="muted" id="pq-copy-status" role="status"></span></p>
+</div>
+</div><div class='cta'>Want quotes, invoices and payment reminders in one calm place? Have a look at the Freelancer Calm Kit. <p><a class='btn' href='/p/freelancer-project-invoice-tracker-xlsx'>Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker (Excel)</a></p></div><h2>FAQ</h2><h3>How do I estimate hours for each task?</h3><p>Split the project into small tasks, such as kickoff call, first draft, revisions and handover. Estimate each one on its own. If you have done similar work before, look at how long it really took, not how long you remember it taking.</p><h3>How big should my buffer be?</h3><p>It depends on how clear the brief is and how many people give feedback. A well-defined project with one decision-maker may need a small buffer. A vague brief or a committee usually needs more. The calculator lets you try different values and see the effect on the price.</p><h3>What does the &#x27;effective hourly rate if it runs over&#x27; show?</h3><p>It shows what you would earn per hour if the work takes longer than your buffered estimate, while the price stays the same. Fixed costs are left out because they are not payment for your time. It helps you see how much overrun the quote can absorb.</p><h3>How much deposit should I ask for?</h3><p>Many freelancers use 30 % to 50 % up front, and the rest on delivery or in stages. The right amount depends on the project size, the client and your own cash flow. Put it in writing before you start.</p><h3>Where do fixed costs go?</h3><p>Enter anything you must pay for this specific project, such as stock photos, licences, fonts or a plugin. They are added to the price once, without a buffer, and are not counted as your earnings per hour.</p><h3>Does this include taxes?</h3><p>No. The result is a planning estimate before any taxes or VAT. Ask a tax professional or accountant how to handle them in your situation.</p><p class='muted'>Runs entirely in your browser – nothing is sent or stored.</p></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
