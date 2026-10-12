@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Afraid You Missed an API Security Hole? The Sunday Lunch Wobble | Blixwerk</title><meta name="description" content="Release on Monday, and over Sunday lunch one thought won&#x27;t leave: what did I forget to check in my API? A story about getting the doubt to settle.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/afraid-i-missed-a-security-hole-in-my-api-before-release"><meta property="og:title" content="Afraid You Missed an API Security Hole? The Sunday Lunch Wobble | Blixwerk">
+<meta property="og:description" content="Release on Monday, and over Sunday lunch one thought won&#x27;t leave: what did I forget to check in my API? A story about getting the doubt to settle."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Afraid You Missed an API Security Hole? The Sunday Lunch Wobble", "description": "Release on Monday, and over Sunday lunch one thought won't leave: what did I forget to check in my API? A story about getting the doubt to settle.", "datePublished": "2026-10-12", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/afraid-i-missed-a-security-hole-in-my-api-before-release"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Afraid You Missed an API Security Hole? The Sunday Lunch Wobble</h1><p class='muted'>2026-10-12</p><p>The soup is still warm when your phone lights up on the table.</p>
+<p>It's not a message. You just picked it up, out of habit, and opened the repository. The release is tomorrow at ten. Your sister is telling a story about her neighbour's dog, and you are nodding in the right places.</p>
+<p>But you are not at the table. You are inside your own code, walking down a corridor, trying every door handle in your head.</p>
+<p>Did I protect that route? Did I check what happens if someone changes the ID in the URL? What did I do with that old debug endpoint?</p>
+<h2>The thought that arrives with the dessert</h2>
+<p>Let's call her Marta. She is made up, but you may know her. She builds backends for small clients on her own. No security team. No second pair of eyes. Just her, a laptop, and a deadline that she set herself and then promised to someone else.</p>
+<p>The API works. She tested it. Every happy path is green.</p>
+<p>That is exactly what bothers her. She tested what she <em>expected</em> people to do. She has no idea what she hasn't thought of. And the part nobody says out loud is this: <strong>you can't see the hole you didn't think of.</strong></p>
+<p>So the doubt doesn't come with a list. It comes as a low hum. A tightness under the ribs that doesn't match anything on the screen.</p>
+<h2>What the hum quietly costs</h2>
+<p>It costs Sunday, first. The lunch, the walk, the film afterwards. You are physically present and mentally in a staging environment.</p>
+<p>It costs sleep, a little. You wake at 5:40 with a clear, oddly specific worry about token expiry, and you can't tell whether it's insight or just nerves.</p>
+<p>And it costs something harder to name. The feeling of being not quite a professional. Real engineering teams have reviews, sign-offs, someone who says "yes, we looked." You have your own memory and a lot of hope.</p>
+<p>So you do what many of us do. You open a few browser tabs. A forum thread from 2019. A long article with forty headings. A tool that prints a wall of warnings, half of which you can't judge. An hour later you know <em>more</em>, but you do not feel <em>safer</em>. Now you have a bigger pile of things you might have missed.</p>
+<p>More information didn't help. What was missing was a way to know when you were done.</p>
+<h2>The turn: a finish line for the worry</h2>
+<p>Marta closes the tabs. She gets up, helps clear the table, and, while drying a plate, thinks something simple.</p>
+<p>The doubt isn't a sign that her work is bad. It's a sign that she has no edge to it. Nothing says "this is what was checked, this is what wasn't, and this is what's left." Without edges, worry fills all the room it's given.</p>
+<p>What if the question were not "is my API secure?", which has no end, but "have I gone through the same set of questions a careful reviewer would ask?" That one has an end. You can tick it. You can see where you stand.</p>
+<p>She doesn't need to become a security expert by tomorrow morning. She needs a calm, ordered walk through the doors, with a record of which ones she tried.</p>
+<p>That is the whole shift. From a hum to a list with a bottom line.</p>
+<h2>Monday, ten to ten</h2>
+<p>Now picture the other version of that Sunday.</p>
+<p>On Sunday afternoon she sits down for an unhurried stretch. The doors in her head become rows on a page. Some get a tick straight away. Two make her frown, and she fixes them while the tea is still hot. One she can't resolve, so she writes it down plainly as a known item, with a note on what she'll do about it. That feels oddly good. A known gap is a task. An unknown gap is a ghost.</p>
+<p>Monday morning, she makes coffee. The release is at ten. Her heartbeat is ordinary.</p>
+<p>When the client asks, a little nervously, "Did anyone look at security?", she doesn't flinch or bluff. She can say what was reviewed, how, and what's on the list for the next sprint. Her voice is level. It is the voice of someone running a real business.</p>
+<p>Nothing about this guarantees that nothing will ever go wrong. No list can promise that, and it would be dishonest to pretend one does. What it gives is something smaller and very valuable: the knowledge that you did the careful thing, in order, and wrote it down.</p>
+<p>The evening after launch belongs to her. She cooks something slow. She doesn't check the logs every ten minutes.</p>
+<h2>If you recognise the hum</h2>
+<p>If you're the one drying a plate with half your mind in a pull request, you're not careless. You are conscientious, and alone, which is a tiring combination.</p>
+<p>We put together the <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong> for exactly that Sunday. It's a 58-item review you can work through at your own pace: a PDF, an XLSX tracker so you can see what's done, curl tests, a small auth-route scanner script and a client report template, for Node/Express and Python. It supports your own review and doesn't replace a professional security audit when your project calls for one.</p>
+<p>It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>You can take a look here, whenever it suits you: <a href="https://kontor7-agent.github.io/p/api-security-review-checklist-kit">Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
