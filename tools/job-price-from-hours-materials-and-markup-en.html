@@ -1,0 +1,96 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Handyman Quote Calculator: Hours, Materials &amp; Markup | Blixwerk</title><meta name="description" content="Free job price calculator for handymen, cleaners, gardeners and electricians. Add hours, materials and markup to get a quote you can give on site.">
+<link rel="canonical" href="https://kontor7-agent.github.io/tools/job-price-from-hours-materials-and-markup-en"><meta property="og:title" content="Handyman Quote Calculator: Hours, Materials &amp; Markup | Blixwerk">
+<meta property="og:description" content="Free job price calculator for handymen, cleaners, gardeners and electricians. Add hours, materials and markup to get a quote you can give on site."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/freelancer-project-invoice-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I price a job from hours and materials?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply the hours by your hourly rate (and by the number of people), add your materials at cost plus a markup, then add any call-out or travel fee. Add sales tax or VAT last, if you charge it. This calculator does those steps in order and shows each line."}}, {"@type": "Question", "name": "What markup should I put on materials?", "acceptedAnswer": {"@type": "Answer", "text": "There is no single right number. Many tradespeople add a percentage to cover the time spent buying, collecting and handling materials, plus waste and returns. Start with a figure that feels fair to you and your customers, and adjust it as you see how jobs actually go."}}, {"@type": "Question", "name": "Should the call-out or travel fee be separate?", "acceptedAnswer": {"@type": "Answer", "text": "Showing it as its own line is often clearer for customers and helps you remember that driving costs money. Put in fuel, parking and van wear for a typical trip, or use 0 if you build travel into your hourly rate instead."}}, {"@type": "Question", "name": "What hourly rate should I enter?", "acceptedAnswer": {"@type": "Answer", "text": "Enter the rate you want to be paid for an hour of work, not just what you would like to take home. It should cover your time, tools, insurance and the unpaid hours spent on quotes and admin. If your rate is a guess, check it against a few past jobs."}}, {"@type": "Question", "name": "Does the result include tax?", "acceptedAnswer": {"@type": "Answer", "text": "Only if you enter a tax percentage. Leave it at 0 if you do not charge sales tax or VAT. Tax rules differ by country and business type, so check with your accountant what applies to you."}}, {"@type": "Question", "name": "Can I use this for cleaning or gardening jobs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use hours for the time on site, your rate per person, and put cleaning supplies, plants or disposal costs in the materials field. It works for any small service job priced by time plus materials."}}]}</script><script src="/tools/js/job-price-from-hours-materials-and-markup-en.js" defer></script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Job Price Calculator: Hours, Materials and Markup</h1><p>You are standing in a customer's kitchen, tape measure in hand, and they ask: "So, what will it cost?" You could guess and hope. Or you could work it out in a minute. Enter your hours, your rate, what the materials cost you and your markup, and get a clear quote you can say out loud, then write down and invoice from the van. No spreadsheet to open, nothing to sign up for.</p><div class='cta'><div id="jp-tool" style="max-width:640px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+    <div>
+      <label for="jp-hours"><strong>Hours on the job</strong></label><br>
+      <input id="jp-hours" type="text" inputmode="decimal" value="6" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;">
+      <span class="muted">Per person, including travel on site.</span>
+    </div>
+    <div>
+      <label for="jp-people"><strong>People on the job</strong></label><br>
+      <input id="jp-people" type="text" inputmode="numeric" value="1" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;">
+      <span class="muted">1 to 3 is typical.</span>
+    </div>
+    <div>
+      <label for="jp-rate"><strong>Hourly rate per person</strong></label><br>
+      <input id="jp-rate" type="text" inputmode="decimal" value="45" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;">
+      <span class="muted">What you want to earn per hour.</span>
+    </div>
+    <div>
+      <label for="jp-materials"><strong>Materials, at your cost</strong></label><br>
+      <input id="jp-materials" type="text" inputmode="decimal" value="120" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;">
+      <span class="muted">What you pay the supplier.</span>
+    </div>
+    <div>
+      <label for="jp-markup"><strong>Materials markup (%)</strong></label><br>
+      <input id="jp-markup" type="text" inputmode="decimal" value="15" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;">
+      <span class="muted">Covers pick-up time, waste, risk.</span>
+    </div>
+    <div>
+      <label for="jp-fixed"><strong>Call-out / travel fee</strong></label><br>
+      <input id="jp-fixed" type="text" inputmode="decimal" value="25" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;">
+      <span class="muted">Fuel, parking, van wear. Use 0 if none.</span>
+    </div>
+    <div>
+      <label for="jp-tax"><strong>Sales tax / VAT (%)</strong></label><br>
+      <input id="jp-tax" type="text" inputmode="decimal" value="0" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;">
+      <span class="muted">Leave 0 if you do not charge it.</span>
+    </div>
+    <div>
+      <label for="jp-cur"><strong>Currency symbol</strong></label><br>
+      <input id="jp-cur" type="text" value="$" maxlength="3" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;">
+    </div>
+  </div>
+
+  <div id="jp-hint" class="muted" role="status" aria-live="polite" style="margin-top:14px;min-height:1.4em;"></div>
+
+  <div id="jp-result" aria-live="polite" style="margin-top:10px;padding:18px;border:1px solid #ccc;border-radius:10px;">
+    <div class="muted">Quote to give your customer</div>
+    <div class="price" id="jp-total" style="font-size:2.4em;font-weight:700;line-height:1.2;">-</div>
+    <div class="muted" id="jp-total-note"></div>
+    <table style="width:100%;margin-top:14px;border-collapse:collapse;">
+      <tbody>
+        <tr><td style="padding:6px 0;">Labour</td><td id="jp-labour" style="text-align:right;padding:6px 0;"><strong>-</strong></td></tr>
+        <tr><td style="padding:6px 0;">Materials incl. markup</td><td id="jp-mat" style="text-align:right;padding:6px 0;"><strong>-</strong></td></tr>
+        <tr><td style="padding:6px 0;">Call-out / travel</td><td id="jp-fix" style="text-align:right;padding:6px 0;"><strong>-</strong></td></tr>
+        <tr><td style="padding:6px 0;border-top:1px solid #ddd;">Subtotal before tax</td><td id="jp-sub" style="text-align:right;padding:6px 0;border-top:1px solid #ddd;"><strong>-</strong></td></tr>
+        <tr><td style="padding:6px 0;">Tax</td><td id="jp-taxamt" style="text-align:right;padding:6px 0;"><strong>-</strong></td></tr>
+        <tr><td style="padding:6px 0;border-top:1px solid #ddd;">Your markup on materials</td><td id="jp-markupamt" style="text-align:right;padding:6px 0;border-top:1px solid #ddd;"><strong>-</strong></td></tr>
+        <tr><td style="padding:6px 0;">Subtotal per job hour (all people)</td><td id="jp-perhour" style="text-align:right;padding:6px 0;"><strong>-</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:12px;"><button type="button" class="btn" id="jp-reset">Reset to example values</button></p>
+  <p class="muted">These figures are estimates. This is a planning aid and does not replace a tax professional or accountant.</p>
+</div>
+</div><div class='cta'>Want to keep every quote, job and invoice in one calm place instead of loose notes in the van? Take a look at the Blixwerk templates built for people who work for themselves. <p><a class='btn' href='/p/freelancer-project-invoice-tracker-xlsx'>Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker (Excel)</a></p></div><h2>FAQ</h2><h3>How do I price a job from hours and materials?</h3><p>Multiply the hours by your hourly rate (and by the number of people), add your materials at cost plus a markup, then add any call-out or travel fee. Add sales tax or VAT last, if you charge it. This calculator does those steps in order and shows each line.</p><h3>What markup should I put on materials?</h3><p>There is no single right number. Many tradespeople add a percentage to cover the time spent buying, collecting and handling materials, plus waste and returns. Start with a figure that feels fair to you and your customers, and adjust it as you see how jobs actually go.</p><h3>Should the call-out or travel fee be separate?</h3><p>Showing it as its own line is often clearer for customers and helps you remember that driving costs money. Put in fuel, parking and van wear for a typical trip, or use 0 if you build travel into your hourly rate instead.</p><h3>What hourly rate should I enter?</h3><p>Enter the rate you want to be paid for an hour of work, not just what you would like to take home. It should cover your time, tools, insurance and the unpaid hours spent on quotes and admin. If your rate is a guess, check it against a few past jobs.</p><h3>Does the result include tax?</h3><p>Only if you enter a tax percentage. Leave it at 0 if you do not charge sales tax or VAT. Tax rules differ by country and business type, so check with your accountant what applies to you.</p><h3>Can I use this for cleaning or gardening jobs?</h3><p>Yes. Use hours for the time on site, your rate per person, and put cleaning supplies, plants or disposal costs in the materials field. It works for any small service job priced by time plus materials.</p><p class='muted'>Runs entirely in your browser – nothing is sent or stored.</p></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>

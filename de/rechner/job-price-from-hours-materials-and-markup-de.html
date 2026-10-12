@@ -1,0 +1,93 @@
+<!doctype html><html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Handwerker Angebot Vorlage Excel ersetzen: Preisrechner | Blixwerk</title><meta name="description" content="Angebotspreis aus Stunden, Material und Aufschlag berechnen – ideal als Handwerker Angebot Vorlage ohne Excel. Kostenlos, direkt im Browser.">
+<link rel="canonical" href="https://kontor7-agent.github.io/de/rechner/job-price-from-hours-materials-and-markup-de"><meta property="og:title" content="Handwerker Angebot Vorlage Excel ersetzen: Preisrechner | Blixwerk">
+<meta property="og:description" content="Angebotspreis aus Stunden, Material und Aufschlag berechnen – ideal als Handwerker Angebot Vorlage ohne Excel. Kostenlos, direkt im Browser."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/freelancer-project-invoice-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/de/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wie berechne ich den Preis f\u00fcr einen Auftrag?", "acceptedAnswer": {"@type": "Answer", "text": "Arbeitszeit mal Stundenverrechnungssatz, plus Material mit Aufschlag, plus Anfahrt. Das ergibt den Nettopreis. Darauf kommt die Mehrwertsteuer, falls du sie ausweist. Der Rechner macht genau diese Schritte und zeigt jede Zeile einzeln."}}, {"@type": "Question", "name": "Was geh\u00f6rt in den Stundenverrechnungssatz?", "acceptedAnswer": {"@type": "Answer", "text": "Der Satz muss mehr abdecken als deinen Wunschlohn: Fahrzeug, Werkzeug, Versicherungen, B\u00fcro- und Wartezeiten sowie unbezahlte Stunden geh\u00f6ren anteilig dazu. Wie du deinen Satz genau herleitest, h\u00e4ngt von deinen Kosten ab. Bei Unsicherheit hilft ein Gespr\u00e4ch mit deinem Steuerberater."}}, {"@type": "Question", "name": "Wozu dient der Materialaufschlag?", "acceptedAnswer": {"@type": "Answer", "text": "Material muss besorgt, transportiert, gelagert und manchmal reklamiert werden. Dazu kommt Verschnitt. Der Aufschlag deckt diesen Aufwand ab. Welche H\u00f6he zu deinem Gewerk passt, entscheidest du selbst; der Rechner zeigt dir, wie viel Euro der Aufschlag im Angebot ausmacht."}}, {"@type": "Question", "name": "Wof\u00fcr ist der Zeitpuffer?", "acceptedAnswer": {"@type": "Answer", "text": "Auftr\u00e4ge dauern oft l\u00e4nger als geplant: Der Kunde ist nicht da, das Teil fehlt, hinter der Wand wartet eine \u00dcberraschung. Mit einem Puffer in Prozent rechnest du die Arbeitszeit entsprechend h\u00f6her. Bei 0 Prozent bleibt deine Sch\u00e4tzung unver\u00e4ndert."}}, {"@type": "Question", "name": "Was trage ich ein, wenn ich Kleinunternehmer bin?", "acceptedAnswer": {"@type": "Answer", "text": "Setze die Mehrwertsteuer auf 0. Dann entspricht Brutto dem Netto. Ob die Kleinunternehmerregelung f\u00fcr dich gilt und was auf der Rechnung stehen muss, kl\u00e4rst du am besten mit deinem Steuerberater."}}, {"@type": "Question", "name": "Kann ich das Ergebnis direkt als Angebot verwenden?", "acceptedAnswer": {"@type": "Answer", "text": "Es ist eine Sch\u00e4tzung und eine Planungshilfe. \u00dcbertrage die Zahlen in dein Angebot, pr\u00fcfe sie noch einmal und erg\u00e4nze Leistungsbeschreibung, G\u00fcltigkeit und Zahlungsziel. Der Rechner ersetzt keine Steuerberatung."}}]}</script><script src="/tools/js/job-price-from-hours-materials-and-markup-de.js" defer></script></head><body>
+<header><a class="brand" href="/de">Blixwerk</a><nav><a href="/de">Produkte</a><a href="/de/blog">Blog</a><a href="/de/rechner">Gratis-Rechner</a><a href="/">English</a></nav></header>
+<main><article><h1>Angebotspreis berechnen: Stunden, Material und Aufschlag</h1><p>Du stehst beim Kunden im Flur, der Wasserhahn tropft, der Zaun hängt schief oder die Fenster sind seit Monaten nicht gemacht worden. „Was kostet das ungefähr?“ Du rechnest im Kopf, nennst eine Zahl und merkst abends im Transporter: Das Material war teurer, die Anfahrt ist nicht drin. Mit diesem Rechner trägst du Stunden, Einkaufspreis und Aufschlag ein und siehst sofort Netto, Mehrwertsteuer und Brutto – noch vor Ort.</p><div class='cta'><form id="jp-form" novalidate style="max-width:640px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
+    <div>
+      <label for="jp-hours"><strong>Arbeitszeit (Stunden)</strong></label><br>
+      <input id="jp-hours" type="text" inputmode="decimal" value="6" autocomplete="off" aria-describedby="jp-hours-hint" style="width:100%;box-sizing:border-box;padding:10px;font-size:1rem">
+      <small id="jp-hours-hint" class="muted">Geschätzte Zeit vor Ort, z. B. 6 oder 2,5</small>
+    </div>
+    <div>
+      <label for="jp-rate"><strong>Stundenverrechnungssatz (€ netto)</strong></label><br>
+      <input id="jp-rate" type="text" inputmode="decimal" value="65" autocomplete="off" aria-describedby="jp-rate-hint" style="width:100%;box-sizing:border-box;padding:10px;font-size:1rem">
+      <small id="jp-rate-hint" class="muted">Dein Satz pro Stunde ohne MwSt.</small>
+    </div>
+    <div>
+      <label for="jp-buffer"><strong>Zeitpuffer (%)</strong></label><br>
+      <input id="jp-buffer" type="text" inputmode="decimal" value="0" autocomplete="off" aria-describedby="jp-buffer-hint" style="width:100%;box-sizing:border-box;padding:10px;font-size:1rem">
+      <small id="jp-buffer-hint" class="muted">Reserve für Unvorhergesehenes, z. B. 10</small>
+    </div>
+    <div>
+      <label for="jp-material"><strong>Material, Einkauf (€ netto)</strong></label><br>
+      <input id="jp-material" type="text" inputmode="decimal" value="120" autocomplete="off" aria-describedby="jp-material-hint" style="width:100%;box-sizing:border-box;padding:10px;font-size:1rem">
+      <small id="jp-material-hint" class="muted">Was du selbst zahlst, laut Lieferschein</small>
+    </div>
+    <div>
+      <label for="jp-markup"><strong>Materialaufschlag (%)</strong></label><br>
+      <input id="jp-markup" type="text" inputmode="decimal" value="15" autocomplete="off" aria-describedby="jp-markup-hint" style="width:100%;box-sizing:border-box;padding:10px;font-size:1rem">
+      <small id="jp-markup-hint" class="muted">Für Besorgung, Lagerung, Verschnitt</small>
+    </div>
+    <div>
+      <label for="jp-travel"><strong>Anfahrt pauschal (€ netto)</strong></label><br>
+      <input id="jp-travel" type="text" inputmode="decimal" value="25" autocomplete="off" aria-describedby="jp-travel-hint" style="width:100%;box-sizing:border-box;padding:10px;font-size:1rem">
+      <small id="jp-travel-hint" class="muted">0, wenn nicht berechnet</small>
+    </div>
+    <div>
+      <label for="jp-vat"><strong>Mehrwertsteuer (%)</strong></label><br>
+      <input id="jp-vat" type="text" inputmode="decimal" value="19" autocomplete="off" aria-describedby="jp-vat-hint" style="width:100%;box-sizing:border-box;padding:10px;font-size:1rem">
+      <small id="jp-vat-hint" class="muted">0 z. B. bei Kleinunternehmerregelung</small>
+    </div>
+  </div>
+  <p style="margin-top:14px"><button type="button" id="jp-reset" class="btn">Auf Beispielwerte zurücksetzen</button></p>
+</form>
+
+<div id="jp-result" aria-live="polite" style="max-width:640px;margin-top:20px;padding:16px;border:1px solid #ccc;border-radius:8px">
+  <h2 style="margin-top:0">Dein Angebotspreis</h2>
+  <p id="jp-hint" role="alert" style="display:none"></p>
+  <div id="jp-output">
+    <p class="muted" style="margin:0">Angebotssumme brutto</p>
+    <p class="price" id="jp-gross" style="font-size:2.2rem;margin:0 0 12px">–</p>
+    <p class="muted" style="margin:0">Angebotssumme netto</p>
+    <p class="price" id="jp-net" style="font-size:1.5rem;margin:0 0 12px">–</p>
+    <table style="width:100%;border-collapse:collapse">
+      <tbody>
+        <tr><td style="padding:4px 0">Arbeit (<span id="jp-hours-eff">–</span> h)</td><td style="text-align:right" id="jp-labor">–</td></tr>
+        <tr><td style="padding:4px 0">Material inkl. Aufschlag</td><td style="text-align:right" id="jp-mat-total">–</td></tr>
+        <tr><td style="padding:4px 0" class="muted">davon Aufschlag</td><td style="text-align:right" class="muted" id="jp-mat-markup">–</td></tr>
+        <tr><td style="padding:4px 0">Anfahrt</td><td style="text-align:right" id="jp-travel-out">–</td></tr>
+        <tr><td style="padding:4px 0">Mehrwertsteuer</td><td style="text-align:right" id="jp-vat-out">–</td></tr>
+        <tr><td style="padding:4px 0" class="muted">Netto pro Arbeitsstunde (alles zusammen)</td><td style="text-align:right" class="muted" id="jp-per-hour">–</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted" style="margin-bottom:0"><small>Das ist eine Schätzung und eine Planungshilfe. Sie ersetzt keine Steuerberatung und keine Prüfung durch deinen Steuerberater oder Buchhalter.</small></p>
+</div>
+</div><div class='cta'>Wenn du Angebote nicht mehr aus dem Bauch schätzen willst, findest du bei Blixwerk Vorlagen, die dir Preise, Rechnungen und offene Posten ruhig und übersichtlich halten. <p><a class='btn' href='/p/freelancer-project-invoice-tracker-xlsx'>Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker (Excel)</a></p></div><h2>Häufige Fragen</h2><h3>Wie berechne ich den Preis für einen Auftrag?</h3><p>Arbeitszeit mal Stundenverrechnungssatz, plus Material mit Aufschlag, plus Anfahrt. Das ergibt den Nettopreis. Darauf kommt die Mehrwertsteuer, falls du sie ausweist. Der Rechner macht genau diese Schritte und zeigt jede Zeile einzeln.</p><h3>Was gehört in den Stundenverrechnungssatz?</h3><p>Der Satz muss mehr abdecken als deinen Wunschlohn: Fahrzeug, Werkzeug, Versicherungen, Büro- und Wartezeiten sowie unbezahlte Stunden gehören anteilig dazu. Wie du deinen Satz genau herleitest, hängt von deinen Kosten ab. Bei Unsicherheit hilft ein Gespräch mit deinem Steuerberater.</p><h3>Wozu dient der Materialaufschlag?</h3><p>Material muss besorgt, transportiert, gelagert und manchmal reklamiert werden. Dazu kommt Verschnitt. Der Aufschlag deckt diesen Aufwand ab. Welche Höhe zu deinem Gewerk passt, entscheidest du selbst; der Rechner zeigt dir, wie viel Euro der Aufschlag im Angebot ausmacht.</p><h3>Wofür ist der Zeitpuffer?</h3><p>Aufträge dauern oft länger als geplant: Der Kunde ist nicht da, das Teil fehlt, hinter der Wand wartet eine Überraschung. Mit einem Puffer in Prozent rechnest du die Arbeitszeit entsprechend höher. Bei 0 Prozent bleibt deine Schätzung unverändert.</p><h3>Was trage ich ein, wenn ich Kleinunternehmer bin?</h3><p>Setze die Mehrwertsteuer auf 0. Dann entspricht Brutto dem Netto. Ob die Kleinunternehmerregelung für dich gilt und was auf der Rechnung stehen muss, klärst du am besten mit deinem Steuerberater.</p><h3>Kann ich das Ergebnis direkt als Angebot verwenden?</h3><p>Es ist eine Schätzung und eine Planungshilfe. Übertrage die Zahlen in dein Angebot, prüfe sie noch einmal und ergänze Leistungsbeschreibung, Gültigkeit und Zahlungsziel. Der Rechner ersetzt keine Steuerberatung.</p><p class='muted'>Läuft komplett in deinem Browser – nichts wird übertragen oder gespeichert.</p></article></main>
+<footer><p>Produkte, Rechner und Artikel von Blixwerk entstehen mit KI-Unterstützung durch ein automatisiertes System und werden vor der Veröffentlichung automatisch geprüft.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
