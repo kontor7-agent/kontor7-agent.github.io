@@ -1,0 +1,60 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tengo miedo de que hackeen mi API antes de lanzarla: el martes del cliente | Blixwerk</title><meta name="description" content="Faltan tres días para lanzar la API de tu cliente y una duda no te deja concentrarte. Una historia sobre cómo dejar de lanzar con el estómago encogido.">
+<link rel="canonical" href="https://kontor7-agent.github.io/es/blog/miedo-a-que-hackeen-mi-api-antes-de-lanzarla"><meta property="og:title" content="Tengo miedo de que hackeen mi API antes de lanzarla: el martes del cliente | Blixwerk">
+<meta property="og:description" content="Faltan tres días para lanzar la API de tu cliente y una duda no te deja concentrarte. Una historia sobre cómo dejar de lanzar con el estómago encogido."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Tengo miedo de que hackeen mi API antes de lanzarla: el martes del cliente", "description": "Faltan tres d\u00edas para lanzar la API de tu cliente y una duda no te deja concentrarte. Una historia sobre c\u00f3mo dejar de lanzar con el est\u00f3mago encogido.", "datePublished": "2026-10-13", "inLanguage": "es", "image": "https://kontor7-agent.github.io/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/es/blog/miedo-a-que-hackeen-mi-api-antes-de-lanzarla"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Tengo miedo de que hackeen mi API antes de lanzarla: el martes del cliente</h1><p class='muted'>2026-10-13</p><p>Es martes, las once y cuarto de la mañana. Estás en una videollamada con Marta, tu cliente, que tiene una tienda online de cerámica y lleva meses esperando esto. Comparte pantalla. Habla del lanzamiento del jueves, de la newsletter, de los descuentos.</p>
+<p>Tú asientes. Sonríes. Y por dentro, una frase que no para: <em>¿y si alguien entra por donde no debería?</em></p>
+<p>La API funciona. Lo has probado a mano, endpoint por endpoint. Pero "funciona" y "está tranquila para salir al mundo" no son lo mismo, y lo sabes.</p>
+<h2>La duda que no cabe en la reunión</h2>
+<p>Nadie te la ha preguntado. Marta no sabe qué es un token ni le hace falta. Lo único que te dice es: "Entonces el jueves está todo listo, ¿verdad?"</p>
+<p>Y tú respondes: "Sí, va todo bien."</p>
+<p>No es mentira del todo. Pero tampoco es la verdad entera. La verdad entera sería: <em>creo que he cerrado lo importante, pero no tengo forma de comprobarlo sin dejarme algo.</em></p>
+<p>Cuelgas. Te quedas mirando el editor. Hay una ruta que escribiste hace tres semanas, con prisa, y no recuerdas si pide autenticación. Otra que devuelve más datos de los que el cliente necesita. Y esa variable de entorno que, seguro, está bien guardada. Seguro.</p>
+<p>Es una preocupación muy callada. No da para llamar a nadie. No es una urgencia. Es un zumbido de fondo que se instala en la comida, en el paseo, en la fila del supermercado, cuando miras el móvil sin querer por si hay algún aviso raro.</p>
+<h2>Lo que cuesta no saberlo</h2>
+<p>No es solo el miedo al ataque. Es todo lo que viene con él.</p>
+<p>Es revisar el código otra vez "por si acaso", sin saber muy bien qué buscas. Es leer foros a las dos de la tarde y salir con más dudas que al entrar. Es sentir que un profesional de verdad lo tendría todo controlado, y que tú, por tu cuenta, sin equipo de seguridad ni nadie que revise tu trabajo, estás improvisando.</p>
+<p>Y es la sensación incómoda de entregar algo a un cliente que confía en ti sin poder decirle, con calma: "Lo he revisado con este criterio, esto sí está cubierto."</p>
+<p>Los que trabajáis solos cargáis con eso. No hay un compañero que diga "yo le echo un vistazo". Eres desarrollador, responsable de seguridad y soporte, todo a la vez, y además tienes que facturar.</p>
+<h2>El momento en que cambia la cosa</h2>
+<p>Imagina que esa tarde, en vez de abrir otro foro, haces algo distinto. Te preguntas: <em>¿y si no tengo que acordarme de todo yo solo?</em></p>
+<p>Porque la duda no nace de que no sepas. Nace de que revisas de memoria. Y la memoria, un martes a las once, con un lanzamiento encima, es un mal sitio donde guardar una lista.</p>
+<p>Lo que haría falta es algo mucho más modesto que un gran curso: una lista ordenada, de la que puedas ir tachando. Algo que te diga "mira esto, y esto, y esto", y que al final te deje con un papel en la mano que diga qué has comprobado.</p>
+<p>No promete que nada pueda fallar jamás; nadie honesto lo promete. Pero cambia la pregunta. Ya no es "¿habré olvidado algo?", sino "¿qué me falta por marcar?". Y esa segunda pregunta tiene una respuesta que cabe en una tarde.</p>
+<h2>Un jueves distinto</h2>
+<p>Vuelve a imaginar el jueves, pero con esa lista hecha.</p>
+<p>Te levantas, te haces el café sin mirar el móvil. A las diez Marta te escribe: "¡Ya está en marcha!" Y tú respondes con un emoji y un "a disfrutar". Sin nudo en el estómago.</p>
+<p>Puedes incluso enviarle, si quieres, un pequeño informe de lo que revisaste. No para asustarla, sino para que vea que su proyecto pasó por un proceso. Eso también es parecer, y ser, profesional.</p>
+<p>Por la tarde sales a caminar. En la fila de la panadería no sacas el móvil. Esa noche duermes de un tirón, y el lanzamiento deja de ser una amenaza para volver a ser lo que era: una buena noticia para alguien que trabaja con ilusión.</p>
+<p>No te has vuelto experto en seguridad de la noche a la mañana. Simplemente has dejado de depender de tu memoria y de tus nervios.</p>
+<h2>Si te has reconocido en el martes de las once</h2>
+<p>Hemos preparado algo pensado para ese momento: <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong>. Es una revisión de 58 puntos con PDF, hoja de seguimiento en XLSX, pruebas con curl, un script que busca rutas sin autenticación (para Node/Express y Python) y una plantilla de informe para tu cliente. Está en inglés, eso sí.</p>
+<p>Si quieres echarle un vistazo, está aquí, sin prisa: <a href="https://kontor7-agent.github.io/p/api-security-review-checklist-kit">Launch Without the 2 a.m. Doubt</a>. Y si no te ayuda, tienes 30 días para pedir el reembolso completo, sin preguntas.</p>
+<p>Es una ayuda de organización: no sustituye a una auditoría profesional si tu proyecto la necesita.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
