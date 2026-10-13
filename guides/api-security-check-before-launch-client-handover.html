@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Did I Miss an API Security Check? The Handover Call at 10 am | Blixwerk</title><meta name="description" content="The client is waiting on the call, your API is ready, and one quiet thought won&#x27;t leave: did I miss a security check? A calm story about shipping without doubt.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/api-security-check-before-launch-client-handover"><meta property="og:title" content="Did I Miss an API Security Check? The Handover Call at 10 am | Blixwerk">
+<meta property="og:description" content="The client is waiting on the call, your API is ready, and one quiet thought won&#x27;t leave: did I miss a security check? A calm story about shipping without doubt."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Did I Miss an API Security Check? The Handover Call at 10 am", "description": "The client is waiting on the call, your API is ready, and one quiet thought won't leave: did I miss a security check? A calm story about shipping without doubt.", "datePublished": "2026-10-13", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/api-security-check-before-launch-client-handover"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Did I Miss an API Security Check? The Handover Call at 10 am</h1><p class='muted'>2026-10-13</p><p>The client's face fills half your screen. Behind her, a bookshelf and a half-dead plant. On your side, a terminal, a green test run and a cup of tea that went cold twenty minutes ago.</p>
+<p>"So we can go live today?" she asks.</p>
+<p>You say yes. Your voice sounds fine. Your stomach does not agree.</p>
+<p>The API works. You know it works. You built the endpoints, you tested the happy paths, you even wrote the README. But somewhere behind the yes, a small voice keeps asking the same thing it asked at breakfast: <em>did I miss something?</em></p>
+<h2>The yes that costs you</h2>
+<p>Nobody sees this part of freelance development. The client sees a smooth handover. You feel a low hum under it.</p>
+<p>Was that one route behind login? Did you really check the one you added on Thursday, the quick one for the export? What happens if someone sends it something strange? Does the error message say too much?</p>
+<p>You are not careless. That is the odd thing. People who worry about this are usually the ones who care. But caring without a clear list turns into a vague dread, and vague dread is expensive.</p>
+<p>It costs you the lightness of the day a project ships. It costs you the walk afterwards, because you keep half-checking in your head. It costs you a bit of your standing in your own eyes: <em>a real professional would just know</em>.</p>
+<p>You are alone on this project. There is no second developer to say "I looked at that, it's fine." No security team. Just you, and the call, and the plant.</p>
+<h2>What you do instead of asking</h2>
+<p>So you do what many of us do. You say, "Give me five minutes, I'll do one last check."</p>
+<p>The client smiles and mutes herself. You open the code and start scrolling, hoping something will jump out.</p>
+<p>Nothing jumps out. That is not the same as everything being fine. You scroll through files you wrote weeks ago, and they all look reasonable, because they look like <em>your</em> code. You are checking your own homework with the eyes that wrote it.</p>
+<p>After eight minutes you unmute. "Looks good," you say.</p>
+<p>It probably is good. But "probably" is a heavy word to carry into someone else's business.</p>
+<h2>The quiet realisation</h2>
+<p>Here is what changes things, and it is not a clever trick.</p>
+<p>The problem was never that you don't know enough. The problem is that you were trying to remember, in the moment, everything that could matter. Memory is a poor place to keep a pre-launch routine. It gets tired. It skips the boring things. It gets loudest exactly when the client is waiting.</p>
+<p>Pilots do not rely on feeling confident before takeoff. Surgeons do not either. They use a list, not because they are beginners, but because the stakes are real and the mind wanders. A list is what experienced people use.</p>
+<p>The moment you see that, something loosens. You were never supposed to carry it all in your head. You were supposed to have somewhere to put it.</p>
+<h2>The same call, a different Monday</h2>
+<p>Picture the same handover, a few weeks later, a different project.</p>
+<p>The client asks, "Can we go live today?"</p>
+<p>You say yes, and it is a plain yes. Because yesterday afternoon you sat down with a finished review, every line ticked or noted, and the two things you found were already fixed. You didn't hunt for them in a panic. They were simply on the page, waiting to be seen.</p>
+<p>The call lasts twelve minutes. Afterwards you do not hover over the terminal. You close the laptop, carry the cold tea to the kitchen, and make a fresh one. Maybe you take a walk, and for once you are only walking.</p>
+<p>There is one more small thing. When the client says, "How do I know it's been checked?", you do not fumble. You send her a short, tidy summary of what was reviewed. It reads like the work of someone who runs a proper business, because you do.</p>
+<p>Nothing dramatic happened. You just stopped improvising the most nerve-racking part of the job.</p>
+<h2>Not a guarantee, a steadier footing</h2>
+<p>Be honest with yourself about what a checklist is. It does not make software unbreakable, and no list ever will. It does not replace a specialist if your project handles something truly sensitive. What it does is smaller and more useful: it makes sure the ordinary, well-known things are not forgotten on a day when your head is full of other people's expectations.</p>
+<p>Most of the dread was never about exotic attacks. It was about the fear of having skipped something basic. A calm, repeatable review answers exactly that fear.</p>
+<h2>If you recognised yourself</h2>
+<p>If you have ever said "looks good" with a small knot in your stomach, you might like having the whole routine in one place. We made a kit for exactly that moment: <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong>. It has 58 review items as a PDF and an XLSX tracker, curl tests you can run, a script that scans your auth routes (for Node/Express and Python), and a client report template for the handover.</p>
+<p>It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p><a href="https://kontor7-agent.github.io/p/api-security-review-checklist-kit">See the REST API Security Checklist Kit</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
