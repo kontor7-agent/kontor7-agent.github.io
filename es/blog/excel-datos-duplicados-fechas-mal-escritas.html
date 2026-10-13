@@ -1,0 +1,64 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mi Excel tiene duplicados y fechas mal escritas: el lunes del cierre | Blixwerk</title><meta name="description" content="Son las nueve de la mañana, el cliente espera tu lista y tu Excel tiene filas repetidas y fechas que no cuadran. Una historia sobre recuperar la calma.">
+<link rel="canonical" href="https://kontor7-agent.github.io/es/blog/excel-datos-duplicados-fechas-mal-escritas"><meta property="og:title" content="Mi Excel tiene duplicados y fechas mal escritas: el lunes del cierre | Blixwerk">
+<meta property="og:description" content="Son las nueve de la mañana, el cliente espera tu lista y tu Excel tiene filas repetidas y fechas que no cuadran. Una historia sobre recuperar la calma."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Mi Excel tiene duplicados y fechas mal escritas: el lunes del cierre", "description": "Son las nueve de la ma\u00f1ana, el cliente espera tu lista y tu Excel tiene filas repetidas y fechas que no cuadran. Una historia sobre recuperar la calma.", "datePublished": "2026-10-13", "inLanguage": "es", "image": "https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/es/blog/excel-datos-duplicados-fechas-mal-escritas"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Mi Excel tiene duplicados y fechas mal escritas: el lunes del cierre</h1><p class='muted'>2026-10-13</p><h1>Mi Excel tiene duplicados y fechas mal escritas: el lunes del cierre</h1>
+<p>Es lunes, las nueve y diez de la mañana. El café todavía está demasiado caliente para beberlo y ya tienes abierto el archivo que te mandó el cliente.</p>
+<p>Imaginemos a Marta, diseñadora y autónoma, que lleva tres años trabajando sola desde una mesa junto a la ventana de su salón. Hoy tiene una llamada a las once. Le han pedido que ordene una exportación de contactos y pedidos antes de esa llamada. Parecía sencillo. Ya no lo parece.</p>
+<h2>Lo que ves cuando abres el archivo</h2>
+<p>Desplazas la pantalla hacia abajo. Hay tres filas con el mismo cliente, pero una lleva una mayúscula distinta y otra un espacio al final que no se ve. Hay fechas que dicen 03/04/2026, otras que dicen 2026-04-03 y una que dice «3 de abril». Y no sabes si el 03/04 es tres de abril o cuatro de marzo.</p>
+<p>En la columna de teléfonos conviven números con prefijo, sin prefijo y con guiones. Algunos nombres tienen esos símbolos raros donde debería haber una «ñ» o una tilde.</p>
+<p>Piensas: «Esto lo arreglo en diez minutos».</p>
+<p>Son las nueve y cuarenta.</p>
+<h2>El coste que nadie apunta</h2>
+<p>Nadie te paga por esa mañana. No sale en ninguna factura. Pero la pagas igual.</p>
+<p>La pagas con la hora que perdiste buscando duplicados a ojo, ordenando la columna, volviendo a ordenarla. La pagas con ese pellizco en el estómago cuando borras una fila y te preguntas si era la buena. La pagas con la duda de si el cliente va a recibir un archivo con errores que tú no viste.</p>
+<p>Y hay algo más callado. Esa sensación de «una profesional de verdad no debería estar peleándose con esto». Como si todos los demás tuvieran un sistema y tú siguieras improvisando con un buscar y reemplazar.</p>
+<p>No es falta de talento. Es que nadie te enseñó a limpiar datos, y tu trabajo era otro.</p>
+<h2>La llamada de las once</h2>
+<p>A las once menos cinco sigues corrigiendo fechas a mano, una por una. Cuando suena la videollamada, el archivo está a medias y tú también.</p>
+<p>El cliente pregunta con amabilidad cómo va. Dices que «casi listo». Es una de esas frases que se dicen sonriendo mientras por dentro haces cuentas de cuánto te falta.</p>
+<p>Colgáis. Respiras. Y entonces piensas algo distinto, casi sin querer: «¿Y si esto no tiene por qué ser así cada vez?».</p>
+<h2>El momento en que cambia la pregunta</h2>
+<p>Hasta ese día, tu pregunta era: «¿cómo arreglo este archivo?». Esa tarde cambia por otra: «¿por qué sigo arreglando a mano algo que se repite cada mes?».</p>
+<p>Porque se repite. Hoy es una exportación de contactos. El mes pasado fue una lista de facturas. Antes, un informe de tienda online. Siempre el mismo tipo de desorden: filas repetidas, fechas en tres formatos, teléfonos escritos como cada persona quiso.</p>
+<p>Y esos problemas tienen algo bueno: son aburridos y predecibles. Justo el tipo de tarea que un programa pequeño hace sin cansarse, sin distraerse y sin borrar la fila equivocada.</p>
+<p>Una herramienta sencilla puede primero enseñarte qué cambiaría, sin tocar nada, y después dejarte un informe de lo que hizo. Con eso, la duda de «¿y si borré algo importante?» deja de dar vueltas en tu cabeza.</p>
+<h2>Un lunes distinto</h2>
+<p>Imagina el mismo lunes, otra versión.</p>
+<p>Llega el archivo a las nueve y diez. Lo abres, ves el desorden y no se te encoge el estómago. Sabes lo que viene: lo pasas por tu herramienta, revisas lo que propone cambiar, aceptas.</p>
+<p>A las nueve y veinte tienes una lista limpia. Un cliente por fila. Las fechas todas iguales. Los teléfonos con el mismo formato. Las tildes donde tocan.</p>
+<p>Te sirves otro café, esta vez a la temperatura justa. Abres el correo, contestas dos mensajes que llevaban días esperando y te queda media mañana libre para el diseño que de verdad te gusta.</p>
+<p>A las once llega la llamada. Dices «ya lo tienes en tu bandeja» y es verdad.</p>
+<p>No ha pasado nada épico. Pero el día entero se siente más ligero, como cuando por fin ordenas un cajón que llevabas meses esquivando.</p>
+<h2>Si te has reconocido en Marta</h2>
+<p>Si alguna vez has mirado un Excel lleno de duplicados y fechas imposibles pensando «tiene que haber otra forma», quizá te sirva echar un vistazo a <strong>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</strong>. Sirve para limpiar exportaciones desordenadas de CSV y Excel: duplicados, fechas, teléfonos, codificación, y trae una prueba en seco y un informe de cambios. Está en inglés, y necesitas tener Python instalado.</p>
+<p>Tiene una garantía de devolución de 30 días: si no te ayuda, te devolvemos el dinero, sin preguntas.</p>
+<p>👉 <a href="https://kontor7-agent.github.io/p/csv-cleaning-toolkit-python">Ver Clean Data in Minutes</a></p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
