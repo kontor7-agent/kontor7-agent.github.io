@@ -1,0 +1,71 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Excel con espacios y nombres mal escritos: no lo limpio a mano | Blixwerk</title><meta name="description" content="Jueves por la mañana, 412 filas con espacios y nombres mal escritos y una entrega a mediodía. Una historia para quien no puede limpiar tanto dato a mano.">
+<link rel="canonical" href="https://kontor7-agent.github.io/es/blog/excel-espacios-nombres-mal-escritos-limpiar-datos"><meta property="og:title" content="Excel con espacios y nombres mal escritos: no lo limpio a mano | Blixwerk">
+<meta property="og:description" content="Jueves por la mañana, 412 filas con espacios y nombres mal escritos y una entrega a mediodía. Una historia para quien no puede limpiar tanto dato a mano."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Excel con espacios y nombres mal escritos: no lo limpio a mano", "description": "Jueves por la ma\u00f1ana, 412 filas con espacios y nombres mal escritos y una entrega a mediod\u00eda. Una historia para quien no puede limpiar tanto dato a mano.", "datePublished": "2026-10-13", "inLanguage": "es", "image": "https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/es/blog/excel-espacios-nombres-mal-escritos-limpiar-datos"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Excel con espacios y nombres mal escritos: no lo limpio a mano</h1><p class='muted'>2026-10-13</p><p>Son las 9:40 de un jueves y Lucía ya va por el segundo café. Se le ha enfriado igual que el primero.</p>
+<p>Es fotógrafa de bodas y retratos. Trabaja sola, desde la mesa del salón, con la ventana abierta y el ruido de la panadería de abajo. Hoy tiene que enviar a su gestor la lista de clientes del año, y a mediodía debe cargar los contactos en la herramienta de correos para avisar de las sesiones de otoño.</p>
+<p>Abre el Excel. Son 412 filas.</p>
+<p>Y ahí está todo lo que sabía que iba a encontrar.</p>
+<h2>Lo que se ve cuando haces zoom</h2>
+<p>Una celda dice "  María López" con dos espacios delante. Otra dice "maria lopez", todo en minúsculas y sin tilde. Más abajo hay un "LOPEZ, Maria". ¿Es la misma persona? Casi seguro. Pero "casi seguro" no es lo que quieres tener delante cuando vas a escribirle a alguien por su nombre.</p>
+<p>Hay un "Jose Luis" y un "José  Luis" con un espacio doble. Hay un "Garcia" y un "García". Hay un teléfono con prefijo, otro con puntos, otro con guiones y otro que solo tiene ocho cifras, porque alguien (ella, hace tres años, con prisa) se comió un número.</p>
+<p>Lucía mira la pantalla y piensa: <em>esto lo hice yo</em>. No lo piensa con rabia. Lo piensa con ese cansancio concreto de quien ve su propio desorden convertido en una tarea.</p>
+<h2>El plan de "lo arreglo yo en un rato"</h2>
+<p>Empieza bien. Selecciona una columna, busca los espacios dobles y los reemplaza. Se siente productiva durante diez minutos.</p>
+<p>Luego se da cuenta de que los espacios que no se ven siguen ahí. Al final de "Carmen ", donde nadie mira. Y de que arreglar los nombres no arregla los teléfonos. Ni los correos con mayúsculas. Ni esa pareja que aparece dos veces, una con el email de ella y otra con el de él.</p>
+<p>A las 10:30 lleva cuarenta filas revisadas y trescientas setenta y dos por delante. Hace la cuenta sin querer: a este ritmo, la mañana entera. Y la tarde que tenía para editar fotos de la boda de Sevilla se esfumaría también.</p>
+<p>Lo que no dice en voz alta, ni siquiera a sí misma, es esto: <em>si llevara mejor mis cosas, no estaría aquí.</em> Esa idea de que un negocio de verdad no tendría una hoja así. Que los demás autónomos tendrán sus datos limpios, ordenados, con su sistema. Y que ella, con su cámara buena y su estilo cuidado, todavía va improvisando.</p>
+<p>No es verdad, pero a las 10:30 de un jueves lo parece.</p>
+<h2>La llamada de las 11</h2>
+<p>Suena el móvil. Es Andrés, el gestor. Es amable y tiene prisa, como todos esa semana, con el cierre del trimestre pegado a la nuca. Hacienda queda de fondo, como cada trimestre, sin necesidad de que nadie la nombre.</p>
+<p>—¿Tienes ya la lista? Si me la mandas hoy, mañana lo reviso con calma.</p>
+<p>Lucía mira las filas.</p>
+<p>—Hoy te la mando —dice.</p>
+<p>Cuelga y siente el nudo en el estómago. No por la lista en sí, sino por la promesa que acaba de hacer sobre algo que no controla.</p>
+<p>Vuelve a la pantalla. Y, por primera vez en toda la mañana, se detiene a pensar en otra cosa.</p>
+<h2>Que no tenga que ser así</h2>
+<p>Se acuerda de algo que le contó una amiga, diseñadora, mientras compartían una tarta en el cumpleaños de alguien: que ya no limpia sus listas a mano. Que tiene una pequeña herramienta que hace el trabajo pesado y que, antes de tocar nada, le enseña lo que va a cambiar. Que no es magia ni nada complicado; es solo que el trabajo aburrido deja de ser suyo.</p>
+<p>Lucía no lo había escuchado de verdad entonces. Ahora sí.</p>
+<p>No piensa en programas. Piensa en una mañana distinta: el mismo jueves, el mismo café, pero con el archivo abierto y una sola pregunta, "¿esto está bien?", en lugar de cuatrocientas.</p>
+<p>Piensa en leer un resumen de lo cambiado en vez de repasar fila por fila. En sacar los duplicados sin miedo a borrar a la persona equivocada. En que los teléfonos tengan todos el mismo aspecto, y los nombres también, y que las tildes no sean un misterio.</p>
+<p>Y piensa, sobre todo, en lo que haría con esas tres horas.</p>
+<h2>Un lunes cualquiera, después</h2>
+<p>Imagínalo con ella. Un lunes a las 9:15. Abre el archivo que exportó el viernes, el que siempre llega un poco sucio, porque los datos vienen de formularios, de mensajes copiados, de apuntes de última hora. Lo repasa un momento. Lo deja limpio y sigue con su día.</p>
+<p>No hay urgencia. Nadie le espera con prisa. Cuando Andrés llama, ella ya tiene la lista enviada desde el día anterior, y la conversación dura dos minutos y trata de otra cosa.</p>
+<p>La mañana es suya. Las fotos de Sevilla se editan con luz de ventana y sin mirar el reloj. Cuando llega la hora de comer, come de verdad, sin el portátil al lado.</p>
+<p>No es una vida perfecta. Solo es una en la que los datos dejan de ser una pequeña vergüenza semanal y vuelven a ser lo que debían: algo que está ahí, en orden, sin pedirte nada.</p>
+<h2>Lo que cuesta de verdad</h2>
+<p>El desorden de un Excel no se paga con dinero, o no solo. Se paga en horas que no estaban previstas, en esa sensación de "no soy muy profesional" que nadie menciona, en correos que envías con el nombre mal escrito y en las mañanas que empiezan ya con un poco de prisa.</p>
+<p>Y casi siempre se paga callado, porque la lista es tuya y nadie más la ve.</p>
+<p>Si te has reconocido en alguna de esas filas, con sus espacios invisibles y sus "García" sin tilde, quizá no necesites más disciplina. Quizá necesites quitarte de encima la parte mecánica.</p>
+<h2>Si quieres mirarlo con calma</h2>
+<p>Para eso existe <a href="https://kontor7-agent.github.io/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a>. Una aclaración breve: el producto está en inglés. Sirve para limpiar exportaciones de CSV y Excel: duplicados, fechas, teléfonos, codificación, separar y unir columnas, validar. Primero hace una prueba sin tocar nada y luego te deja un informe de cambios, para que decidas tú.</p>
+<p>Tiene una garantía de devolución de 30 días: si no te ayuda, te devolvemos el dinero, sin preguntas.</p>
+<p>Y si hoy solo necesitabas saber que no eres la única persona con un Excel así, también está bien. Respira, cierra el archivo un momento y toma el café mientras aún está caliente.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
