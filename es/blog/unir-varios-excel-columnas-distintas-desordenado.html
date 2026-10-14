@@ -1,0 +1,66 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unir varios Excel con columnas distintas y que salga desordenado | Blixwerk</title><meta name="description" content="Tres Excel, tres formas de llamar a las mismas columnas y una llamada a las once. Una historia para quien pega datos a mano y nunca cuadra.">
+<link rel="canonical" href="https://kontor7-agent.github.io/es/blog/unir-varios-excel-columnas-distintas-desordenado"><meta property="og:title" content="Unir varios Excel con columnas distintas y que salga desordenado | Blixwerk">
+<meta property="og:description" content="Tres Excel, tres formas de llamar a las mismas columnas y una llamada a las once. Una historia para quien pega datos a mano y nunca cuadra."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Unir varios Excel con columnas distintas y que salga desordenado", "description": "Tres Excel, tres formas de llamar a las mismas columnas y una llamada a las once. Una historia para quien pega datos a mano y nunca cuadra.", "datePublished": "2026-10-14", "inLanguage": "es", "image": "https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/es/blog/unir-varios-excel-columnas-distintas-desordenado"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Unir varios Excel con columnas distintas y que salga desordenado</h1><p class='muted'>2026-10-14</p><p>Son las 10:52 de un lunes y tienes la cámara ya encendida. En cinco minutos empieza la llamada con tu cliente. Lleva meses pidiéndote lo mismo: "una sola lista con todo, para ver de una vez qué pasa".</p>
+<p>Todo son tres archivos. Uno viene de la tienda online. Otro es el que te mandó su contable. El tercero es una hoja que su socio lleva "a su manera".</p>
+<p>Los has pegado uno debajo del otro. Y ahora miras la pantalla sin querer creerlo.</p>
+<h2>Tres archivos, tres idiomas</h2>
+<p>Imagina a Carolina, autónoma en Guadalajara. Lleva la parte de datos y administración de un pequeño negocio de cerámica. Es un personaje inventado, pero seguro que conoces su pantalla.</p>
+<p>En el primer archivo la columna se llama "Correo". En el segundo, "Email". En el tercero, "E-mail cliente", y está dos columnas más a la derecha porque alguien insertó una nota en medio.</p>
+<p>Las fechas son otra historia. Unas dicen 03/10/2026, otras 2026-10-03 y otras "3 oct". Excel, con toda su buena voluntad, ha decidido que algunas son el 10 de marzo.</p>
+<p>Hay nombres que aparecen dos veces: "María Pérez" y "maria perez " con un espacio al final. Y hay teléfonos con el prefijo y otros sin él.</p>
+<p>Llevas desde las nueve moviendo columnas con el ratón. Cortar, pegar, arrastrar. Cada vez que arreglas algo, se descuadra otra cosa unas filas más abajo.</p>
+<h2>El miedo que no se cuenta</h2>
+<p>Lo que más pesa no es el trabajo. Es el pensamiento que viene con él: <em>si me equivoco en una fila, ¿cómo lo sabré?</em></p>
+<p>Porque este archivo no se queda en tu pantalla. Alguien lo va a usar para escribir a clientes, para revisar cobros, para preparar números que luego irán a la gestoría o a Hacienda, o al SAT si estás al otro lado del charco. No es algo que tú decidas, pero sí es algo que tú entregas.</p>
+<p>Y tú te sabes la verdad: lo has pegado a mano y "parece que está bien".</p>
+<p>Ese "parece" cuesta caro. Cuesta la hora extra del domingo, cuando lo repasas otra vez por si acaso. Cuesta la sensación de que un negocio de verdad tendría esto resuelto, y tú estás aquí, con tres ventanas abiertas y el café frío.</p>
+<h2>La llamada</h2>
+<p>A las once en punto entra el cliente. Sonríe, saluda, te pregunta qué tal el fin de semana.</p>
+<p>—¿Tienes ya la lista unificada?</p>
+<p>Tú dices que casi. Que hay un par de detalles de formato. Es verdad, pero suena a excusa, y lo notas en la voz.</p>
+<p>Comparte pantalla sin pensarlo. Ve la columna de fechas mezcladas. Ve a María Pérez dos veces. No dice nada feo, solo un "ah, vale" demasiado amable.</p>
+<p>Ese "ah, vale" se te queda dentro el resto del día.</p>
+<h2>Lo que cambia cuando deja de ser a mano</h2>
+<p>Esa tarde, cuando se te baja el calor de la cara, haces algo distinto. No abres otra vez los tres archivos. Te preguntas, por primera vez, por qué estás haciendo con las manos algo que es siempre lo mismo.</p>
+<p>Porque lo es. Las columnas con otro nombre, las fechas rebeldes, los duplicados con un espacio escondido: la próxima vez serán otros archivos, pero los mismos problemas.</p>
+<p>Y entonces entiendes algo sencillo. Un sistema pequeño y repetible no te quita el criterio. Te quita el arrastrar y el pegar. Te enseña antes qué va a cambiar, para que tú decidas. Y te deja un resumen de lo que se tocó, por si alguien pregunta.</p>
+<p>No hace falta más. No hace falta un programa enorme ni dejar de ser quien eres.</p>
+<h2>Otro lunes</h2>
+<p>Imagina el lunes siguiente. Son las 10:52 otra vez, y los tres archivos están ahí, tan distintos como siempre.</p>
+<p>Pero esta vez no hay prisa en el pecho. Los juntas, miras el resumen de cambios y ves que nada raro se coló. Tomas el café mientras aún está caliente.</p>
+<p>A las once entra tu cliente y le comparte tú la pantalla. Una lista limpia, una sola, con cada persona una vez y cada fecha igual. Él asiente.</p>
+<p>—Perfecto. Justo lo que necesitaba.</p>
+<p>Y tú sientes algo que hacía tiempo no sentías un lunes: que esto lo tienes controlado. Que no estás improvisando, que eres profesional y que el tiempo de la tarde es tuyo.</p>
+<h2>Si te has reconocido</h2>
+<p>Si alguna vez has mirado una hoja de cálculo pegada de tres sitios y has pensado "yo sé que esto está mal, pero no sé dónde", esto es para ti.</p>
+<p>En Blixwerk hemos preparado <em>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</em>, un kit para limpiar exportaciones desordenadas: quitar duplicados, arreglar fechas y teléfonos, unir archivos y validar, con una prueba previa y un informe de cambios. El producto está en inglés, pero está pensado para usarse sin complicaciones. Tiene garantía de devolución de 30 días, por si no te ayuda.</p>
+<p>Puedes verlo con calma aquí: <a href="https://kontor7-agent.github.io/p/csv-cleaning-toolkit-python">Clean Data in Minutes</a></p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
