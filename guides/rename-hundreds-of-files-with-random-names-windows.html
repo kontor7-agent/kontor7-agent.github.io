@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hundreds of Files With Random Names? The Photographer&#x27;s Handover | Blixwerk</title><meta name="description" content="Three hundred files named IMG_4471 and scan_final2. The client is on screen-share and you can&#x27;t find a thing. A story about renaming, and the calm after.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/rename-hundreds-of-files-with-random-names-windows"><meta property="og:title" content="Hundreds of Files With Random Names? The Photographer&#x27;s Handover | Blixwerk">
+<meta property="og:description" content="Three hundred files named IMG_4471 and scan_final2. The client is on screen-share and you can&#x27;t find a thing. A story about renaming, and the calm after."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/windows-file-organizer-powershell-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Hundreds of Files With Random Names? The Photographer's Handover", "description": "Three hundred files named IMG_4471 and scan_final2. The client is on screen-share and you can't find a thing. A story about renaming, and the calm after.", "datePublished": "2026-10-14", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/windows-file-organizer-powershell-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/rename-hundreds-of-files-with-random-names-windows"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Hundreds of Files With Random Names? The Photographer&#x27;s Handover</h1><p class='muted'>2026-10-14</p><p>The client's face is small in the corner of your screen. Behind it, your own desktop, shared with everyone on the call.</p>
+<p>"Could you just pull up the final selection?" she says.</p>
+<p>You open the folder. Three hundred and twelve files. <code>IMG_4471.jpg</code>. <code>DSC00093 (2).jpg</code>. <code>scan_final2.pdf</code>. <code>Untitled-7_copy.png</code>. <code>a8f3c1e0-b2.jpg</code>, which you have never seen before in your life.</p>
+<p>You scroll. The silence on the call is only a few seconds long. It feels like a week.</p>
+<p>"Sorry, one moment. I'm just finding it."</p>
+<p>You are not just finding it. You are hoping it will appear.</p>
+<h2>The folder nobody sees</h2>
+<p>Most people who work alone have one of these. A folder that grew by itself, one rushed save at a time. The camera named things one way. The client's upload tool named them another. The scanner had its own opinion. Your own tired Friday-self added <code>_final</code>, then <code>_final_v2</code>, then <code>_USE_THIS_ONE</code>.</p>
+<p>Nobody warns you about this part of being self-employed. There is no one to say, "let's agree on a naming scheme." It is just you, the files, and the quiet belief that you will sort it out later.</p>
+<p>Later never has a calendar slot.</p>
+<p>So the cost hides in small places. Five minutes looking for a file before a call. A deliverable sent in the wrong version, and the careful apology afterwards. The faint feeling, when someone says "can you send me the originals," that you are not quite the professional you present yourself as.</p>
+<p>It is not a disaster. That is exactly why it never gets fixed.</p>
+<h2>The afternoon you decide to deal with it</h2>
+<p>After the call, you sit with the folder open. You think: right, I'll rename them. All of them. Today.</p>
+<p>You right-click the first file. F2. Type a name. Enter. Next one.</p>
+<p>By file twelve, you notice you are already guessing. Was this the one from the harbour shoot, or the one from the market? You open it to check. Then you have to find your place again. Twenty files in, you have renamed two shoots into the wrong pattern and you can't tell which.</p>
+<p>You also feel a particular kind of dread. What if you rename something and break a link? What if two files end up with the same name and one quietly overwrites the other? You close the window.</p>
+<p>The folder stays as it was. You tell yourself you'll do it on a quiet day.</p>
+<p>There is no quiet day. You know that.</p>
+<h2>The thought that changes the shape of it</h2>
+<p>A week later, a friend who builds websites is on your sofa, watching you hunt for an old invoice scan. She doesn't say anything clever. She just asks:</p>
+<p>"Why are you doing that by hand?"</p>
+<p>You start to explain that it's complicated, that the files are all different, that you'd have to check each one.</p>
+<p>"No," she says. "I mean, why are you the one doing the repeating?"</p>
+<p>It lands strangely. You had thought of this as a discipline problem. Something you ought to be better at. Not as a job a machine could do while you make tea.</p>
+<p>The repeating part, the same rule applied three hundred times, was never meant for your hands. Your part is the deciding. What should a good name look like? Which folder should an invoice live in? Where should the old duplicates go?</p>
+<p>The doing can be handed off. And, you learn, it can be handed off <em>gently</em>: shown to you first as a preview, nothing touched until you say so, with a record of every change so that any of it can be taken back.</p>
+<p>That last detail is what lets your shoulders drop. The fear was never the work. It was the one wrong click you couldn't reverse.</p>
+<h2>An ordinary Monday, afterwards</h2>
+<p>Picture it a few weeks on.</p>
+<p>It is Monday, 9:05. The coffee is still too hot. Your downloads folder holds exactly what you downloaded since Friday, and nothing from March.</p>
+<p>The client call comes in at half past. "Could you pull up the final selection?"</p>
+<p>You type three letters into the folder search. The file is there, named with the date, the project and the version, in plain words that make sense to a person. You share it. It opens. Nobody waits.</p>
+<p>"Perfect," she says, and moves on to the next point.</p>
+<p>That's the whole scene. Nothing dramatic. No one praises your folder structure. But something small in your chest, the thing that used to tighten when someone said "can you just send me", stays loose.</p>
+<p>The duplicates are gone, tucked into an archive rather than deleted. The scans have a home. The random-letter files have names you can read. And the folder tidies itself on a schedule, so the mess never gets the chance to become a project again.</p>
+<p>You didn't become a more organised person. You just stopped being the only one doing the sorting.</p>
+<h2>If this sounds like your folder</h2>
+<p>If you saw yourself in that screen-share, in the scrolling and the "one moment," there is a gentle way out. We made <strong>Tame Your Downloads Folder – File Organizer &amp; Bulk Renamer Scripts</strong> for exactly this. It sorts, renames, de-duplicates and archives messy folders, with a preview mode so nothing happens until you've looked, and a CSV undo log so you can reverse it. PowerShell and Bash versions are included, plus a guide to running it on a schedule. It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p><a href="https://kontor7-agent.github.io/p/windows-file-organizer-powershell-kit">Have a look at Tame Your Downloads Folder</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Tame Your Downloads Folder – File Organizer &amp; Bulk Renamer Scripts – Sort, rename, de-duplicate and archive messy folders with a preview mode and a CSV undo log. PowerShell + Bash, scheduler guide included. <p><a class='btn' href='/p/windows-file-organizer-powershell-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>

@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Excel Turned My CSV Dates and Zip Codes Into Garbage | Blixwerk</title><meta name="description" content="The client call is in ten minutes and your zip codes have lost their zeros. A calm story about CSV dates gone wrong, and the Monday when they stay put.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/excel-turned-my-csv-dates-and-zip-codes-into-garbage"><meta property="og:title" content="Excel Turned My CSV Dates and Zip Codes Into Garbage | Blixwerk">
+<meta property="og:description" content="The client call is in ten minutes and your zip codes have lost their zeros. A calm story about CSV dates gone wrong, and the Monday when they stay put."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Excel Turned My CSV Dates and Zip Codes Into Garbage", "description": "The client call is in ten minutes and your zip codes have lost their zeros. A calm story about CSV dates gone wrong, and the Monday when they stay put.", "datePublished": "2026-10-14", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/excel-turned-my-csv-dates-and-zip-codes-into-garbage"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Excel Turned My CSV Dates and Zip Codes Into Garbage</h1><p class='muted'>2026-10-14</p><h2>The Call Starts in Ten Minutes</h2>
+<p>It is Monday, 9:50 am. You are standing at the kitchen counter with a lukewarm coffee and the laptop open on top of the bread bin, because the desk is still covered in last week.</p>
+<p>At ten you have a call with a client. Maya runs a small online shop. She sent you a customer export last Friday and asked you to tidy it before her newsletter goes out.</p>
+<p>You open the file. Your stomach drops a little.</p>
+<p>The zip codes that started with a zero are now four digits long. 01067 has become 1067. The dates, which were all one tidy format in the original, are a mix now. Some say 03/04/2026. Some say 2026-04-03. One just says 46115, which means nothing to a human being.</p>
+<p>You did not do anything special. You double-clicked the file. That is all.</p>
+<h2>The Small Shame of It</h2>
+<p>You know, somewhere in the back of your head, that this is a known thing. Spreadsheet programs guess. They look at a column, decide what it "must" be, and quietly rewrite it.</p>
+<p>Knowing that does not help at 9:52.</p>
+<p>What you feel is something smaller and more awkward. You are the person who is supposed to be good with data. And here you are, about to tell a client that her customers' postcodes look broken, and that you are not entirely sure whether it was her export or your opening of it.</p>
+<p>Nobody talks about this part. It is not the hours. It is the little wobble in how professional you feel.</p>
+<h2>What It Quietly Costs</h2>
+<p>You start fixing things by hand. You format the column as text, but the zeros are already gone, so you retype a few. You try to work out which dates are day-month and which are month-day. Is 03/04 the third of April or the fourth of March? You have no way to be sure without going back to the source.</p>
+<p>The call starts. You say, "I'm just finishing a cleanup, give me a minute," in the calm voice you have practised.</p>
+<p>Maya is kind about it. She says it is fine, there is no rush. But you can hear a tiny change in her tone. She is now wondering whether the list is safe to send to.</p>
+<p>And you are wondering the same thing.</p>
+<p>This is how it usually costs you. Not one disaster, but a slow tax on your confidence. An hour here. A second look at every file. A habit of opening exports with a small flinch, the way you check a pan you think might still be hot.</p>
+<h2>The Moment It Turned</h2>
+<p>A few days later, you are in the supermarket queue with a basket of tomatoes and a loaf, half-reading a message on your phone. Someone in a developer group you follow has written one flat sentence: the file was never the problem, the way it got opened was.</p>
+<p>That is all. Nothing clever.</p>
+<p>But it lands. You had been treating every messy export as a personal failing. A thing you should have caught. Standing there with the tomatoes, you see it differently. The file arrived fine. A program made a guess. And the guess can be avoided, or undone, or checked, in a way that does not depend on you being alert at 9:50 on a Monday.</p>
+<p>It does not have to be a ritual of dread.</p>
+<p>The queue moves. You pay. You walk home a little lighter than you left.</p>
+<h2>A Different Monday</h2>
+<p>Picture the same Monday, a few weeks on.</p>
+<p>The export arrives. You do not double-click it. You run one small step you set up once, and it reads the file as it is. Zip codes stay as written, zeros included. Dates come out in a single format. Duplicates are flagged rather than silently swallowed, and before anything is changed you can see what would change.</p>
+<p>Then you get a short report. It says what was fixed and what was left alone, in plain words. You skim it with your coffee, still hot this time.</p>
+<p>At ten, when Maya joins the call, you say, "The list is clean, and I can show you exactly what I changed." You mean it. Your voice does not need practising.</p>
+<p>The call is about her autumn campaign instead of about your apologies. Afterwards you close the laptop and the morning still belongs to you.</p>
+<h2>What Changes, Quietly</h2>
+<p>Nothing dramatic. You still get messy files. Clients still export things in odd ways, and old systems still produce strange encodings and phone numbers in six styles.</p>
+<p>What changes is that a messy file stops being an event. It becomes a small, ordinary job with a visible before and after. The flinch fades. You trust your own work again, and so do the people you do it for.</p>
+<p>That is worth more than the hour you save, though you do get the hour back too.</p>
+<h2>If You Recognised Yourself</h2>
+<p>If you have ever stared at a column of numbers that used to be dates, or watched a leading zero vanish, you are in good company. It happens to careful people constantly.</p>
+<p>We made a small Python toolkit for exactly this kind of morning. It cleans messy CSV and Excel exports: duplicates, dates, phone numbers, encoding, splitting and merging, validation. It does a dry run first and gives you a change report, so you see before you commit. Like every Blixwerk product, it comes with a 30-day money-back promise: if it does not help, you get a full refund, no questions.</p>
+<p>If that sounds like the Monday you want, you can have a look here: <a href="https://kontor7-agent.github.io/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
