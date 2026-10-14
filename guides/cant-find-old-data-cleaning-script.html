@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Can&#x27;t Find Your Old Data Scripts? The Canteen Queue Ping | Blixwerk</title><meta name="description" content="You know you wrote that cleanup script once. Somewhere. A story about the canteen queue, a visitor badge, and scripts you stop rewriting from scratch.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/cant-find-old-data-cleaning-script"><meta property="og:title" content="Can&#x27;t Find Your Old Data Scripts? The Canteen Queue Ping | Blixwerk">
+<meta property="og:description" content="You know you wrote that cleanup script once. Somewhere. A story about the canteen queue, a visitor badge, and scripts you stop rewriting from scratch."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/bundle-developer-data-automation-v3.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Can't Find Your Old Data Scripts? The Canteen Queue Ping", "description": "You know you wrote that cleanup script once. Somewhere. A story about the canteen queue, a visitor badge, and scripts you stop rewriting from scratch.", "datePublished": "2026-10-14", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/bundle-developer-data-automation-v3.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/cant-find-old-data-cleaning-script"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Can&#x27;t Find Your Old Data Scripts? The Canteen Queue Ping</h1><p class='muted'>2026-10-14</p><p>You are standing in the canteen queue at a client's office, holding a tray and a visitor badge that keeps flipping backwards.</p>
+<p>The soup of the day is lentil. You are not thinking about the soup.</p>
+<p>Your phone buzzes. A message from the project lead: <em>"Hey, the partner export is back with the same mess as in spring. Dates all over the place, duplicate rows. Can you run that cleanup thing you did before? Before the 14:00 sync?"</em></p>
+<p>You read it twice. Then the thought arrives, quiet and a little sour.</p>
+<p>Which folder was that in?</p>
+<h2>The thing you did before</h2>
+<p>You know you wrote it. You can almost see it. A tidy little script, a few lines of logic you were quietly proud of at the time.</p>
+<p>But was it called <code>clean_export.py</code>? Or <code>fix_dates_final.py</code>? Or <code>fix_dates_final2.py</code>? Maybe it lived in the repo you archived. Maybe it was in a notebook on the old laptop. Maybe it was never saved at all and just lived in your head, in the one afternoon you understood the problem completely.</p>
+<p>The queue moves. You step forward and pay for lentil soup you will not taste.</p>
+<p>This is the small friction nobody puts in a retro. It is not a crisis. Nothing is on fire. It is just the third time this year you have solved the same problem, and each time it feels like the first.</p>
+<h2>Fifteen minutes becomes the whole lunch</h2>
+<p>You find a table by the window. Laptop open, soup cooling beside it.</p>
+<p>You search your own disk. Nothing useful. You search your email for the word "cleanup". You find a thread from March, but the attachment link has expired.</p>
+<p>So you start again. Parse the dates. Notice there are three different formats in one column. Notice that a postcode lost its leading zero somewhere between the export and your screen. Strip the duplicates, but carefully, because two of them are not really duplicates.</p>
+<p>You are good at this. That is the odd part. It is not hard. It is just <em>again</em>.</p>
+<p>At 13:50 the file is clean enough. You send it. The lead replies with a thumbs-up and nothing else, which is exactly right, and also means nobody will ever know that lunch cost you forty minutes and a decent bowl of soup.</p>
+<p>Walking back past the reception desk, you do the quiet maths nobody asked for. How many lunches, evenings and half-mornings have gone like this? Not on the big, interesting problems. On the small, familiar ones, the ones you already solved once.</p>
+<p>There is a second worry underneath, too. On another project, someone asked you to look over an API before a release. You did it from memory, a mental list, a few things you always check. It went fine. But "from memory" is not a comforting phrase at 23:00 the night before a launch. A list that lives only in your head is a list that can have a bad day.</p>
+<h2>The turning point is small</h2>
+<p>It does not arrive as a big idea. It arrives on the tram home, with your badge still in your pocket.</p>
+<p>The problem is not that you lack skill. The problem is that your best work keeps evaporating. Every solved chore disappears the moment it is done, and next time you pay the full price again.</p>
+<p>What if the common chores simply had a home? A cleanup you could reach for. A way to sort a chaotic folder without inventing it fresh. A review routine for an API that you follow rather than recall. Not clever. Not new. Just <em>there</em>, in one place, waiting.</p>
+<p>You would still make the decisions. You would still read the output and judge it. You would just stop starting from a blank file every time.</p>
+<h2>A different Monday</h2>
+<p>Picture the same message arriving, the same words, the same project lead.</p>
+<p><em>"The export is back with the same mess. Can you run the cleanup?"</em></p>
+<p>You are in the same canteen queue. The soup is still lentil. But this time you type <em>"On it"</em>, and you mean it. You eat lunch. You actually taste the soup. Maybe you even look out of the window for a minute, at the car park, at the rain, at nothing in particular.</p>
+<p>Later you run the thing, glance at the result, and send it. Ten minutes, not forty. The afternoon still belongs to the problem you were hired to think about.</p>
+<p>Nothing dramatic changes. You are not suddenly a different developer. You are the same one, with fewer repeated afternoons and a bit more room in your head.</p>
+<h2>If this sounds like your Tuesday</h2>
+<p>If you have ever said <em>"I know I wrote this once"</em> out loud to an empty room, the Developer &amp; Data Automation Bundle might be a gentle next step. It collects the Blixwerk script kits for data cleaning, file automation and API reviews in one download, and it saves about 40% compared with buying them one by one.</p>
+<p>It comes with a 30-day money-back promise. If it does not help, you get a full refund, no questions.</p>
+<p><a href="https://kontor7-agent.github.io/p/bundle-developer-data-automation-v3">Have a look at the Developer &amp; Data Automation Bundle</a></p>
+<p>And if not today, that is fine too. Maybe just give the next script you write a proper name and a proper folder. Future you, in some canteen queue, will be grateful.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Developer &amp; Data Automation Bundle – All Blixwerk script kits for data cleaning, file automation and API reviews – save about 40%. <p><a class='btn' href='/p/bundle-developer-data-automation-v3'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
