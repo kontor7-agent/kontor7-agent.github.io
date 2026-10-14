@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Full of Trailing Spaces and Mixed Dates? The Lunch Break Fix | Blixwerk</title><meta name="description" content="Half past twelve, a sandwich going cold, and a CSV where every date looks different. A short story about cleaning exports by hand, and the day it stopped.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/csv-export-trailing-spaces-mixed-date-formats"><meta property="og:title" content="CSV Full of Trailing Spaces and Mixed Dates? The Lunch Break Fix | Blixwerk">
+<meta property="og:description" content="Half past twelve, a sandwich going cold, and a CSV where every date looks different. A short story about cleaning exports by hand, and the day it stopped."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "CSV Full of Trailing Spaces and Mixed Dates? The Lunch Break Fix", "description": "Half past twelve, a sandwich going cold, and a CSV where every date looks different. A short story about cleaning exports by hand, and the day it stopped.", "datePublished": "2026-10-14", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/csv-export-trailing-spaces-mixed-date-formats"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>CSV Full of Trailing Spaces and Mixed Dates? The Lunch Break Fix</h1><p class='muted'>2026-10-14</p><h2>12:35, and the Sandwich Is Still in Its Wrapper</h2>
+<p>The export finished downloading at 12:20. You opened it expecting a quick look. Fifteen minutes later, the sandwich is still in its paper, and you are zooming into column D.</p>
+<p>One row says 03/04/2026. The next says 2026-04-03. Another says 3 Apr. Somewhere further down, someone typed "April 3rd" into a field that was never meant to hold words.</p>
+<p>Is 03/04 the third of April, or the fourth of March? You honestly don't know. The system that made this file doesn't seem to know either.</p>
+<p>Let's call you Mara. You look after the operations side of a small online shop, and the report is due to your boss at two. It's the sort of job that was supposed to take ten minutes.</p>
+<h2>The Space You Can't See</h2>
+<p>Then the lookup fails. A customer named "Jonas Keller" is definitely in the list. You can see him. But the sheet insists he isn't there.</p>
+<p>You click into the cell and press the End key. The cursor jumps one character past the final letter. There is a space there. A trailing space, invisible, patient, and completely ruinous.</p>
+<p>You fix that one. Then you wonder how many others there are. You scroll. Four hundred rows. Maybe six hundred. You can't tell, because the problem is made of nothing.</p>
+<p>So you start doing what everyone does. Click, delete, click, delete. Then a find-and-replace that fixes some of it and quietly breaks something else. Then a column of helper formulas, then a second column to clean the first one, then a third to check the second.</p>
+<p>The sandwich stays wrapped.</p>
+<h2>What It Quietly Costs</h2>
+<p>Nobody puts this on a timesheet. It doesn't look like work. It looks like a person muttering at a spreadsheet.</p>
+<p>But it costs something. It costs the lunch break, and the calm you wanted for the afternoon. It costs a small, nagging doubt: <em>did I fix everything, or only everything I noticed?</em></p>
+<p>That doubt is the worst part. You hand the report over at 1:55 and say "should be fine." Then you spend the meeting watching the screen, waiting for someone to ask why two customers appear twice.</p>
+<p>And there's a quieter feeling underneath it. It's the sense that a competent person shouldn't be doing this by hand. That there must be a better way, and that everyone else must already know it.</p>
+<p>They mostly don't. Plenty of capable people are fixing the same dates, row by row, right now.</p>
+<h2>The Colleague Who Wasn't Even Trying</h2>
+<p>The next week, a developer friend stops by your desk. Call him Tobias. He sees the familiar mess on your screen: the half-selected column, the three helper columns, the look on your face.</p>
+<p>"Is that the same export?" he asks.</p>
+<p>It is.</p>
+<p>He doesn't lecture you. He doesn't say "you should learn Python." He just says that cleaning a file like this is a solved problem. It doesn't need to be done by eye, and it doesn't need to be redone every month. A small, careful routine can handle it and tell you exactly what it changed.</p>
+<p>That last part is what stays with you. <em>Tell you exactly what it changed.</em> Not "trust me, it's fine," but a list you can read.</p>
+<h2>A Different Kind of Monday</h2>
+<p>Picture the next export. It arrives on Monday morning, around nine, with your coffee still too hot to drink.</p>
+<p>You drop the file in. You look at what <em>would</em> change before anything is touched. The spaces, the dates that all agree now, the two duplicate customers that were hiding in plain sight. A short report, written in plain words.</p>
+<p>You check it. It makes sense. You accept it.</p>
+<p>Then you close the file, and the coffee is a good temperature.</p>
+<p>Nothing dramatic happened. That's the point. The knot that used to tighten at the sight of an export just isn't there. You eat lunch somewhere with a window, and the afternoon belongs to the work you actually wanted to do.</p>
+<h2>If This Sounds Like Your Lunch Break</h2>
+<p>Maybe you're not in an online shop. Maybe you're a freelancer with a client's messy file, or a bookkeeper's helper, or the one person who "is good with spreadsheets" and therefore gets everything. The scene changes, but the feeling is the same.</p>
+<p>We made a small toolkit for exactly this. It's called <strong>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</strong>. It tidies dates, phone numbers, encoding and duplicates, can split and merge files, and checks the result. It runs a dry run first and gives you a change report, so you can see what it did instead of hoping.</p>
+<p>If you recognise yourself in Mara's 12:35, you can <a href="https://kontor7-agent.github.io/p/csv-cleaning-toolkit-python">take a look here</a>. There's a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
