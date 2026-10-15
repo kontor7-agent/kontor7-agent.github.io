@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Server Disk Full Again? Old Log Files and a 7:45 Client Call</title><meta name="description" content="The disk is full again, and the culprit is months of old log files. A calm story about the Monday it stopped happening, and what changed.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/server-disk-full-old-log-files"><meta property="og:title" content="Server Disk Full Again? Old Log Files and a 7:45 Client Call">
+<meta property="og:description" content="The disk is full again, and the culprit is months of old log files. A calm story about the Monday it stopped happening, and what changed."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/backup-log-rotation-scripts.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Server Disk Full Again? Old Log Files and a 7:45 Client Call", "description": "The disk is full again, and the culprit is months of old log files. A calm story about the Monday it stopped happening, and what changed.", "datePublished": "2026-10-15", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/backup-log-rotation-scripts.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/server-disk-full-old-log-files"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Server Disk Full Again? Old Log Files and a 7:45 Client Call</h1><p class='muted'>2026-10-15</p><h2>7:45 on a Monday, standing at the bus shelter</h2>
+<p>Your phone buzzes with a message from a client. Two words: "Site down?"</p>
+<p>You are standing at the bus shelter with a coffee that is still too hot. Rain on the glass. You open the laptop bag on your knee, which is not a good idea, but you do it anyway.</p>
+<p>You know before you log in. You have known for weeks, somewhere in the back of your head.</p>
+<p>The disk is full. Again.</p>
+<h2>The folder nobody opened</h2>
+<p>You connect over SSH on mobile data, one bar, typing with your thumbs. The command comes back with a number that makes your stomach drop. One hundred percent. No space left on device.</p>
+<p>You look for the cause, and there it is. A folder of logs. Months of them. Every night the server wrote a little more, and every night nobody looked.</p>
+<p>You remember the last time. You deleted a pile of old files in a hurry, promised yourself you would set something up properly, and then a project landed and the promise slid to the bottom of the list.</p>
+<p>Now the bus is late and the client is waiting. You delete files with your heart in your throat, because one wrong path and you would be explaining something much worse than a full disk.</p>
+<h2>What it quietly costs</h2>
+<p>The site comes back after ten minutes. The client writes, "Thanks, all good now?" and you answer, "Yes, fixed."</p>
+<p>It is true. But it does not feel true.</p>
+<p>Because the cost was never the ten minutes. It was the cold feeling at the bus stop. It was the small lie of the word "fixed" when you know it will happen again in three months. It was the way you spent the first hour of your week feeling like someone who is winging it.</p>
+<p>You work for yourself. There is no colleague who says, "Oh, I'll look after that." The server, the backups, the logs, the quiet jobs that nobody sees until they fail: all of it is yours.</p>
+<p>And there is a second worry behind the first one, the one you rarely say out loud. If the disk can fill up without you noticing, what else is quietly piling up? Are the backups really running? When did you last check that one actually worked?</p>
+<h2>The small thought on the way home</h2>
+<p>That evening you sit on the sofa with tea and no laptop. You are not angry, just tired in a specific way.</p>
+<p>A thought arrives, quite gently. This does not have to be a thing you remember. It could be a thing that simply happens, every night, the same way, and leaves a note saying what it did.</p>
+<p>Not a clever setup. Not a weekend project. Just a boring routine: old logs get tidied away on a schedule, a fresh copy of what matters is kept, and anything older than you need is let go. A routine that tells you what it would do before it does it, so you are never afraid of the delete key. And a small record of every run, so you can read it in thirty seconds instead of guessing.</p>
+<p>You realise that what you want is not a fix. It is permission to stop thinking about it.</p>
+<h2>A different Monday</h2>
+<p>Picture the same week, a few weeks later.</p>
+<p>It is 7:45 again. You are at the same bus shelter, the same coffee, the same drizzle. Your phone buzzes, and it is a client asking about a deadline. Nothing else.</p>
+<p>You answer it in two lines. The bus arrives on time, which feels almost like a bonus.</p>
+<p>On the ride you don't open the laptop. You look out of the window. Somewhere a server is quietly doing its small, dull job: logs rotated overnight, older ones compressed and cleared, a snapshot taken, a line written in a file saying all went well.</p>
+<p>Later, at your desk, you glance at that file the way you glance at the weather. Green. Fine. You close it.</p>
+<p>There is a particular kind of calm in that. Not excitement. Just the absence of a knot you had gotten so used to that you forgot it was there.</p>
+<p>When a client asks, "Are our backups okay?" you can answer plainly, because you have looked, and there is a record. That is what feeling like a real business is made of, more than any logo or invoice template. It is the dull, reliable things behind the scenes.</p>
+<h2>If you recognise the bus shelter</h2>
+<p>Maybe your version is a different place. A queue, a kitchen, a car park with one bar of signal. The disk is full, the logs are old, and you are sure you will deal with it properly "soon".</p>
+<p>If that is you, there is a small set of ready-made scripts for exactly this: <strong>Backup &amp; Log Rotation Scripts (PowerShell + Bash)</strong>. They cover incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. There is a dry-run mode, so you can see what would happen before anything is touched, and a logfile for every run, so you always know what happened.</p>
+<p>They are a starting point, not magic. You still decide what to keep and for how long, and it is worth testing them on a non-critical folder first. But the blank page is already filled in.</p>
+<p>If it does not help, the 30-day money-back promise means you can ask for a full refund, no questions.</p>
+<p><a href="https://kontor7-agent.github.io/p/backup-log-rotation-scripts">Have a look at the Backup &amp; Log Rotation Scripts</a></p>
+<p>The next time your phone buzzes at 7:45, you might just let it be a question about a deadline.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Backup &amp; Log Rotation Scripts (PowerShell + Bash) – Incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. Dry-run mode and a logfile for every run. <p><a class='btn' href='/p/backup-log-rotation-scripts'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
