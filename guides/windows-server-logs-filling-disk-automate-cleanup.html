@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Windows Server Logs Filling Up Again? The Sports Day Call</title><meta name="description" content="Windows server logs filled the disk again, and the call came mid-egg-and-spoon race. A calm story about letting cleanup run itself, quietly, every week.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/windows-server-logs-filling-disk-automate-cleanup"><meta property="og:title" content="Windows Server Logs Filling Up Again? The Sports Day Call">
+<meta property="og:description" content="Windows server logs filled the disk again, and the call came mid-egg-and-spoon race. A calm story about letting cleanup run itself, quietly, every week."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/backup-log-rotation-scripts.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Windows Server Logs Filling Up Again? The Sports Day Call", "description": "Windows server logs filled the disk again, and the call came mid-egg-and-spoon race. A calm story about letting cleanup run itself, quietly, every week.", "datePublished": "2026-10-15", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/backup-log-rotation-scripts.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/windows-server-logs-filling-disk-automate-cleanup"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Windows Server Logs Filling Up Again? The Sports Day Call</h1><p class='muted'>2026-10-15</p><p>The egg-and-spoon race is about to start when your phone buzzes against your thigh.</p>
+<p>You are sitting on a picnic blanket at your daughter's sports day. It is 10:40 on a Thursday. The sun is out, someone has brought a tray of flapjacks, and for the first time this week you are not looking at a screen.</p>
+<p>Then you are looking at a screen.</p>
+<p><em>"Nobody can save anything. The drawings just hang. Is it the server again?"</em></p>
+<p>It is Priya from the small architecture office you have looked after for three years. Six people, one Windows server in a cupboard behind the kitchen, and you, the person they ring.</p>
+<p>You already know. You knew before you finished reading. You have had this exact feeling before, a small cold drop in the stomach.</p>
+<h2>The folder you swore you would deal with</h2>
+<p>You open the remote session on your phone, squinting in the glare. The thumbnail loads slowly. The system drive is at 100 percent.</p>
+<p>You don't need to look far. The log folder. Months of it, quietly growing, one polite line at a time, until there was no room left for anything else.</p>
+<p>You remember the last time. You cleared it by hand, felt a rush of competence, and told yourself: <em>next time I'll set something up properly.</em> Then a client deadline came. Then another. The thought went into the same drawer as all the other thoughts that start with "next time."</p>
+<p>A parent beside you says, "Go on, you're up in two minutes!" Your daughter is lining up with a wooden spoon and a very serious face.</p>
+<p>You are holding a phone with one hand, deleting old files with the other, hoping you don't remove something you shouldn't. Your thumb hovers over the delete key and you think: <em>Which of these can I actually remove? What if one of them is the one I need?</em></p>
+<p>That is the part nobody sees. It is not the disk. It is the guessing.</p>
+<h2>What it quietly costs</h2>
+<p>By the time the race starts, you have freed enough space for the office to save again. Priya writes back with a thumbs-up and a heart. Everyone is relieved.</p>
+<p>You are not.</p>
+<p>You watch your daughter's egg wobble, drop, and roll into the grass. She laughs. You miss the exact moment, because you are checking the folder again to make sure it is not already refilling.</p>
+<p>It is a small thing, and it is also not small. It is the Thursday you half-spent somewhere else. It is the hum of low-level dread whenever the office phone number appears on your screen. It is knowing that clients pay you to be the calm one, while you privately feel like someone keeping a leaking boat afloat with a cup.</p>
+<p>Nobody has ever thanked you for the disk that did not fill up. It is invisible when it works. It only exists when it fails.</p>
+<h2>The sentence on the walk to the car</h2>
+<p>Afterwards, with the flapjack crumbs still on your jacket, you walk to the car holding your daughter's hand. She is explaining, in great detail, why the egg was the egg's fault.</p>
+<p>And somewhere between the gate and the car park, a plain thought arrives. Not a clever one.</p>
+<p><em>This should not need me.</em></p>
+<p>Not a bigger disk. Not a heroic evening of clean-up. Just something small, boring, and reliable that tidies the old files on its own, keeps what it should, lets go of what it should, and leaves a note each time saying what it did. Something that tries things out first without touching anything, so you are never guessing. Something that runs while you are asleep, or at a sports day, or anywhere else you would rather be.</p>
+<p>You have written that kind of thing for other people. It had just never made it onto your own list.</p>
+<h2>A different Thursday</h2>
+<p>Picture the same week, with that boring thing quietly in place.</p>
+<p>The Thursday comes. The sun is out. You are on the picnic blanket. The phone stays in your pocket, because nothing has happened. Nothing happens, in fact, week after week. The log folder stays a sensible size. Old files drift away on schedule, and a short text file somewhere records that they did.</p>
+<p>If Priya ever asks, you can open that record in thirty seconds and say, "Here is what ran, and when." Calm. Specific. Professional.</p>
+<p>You watch the egg-and-spoon race from start to finish. You see your daughter win silver and argue it should have been gold.</p>
+<p>On Monday morning you open your laptop and the first thing you do is something you actually wanted to do.</p>
+<p>That is all it is. Not a transformation. Just one small worry, handed over to something that does not forget.</p>
+<h2>If you recognise the cupboard server</h2>
+<p>If you look after a Windows server, or a Linux box, or a backup drive that fills up at the worst moment, you may know this story from the inside. Maybe your folder is logs. Maybe it is old backups. Maybe it is something you have not found yet.</p>
+<p>We made a set of <strong>Backup &amp; Log Rotation Scripts</strong> for exactly this: PowerShell and Bash, incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. There is a dry-run mode, so you can see what would happen before anything is touched, and a logfile for every run, so you always know what happened afterwards.</p>
+<p>It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>If that sounds like a quieter Thursday, you can <a href="https://kontor7-agent.github.io/p/backup-log-rotation-scripts">have a look here</a>.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Backup &amp; Log Rotation Scripts (PowerShell + Bash) – Incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. Dry-run mode and a logfile for every run. <p><a class='btn' href='/p/backup-log-rotation-scripts'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
