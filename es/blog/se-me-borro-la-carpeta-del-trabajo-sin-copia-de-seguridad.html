@@ -1,0 +1,65 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Se me borró la carpeta del trabajo: sin copia, un martes</title><meta name="description" content="Martes, 9:10: la carpeta del cliente ya no está y no hay copia de seguridad. Una historia sobre ese vacío en el estómago y la calma que llega después.">
+<link rel="canonical" href="https://kontor7-agent.github.io/es/blog/se-me-borro-la-carpeta-del-trabajo-sin-copia-de-seguridad"><meta property="og:title" content="Se me borró la carpeta del trabajo: sin copia, un martes">
+<meta property="og:description" content="Martes, 9:10: la carpeta del cliente ya no está y no hay copia de seguridad. Una historia sobre ese vacío en el estómago y la calma que llega después."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/backup-log-rotation-scripts.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Se me borr\u00f3 la carpeta del trabajo: sin copia, un martes", "description": "Martes, 9:10: la carpeta del cliente ya no est\u00e1 y no hay copia de seguridad. Una historia sobre ese vac\u00edo en el est\u00f3mago y la calma que llega despu\u00e9s.", "datePublished": "2026-10-15", "inLanguage": "es", "image": "https://kontor7-agent.github.io/img/backup-log-rotation-scripts.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/es/blog/se-me-borro-la-carpeta-del-trabajo-sin-copia-de-seguridad"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Se me borró la carpeta del trabajo: sin copia, un martes</h1><p class='muted'>2026-10-15</p><p>Son las 9:10 de un martes y tienes el café a medias.</p>
+<p>Abres la carpeta de siempre, la que se llama <em>Clientes_2026</em>, y está vacía. No es que falte un archivo. Falta todo: los diseños de la marca de cerámica, las facturas del trimestre, el contrato escaneado, los textos que tardaste tres semanas en pulir.</p>
+<p>Refrescas la ventana. Vuelves a abrirla. Buscas en la papelera, que está limpia. Buscas en el disco externo, el que "ibas a conectar el viernes". Su última fecha es de hace cuatro meses.</p>
+<p>Afuera pasa una moto. Dentro de ti no pasa nada, salvo un frío que sube desde el estómago.</p>
+<h2>La llamada de las 10:30</h2>
+<p>Imagina a Lucía, diseñadora gráfica autónoma en Valencia. Es un personaje ilustrativo, pero seguro que reconoces su mesa: el portátil de hace seis años, la taza con la marca del último cliente, la libreta con los plazos apuntados a boli.</p>
+<p>Esa mañana tiene una videollamada a las 10:30 para enseñar la versión final de un proyecto. Y la versión final estaba en la carpeta que ya no existe.</p>
+<p>Piensa en lo que se pierde, y no solo en archivos. Se pierden horas ya trabajadas y ya prometidas. Se pierde la tranquilidad de decir "os lo envío esta tarde" sin que se te seque la boca. Y se pierde esa imagen que tanto te costó construir: la de alguien que lo tiene todo bajo control.</p>
+<p>Lucía respira. Llama a su hermano, que sabe de ordenadores. Él le dice, con buena voluntad, que no toque nada y que no instale nada raro. Eso ya es mucho pedir cuando te tiemblan las manos.</p>
+<h2>Lo que nadie cuenta de este susto</h2>
+<p>Nadie habla de esto en las charlas sobre emprender. Se habla de tarifas, de captar clientes, de marca personal. De dónde vive tu trabajo cuando el portátil decide dejar de colaborar, casi nada.</p>
+<p>Y sin embargo es una de esas preocupaciones silenciosas que muchos autónomos llevan encima. Lo piensas un domingo y lo apartas: "ya lo haré". Trabajas sin red porque no hay nadie más. No tienes un departamento de informática ni un compañero que te diga "¿has hecho copia?".</p>
+<p>La semana además no podía ser peor. Estaba cerca la fecha de presentar el trimestre, y las facturas emitidas estaban en esa misma carpeta. Hacienda era solo el fondo de la escena, pero ese fondo apretaba. Lucía se vio pidiendo a sus clientes que le reenviaran cada factura, con un "perdona la molestia, se me ha estropeado una cosa".</p>
+<p>Ese es el coste verdadero. No solo el archivo perdido, sino la vergüenza pequeña, repetida, de explicar que eres una profesional con un sistema que no existía.</p>
+<h2>Lo que se recupera y lo que no</h2>
+<p>A las 10:25, con la cara de quien no ha dormido aunque haya dormido, Lucía escribió al cliente. Fue sincera, sin dramatismo: le pidió media hora de margen y le prometió el material antes de comer.</p>
+<p>El cliente contestó con un pulgar hacia arriba. Así de poco pesó, en el fondo, aquello que a ella le había parecido una montaña.</p>
+<p>Por la tarde, entre el programa de recuperación de su hermano, un correo antiguo con adjuntos y mucha paciencia, rescató casi todo. Casi. Faltaban dos semanas de ajustes sobre un logotipo, y las rehizo de memoria, con ese cansancio particular de repetir un trabajo que ya habías hecho bien.</p>
+<p>Cuando cerró el portátil, no sentía alivio. Sentía algo más callado: <em>no quiero volver a estar aquí</em>.</p>
+<h2>El momento en que algo cambia</h2>
+<p>Ese es el giro, y casi nunca es grandioso. Es una frase pequeña que se te cruza en la cabeza mientras friegas la taza: <em>esto no tiene por qué depender de mi suerte</em>.</p>
+<p>No hace falta ser informática. Hace falta una idea sencilla: que tu trabajo se copie solo, a una hora fija, sin que tengas que acordarte, y que si algo falla, quede constancia de qué pasó. Que las copias viejas se vayan limpiando solas para que el disco no se llene. Que puedas ensayar el proceso antes de confiar en él.</p>
+<p>Suena casi aburrido. Y precisamente de eso se trata.</p>
+<h2>Un martes cualquiera, pero distinto</h2>
+<p>Imagina otro martes, meses después.</p>
+<p>Son las 9:10 otra vez. Abres el portátil. Hay café, hay luz en la ventana, y en algún lugar un archivo de registro dice, sin aspavientos, que anoche la copia salió bien. Ni lo miras. No lo necesitas.</p>
+<p>Si esta mañana una carpeta desapareciera, sería una molestia pequeña: un par de clics, un "vaya, qué pesado" y seguir. La llamada de las 10:30 seguiría siendo una llamada, no un examen.</p>
+<p>Puedes decir "te lo envío esta tarde" con la voz normal. Puedes presentar tu trimestre sin pedirle a nadie que te reenvíe tus propias facturas. Puedes cerrar el portátil a las seis y no llevarte el susto a casa.</p>
+<p>Eso es lo que cambia. No tienes más herramientas, tienes menos peso.</p>
+<h2>Si te has reconocido en Lucía</h2>
+<p>Si lees esto con ese frío en el estómago, o con la culpa tranquila de no haber conectado el disco desde hace meses, no eres descuidada ni descuidado. Trabajas solo, con mil cosas a la vez, y esta era una de las que se quedaban para "luego".</p>
+<p>Por si te sirve como siguiente paso, en Blixwerk tenemos <em>Backup &amp; Log Rotation Scripts (PowerShell + Bash)</em>: copias de seguridad incrementales, retención de copias antiguas, rotación de registros y programación para Windows y Linux. Incluye un modo de prueba (dry-run) para ensayar sin tocar nada, y un archivo de registro de cada ejecución. El producto está en inglés. Si no te convence, tienes 30 días para pedir el reembolso completo, sin preguntas.</p>
+<p><a href="https://kontor7-agent.github.io/p/backup-log-rotation-scripts">Echa un vistazo a Backup &amp; Log Rotation Scripts</a></p>
+<p>Y si hoy solo te llevas una idea: conecta ese disco externo. Esta tarde, sin prisa. Tu yo del próximo martes te lo agradecerá.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Backup &amp; Log Rotation Scripts (PowerShell + Bash) – Incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. Dry-run mode and a logfile for every run. <p><a class='btn' href='/p/backup-log-rotation-scripts'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
