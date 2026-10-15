@@ -1,0 +1,72 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Backup Never Ran? The Dead Laptop Before the Pitch</title><meta name="description" content="Your laptop won&#x27;t start an hour before a client pitch, and the last backup is a mystery. A calm story about backups you can finally stop wondering about.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/backup-script-failed-silently-windows-linux-restore"><meta property="og:title" content="Backup Never Ran? The Dead Laptop Before the Pitch">
+<meta property="og:description" content="Your laptop won&#x27;t start an hour before a client pitch, and the last backup is a mystery. A calm story about backups you can finally stop wondering about."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/backup-log-rotation-scripts.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Backup Never Ran? The Dead Laptop Before the Pitch", "description": "Your laptop won't start an hour before a client pitch, and the last backup is a mystery. A calm story about backups you can finally stop wondering about.", "datePublished": "2026-10-15", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/backup-log-rotation-scripts.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/backup-script-failed-silently-windows-linux-restore"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Backup Never Ran? The Dead Laptop Before the Pitch</h1><p class='muted'>2026-10-15</p>
+<p>It is 8:20 on a Thursday morning, and the screen is black.</p>
+<p>You press the power button again. A small logo appears, a spinning circle, then nothing. Your pitch to a new client starts at ten. The slides are on this laptop. So are the contracts, the photos, the invoices, and a year of project folders.</p>
+<p>Your first thought is not about the pitch. It is: <em>When did I last back this up?</em></p>
+<p>You honestly don't know.</p>
+<h2>The sentence you've said for two years</h2>
+<p>You remember setting something up. A script, a scheduled task, a copy to the external drive. A friend helped, or you found it online on a quiet Sunday and felt proud of yourself.</p>
+<p>"I should check that it's still running," you told yourself in March. And again in June.</p>
+<p>You never checked, because checking meant opening a folder you didn't understand. Looking meant risking an answer you didn't want.</p>
+<p>So you carried on. Quietly. With a small knot somewhere under the ribs, the kind that only shows up when the screen goes black.</p>
+<h2>What the quiet worry costs</h2>
+<p>Nobody talks about this one. It doesn't look like a crisis until the day it is one.</p>
+<p>It costs you a little peace every time you drag a big file around. It costs you a slight flinch when the laptop fan screams. It makes you hesitate before you update the system, because what if it doesn't come back?</p>
+<p>And it makes you feel, just a bit, like you're not a real business. A real business would know where its files are. A real business wouldn't be sitting in a café at 8:30 with a dead laptop, hoping.</p>
+<h2>The drive on the shelf</h2>
+<p>You borrow your partner's laptop. You plug in the external drive and open it with the particular care you'd use on a sleeping animal.</p>
+<p>There are folders. Some are dated. One says <em>backup_new</em>. Another says <em>backup_new2</em>. The newest file is from February.</p>
+<p>February.</p>
+<p>You sit very still. The kettle clicks off in the kitchen. Somewhere a neighbour is running a vacuum cleaner, and it sounds enormously loud.</p>
+<p>Then you find an older copy of the pitch deck, three versions behind. It is not nothing. You rebuild the missing slides from memory and an old email thread, and you make it to the call with four minutes to spare.</p>
+<p>It goes fine. Better than fine, actually. The client is friendly. Nobody knows what your morning was.</p>
+<p>But afterwards you sit in the car for a moment with your hands on the wheel, and you think: <em>I never want to feel that again.</em></p>
+<h2>The moment it doesn't have to be like this</h2>
+<p>The turning point isn't dramatic. It is a thought that arrives on the drive home.</p>
+<p>The problem was never that you're careless. You did set up a backup. It simply ran in the dark, with no way for you to see it. No record. No sign that it worked. No sign that it stopped.</p>
+<p>A backup you can't see is a hope, not a backup.</p>
+<p>What you actually want is small and plain. Something that copies only what changed, so it's quick. Something that keeps the last few versions and quietly lets go of the old ones, so the drive doesn't fill up. Something that writes a short note every single time it runs, so you can glance at it and know. And a way to try it first without touching anything, so you're not afraid of it.</p>
+<p>That's all. It isn't clever. It is just <em>visible</em>.</p>
+<h2>A normal Monday, afterwards</h2>
+<p>Picture it a few weeks on.</p>
+<p>Monday, 8:45. Coffee. You open the laptop and, before anything else, you glance at the latest logfile. Three lines. Finished, no errors, a few megabytes copied overnight.</p>
+<p>You close it. That's the whole ritual. It takes less time than stirring the coffee.</p>
+<p>Later, the fan screams during a video call, and you notice that you don't flinch. A system update pops up and you click <em>install</em> without bargaining with the universe.</p>
+<p>On the Linux box in the corner, the one you use for a side project, the same quiet thing happens. A snapshot, a short log, old copies tidied away. Windows or Linux, it is the same calm little habit.</p>
+<p>And the old log files? They don't pile up into a mess either. They rotate, get trimmed, and stay out of your way.</p>
+<p>None of this is exciting. That is exactly the point. The best backup is one you stop thinking about, because you can <em>see</em> that it's working whenever you choose to look.</p>
+<h2>If you recognise the black screen</h2>
+<p>If you've ever felt that cold drop when a laptop wouldn't start, or you suspect your own backup is a hope rather than a fact, you're in good company. Most people working for themselves have a version of that February folder.</p>
+<p>We put together <strong>Backup &amp; Log Rotation Scripts (PowerShell + Bash)</strong>: incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. There is a dry-run mode so you can see what would happen before anything is touched, and a logfile for every run. It does not replace professional IT advice for complex setups, and it is worth testing a restore once, calmly, on a day when nothing is on fire.</p>
+<p>It comes with our 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>You can take a look here: <a href="https://kontor7-agent.github.io/p/backup-log-rotation-scripts">Backup &amp; Log Rotation Scripts</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Backup &amp; Log Rotation Scripts (PowerShell + Bash) – Incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. Dry-run mode and a logfile for every run. <p><a class='btn' href='/p/backup-log-rotation-scripts'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
