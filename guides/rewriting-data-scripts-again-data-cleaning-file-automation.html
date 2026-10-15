@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rewriting Data Scripts Again? The Cottage Week Off</title><meta name="description" content="A week off that isn&#x27;t one: the same CSV cleanup, rewritten from scratch on a cottage sofa. A story for developers tired of rebuilding old scripts.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/rewriting-data-scripts-again-data-cleaning-file-automation"><meta property="og:title" content="Rewriting Data Scripts Again? The Cottage Week Off">
+<meta property="og:description" content="A week off that isn&#x27;t one: the same CSV cleanup, rewritten from scratch on a cottage sofa. A story for developers tired of rebuilding old scripts."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/bundle-developer-data-automation-v4.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Rewriting Data Scripts Again? The Cottage Week Off", "description": "A week off that isn't one: the same CSV cleanup, rewritten from scratch on a cottage sofa. A story for developers tired of rebuilding old scripts.", "datePublished": "2026-10-15", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/bundle-developer-data-automation-v4.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/rewriting-data-scripts-again-data-cleaning-file-automation"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Rewriting Data Scripts Again? The Cottage Week Off</h1><p class='muted'>2026-10-15</p><p>It's Wednesday, 10:20 in the morning, and the rain is coming sideways off the sea.</p>
+<p>You're in a rented cottage with a wood stove, a kettle that takes forever, and one bar of Wi-Fi that only exists next to the bookshelf. This is supposed to be your week off. You told your clients so. You even wrote it in your email signature.</p>
+<p>Then the message arrives. <em>Hi, quick one: the supplier export is a mess again. Can you tidy it before Friday's report?</em></p>
+<p>Your stomach does a small, familiar drop.</p>
+<p>You <em>have</em> tidied this before. You know you have. Somewhere there is a script that trims the spaces, fixes the dates, drops the duplicates and renames the columns. You wrote it in spring. Or was it winter?</p>
+<h2>The laptop you didn't bring</h2>
+<p>You stand by the bookshelf, phone held up like an offering, and try to remember where it lives.</p>
+<p>Is it in the project folder called <code>final</code>? Or <code>final_v2</code>? Maybe it's in the one named <code>scripts_old</code>, next to <code>scripts_new</code>, which contains almost nothing. Perhaps it only ever existed on the desktop machine at home, two hundred kilometres away.</p>
+<p>Your partner glances up from a crossword. "Everything okay?"</p>
+<p>"Yes," you say. "Just a tiny thing."</p>
+<p>It is never a tiny thing. A tiny thing is something you can find.</p>
+<h2>The quiet cost of starting from zero</h2>
+<p>So you do what you always do. You open the laptop on the sofa, balance it on a cushion, and start again from a blank file.</p>
+<p>You write the import line. You look at the columns. You remember, slowly, that this export puts dates in two formats and a stray space after every name. You rediscover the problem the way you'd rediscover a pothole by driving into it.</p>
+<p>It isn't hard work. That's the strange part. Nothing here is difficult. It's just <em>again</em>.</p>
+<p>Again the small decisions. Again the test on a handful of rows. Again the nagging thought that last time you handled some edge case you've now forgotten, and the report will quietly carry the mistake.</p>
+<p>An hour goes. The stove ticks. Outside, a gull argues with the wind.</p>
+<p>Nobody talks about this cost. It isn't the hour. It's what the hour does to the rest of the day: the low hum of resentment, the feeling that you're a person who builds clever things and yet keeps rebuilding the same one. It's the faint embarrassment of being the "data person" who can't find their own tools.</p>
+<p>And under that, a smaller worry. If a client asked you to run something on their API folder, or to sort three thousand files with random names, would you be ready? Or would you be on a sofa again, starting from nothing?</p>
+<h2>The walk to the harbour</h2>
+<p>Around noon you give up and walk to the harbour for a sandwich. The rain has thinned to a mist.</p>
+<p>On the way you think about a colleague who once said something offhand. She never fixes the same problem twice. When she solves something, she puts it somewhere sensible, with a name that means something, and a note to her future self. Next time it's a five-minute job.</p>
+<p>You'd nodded politely. You'd thought: <em>that's nice for people with time.</em></p>
+<p>But standing at the harbour wall, eating a cheese sandwich with cold fingers, it lands differently. She isn't more disciplined than you. She just stopped treating every chore as new.</p>
+<p>It doesn't have to be like this.</p>
+<p>The tools aren't the problem. You can write them. You've written them a dozen times. What's missing is a place where they already <em>are</em>: checked, tidy, ready, so that a message like this morning's is a small task and not a ruined afternoon.</p>
+<h2>A different Wednesday</h2>
+<p>Picture the same cottage and the same rain.</p>
+<p>The message arrives. You read it by the bookshelf, and the drop in your stomach doesn't come. You think: <em>I have something for that.</em></p>
+<p>You open the folder. You know what's in it. You run the cleanup on the export, glance at the result, and send it off with a short, friendly note. Eleven minutes, maybe. Then you close the laptop and put another log in the stove.</p>
+<p>The rest of the day belongs to you. You read. You nap badly on the sofa. You argue with the crossword. When your partner asks if everything's okay, you say, "Yes. Completely." And it's true.</p>
+<p>That's the whole difference. Not a cleverer you. A calmer one, because the repetitive things are already handled.</p>
+<h2>If you recognise the sofa</h2>
+<p>If you've ever rebuilt the same data cleanup from scratch, or lost an evening to a pile of badly named files, or felt that small cold doubt before an API goes out, you probably know this week off.</p>
+<p>We've gathered our script kits for data cleaning, file automation and API reviews into one place, the <a href="https://kontor7-agent.github.io/p/bundle-developer-data-automation-v4">Developer &amp; Data Automation Bundle</a>. Together they cost about 40% less than buying the kits one by one. It's made with AI, checked automatically and refined by real use, so please test it on a copy of your own data first, as you would with any script. If it doesn't help, there's a 30-day money-back promise, no questions asked.</p>
+<p>No rush. The rain will probably keep going either way.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Developer &amp; Data Automation Bundle – All Blixwerk script kits for data cleaning, file automation and API reviews – save about 40%. <p><a class='btn' href='/p/bundle-developer-data-automation-v4'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
