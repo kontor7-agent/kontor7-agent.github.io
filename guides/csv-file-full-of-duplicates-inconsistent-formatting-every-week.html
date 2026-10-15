@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Full of Duplicates Every Week? The Friday 11:00 Call | Blixwerk</title><meta name="description" content="Same export, same duplicates, same odd formatting every week. A story about the Friday call where the numbers didn&#x27;t match, and a calmer way to start the week.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/csv-file-full-of-duplicates-inconsistent-formatting-every-week"><meta property="og:title" content="CSV Full of Duplicates Every Week? The Friday 11:00 Call | Blixwerk">
+<meta property="og:description" content="Same export, same duplicates, same odd formatting every week. A story about the Friday call where the numbers didn&#x27;t match, and a calmer way to start the week."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "CSV Full of Duplicates Every Week? The Friday 11:00 Call", "description": "Same export, same duplicates, same odd formatting every week. A story about the Friday call where the numbers didn't match, and a calmer way to start the week.", "datePublished": "2026-10-15", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/csv-file-full-of-duplicates-inconsistent-formatting-every-week"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>CSV Full of Duplicates Every Week? The Friday 11:00 Call</h1><p class='muted'>2026-10-15</p><p>Friday, 10:52. Your video call starts in eight minutes.</p>
+<p>You have the weekly customer export open on the left screen and the report you promised on the right. The export came in this morning, the way it does every week. You already know what is in it before you scroll.</p>
+<p>Some customers appear twice. Some appear three times, once as "Anna Weber", once as "anna weber " with a space at the end, once as "WEBER, ANNA". The dates are a mix: 03/10/2026, 2026-10-03, 3.10.26. One phone number begins with a plus, the next with two zeros, the next with nothing at all. Somewhere a name that should say "Müller" says "MÃ¼ller".</p>
+<p>You tell yourself it will take ten minutes. It never takes ten minutes.</p>
+<h2>The number that didn't match</h2>
+<p>Let's call her Mara. She is not a real person, just someone you may recognise. She works alone, doing marketing support for a small garden-supply shop. Every week she turns the shop's raw export into a tidy summary: new customers, repeat customers, who to include in the next mailing.</p>
+<p>Last Friday she sent the summary with a quiet, hopeful feeling. Then the owner joined the call, looked at the screen, and said, kindly, "That seems like a lot of new customers. Didn't we have about this many last month?"</p>
+<p>Mara felt the heat start at her collarbones.</p>
+<p>She knew what had happened. A handful of people had been counted twice, and she had missed it. It was Friday, she had been tired, and the file had been long. She said, "Let me check that and send a corrected version this afternoon." Her voice was steady. Her stomach was not.</p>
+<p>Nobody was angry. The owner said, "No rush." That almost made it worse. Mara is the person who is supposed to be the careful one.</p>
+<h2>What it quietly costs</h2>
+<p>The file was never the real problem. The cost was everything around it.</p>
+<p>It was the hour on Thursday evening that was supposed to be free. It was the small dread when the export email arrived, and the habit of opening the file, sighing, and closing it again until later. It was the private worry that one day a mistake would slip through into a mailing, and a customer would get the same email twice and wonder who is running this place.</p>
+<p>It was the feeling of not being a real business. Real businesses, she thought, surely don't sit and delete rows by hand.</p>
+<p>That afternoon she fixed the report. It took fifty minutes. She sent it with a short, slightly over-apologetic note. Then she closed the laptop and stood at the window for a while, looking at nothing in particular.</p>
+<p>She thought: <em>I have done this every week for a year. I am going to do it every week for another year.</em></p>
+<h2>The small turn</h2>
+<p>Nothing dramatic happened. There was no breakthrough at 3 am.</p>
+<p>What happened was smaller. Mara noticed that the mess was not random. It was the same mess, every week. The same trailing spaces, the same three date styles, the same name written in capitals. The export was not surprising her. She was just meeting the same old problem again, as if for the first time.</p>
+<p>And if the problem is the same every week, it doesn't have to be fixed by hand every week.</p>
+<p>That thought loosened something. It wasn't about being cleverer or more careful. The work could simply be set up once, so that a tired Friday-afternoon version of her didn't have to hold all the details in her head.</p>
+<p>She also wanted to see what was about to change before it changed. Deleting rows and hoping was what had hurt her. She wanted a list she could read, saying: these two were merged, these dates were rewritten, these rows were left alone.</p>
+<h2>A different Friday</h2>
+<p>Picture the same Friday a few weeks on.</p>
+<p>The export arrives at 9:30. Mara opens her tea, not the file. She runs the cleanup and reads the short summary of what it found: duplicates merged, dates made consistent, phone numbers tidied. Nothing has been changed without her seeing it first.</p>
+<p>The summary takes four minutes to read. She spots one pair of names she isn't sure about, checks them herself, and decides. That is the part that should be hers: the judgement, not the janitorial work.</p>
+<p>At 10:52 she is not scrolling and sweating. She is refilling her water glass.</p>
+<p>On the call, the owner glances at the numbers and nods. Maybe they ask a question, maybe they don't. Either way Mara can answer it, because she knows where each number came from. She closes the laptop at lunchtime and the afternoon is hers.</p>
+<p>It is a very ordinary change, and ordinary is exactly the point. A quiet Friday is a good Friday.</p>
+<h2>If this sounds like your week</h2>
+<p>Maybe your file isn't a customer list. Maybe it's orders, invoices, a client export or a mailing list. The shape is the same: a CSV that shows up messy on a schedule, and an hour you'd rather not give it.</p>
+<p>If you recognise yourself in Mara, we built <strong><a href="https://kontor7-agent.github.io/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a></strong> for exactly this. It handles duplicates, dates, phone numbers and encoding, and it works as a dry run first, so you see a change report before anything is touched. It is a Python toolkit, so it suits you if you're comfortable running a script. Like all our paid products, it comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>You don't have to love data cleaning. You only have to stop doing it by hand every Friday.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>

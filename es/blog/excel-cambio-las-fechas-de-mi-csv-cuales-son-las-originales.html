@@ -1,0 +1,62 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Excel cambió las fechas de mi CSV y no sé cuáles son las originales | Blixwerk</title><meta name="description" content="Abres el CSV, guardas, y las fechas ya no son las mismas. Una llamada con un cliente, una duda incómoda y la calma de saber qué cambió y qué no.">
+<link rel="canonical" href="https://kontor7-agent.github.io/es/blog/excel-cambio-las-fechas-de-mi-csv-cuales-son-las-originales"><meta property="og:title" content="Excel cambió las fechas de mi CSV y no sé cuáles son las originales | Blixwerk">
+<meta property="og:description" content="Abres el CSV, guardas, y las fechas ya no son las mismas. Una llamada con un cliente, una duda incómoda y la calma de saber qué cambió y qué no."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Excel cambi\u00f3 las fechas de mi CSV y no s\u00e9 cu\u00e1les son las originales", "description": "Abres el CSV, guardas, y las fechas ya no son las mismas. Una llamada con un cliente, una duda inc\u00f3moda y la calma de saber qu\u00e9 cambi\u00f3 y qu\u00e9 no.", "datePublished": "2026-10-15", "inLanguage": "es", "image": "https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/es/blog/excel-cambio-las-fechas-de-mi-csv-cuales-son-las-originales"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Excel cambió las fechas de mi CSV y no sé cuáles son las originales</h1><p class='muted'>2026-10-15</p><p>Son las 11:02 de un martes y estás en una videollamada. Tu cliente comparte pantalla y señala una columna con el dedo, o con el cursor, que es lo mismo.</p>
+<p>—Esta fecha no puede ser. Aquí pone 4 de marzo y esa factura es del 3 de abril.</p>
+<p>Te quedas mirando. Tú también lo ves. Y sientes ese pequeño vacío en el estómago, el de <em>esto lo he tocado yo</em>.</p>
+<p>Imaginemos a Irene, diseñadora y autónoma. Es un personaje ilustrativo, pero seguro que conoces su cara de esa mañana: sonrisa tranquila por fuera, la cabeza buscando una salida por dentro.</p>
+<h2>«Lo reviso y te escribo en un rato»</h2>
+<p>Es lo que dice Irene. Es lo que se dice siempre. Cuelga, respira y abre el archivo original que le mandó el cliente la semana pasada. Un CSV, nada raro. Lo abrió con doble clic, cambió un par de cosas, lo guardó y se lo devolvió.</p>
+<p>Ahora hay dos versiones con casi el mismo nombre. En una, algunas fechas dicen 03/04/2026. En otra, 04/03/2026. Otras ni siquiera parecen fechas: aparecen como números raros, o con el día y el mes intercambiados solo en las filas donde el día es menor que 13.</p>
+<p>Ese detalle es lo que más inquieta. No está todo mal. Está <em>a veces</em> mal. Y lo que está mal a veces es lo peor, porque no puedes fiarte de ninguna fila.</p>
+<h2>El coste que no sale en ninguna factura</h2>
+<p>Nadie le va a cobrar a Irene por esto. Pero lo paga igual.</p>
+<p>Lo paga en media mañana, que iba a dedicar a un proyecto que sí le gusta. Lo paga en esa frase que no quería decir: «no estoy segura de cuál es la correcta». Y lo paga en la sensación de que un profesional de verdad no tendría este lío.</p>
+<p>Se pone a comparar a mano. Fila 12, fila 13, fila 14. Abre el correo del cliente, busca un PDF, cruza una fecha con otra. A las doce y media ya no sabe si está arreglando el archivo o empeorándolo.</p>
+<p>Y debajo de todo, la preocupación que no se cuenta: ¿y si alguna de estas fechas acaba en algo importante? Un recordatorio de pago, un cierre de trimestre, esa conversación con la gestoría donde Hacienda queda de fondo como una sombra. No tiene que ser dramático. Basta con que sea impreciso para que quite el sueño a una persona que trabaja sola y no tiene a quién preguntar.</p>
+<h2>El momento en que algo encaja</h2>
+<p>A la una, con el café ya frío, Irene hace algo que no había hecho: deja de arreglar y se pregunta qué pasó exactamente.</p>
+<p>No fue un error suyo, en el sentido de descuido. Fue un archivo de texto abierto por un programa que <em>interpreta</em> lo que ve, con sus propias ideas sobre cómo se escribe una fecha. Y lo guardó encima, sin dejar una copia de cómo estaba antes.</p>
+<p>La frase que se queda dando vueltas es otra: <em>no me falta cuidado, me falta poder ver qué cambió</em>.</p>
+<p>Eso lo cambia todo. Porque el problema ya no es «soy desordenada» ni «no sé de esto». El problema es que nadie le enseñó una forma tranquila de limpiar un archivo <strong>sin jugársela</strong>: probar primero, ver qué tocaría, y solo entonces decidir.</p>
+<p>Irene cierra el portátil un minuto. Mira por la ventana. Hay una vecina tendiendo ropa. La vida sigue, y el archivo también tiene arreglo.</p>
+<h2>Un martes que empieza de otra manera</h2>
+<p>Imagina otro martes, el mismo cliente, la misma llamada de las 11.</p>
+<p>Antes de que te llegue el CSV, ya lo pasaste por un proceso sencillo. Primero una simulación: sin tocar nada, solo mirando qué cambiaría. Después, un informe corto con las filas afectadas, lo que había antes y lo que hay ahora. El original sigue intacto en su carpeta, con su nombre de siempre.</p>
+<p>Cuando el cliente señala una fecha en la pantalla, no se te encoge el estómago. Dices:</p>
+<p>—Buena pregunta. Tengo aquí el original y el informe de cambios. Mira, esta es la fila.</p>
+<p>Y la conversación dura cuarenta segundos.</p>
+<p>Eso es todo. No hay épica. Hay una mañana que sigue su curso, un cliente que se queda tranquilo y tú con la sensación, sencilla y enorme, de que llevas un negocio de verdad. A las seis cierras el portátil porque nada se quedó pendiente a medias.</p>
+<h2>Si te has reconocido en Irene</h2>
+<p>Si alguna vez abriste un CSV, guardaste, y después no supiste qué era lo original, no es que lo hagas mal. Es que casi nadie te dio una forma segura de hacerlo.</p>
+<p>Para estos momentos existe <em>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</em>. Ayuda a limpiar exportaciones desordenadas: duplicados, fechas, teléfonos, codificación, dividir y unir archivos, validar. Todo con simulación previa e informe de cambios, para que veas qué se tocó antes de decidir. Va en inglés, el producto, no esta historia. Tiene una garantía de devolución de 30 días: si no te ayuda, te devolvemos el dinero sin preguntas.</p>
+<p>Si te apetece echarle un vistazo, está aquí, sin prisa: <a href="https://kontor7-agent.github.io/p/csv-cleaning-toolkit-python">Clean Data in Minutes</a></p>
+<p>Y si hoy solo necesitabas saber que no eres la única persona a la que le pasa, también vale.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer></body></html>
