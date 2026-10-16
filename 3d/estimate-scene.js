@@ -129,7 +129,7 @@ chim.position.set(1.9, Hh + roofH - 0.3, -0.9); chim.castShadow = true; house.ad
 // Tür
 const doorMat = new THREE.MeshStandardMaterial({ color: accent.clone().multiplyScalar(0.85), roughness: .5 });
 const door = new THREE.Mesh(new THREE.BoxGeometry(1.1, 2.2, 0.08), doorMat); door.position.set(0, 1.1, D / 2 + 0.04); house.add(door);
-const frame = new THREE.Mesh(new THREE.BoxGeometry(1.3, 2.35, 0.06), new THREE.MeshStandardMaterial({ color: 0xf4f1ea, roughness: .6 })); frame.position.set(0, 1.17, D / 2 + 0.01); house.add(frame);
+const doorFrame = new THREE.Mesh(new THREE.BoxGeometry(1.3, 2.35, 0.06), new THREE.MeshStandardMaterial({ color: 0xf4f1ea, roughness: .6 })); doorFrame.position.set(0, 1.17, D / 2 + 0.01); house.add(doorFrame);
 const step = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.18, 0.7), new THREE.MeshStandardMaterial({ color: 0xb9b2a6, roughness: .9 })); step.position.set(0, 0.09, D / 2 + 0.4); step.castShadow = step.receiveShadow = true; house.add(step);
 // Fenster (Glas mit Emission bei Licht an) + Rahmen
 const glassMat = new THREE.MeshPhysicalMaterial({ color: 0x24344c, roughness: 0.08, metalness: 0, envMapIntensity: 1.6, emissive: 0xffc46a, emissiveIntensity: 0 });
