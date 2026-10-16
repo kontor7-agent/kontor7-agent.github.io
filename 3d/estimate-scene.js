@@ -49,9 +49,17 @@
     if (loopsOk) showLoop(n); else on(V, true);
     if (target !== shown) go();
   }
-  function tick() {
+  let heal = 0;
+  function tick(now) {
     requestAnimationFrame(tick);
     if (mode === "trans" && !V.paused && V.currentTime >= goal - 0.04) finish();
+    // Selbstheilung (max. 1x/s): Browser pausieren stumme Videos gelegentlich von sich aus (Energiesparen, Tab verdeckt,
+    // Test-Browser) - ein stehender Loop oder ein haengender Uebergang wird einfach wieder angestossen.
+    if (now - heal > 1000 && !document.hidden) {
+      heal = now;
+      if (mode === "idle" && loopsOk && L && L.paused && L.readyState >= 2) L.play().catch(() => {});
+      if (mode === "trans" && V.paused && V.currentTime < goal - 0.04) V.play().catch(() => { V.currentTime = goal; finish(); });
+    }
   }
   V.addEventListener("loadedmetadata", () => { dur = V.duration || dur; });
   V.addEventListener("canplay", () => { if (ready) return; ready = true; stageEl.classList.add("gl-ready"); go(); });
