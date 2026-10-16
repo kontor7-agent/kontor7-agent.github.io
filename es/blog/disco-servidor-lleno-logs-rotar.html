@@ -1,0 +1,64 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Disco lleno de logs y servidor caído: la llamada de las 9</title><meta name="description" content="Se cayó la tienda de tu cliente porque el disco se llenó de logs. Una historia sobre rotarlos a tiempo y empezar el lunes sin sobresaltos.">
+<link rel="canonical" href="https://kontor7-agent.github.io/es/blog/disco-servidor-lleno-logs-rotar"><meta property="og:title" content="Disco lleno de logs y servidor caído: la llamada de las 9">
+<meta property="og:description" content="Se cayó la tienda de tu cliente porque el disco se llenó de logs. Una historia sobre rotarlos a tiempo y empezar el lunes sin sobresaltos."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/backup-log-rotation-scripts.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Disco lleno de logs y servidor ca\u00eddo: la llamada de las 9", "description": "Se cay\u00f3 la tienda de tu cliente porque el disco se llen\u00f3 de logs. Una historia sobre rotarlos a tiempo y empezar el lunes sin sobresaltos.", "datePublished": "2026-10-16", "inLanguage": "es", "image": "https://kontor7-agent.github.io/img/backup-log-rotation-scripts.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/es/blog/disco-servidor-lleno-logs-rotar"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Disco lleno de logs y servidor caído: la llamada de las 9</h1><p class='muted'>2026-10-16</p><p>Son las 9:07 de un lunes y Marcos está en la cola de la panadería, con el café en una mano y el móvil en la otra. Lleva tres minutos sin respirar bien.</p>
+<p>En la pantalla hay un mensaje de Inés, la dueña de una tienda de plantas que él mantiene desde hace dos años: «Marcos, la web no carga. Tengo un pedido grande esperando y una clienta preguntando por WhatsApp.»</p>
+<p>Debajo, una llamada perdida. Y otra.</p>
+<p>La panadera le pregunta qué va a querer. Marcos dice «lo de siempre» sin saber qué ha dicho.</p>
+<p><em>(Marcos es un personaje ilustrativo: un desarrollador autónomo que podría ser cualquiera de nosotros.)</em></p>
+<h2>El silencio de un servidor que no avisa</h2>
+<p>Vuelve a casa casi corriendo. Abre el portátil en la mesa de la cocina, todavía con la bolsa del pan sin deshacer. Entra al servidor y lo primero que ve es una línea que no esperaba: <strong>no queda espacio en el disco</strong>.</p>
+<p>No es un ataque. No es un fallo raro. Es algo mucho más tonto, y por eso duele más.</p>
+<p>Los logs. Esos archivos que se escriben solos, día tras día, y que nadie mira porque nunca dan problemas. Hasta que dan uno. Llevaban meses creciendo en silencio y esta madrugada se comieron el último hueco.</p>
+<p>La base de datos no pudo escribir. La web dejó de responder. Y Marcos, que se acuerda perfectamente de haber pensado «tengo que ocuparme de eso» hace medio año, siente cómo se le calienta la cara.</p>
+<h2>Lo que cuesta de verdad</h2>
+<p>Lo arregla en veinte minutos. Borra lo viejo, reinicia, comprueba que la tienda vuelve a cargar. Inés le escribe: «¡Ya va! Gracias.» Con un emoji sonriente.</p>
+<p>Pero el problema no es el tiempo que perdió hoy.</p>
+<p>Es la llamada que tuvo que devolver con voz tranquila cuando por dentro no lo estaba. Es la frase «ha sido un tema de mantenimiento» que le salió sin que sonara del todo convincente. Es la sensación de no ser un profesional, sino alguien que va apagando fuegos con una mano mientras con la otra sostiene el café.</p>
+<p>Y es algo más callado: la duda. Si esto se había llenado sin que él lo viera, ¿qué más está creciendo ahí dentro? ¿Hay copias de seguridad? ¿Desde cuándo? ¿Alguna vez probó a restaurar una?</p>
+<p>Esa tarde, mientras factura el mes, se descubre mirando el servidor cada diez minutos. Como quien vuelve a comprobar que cerró la puerta de casa.</p>
+<h2>El momento en que dejó de ser «ya me ocuparé»</h2>
+<p>Al día siguiente, Marcos hace algo que no hacía nunca: apunta en una hoja qué cosas de su trabajo se hacen solas y cuáles dependen de que él se acuerde.</p>
+<p>La columna de «dependen de que me acuerde» es bastante más larga de lo que le gustaría.</p>
+<p>Y entiende algo sencillo. El problema no era que fuera descuidado. Era que llevaba demasiadas cosas en la cabeza, y los logs, las copias y las limpiezas no son urgentes… hasta el día en que lo son. Un autónomo no tiene departamento de sistemas. Tiene un lunes, una cola de panadería y un teléfono que vibra.</p>
+<p>No necesitaba ser más listo ni trabajar más horas. Necesitaba que esas tareas aburridas ocurrieran sin él: que los registros viejos se archivaran y se borraran a su debido tiempo, que las copias se hicieran a una hora fija, que cada ejecución dejara una nota de lo que había pasado. Que, si algo fallara, hubiera un rastro claro en vez de una sorpresa.</p>
+<p>No hace falta un sistema enorme. Solo uno que se encargue de lo pesado y te deje la cabeza libre.</p>
+<h2>Un lunes distinto</h2>
+<p>Seis semanas después, es otro lunes. Marcos está otra vez en la cola de la panadería, con el mismo café.</p>
+<p>El móvil vibra. Es un mensaje de otro cliente sobre un cambio de texto en su web. Lo lee, sonríe y piensa: «Esto lo hago después de desayunar.»</p>
+<p>No mira el servidor. No tiene necesidad. Sabe que esta noche las copias se hicieron, que los logs viejos se comprimieron y se fueron a su sitio, y que hay un archivo con la hora y el resultado de cada tarea esperando por si algún día le interesa leerlo.</p>
+<p>La panadera le pregunta qué quiere. Esta vez lo sabe: una barra, y un cruasán, que hoy es lunes.</p>
+<p>Vuelve a casa sin prisa. Abre el portátil y empieza el día por el trabajo que de verdad le gusta, el que le paga las facturas y no el que le quita el sueño.</p>
+<p>Nada espectacular. Solo ese silencio bueno de las cosas que funcionan.</p>
+<h2>Si te reconoces en Marcos</h2>
+<p>Si llevas tiempo pensando «tengo que ocuparme de las copias y de los logs», y la frase se ha convertido en un pequeño ruido de fondo, quizá no hace falta más fuerza de voluntad. Quizá solo hace falta dejar de depender de tu memoria.</p>
+<p>Para eso hay una opción tranquila: <strong>Backup &amp; Log Rotation Scripts (PowerShell + Bash)</strong>, scripts para Windows y Linux con copias incrementales, retención, rotación de logs y programación. Incluyen modo de prueba (dry-run) y un archivo de registro de cada ejecución. El producto está en inglés. Si no te ayuda, tienes 30 días para pedir el reembolso completo, sin preguntas.</p>
+<p>👉 <a href="https://kontor7-agent.github.io/p/backup-log-rotation-scripts">Echa un vistazo a Backup &amp; Log Rotation Scripts</a></p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Backup &amp; Log Rotation Scripts (PowerShell + Bash) – Incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. Dry-run mode and a logfile for every run. <p><a class='btn' href='/p/backup-log-rotation-scripts'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>

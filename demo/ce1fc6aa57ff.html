@@ -28,7 +28,7 @@ Roboto,sans-serif;color:#1d1d1f;background:var(--tint);-webkit-font-smoothing:an
 .cta h2{font-size:clamp(28px,5vw,48px);letter-spacing:-.025em}.btn{display:inline-block;background:#fff;color:var(--deep);font-weight:800;font-size:19px;padding:17px 36px;border-radius:999px;text-decoration:none;margin-top:22px;box-shadow:0 12px 30px rgba(0,0,0,.3)}
 .cta p{opacity:.75;margin-top:14px;font-size:15px}.foot{font-size:12px;color:#86868b;text-align:center;padding:22px 0 30px}.foot a{color:#86868b}</style></head><body>
 <section class="hero"><div class="w"><div class="note">Preview made for Boise Roof by Blixwerk Studio. Not affiliated, not live yet.</div><div class="badge"><img src="https://cdn.agencyengine.ai/logos/mr_vdfbwg8iq03gi1/logo_026cc602a3ca.2xs.png" alt="Boise Roof" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Boise Roof'}))"></div>
-<div class="vwrap"><video id="v" src="/demo-media/ce1fc6aa57ff.mp4" poster="/demo-media/ce1fc6aa57ff.jpg" autoplay muted playsinline preload="auto"></video><button id="snd" type="button">&#128264; Tap for sound</button><a id="go" href="#demo">See it for Boise Roof &darr;</a></div><script>(function(){var v=document.getElementById("v"),b=document.getElementById("snd"),g=document.getElementById("go");b.onclick=function(){v.muted=false;v.currentTime=0;v.play();b.style.display="none"};v.onended=function(){g.style.opacity=1;b.style.display="none"}})();</script><div class="k" id="demo">1 missed call<br>= <span>$2,000</span></div>
+<div class="vwrap"><video id="v" src="/demo-media/ce1fc6aa57ff.mp4" poster="/demo-media/ce1fc6aa57ff.jpg" autoplay muted playsinline preload="auto"></video><button id="snd" type="button">&#128264; Tap for sound</button><a id="go" href="#demo" style="pointer-events:none" tabindex="-1">See it for Boise Roof &darr;</a></div><script>(function(){var v=document.getElementById("v"),b=document.getElementById("snd"),g=document.getElementById("go");function snd(e){if(e){e.preventDefault();e.stopPropagation()}v.muted=false;v.volume=1;v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){});b.style.display="none"}b.addEventListener("click",snd);v.addEventListener("click",function(e){if(v.muted)snd(e)});v.onended=function(){g.style.opacity=1;g.style.pointerEvents="auto";g.removeAttribute("tabindex");b.style.display="none"}})();</script><div class="k" id="demo">Missed call<br>= <span>missed job</span></div>
 <p>You're on a roof. The phone rings. They don't wait. They call the next roofer.</p></div></section>
 <div class="w"><section class="stage"><div class="phone"><div class="scr">
 <div class="n n1 miss"><b>MISSED CALL · now</b>(208) 555‑0142</div>
@@ -37,15 +37,19 @@ Roboto,sans-serif;color:#1d1d1f;background:var(--tint);-webkit-font-smoothing:an
 </div></div>
 <div class="copy"><h2>The second you miss a call, they get a text from Boise Roof.</h2>
 <p>They reply. They wait. The job stays yours.</p><p>You keep your number. We set it up, you keep working.</p></div></section>
-<section class="calc"><label>How many calls do you miss per week?<br><input id="m" type="number" min="0" max="99" value="3" inputmode="numeric"></label>
-<div class="out" id="o">$312,000</div><small>a year in jobs walking to the next roofer (at about $2,000 per missed call)</small></section>
+<section class="calc"><div class="cin"><label>Missed calls per month<input id="m" type="number" min="0" max="200" value="4" inputmode="numeric"></label>
+<label>Your average job ($)<input id="j" type="number" min="0" max="200000" step="500" value="8000" inputmode="numeric"></label>
+<label>Share you'd win (%)<input id="w" type="number" min="0" max="100" value="25" inputmode="numeric"></label></div>
+<div class="out" id="o">$96,000</div><small>a year in jobs that could be walking to the next roofer. Your numbers, your estimate: change them above.</small></section>
 <section class="bonus"><div class="card"><h3>Plus: a quote form on your site</h3><p>Homeowners ask for an estimate at night and on weekends.
 You get it by e-mail and just hit reply.</p></div><div class="card"><h3>Plus: review requests on autopilot</h3><p>After every job, a
 friendly ask for a Google review. More reviews, more calls.</p></div></section></div>
 <section class="cta"><h2>Keep every job, Boise Roof.</h2><a class="btn" href="https://leadcatch.blixwerkstudio.com/start">Try it free for 14 days</a>
-<p>No card. No sales call. Cancel anytime.<br>After the pilot $197 a month with text back, or $97 for form and reviews.</p></section>
+<p>No card. No sales call. Cancel anytime.<br>Review requests and estimate form work right away. Text-back goes live in
+about 3 weeks: the first 5 roofers get everything for $97 a month instead of $197.</p></section>
 <div class="foot">Blixwerk Studio, Germany. Built with AI help, checked by us. <a href="/leadcatch/privacy">Privacy</a> · <a href="/impressum">Legal</a></div>
-<script>(function(){var m=document.getElementById("m"),o=document.getElementById("o"),c=0,t=0;function go(){var v=Math.max(0,Math.min(99,+m.value||0))*2000*52;
+<script>(function(){var m=document.getElementById("m"),j=document.getElementById("j"),w=document.getElementById("w"),o=document.getElementById("o"),c=0,t=0;
+function n(e,a,b){return Math.max(a,Math.min(b,+e.value||0))}function go(){var v=Math.round(n(m,0,200)*12*n(j,0,200000)*n(w,0,100)/100);
 cancelAnimationFrame(t);var s=c,st=performance.now();(function f(n){var q=Math.min(1,(n-st)/700);c=Math.round(s+(v-s)*(1-Math.pow(1-q,3)));
-o.textContent="$"+c.toLocaleString("en-US");if(q<1)t=requestAnimationFrame(f)})(st)}m.addEventListener("input",go);go()})();</script>
+o.textContent="$"+c.toLocaleString("en-US");if(q<1)t=requestAnimationFrame(f)})(st)}[m,j,w].forEach(function(e){e.addEventListener("input",go)});go()})();</script>
 <script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>

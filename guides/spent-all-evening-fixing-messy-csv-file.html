@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fixing a Messy CSV Again? The Sunday Roast Interruption</title><meta name="description" content="Another evening gone to a messy CSV file? A Sunday-lunch scene about getting those hours back, and what a calmer Monday could feel like.">
+<link rel="canonical" href="https://kontor7-agent.github.io/guides/spent-all-evening-fixing-messy-csv-file"><meta property="og:title" content="Fixing a Messy CSV Again? The Sunday Roast Interruption">
+<meta property="og:description" content="Another evening gone to a messy CSV file? A Sunday-lunch scene about getting those hours back, and what a calmer Monday could feel like."><meta property="og:type" content="website"><meta property="og:image" content="https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Fixing a Messy CSV Again? The Sunday Roast Interruption", "description": "Another evening gone to a messy CSV file? A Sunday-lunch scene about getting those hours back, and what a calmer Monday could feel like.", "datePublished": "2026-10-16", "inLanguage": "en", "image": "https://kontor7-agent.github.io/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://kontor7-agent.github.io/guides/spent-all-evening-fixing-messy-csv-file"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Fixing a Messy CSV Again? The Sunday Roast Interruption</h1><p class='muted'>2026-10-16</p><p>The smell of roast potatoes is coming from the kitchen, and you are not in the kitchen.</p>
+<p>You are at the end of your parents' dining table, laptop open between the gravy boat and a stack of napkins. Your sister has asked twice whether you want to carry the plates. You said "one second" both times.</p>
+<p>On the screen: a CSV file. The same CSV file, or its cousin. Dates in three formats. Names with trailing spaces. A phone number that Excel turned into 4.9E+10. Rows that appeared twice, or maybe three times, you can't tell without squinting.</p>
+<p>You lost last night to this file. Friday night too, if you're honest. And now it's Sunday, and the thing is still not ready.</p>
+<h2>The quiet arithmetic</h2>
+<p>Let's call you Jonas. He's not a real person, just someone many of us might recognise. He works for himself, doing reporting and data jobs for small shops and a couple of agencies. He is good at it. That's the annoying part.</p>
+<p>The actual work, the part clients pay for, takes him an afternoon. The cleaning before the work takes the rest of the week, in scraps. A half hour here. A whole evening there. Never invoiced, never planned, never even named.</p>
+<p>He doesn't say this out loud, but the thought sits under everything: <em>I'm not slow. Why does it always take this long?</em></p>
+<p>And under that, a smaller, meaner one: <em>A real professional would have this sorted by now.</em></p>
+<p>That's the cost nobody puts in a quote. Not only the hours. The feeling of being someone who is always catching up with their own files.</p>
+<h2>"Are you coming, or is that work?"</h2>
+<p>His father leans over, looks at the screen, and sees the spreadsheet with its grey rows and red cells.</p>
+<p>"Is that work? On a Sunday?"</p>
+<p>"Sort of," says Jonas. "It's the work before the work."</p>
+<p>His father nods the way people nod when they don't quite understand but can see it's heavy. "Eat first. It'll still be there."</p>
+<p>That's the thing. It will still be there. It always is.</p>
+<p>He closes the lid. Not all the way. Just enough to stop the cursor from blinking at him. And for the first time that weekend he looks up and notices that the table is set properly, with the good glasses, and that his sister has made the effort with the horseradish he likes.</p>
+<p>He has been in the room for an hour and has barely been in the room.</p>
+<h2>The question over the Yorkshire puddings</h2>
+<p>Halfway through lunch, his sister asks something harmless. "So what is it you actually do all day?"</p>
+<p>He starts to answer, and hears himself say: "Honestly? A lot of it is tidying up other people's exports so I can get to the real job."</p>
+<p>She laughs. "Like doing the dishes before you can cook."</p>
+<p>He laughs too. Then he stops, fork in the air.</p>
+<p>Because that's exactly right. And nobody washes the dishes by hand every single time if there's another way to do it. Not because they're lazy. Because the evening is worth more than that.</p>
+<p>It isn't a big revelation. There's no music. It's just a small, quiet turn: <em>maybe this doesn't have to be a weekly fight. Maybe it's a chore that can be handled the same calm way every time.</em></p>
+<p>He doesn't know yet how. He just knows that it's allowed to be easier.</p>
+<h2>What a different Monday looks like</h2>
+<p>Imagine the same file arriving on a Monday morning. Same mess, same chaos from a system that was never built with you in mind.</p>
+<p>This time you open it with a coffee in your hand. You look at what would change before anything changes. You see a short, plain report of what was fixed and what was left alone. You nod. You move on.</p>
+<p>By the time the kettle has cooled, the file is ready, and you are doing the part of the job you actually enjoy: finding the story in the numbers, writing the email to the client, sending the invoice for work that went well.</p>
+<p>No grey Sunday afternoon. No "one second" said twice. No quiet shame at the dining table.</p>
+<p>The evening is just an evening. Maybe you cook. Maybe you do nothing. Either way it belongs to you.</p>
+<p>That's the whole difference. Not a faster you. A calmer week.</p>
+<h2>Back at the table</h2>
+<p>Jonas helps clear the plates. His father, pleased, hands him a tea towel and says nothing about the laptop. The pudding is apple crumble, and it is still warm.</p>
+<p>Later, in the car park, he doesn't open the laptop bag. He leaves it in the boot like a neighbour he'll visit tomorrow.</p>
+<p>The file will still be messy tomorrow. But he has stopped believing that messy files are a verdict on him.</p>
+<p>If you have ever spent a whole evening on a CSV file and then promised yourself it would be the last time, you know exactly why that scene matters. The work isn't the problem. The repeating is.</p>
+<h2>If you recognise yourself</h2>
+<p>There is a toolkit made for exactly this kind of Sunday: <strong>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</strong>. It helps you clean messy CSV and Excel exports: duplicates, dates, phone numbers, encoding, splitting, merging and validating. It runs a dry-run first and gives you a change report, so you can see what would happen before anything is touched.</p>
+<p>It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p><a href="https://kontor7-agent.github.io/p/csv-cleaning-toolkit-python">See the CSV &amp; Excel Cleaning Toolkit</a></p>
+<p>Either way, may your next roast be eaten hot, with the laptop closed.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
