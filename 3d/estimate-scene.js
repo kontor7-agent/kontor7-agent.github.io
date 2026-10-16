@@ -1,37 +1,68 @@
-// LeadCatch Anfrage-Szene v3 „Film“ (Ersteller 16.10.: eigener Higgsfield-Clip, nur aus Prompt erzeugt).
-// Ein 5-s-Clip – Sturm → Regen → goldene Stunde → Sonne, Haus bleibt identisch – wird mit jeder Antwort
-// ein Stück weitergespielt (nicht gesprungen): Stufe n = Zeitmarke MARKS[n]. Zurück = Sprung zur Marke.
-// Schnittstelle wie v1/v2: window.__setStage(n), Klasse gl-ready auf #stage, window.__sceneDebug().
+// LeadCatch Anfrage-Szene v3.1 „Film + Loops“ (Ersteller 16.10.: pro Zustand ein Loop desselben Hauses, der weiterläuft, solange die Frage steht).
+// Zwei <video>: #hl = Zustands-Loop (loop-n.mp4, Start = Ende = exakter Frame aus dem Hauptclip an Marke n, lokal mit MiniMax H3 gerendert),
+// #hv = Hauptclip (house-720/1080.mp4, Sturm → Sonne). Antwort: Hauptclip wird von Marke n bis Marke m gespielt (kurze Überblendung aus dem
+// Loop), dann übernimmt Loop m. „Zurück“ springt. Fehlen die Loops (404), verhält sich die Szene wie v3 (Hauptclip hält am Frame).
+// Schnittstelle unverändert: window.__setStage(n), Klasse gl-ready auf #stage, window.__sceneDebug().
 (() => {
   const stageEl = document.getElementById("stage");
-  const v = document.getElementById("hv");
-  if (!stageEl || !v) return;
+  const V = document.getElementById("hv"), L = document.getElementById("hl");
+  if (!stageEl || !V) return;
   const base = stageEl.getAttribute("data-video") || "/3d/video/";
   const ver = stageEl.getAttribute("data-v") || "";
   const q = Math.max(innerWidth, innerHeight) * (devicePixelRatio || 1) > 1500 ? "1080" : "720";
-  v.src = `${base}house-${q}.mp4${ver ? "?v=" + ver : ""}`;
-  v.muted = true; v.playsInline = true; v.preload = "auto";
-  let dur = 5.1, target = +(stageEl.getAttribute("data-stage") || 0), goal = 0, playing = false, ready = false;
-  const marks = () => [0, 0.26, 0.52, 0.78, 0.985].map((f) => f * dur);
-  const stop = () => { v.pause(); playing = false; };
+  const src = (n) => `${base}${n}.mp4${ver ? "?v=" + ver : ""}`;
+  const FR = [0, 0.26, 0.52, 0.78, 0.985];
+  let dur = 5.17, target = +(stageEl.getAttribute("data-stage") || 0), shown = -1, goal = -1, mode = "idle", loopsOk = !!L, loopN = -1, ready = false;
+  const mark = (n) => FR[n] * dur;
+  const on = (el, yes) => el && el.classList.toggle("on", yes);
+  const warmed = new Set();
+  const warm = (n) => { if (!loopsOk || n < 0 || n > 4 || warmed.has(n)) return; warmed.add(n); try { fetch(src("loop-" + n), { mode: "no-cors" }).catch(() => {}); } catch (e) { /* egal */ } };
+
+  function showLoop(n) {
+    if (!loopsOk) { on(V, true); mode = "idle"; shown = n; return; }
+    if (loopN !== n) { loopN = n; L.src = src("loop-" + n); L.load(); }
+    L.loop = true; mode = "loopwait";
+    const start = () => {
+      L.removeEventListener("canplay", start);
+      if (loopN !== n) return;
+      L.currentTime = 0;
+      L.play().then(() => { on(L, true); on(V, false); mode = "idle"; shown = n; setTimeout(() => { if (mode === "idle") V.pause(); }, 400); warm(n + 1); })
+        .catch(() => { loopsOk = false; on(V, true); on(L, false); mode = "idle"; shown = n; });
+    };
+    if (L.readyState >= 3) start(); else L.addEventListener("canplay", start);
+  }
   function go() {
-    if (!ready) return;
-    const m = marks()[target];
-    if (m < v.currentTime - 0.05) { stop(); v.currentTime = m; goal = m; return; }  // zurück = Sprung
-    if (m <= v.currentTime + 0.03) return;
-    goal = m;
-    if (!playing) { playing = true; v.play().catch(() => { v.currentTime = goal; playing = false; }); }
+    if (!ready || target === shown || mode === "trans") return;
+    if (shown < 0 || target < shown || !loopsOk && mode !== "idle") {  // Start oder Zurück: springen
+      V.pause(); V.currentTime = mark(target); shown = target; on(V, true);
+      if (loopsOk) showLoop(target); else mode = "idle";
+      return;
+    }
+    // vorwärts: Hauptclip von Marke shown bis Marke target spielen, dann Loop target
+    mode = "trans"; goal = mark(target);
+    V.currentTime = mark(shown);
+    const run = () => { V.removeEventListener("seeked", run); V.play().then(() => on(V, true)).catch(() => { V.currentTime = goal; finish(); }); };
+    if (Math.abs(V.currentTime - mark(shown)) < 0.05) run(); else V.addEventListener("seeked", run);
+  }
+  function finish() {
+    V.pause(); V.currentTime = goal; const n = target; shown = n; mode = "idle";
+    if (loopsOk) showLoop(n); else on(V, true);
+    if (target !== shown) go();
   }
   function tick() {
     requestAnimationFrame(tick);
-    if (playing && v.currentTime >= goal - 0.04) { stop(); if (goal < dur - 0.1) v.currentTime = goal; }
+    if (mode === "trans" && !V.paused && V.currentTime >= goal - 0.04) finish();
   }
-  v.addEventListener("loadedmetadata", () => { dur = v.duration || dur; });
-  v.addEventListener("canplay", () => { if (ready) return; ready = true; stageEl.classList.add("gl-ready"); go(); }, { once: false });
-  v.addEventListener("ended", () => { playing = false; });
-  v.addEventListener("error", () => { stageEl.classList.add("nogl"); });
+  V.addEventListener("loadedmetadata", () => { dur = V.duration || dur; });
+  V.addEventListener("canplay", () => { if (ready) return; ready = true; stageEl.classList.add("gl-ready"); go(); });
+  V.addEventListener("error", () => { stageEl.classList.add("nogl"); });
+  if (L) {
+    L.muted = true; L.playsInline = true; L.preload = "auto";
+    L.addEventListener("error", () => { loopsOk = false; on(L, false); on(V, true); if (mode === "loopwait") mode = "idle"; });
+  }
+  V.muted = true; V.playsInline = true; V.preload = "auto"; V.src = src("house-" + q); V.load();
   window.__setStage = (n) => { target = Math.max(0, Math.min(4, n | 0)); go(); };
-  window.__sceneDebug = () => ({ v: 3, target, t: +v.currentTime.toFixed(2), dur: +dur.toFixed(2), goal: +goal.toFixed(2), playing, ready, q, size: [v.videoWidth, v.videoHeight] });
+  window.__sceneDebug = () => ({ v: 3.1, target, shown, mode, loopsOk, loopN, t: +V.currentTime.toFixed(2), lt: L ? +L.currentTime.toFixed(2) : null, dur: +dur.toFixed(2), ready, q });
   requestAnimationFrame(tick);
-  v.load();
+  warm(target);
 })();
