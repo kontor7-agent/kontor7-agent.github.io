@@ -9,7 +9,20 @@
   if (!stageEl || !V) return;
   const base = stageEl.getAttribute("data-video") || "/3d/video/";
   const ver = stageEl.getAttribute("data-v") || "";
-  const q = Math.max(innerWidth, innerHeight) * (devicePixelRatio || 1) > 1500 ? "1080" : "720";
+  // Datensparmodus / langsames Netz / reduzierte Bewegung (KUNDENREISE 2, 16.10.): kein Video, das Poster bleibt (Klasse nogl).
+  // window.__setStage bleibt definiert, damit das Formular wie gewohnt weiterläuft; gl-ready wird nicht gesetzt.
+  const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const slowNet = !!(conn && (conn.saveData || /^(slow-2g|2g|3g)$/.test(String(conn.effectiveType || ""))));
+  const reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  if (slowNet || reduceMotion) {
+    stageEl.classList.add("nogl");
+    let target = +(stageEl.getAttribute("data-stage") || 0);
+    window.__setStage = (n) => { target = Math.max(0, Math.min(4, n | 0)); };
+    window.__sceneDebug = () => ({ v: 3.1, off: slowNet ? "slow-net" : "reduced-motion", target, shown: -1, mode: "off", loopsOk: false, loopN: -1, ready: false, q: null });
+    return;
+  }
+  // Qualität nach CSS-Pixeln (nicht mal DPR): Handys bleiben bei 720p (KUNDENREISE 2: 1080p = 4,3 MB auf dem Handy)
+  const q = Math.max(innerWidth, innerHeight) > 1100 ? "1080" : "720";
   const src = (n) => `${base}${n}.mp4${ver ? "?v=" + ver : ""}`;
   const FR = [0, 0.26, 0.52, 0.78, 0.985];
   let dur = 5.17, target = +(stageEl.getAttribute("data-stage") || 0), shown = -1, goal = -1, mode = "idle", loopsOk = !!L, loopN = -1, ready = false;
