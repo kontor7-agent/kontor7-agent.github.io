@@ -1,0 +1,67 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BUSCARV no encuentra datos que sí existen: entrego hoy</title><meta name="description" content="Ves el dato en las dos hojas y BUSCARV dice #N/D. Una mañana de entrega, una videollamada y por qué no hace falta pelearse con el Excel.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/buscarv-no-encuentra-datos-que-existen-entrego-hoy"><meta property="og:title" content="BUSCARV no encuentra datos que sí existen: entrego hoy">
+<meta property="og:description" content="Ves el dato en las dos hojas y BUSCARV dice #N/D. Una mañana de entrega, una videollamada y por qué no hace falta pelearse con el Excel."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "BUSCARV no encuentra datos que s\u00ed existen: entrego hoy", "description": "Ves el dato en las dos hojas y BUSCARV dice #N/D. Una ma\u00f1ana de entrega, una videollamada y por qu\u00e9 no hace falta pelearse con el Excel.", "datePublished": "2026-10-19", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/buscarv-no-encuentra-datos-que-existen-entrego-hoy"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>BUSCARV no encuentra datos que sí existen: entrego hoy</h1><p class='muted'>2026-10-19</p><p>Son las 11:40 de un martes y llevas veinte minutos mirando la misma celda.</p>
+<p>El código <strong>A-10442</strong> está en la hoja de pedidos. Lo ves. Está en la hoja de precios. También lo ves. Lo has buscado con Ctrl+F en las dos. Y BUSCARV, con toda su calma, te devuelve <strong>#N/D</strong>.</p>
+<p>Paula es autónoma en Sevilla. Lleva el catálogo y los pedidos de una tienda online de cerámica, y a las 14:00 tiene que mandar el archivo con los precios cruzados. El cliente ya preguntó dos veces por WhatsApp si "va todo bien". Ella contestó con un pulgar arriba. Por dentro, no iba nada bien.</p>
+<p><em>(Paula es un personaje ilustrativo. Pero quizá te suena su mañana.)</em></p>
+<h2>El dato está ahí, y Excel dice que no</h2>
+<p>Lo peor no es el error. Lo peor es la sensación de estar loca.</p>
+<p>Si el dato no existiera, lo entenderías. Pero existe. Lo ves con tus propios ojos, y aun así el Excel te dice que no. Empiezas a dudar de todo: de la fórmula, del archivo, de ti.</p>
+<p>Paula revisa la fórmula por quinta vez. Está bien. La copia a otra celda. Sigue igual. Se levanta, se sirve un vaso de agua que no quiere y vuelve a sentarse.</p>
+<p>En el fondo de la cabeza suena una frase que conoce bien: <em>"una profesional de verdad ya habría terminado esto"</em>.</p>
+<p>No es verdad. Pero a las 11:50 con una entrega encima, cuesta creerlo.</p>
+<h2>La videollamada de las 12:00</h2>
+<p>En diez minutos tiene una llamada con otro cliente, de otro proyecto, que no tiene nada que ver. Y ella no puede estar en dos sitios.</p>
+<p>Se conecta con la cámara puesta y el archivo del catálogo abierto en la otra pantalla, minimizado, como quien esconde una ropa sucia debajo de la cama. Asiente. Sonríe. Dice "claro, claro". Y mientras tanto una parte de su cabeza sigue en la columna B, preguntándose por qué un código idéntico no es idéntico.</p>
+<p>Cuando cuelga, son las 12:40. Quedan 80 minutos.</p>
+<p>Entonces hace lo que hacemos casi todos: empieza a arreglar a mano. Borra un espacio aquí, retoca un código allá, prueba con unas pocas filas a ver si se encienden. Algunas se encienden. Otras no. No sabe por qué. Y lo que más le inquieta es esto: <strong>¿qué otras celdas ha tocado sin querer?</strong></p>
+<p>Porque cada arreglo manual deja una duda detrás. Si mañana el cliente dice que un precio no cuadra, ¿cómo sabrá si el error venía del archivo original o de sus propias manos a las 12:55, con prisa?</p>
+<h2>Lo que nadie dice en voz alta</h2>
+<p>El coste de un archivo así no es solo el rato perdido. Es todo lo que arrastra.</p>
+<p>Es la comida a las 15:30 delante del ordenador. Es entregar con un "creo que está bien" en lugar de un "está bien". Es no atreverte a decirle al cliente que necesitas una hora más, porque suena a que no controlas. Es esa vergüenza pequeña y callada de sentir que tu trabajo depende de un hilo que no ves.</p>
+<p>Y es, sobre todo, la sensación de que cada semana vas a volver a lo mismo. Otro archivo, otra exportación, otro desorden que parece invisible hasta que lo necesitas.</p>
+<h2>El momento en que algo cambia</h2>
+<p>A las 13:05, Paula hace algo distinto. Deja de arreglar y piensa: <em>"Esto no me pasa a mí sola. Y no debería resolverlo a mano cada vez."</em></p>
+<p>No se trata de que sea una mala profesional. Los datos que llegan de otros sistemas suelen venir sucios de formas que no se ven a simple vista: cosas que parecen iguales y para la máquina no lo son. La diferencia entre "lo veo" y "lo reconoce" a veces es mínima e invisible.</p>
+<p>Lo que ella necesita no es otra fórmula más lista. Es que el archivo llegue limpio <em>antes</em> de cruzarlo, con un registro claro de qué se tocó y qué no. Un sitio donde mirar y decir: "vale, esto cambió, esto no".</p>
+<p>Entrega a las 13:50, algo tensa, con un correo corto y honesto. El cliente contesta con un "gracias" y nada más. Nadie se muere. Pero Paula cierra el portátil sabiendo que no quiere repetir esa mañana.</p>
+<h2>Un martes distinto</h2>
+<p>Imagina el mismo martes, unas semanas después.</p>
+<p>Llega el archivo del cliente. Lo abres con el café en la mano. Antes de cruzar nada, lo limpias: sale un pequeño informe con lo que se corrigió, y puedes ver los cambios antes de aplicarlos. Cruzas los datos y, esta vez, aparecen todos.</p>
+<p>La videollamada de las 12:00 es solo una videollamada. Atiendes de verdad, sin la otra pantalla escondida. A las 12:30 ya has entregado, y la comida es una comida.</p>
+<p>No es magia. Es que el desorden deja de ser tu problema de última hora y pasa a ser un paso tranquilo, repetible, que sabes que está hecho.</p>
+<p>Y si mañana alguien pregunta "¿esto de dónde sale?", tienes la respuesta por escrito.</p>
+<h2>Si te reconoces en Paula</h2>
+<p>Si tu mañana de hoy se parece a la suya, primero: respira. El dato existe, no te lo estás inventando, y el problema casi seguro no eres tú.</p>
+<p>Cuando pase la entrega, quizá quieras algo para que no se repita. Hemos preparado <strong>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</strong>: limpia exportaciones desordenadas (duplicados, fechas, teléfonos, codificación, unir y separar archivos, validar), con una prueba en seco antes de cambiar nada y un informe de cambios. Está en inglés, y necesitas Python para usarlo. Lleva garantía de devolución de 30 días.</p>
+<p>Si te encaja, lo tienes aquí: <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit</a></p>
+<p>Y si hoy solo necesitas llegar a las 14:00: tú puedes. Después, ya hablamos de martes más tranquilos.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
