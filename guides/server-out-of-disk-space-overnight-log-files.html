@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Server Out of Disk Space Overnight? The Gondola Queue</title><meta name="description" content="Your server ran out of disk space overnight because of log files, and you&#x27;re in a gondola queue with one bar of signal. A story about calm after the alert.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/server-out-of-disk-space-overnight-log-files"><meta property="og:title" content="Server Out of Disk Space Overnight? The Gondola Queue">
+<meta property="og:description" content="Your server ran out of disk space overnight because of log files, and you&#x27;re in a gondola queue with one bar of signal. A story about calm after the alert."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/backup-log-rotation-scripts.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Server Out of Disk Space Overnight? The Gondola Queue", "description": "Your server ran out of disk space overnight because of log files, and you're in a gondola queue with one bar of signal. A story about calm after the alert.", "datePublished": "2026-10-19", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/backup-log-rotation-scripts.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/server-out-of-disk-space-overnight-log-files"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Server Out of Disk Space Overnight? The Gondola Queue</h1><p class='muted'>2026-10-19</p><p>The gondola queue moves one cabin at a time. Your skis are on your shoulder, and your phone is in the glove with the hole in the thumb.</p>
+<p>It buzzes once. Then again.</p>
+<p>You pull the glove off with your teeth. One bar of signal. Three messages from the owner of the yoga studio whose booking site you built and host for her.</p>
+<p><em>Site shows an error. Clients can't book the 9 o'clock class. Is it down?</em></p>
+<p>You stand there in the cold, between a family in matching helmets and a man eating a pretzel, and you already know. You have known since the second message. Something filled up. It always feels like a disk before it is a disk.</p>
+<h2>The holiday that isn't one</h2>
+<p>This was meant to be your first real week off in fourteen months. You told her in September. You put it in the calendar. You even wrote "offline" in your email signature, and for three days you almost believed it.</p>
+<p>Now the cabin arrives and you shuffle in with strangers. You balance the phone against the window and open a terminal with fingers that don't want to bend.</p>
+<p>The login takes a long time. Then the answer, plain as a parking ticket: <strong>No space left on device.</strong></p>
+<p>You check what grew. It isn't the database or the photos of the studio's teachers. It is the log files. Months of them. Polite, harmless little lines, one for every page view and every retry. Nobody ever told them to stop. Overnight they simply reached the edge of the disk, and the whole site went quiet with them.</p>
+<h2>What it quietly costs</h2>
+<p>The fix itself takes four minutes. You delete the oldest files, restart the service, watch the error page turn into a timetable. Your hands warm up in the cabin.</p>
+<p>But the four minutes are not what this cost you.</p>
+<p>It cost you the next hour, when you ski badly because you keep checking your phone. It cost you the dinner, where you said "just one second" twice. And it cost you a small, private sentence that you'd been carrying for a long time: <em>I run this on goodwill and memory.</em></p>
+<p>You don't talk about that part. Clients see a booking page that works. They don't see the freelancer who still remembers, in the back of his head, that something somewhere is slowly filling up. Nobody pays you for the remembering. You just do it, every week, with no end date.</p>
+<p>And when you forget once, it isn't a small thing. It's a studio owner standing in a lobby with a queue of people holding yoga mats and a booking page that says error.</p>
+<h2>The sentence on the way down</h2>
+<p>On the last ride of the day, the cabin is nearly empty. Light goes orange on the glass, and you think about something she said in her last message, after the site came back:</p>
+<p><em>Thank you. I don't know how you do it.</em></p>
+<p>You don't either. That is the problem. You don't <em>do</em> it. You <em>remember</em> it, and remembering is not a system.</p>
+<p>Somewhere between the middle station and the valley, the thought arrives in full: it doesn't have to work like this. Old logs could be tidied on a schedule, quietly, in the night, while you're asleep. Backups could be taken and the stale ones let go, without you holding the whole calendar in your head. And if a script were going to delete something, it could first show you what it <em>would</em> delete. Then it could leave a small written note of what it did, every single time.</p>
+<p>That isn't a heroic idea. It's just boring and kind, which is exactly what you want from the thing that guards your clients' sites.</p>
+<h2>A Monday that feels like nothing</h2>
+<p>Picture a Monday months later. No holiday, no gondola. Just coffee and the radiator ticking.</p>
+<p>You open the logfile from the night. It says what ran, what was kept, what was let go, and how much room is left. It takes you about thirty seconds to read. There is nothing to chase.</p>
+<p>The studio owner books her own Tuesday class on her own phone and never once thinks about your server. That is the right outcome. A good setup is one nobody mentions.</p>
+<p>And your head, the part that used to hold <em>did I check the disk?</em>, is free for something else. A proposal. A walk. Closing the laptop at six, and meaning it.</p>
+<h2>If you recognise yourself</h2>
+<p>Maybe you're not on a mountain. Maybe you're in a car park, or at a kitchen table, or in the middle of a client call, reading <em>no space left on device</em> with a small cold drop in your stomach.</p>
+<p>If so, there's a set of scripts built for exactly this quiet job: <strong>Backup &amp; Log Rotation Scripts (PowerShell + Bash)</strong>. It covers incremental snapshot backups, retention, log rotation and scheduling for both Windows and Linux. There is a dry-run mode, so you can see what would happen before anything is touched, and a logfile for every run. Like every Blixwerk product, it comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>You can look at it here, whenever it suits you: <a href="https://blixwerkstudio.com/p/backup-log-rotation-scripts">Backup &amp; Log Rotation Scripts</a>.</p>
+<p>Check it against your own setup first, and keep your own judgement about what your servers need.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Backup &amp; Log Rotation Scripts (PowerShell + Bash) – Incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. Dry-run mode and a logfile for every run. <p><a class='btn' href='/p/backup-log-rotation-scripts'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
