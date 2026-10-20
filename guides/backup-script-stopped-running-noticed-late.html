@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Backup Script Stopped Running? The Poolside Bench | Blixwerk</title><meta name="description" content="Your backup script stopped running and you only just noticed. A Tuesday on a humid poolside bench, and what a calmer routine feels like afterwards.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/backup-script-stopped-running-noticed-late"><meta property="og:title" content="Backup Script Stopped Running? The Poolside Bench | Blixwerk">
+<meta property="og:description" content="Your backup script stopped running and you only just noticed. A Tuesday on a humid poolside bench, and what a calmer routine feels like afterwards."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/backup-log-rotation-scripts.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Backup Script Stopped Running? The Poolside Bench", "description": "Your backup script stopped running and you only just noticed. A Tuesday on a humid poolside bench, and what a calmer routine feels like afterwards.", "datePublished": "2026-10-20", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/backup-log-rotation-scripts.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/backup-script-stopped-running-noticed-late"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Backup Script Stopped Running? The Poolside Bench</h1><p class='muted'>2026-10-20</p><p>It is 16:35 on a Tuesday, and the air at the leisure centre is thick enough to drink.</p>
+<p>Your daughter is in the shallow end with a foam noodle and a very serious face. You are on the plastic bench with your phone, a lukewarm tea and a towel that already belongs to someone else's child.</p>
+<p>The phone buzzes. A client: <em>"Quick one: can you send the version of the logo files from before we changed the colours? The June one?"</em></p>
+<p>Easy. You have a backup script for exactly this. You set it up a year ago, on a Sunday, feeling quietly pleased with yourself.</p>
+<p>You open the backup drive through the remote connection. Chlorine fog on the screen, thumb smudging the folder names.</p>
+<p>The newest snapshot is dated 14 August.</p>
+<p>You look at it for a while. Then you check today's date, as if the date might have changed its mind.</p>
+<h2>The quiet maths</h2>
+<p>You do the sum while a whistle blows somewhere behind you. August to October. Two months. Eight, nine weeks of invoices, drafts, two finished projects and one very long proposal. None of it copied anywhere.</p>
+<p>Nothing is broken. That is the strange part. Your laptop is humming along at home. The files are all there. Nothing has gone wrong.</p>
+<p>But something has been wrong for nine weeks, and it was wrong silently. No error, no email, no little red flag. The script simply stopped, the way a clock stops in a room you never go into.</p>
+<p>You try to remember what changed in August. A system update? The new router? The day you moved the drive to a different socket because the desk was in the way?</p>
+<p>You don't know. That is the part that sits in your stomach. Not the lost files, because you haven't lost any. It is the feeling that you were <em>trusting</em> something that wasn't there.</p>
+<h2>The reply you type slowly</h2>
+<p>The client is waiting. You find the June logo files in an old email attachment, thank goodness, and send them over. You add a cheerful line. Nobody needs to know your pulse did a small tap dance on the way.</p>
+<p>Then your daughter waves from the water. You wave back with your whole arm, because that is the job right now.</p>
+<p>But under the wave, the thought keeps going: <em>how many other things are like this?</em> What else am I sure is running that isn't? You are a one-person business. There is no IT department down the hall to ask. There is you, and a script you wrote in a good mood.</p>
+<p>The cost isn't dramatic. It is the low hum of not quite trusting your own setup. The little flinch whenever a file looks odd. The way you now half-remember to check, and half-forget, and feel faintly unprofessional about both.</p>
+<h2>What you actually wanted</h2>
+<p>On the drive home, damp hair, a swimming bag on the back seat, you think about what you really wanted a year ago.</p>
+<p>Not a clever script. You wanted to <em>stop thinking about it</em>.</p>
+<p>You wanted backups that run on their own, and, just as important, leave a trace you can read. A plain logfile for every run, so a gap shows up as a gap instead of as a surprise on a poolside bench. You wanted to be able to rehearse a change first, to see what <em>would</em> happen before it touches anything real. You wanted old copies to tidy themselves away, so the drive doesn't quietly fill up and become the next thing that fails.</p>
+<p>None of that is exciting. That is exactly the point. Good backups are boring in the way a smoke alarm battery is boring.</p>
+<h2>A different Tuesday</h2>
+<p>Picture the same bench, a few weeks on.</p>
+<p>Same humidity, same whistle, same foam noodle. The client messages: <em>"Can you dig out the old files from before the colour change?"</em></p>
+<p>You open the folder. Last night's snapshot is there. So is the one before, and the one before that, going back neatly through the weeks. A short logfile says the run finished at 02:10 without complaints.</p>
+<p>You find the June files in under a minute and send them. You put the phone face down on the towel.</p>
+<p>Then you watch the shallow end. Your daughter has just let go of the noodle and floated for three whole seconds, and you saw it. Your attention was actually there, not half in a folder you were afraid to open.</p>
+<p>That is all it is. Not a big transformation. Just one small worry you no longer have to carry into rooms where it doesn't belong.</p>
+<h2>If you recognise the bench</h2>
+<p>If your own backup quietly stopped at some point and you found out by accident, you are in very ordinary company. It happens to careful people, precisely because the whole idea is that you stop looking.</p>
+<p>We put together <strong>Backup &amp; Log Rotation Scripts (PowerShell + Bash)</strong> for this moment: incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. It has a dry-run mode so you can see what a run would do first, and a logfile for every run, so you can check in ten seconds that last night actually happened. It supports your routine; the decisions about what to keep and for how long stay with you.</p>
+<p>If it doesn't help, there is a 30-day money-back promise: full refund, no questions.</p>
+<p><a href="https://blixwerkstudio.com/p/backup-log-rotation-scripts">Have a look at the Backup &amp; Log Rotation Scripts</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Backup &amp; Log Rotation Scripts (PowerShell + Bash) – Incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. Dry-run mode and a logfile for every run. <p><a class='btn' href='/p/backup-log-rotation-scripts'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
