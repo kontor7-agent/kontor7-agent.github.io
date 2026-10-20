@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VLOOKUP Not Working? The Hidden Space in Row 212 | Blixwerk</title><meta name="description" content="Two names that look identical, and VLOOKUP says #N/A. A story about hidden spaces in exported data, a client waiting on the line, and a calmer way to clean it.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/vlookup-not-working-hidden-spaces"><meta property="og:title" content="VLOOKUP Not Working? The Hidden Space in Row 212 | Blixwerk">
+<meta property="og:description" content="Two names that look identical, and VLOOKUP says #N/A. A story about hidden spaces in exported data, a client waiting on the line, and a calmer way to clean it."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "VLOOKUP Not Working? The Hidden Space in Row 212", "description": "Two names that look identical, and VLOOKUP says #N/A. A story about hidden spaces in exported data, a client waiting on the line, and a calmer way to clean it.", "datePublished": "2026-10-20", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/vlookup-not-working-hidden-spaces"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>VLOOKUP Not Working? The Hidden Space in Row 212</h1><p class='muted'>2026-10-20</p><h2>10:05, and the client is already on the call</h2>
+<p>Mara has the screen share running. Her client, the owner of a small events company, is eating a late breakfast on camera. He is friendly. He is also waiting.</p>
+<p>"So, which of the registered guests have actually paid?" he asks.</p>
+<p>Mara nods. She has two exports open: the registration list from his booking page and the payment list from his bank. She has done this a dozen times. Match the names, see who is missing, send the reminders.</p>
+<p>She runs the lookup. A column of green, then red, then green.</p>
+<p>Then a long run of <code>#N/A</code>.</p>
+<p>She looks at row 212. "Anna Lindqvist" in one sheet. "Anna Lindqvist" in the other. The same letters, the same capital L, the same everything.</p>
+<p>"Give me one second," she says, in the voice people use when they have no idea how long a second will be.</p>
+<h2>The two names that are not the same</h2>
+<p>You know this moment, even if your data is different. It might be client names, invoice numbers, product codes or email addresses. Two things look identical on the screen, and the spreadsheet insists they are strangers.</p>
+<p>You check the spelling. You retype one name. For a second the match works and you feel a flicker of hope. Then you check the next row, and the next, and the old fear comes back: <em>Is it me? Am I doing something wrong?</em></p>
+<p>You are not. Somewhere in that export there is a space you cannot see. It might be at the end of a name, or in front of it. It might be a strange kind of space that came from a website, a copy-paste or an old system. It is invisible, it is stubborn, and it has made two perfectly good rows refuse to recognise each other.</p>
+<p>Mara does not know that yet. All she knows is that her client is watching a cursor blink on her screen.</p>
+<h2>What it quietly costs</h2>
+<p>The cost is not the thirty seconds. It is what the thirty seconds make you feel.</p>
+<p>You feel like someone who should be better at this. You feel the small heat in your neck when a client sees you hesitate. You start to wonder whether the numbers you gave him last month were right, because if the lookup can fail like this, what else has failed quietly?</p>
+<p>So you do the careful, slow thing. You scroll. You click into cells. You delete a space here, retype a name there. You tell yourself you will do the rest after the call.</p>
+<p>Then "after the call" becomes the lunch you eat at your desk. It becomes the reminder emails that go out a day later than you promised. It becomes the habit of sending the file with a small note, <em>"please double-check against your records,"</em> because you no longer fully trust your own result.</p>
+<p>That is the real price of invisible mess. It does not break anything loudly. It just takes a little confidence every time.</p>
+<h2>The turning point, in the middle of a call</h2>
+<p>Mara does what most people do. She apologises, fixes row 212 by hand, and sees the match turn green. The client says, "No problem, these things happen." He means it kindly.</p>
+<p>But she scrolls down and sees three more reds. Then five. Then she understands that this is not one bad row. It is the whole export. It has been this way every month. She had just never noticed, because in other months the list was shorter and the mismatches were few enough to fix by eye.</p>
+<p>She says it out loud, quietly, mostly to herself: "It's never going to be clean when it arrives, is it?"</p>
+<p>That is the turning point. It is not a clever trick. It is the realisation that the mess is not a personal failing. It is a property of exports. Systems add spaces, mix up dates, and change encodings, and they do it every week. You were never meant to catch it with your eyes at 10:05 with someone watching.</p>
+<p>The question changes from "why can't I get this to work?" to "why am I the cleaning step?"</p>
+<h2>A different Thursday</h2>
+<p>Imagine the same call a few weeks later.</p>
+<p>Mara opens the same two exports. Before she shares her screen, before anyone is eating breakfast on camera, she has already run both files through the same small routine. It shows her what it would change, without touching anything yet. She glances at the report: a few dozen names trimmed, a couple of odd characters fixed, nothing she didn't expect. She says yes.</p>
+<p>When her client joins, the lookup is just a lookup. Green, green, green, and two names that truly have not paid.</p>
+<p>"Those two," she says. "I'll send a friendly reminder today."</p>
+<p>He nods and takes a bite of toast. The call ends eight minutes early. Mara sits for a moment with her coffee, still warm, and realises her shoulders are down.</p>
+<p>Nothing dramatic happened. That is the point. The data stopped being a small daily ambush.</p>
+<h2>What a calmer system changes</h2>
+<p>A good routine does two quiet things. It does the dull cleaning the same way every time, so you stop depending on your eyes and your mood. And it tells you what it changed, so you can trust the result instead of hoping.</p>
+<p>That is all. You still make the decisions. You still know your clients and your numbers. You just stop spending your attention on invisible spaces.</p>
+<h2>If this sounds like your Thursday</h2>
+<p>If you have ever stared at two identical names and a stubborn <code>#N/A</code>, you may like the <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a>. It cleans messy CSV and Excel exports: dedupe, fix dates, phones and encoding, split, merge, validate. It has a dry-run mode and a change report, so you see what will change before it does.</p>
+<p>It comes with a 30-day money-back promise. If it doesn't help, you get a full refund, no questions.</p>
+<p>Either way, the next time two matching names refuse to match, remember: it is probably not you. It is a space you cannot see.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
