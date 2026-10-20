@@ -1,0 +1,61 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Miles de filas desordenadas en Excel: ¿por dónde empiezo?</title><meta name="description" content="Lunes por la mañana, el tren y un Excel de 14.000 filas que no sabes por dónde coger. Una historia sobre abrirlo sin que se te encoja el estómago.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/excel-miles-de-filas-desordenadas-por-donde-empezar"><meta property="og:title" content="Miles de filas desordenadas en Excel: ¿por dónde empiezo?">
+<meta property="og:description" content="Lunes por la mañana, el tren y un Excel de 14.000 filas que no sabes por dónde coger. Una historia sobre abrirlo sin que se te encoja el estómago."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Miles de filas desordenadas en Excel: \u00bfpor d\u00f3nde empiezo?", "description": "Lunes por la ma\u00f1ana, el tren y un Excel de 14.000 filas que no sabes por d\u00f3nde coger. Una historia sobre abrirlo sin que se te encoja el est\u00f3mago.", "datePublished": "2026-10-21", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/excel-miles-de-filas-desordenadas-por-donde-empezar"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Miles de filas desordenadas en Excel: ¿por dónde empiezo?</h1><p class='muted'>2026-10-21</p><p>Lunes, 8:40. El tren de cercanías va lleno y tú vas de pie, con el portátil medio abierto sobre el antebrazo y el bolso colgando del codo.</p>
+<p>En la pantalla está el archivo que te mandó Paco, el dueño de la tienda de aceites y conservas para la que llevas el marketing. Se llama <code>clientes_FINAL_v3 (copia).xlsx</code>. Tiene 14.000 filas.</p>
+<p>Desplazas el cursor hacia abajo. Nombres en mayúsculas, nombres en minúsculas, un «Garcia Lopez, Ana» y más abajo un «ana garcía». Teléfonos con prefijo, sin prefijo, con guiones, con un punto. Fechas que a veces son fechas y a veces son texto. Una columna entera que parece no pertenecer a nada.</p>
+<p>Cierras el portátil. Lo vuelves a abrir. Lo cierras otra vez.</p>
+<h2>El archivo que nadie quiere abrir</h2>
+<p>Paco te lo pidió con buena intención: «Solo hay que dejarlo limpio para la campaña de otoño, ¿verdad? Es un momento».</p>
+<p>No es un momento. Tú lo sabes, y lo sabes en el estómago, esa especie de nudo pequeño que aparece cuando miras algo demasiado grande para empezar por ningún sitio.</p>
+<p>Porque la pregunta no es cómo se limpia. La pregunta es por dónde. ¿Primero los duplicados? ¿Primero las fechas? ¿Y si arreglas una cosa y rompes otra? ¿Y si borras una fila que importaba y nadie se entera hasta que un cliente reciba el mismo correo tres veces?</p>
+<p>Nadie habla de este miedo. Parece una tontería al lado de «tengo que cobrar una factura» o «tengo que subir mis tarifas». Pero ocupa sitio. Lo arrastras todo el fin de semana. Piensas en él mientras compras el pan. Lo dejas para después del café, y después de la reunión, y después de la comida.</p>
+<h2>Lo que cuesta, sin hacer ruido</h2>
+<p>El coste no sale en ninguna factura, pero está.</p>
+<p>Es la mañana que empiezas «un ratito» y a las doce sigues cambiando mayúsculas a mano, celda a celda, con la vista cansada. Es la tarde que ya no tienes para lo que de verdad te gusta de tu trabajo. Es la sensación de no ser muy profesional, de que alguien con más experiencia lo habría resuelto en diez minutos, aunque nadie te haya dicho nunca cómo.</p>
+<p>Y es la llamada con Paco el miércoles, cuando te pregunta «¿qué tal el listado?» y tú contestas «avanzando», que es esa palabra que significa «todavía no he tenido el valor de tocarlo».</p>
+<p>No es pereza. Es que un archivo desordenado te pide decidir mil cosas pequeñas a la vez, y eso agota más que una sola cosa difícil.</p>
+<h2>El momento en que te das cuenta</h2>
+<p>La estación de Atocha se vacía. Te sientas por fin en un banco, con el café de máquina que sabe a cartón, y abres el portátil otra vez.</p>
+<p>Pero esta vez no miras las 14.000 filas. Miras solo cinco. Y piensas algo que no se te había ocurrido: que quizá tú no tengas que arreglar fila por fila lo que está roto de la misma manera en todas partes.</p>
+<p>Que el desorden, por feo que parezca, suele repetirse. Los mismos espacios de más. Las mismas fechas escritas de tres maneras. Los mismos duplicados con una letra distinta. Y que algo que revise todo eso de una vez, te enseñe lo que cambiaría <em>antes</em> de tocar nada y te deje un resumen de lo hecho, convierte el miedo a romper algo en una simple lectura tranquila.</p>
+<p>No hace falta heroicidad. Hace falta poder mirar el cambio antes de aceptarlo.</p>
+<p>El nudo no desaparece del todo, pero se afloja.</p>
+<h2>Un lunes distinto</h2>
+<p>Imagina el mismo lunes, pero después.</p>
+<p>Subes al tren con tu café de verdad, el de la panadería de debajo de casa. El archivo de Paco ya no es un monstruo. Está limpio en otra copia y el original sigue intacto, por si acaso. En una hoja aparte tienes la lista de lo que cambió: tantas filas repetidas, tantos teléfonos unificados, estas fechas arregladas, estas tres filas dudosas para que las mires tú con calma.</p>
+<p>A las nueve y diez le escribes a Paco: «Listo el listado, te mando también un resumen de lo que he tocado». Y lo envías sin esa sensación de cruzar los dedos.</p>
+<p>Te queda toda la mañana. Para pensar en la campaña, que es lo que Paco te paga por pensar. Para llamar a esa clienta nueva. Para salir a comer sin el portátil en la mochila haciendo ruido dentro de tu cabeza.</p>
+<p>No es magia. Es que algo difícil de empezar se ha vuelto algo con principio y con final.</p>
+<h2>Si te has reconocido en el tren</h2>
+<p>Si tienes un Excel o un CSV de miles de filas esperándote y llevas días rodeándolo, no eres desordenada ni lento. Te enfrentas a algo que está hecho para agotarte.</p>
+<p>Existe una forma más tranquila de hacerlo. En Blixwerk preparamos <em>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</em>: sirve para quitar duplicados, arreglar fechas y teléfonos, resolver problemas de codificación, dividir, unir y validar archivos. Primero te enseña lo que cambiaría, con una simulación previa, y después te deja un informe de cambios. El producto está en inglés, y tiene garantía de devolución de 30 días: si no te ayuda, te devolvemos el dinero sin preguntas.</p>
+<p>Si quieres echarle un vistazo, lo tienes aquí, sin prisa: <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit</a></p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
