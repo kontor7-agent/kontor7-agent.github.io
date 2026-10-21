@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Which Project Hours Are Invoiced? The Ferris Wheel Pause</title><meta name="description" content="Your phone buzzes at the top of a ferris wheel: &#x27;Can you invoice what&#x27;s done so far?&#x27; And you can&#x27;t tell which project hours are billed and which are open.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/which-project-hours-invoiced-still-open"><meta property="og:title" content="Which Project Hours Are Invoiced? The Ferris Wheel Pause">
+<meta property="og:description" content="Your phone buzzes at the top of a ferris wheel: &#x27;Can you invoice what&#x27;s done so far?&#x27; And you can&#x27;t tell which project hours are billed and which are open."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/freelancer-project-invoice-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Which Project Hours Are Invoiced? The Ferris Wheel Pause", "description": "Your phone buzzes at the top of a ferris wheel: 'Can you invoice what's done so far?' And you can't tell which project hours are billed and which are open.", "datePublished": "2026-10-21", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/freelancer-project-invoice-tracker-xlsx.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/which-project-hours-invoiced-still-open"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Which Project Hours Are Invoiced? The Ferris Wheel Pause</h1><p class='muted'>2026-10-21</p><p>The cabin lurches, then stops at the very top.</p>
+<p>Below you, the fairground lights are coming on one by one. Your niece is pressed against the glass, pointing at the roof of her school. You are smiling. You are really trying to.</p>
+<p>Then your phone buzzes.</p>
+<p><em>"Hi! Can you send an invoice for everything we've done so far on the app project? Finance closes the month on Friday."</em></p>
+<p>The cabin rocks gently. You do not.</p>
+<p>Because you know, in that one cold second, that you cannot answer. Not truthfully. You worked on that project for six weeks. Some of those hours went out on an invoice in September. You think. Some are in a notebook. Some are in a calendar. Some are only in your head, attached to a Tuesday when it rained.</p>
+<p>Which ones are already billed? Which are still open?</p>
+<p>You have no idea.</p>
+<h2>The sentence you rehearse at the top</h2>
+<p>The wheel stays still. Somebody below is fixing something, or chatting, or both.</p>
+<p>You type <em>"Sure, will do!"</em> and delete it. A promise you can't keep is worse than silence. You type <em>"Of course, give me a day"</em> and send that instead.</p>
+<p>Then you put the phone face-down on your knee and look at the view. You see none of it.</p>
+<p>This is the part nobody talks about. It isn't the work that wears you out. The work was fine. It's the feeling of owing yourself an answer and not having it. The quiet suspicion that you might bill the same hours twice and look careless. Or, worse, that you've given away a week and nobody noticed, least of all you.</p>
+<p>Neither mistake would end your business. But either one would make you feel like someone who is winging it.</p>
+<h2>What the evening costs</h2>
+<p>The wheel starts moving again. Your niece wants candy floss, and you buy it, and you are only half there.</p>
+<p>That night, after she's asleep and the flat is quiet, you do what you always do. You open the calendar. Then the folder called <em>Invoices_final</em>. Then <em>Invoices_final2</em>. You scroll through PDFs, trying to match dates to hours, hours to projects, projects to numbers.</p>
+<p>A line says <em>"Development, 18 h."</em> Which 18? Weeks 2 and 3? Or the ones before the holiday?</p>
+<p>By eleven, you have a rough picture. By midnight, you have a rough picture you don't trust. You go to bed with the same knot in your stomach you carried onto the wheel.</p>
+<p>It isn't about money, exactly. It's that you can't <em>see</em> your own business. You are standing inside it with the lights off.</p>
+<h2>The thought that arrives on the tram home</h2>
+<p>Saturday, on the tram, with nothing to do but watch the streets, a different thought arrives. Quiet. Almost boring.</p>
+<p><em>What if every hour had a status?</em></p>
+<p>Not a clever system. Not a new app with forty settings. Just a plain answer sitting next to each stretch of work: billed, or not yet. And next to each invoice: sent, due, paid.</p>
+<p>You realise you've never actually had that. You've had memory, and good intentions, and a talent for reconstructing things under stress. That's not a system. That's a habit of surviving.</p>
+<p>And you also realise something kinder. You're not careless. You were never missing discipline. You were missing one place where it all lives together.</p>
+<h2>A different Monday</h2>
+<p>Picture the same request arriving a few weeks from now.</p>
+<p>It's Monday, 9:10. Coffee is still too hot. You're at your desk, and the message comes in: <em>"Can you invoice what's done so far?"</em></p>
+<p>You don't flinch. You open one file. The project is right there, and the hours are sorted into what's already gone out and what hasn't. The open total is a single number. You check it against your own sense of the work, and it matches.</p>
+<p>You write the invoice. You send it. The whole thing takes about as long as the coffee takes to cool.</p>
+<p>Then you reply: <em>"Sent, with the hours since the last invoice. Let me know if finance needs anything else."</em></p>
+<p>Calm. Specific. Professional. Exactly the sentence the version of you on the ferris wheel wished she could write.</p>
+<p>Friday arrives and you aren't sweating over anyone's month-end. Your evening belongs to you. If a client asks "what's still open?", you answer in a breath, not in an apology.</p>
+<h2>Not a big change. A small one that holds.</h2>
+<p>Nothing about your work has to change. You still do the same projects, for the same people, at the same rate. The difference is that your business stops living in four places and starts living in one.</p>
+<p>That's most of the relief. Not speed, not cleverness. Just the ability to look at your own work and know where it stands.</p>
+<p>If you recognise yourself at the top of that wheel, there's a calm place to start. <a href="https://blixwerkstudio.com/p/freelancer-project-invoice-tracker-xlsx">Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker (Excel)</a> keeps your clients, projects, hours and invoices together. It numbers invoices for you, tracks due dates, flags what's overdue, and shows it all on one dashboard. It comes with sample data so you can see how it looks before you enter your own, plus a short PDF guide.</p>
+<p>If it doesn't help, you get your money back within 30 days. No questions.</p>
+<p>The next time the cabin stops at the top, you could simply enjoy the view.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker (Excel) – Excel tracker for clients, projects, hours and invoices: auto invoice numbers, due dates, overdue flags, dashboard. Sample data + PDF guide. <p><a class='btn' href='/p/freelancer-project-invoice-tracker-xlsx'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
