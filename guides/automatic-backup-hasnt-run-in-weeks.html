@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Backup Hasn&#x27;t Run in Weeks? The Lost Property Office</title><meta name="description" content="You queue at the lost property office and glance at your backup status: last run, five weeks ago. A short story about the quiet kind of dread, and what calms it">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/automatic-backup-hasnt-run-in-weeks"><meta property="og:title" content="Backup Hasn&#x27;t Run in Weeks? The Lost Property Office">
+<meta property="og:description" content="You queue at the lost property office and glance at your backup status: last run, five weeks ago. A short story about the quiet kind of dread, and what calms it."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/backup-log-rotation-scripts.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Backup Hasn't Run in Weeks? The Lost Property Office", "description": "You queue at the lost property office and glance at your backup status: last run, five weeks ago. A short story about the quiet kind of dread, and what calms it.", "datePublished": "2026-10-21", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/backup-log-rotation-scripts.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/automatic-backup-hasnt-run-in-weeks"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Backup Hasn&#x27;t Run in Weeks? The Lost Property Office</h1><p class='muted'>2026-10-21</p><p>The queue at the lost property office moves one umbrella at a time.</p>
+<p>You are third in line, holding a numbered slip and a coffee that went lukewarm ten minutes ago. Yesterday you left your tote bag on the 17:42 train. A charger, a notebook and a pair of sunglasses you liked. Nothing that matters much. You tell yourself that twice.</p>
+<p>To stop yourself staring at the shelves of single gloves, you take out your phone and open the little dashboard for your laptop backup. You don't know why. Habit, maybe. A way to feel organised while standing in a queue.</p>
+<p>The dashboard says: <strong>Last successful backup: 36 days ago.</strong></p>
+<p>You read it again. The words don't change.</p>
+<h2>The quiet sort of dread</h2>
+<p>There is no alarm. No red banner. The thing never told you it had stopped. For five weeks it sat there looking like it was working, and you believed it, because why wouldn't you?</p>
+<p>You are a freelance illustrator, and everything you have lives on that one laptop. Client files. Three half-finished brand packages. The signed contracts. The invoices you sent in September. The folder with the sketches for a children's book that you've never told anyone about.</p>
+<p>The man at the counter calls "next, please" and the woman ahead of you steps forward. You don't hear what she says. You are doing arithmetic you don't want to do. Five weeks of work. How many files is that? Which clients? What would you say to the one with the Thursday deadline if the laptop simply did not turn on tomorrow?</p>
+<p>Nobody warns you about this part of working for yourself. There is no IT department. There is no one who notices on your behalf. There is you, a laptop, and a promise you made to yourself once, in a calmer month, that it was handled.</p>
+<h2>What it quietly costs</h2>
+<p>You think about the last few weeks and what they would have felt like if you had known.</p>
+<p>Probably the same, honestly. Deadlines, emails, a coffee on the balcony. That's the odd thing about this kind of problem. It doesn't hurt until, suddenly, it hurts completely. Until then it is just a small weight you carry without knowing, a faint "I should check that" that kept surfacing and getting pushed down again.</p>
+<p>You remember it now. Three weeks ago, a pop-up. You clicked "remind me later." Of course you did. You were in the middle of a client call.</p>
+<p>There is a particular embarrassment in this, too. You tell clients you are reliable. You <em>are</em> reliable. But a professional wouldn't have let this slide, you think, and then you notice the thought, and you try to put it down. It isn't fair. You were busy. You trusted a thing that was supposed to look after itself.</p>
+<p>"Number forty-one?"</p>
+<p>That's you. The man comes back from the shelves holding your tote bag. The charger is inside. So is the notebook. Even the sunglasses.</p>
+<p>It is a small relief, and it makes the bigger one feel unfair by comparison. Some things you can get back by queueing patiently. Other things you only get back if you did something quiet and boring weeks ago.</p>
+<h2>The turning point, on a station bench</h2>
+<p>You sit on a bench outside, bag on your lap, and before you can talk yourself out of it, you plug in the external drive from your rucksack and copy the folders that matter. It takes eleven minutes. The progress bar creeps along while commuters stream past, and for the first time in an hour your shoulders drop.</p>
+<p>And somewhere in those eleven minutes the real thought arrives, not the panic but the one underneath it: <em>it doesn't have to be like this.</em></p>
+<p>The problem was never that you forgot. It was that nothing ever told you. A backup that fails in silence is only a hope with a nice icon. What you want is something plainer. A snapshot every night. A short note that says what it did. The old copies tidied away so the drive doesn't fill up. And a record you can glance at, without trusting anything on faith.</p>
+<p>You don't need to become a systems person for that. You just need it set up once, properly, by someone who thought about the dull parts.</p>
+<h2>A different Monday</h2>
+<p>Picture a Monday morning a few weeks from now. You carry your coffee to the desk, open the laptop, and there is a small logfile from last night. You open it. Three lines. <em>Finished. Nothing went wrong.</em> You close it again without a second thought.</p>
+<p>That's the whole ceremony. Ten seconds.</p>
+<p>Then you start on the client's logo revisions, and the sentence "I should check that" doesn't turn up at all. It's gone, like a tap you finally stopped hearing drip.</p>
+<p>You might even do something you haven't done for ages: finish a day at six, close the lid, and not carry a faint hum of worry into dinner.</p>
+<h2>If you recognise yourself here</h2>
+<p>If you read that dashboard line and felt your stomach drop, you are in good company, and the fix is smaller than the dread suggests. We put together <strong>Backup &amp; Log Rotation Scripts (PowerShell + Bash)</strong>: incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. There is a dry-run mode so you can see what it <em>would</em> do before it touches anything, and a logfile for every run, so you never have to wonder again. It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>Have a look when you're ready: <a href="https://blixwerkstudio.com/p/backup-log-rotation-scripts">Backup &amp; Log Rotation Scripts</a>.</p>
+<p>And today, copy the important folders somewhere safe. Eleven minutes on a bench is enough.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Backup &amp; Log Rotation Scripts (PowerShell + Bash) – Incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. Dry-run mode and a logfile for every run. <p><a class='btn' href='/p/backup-log-rotation-scripts'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
