@@ -52,38 +52,52 @@
       return;
     }
     // vorwärts: Hauptclip von Marke shown bis Marke target spielen, dann Loop target
-    mode = "trans"; goal = mark(target);
+    mode = "trans"; goal = mark(target); startTick();
     V.currentTime = mark(shown);
     const run = () => { V.removeEventListener("seeked", run); V.play().then(() => on(V, true)).catch(() => { V.currentTime = goal; finish(); }); };
     if (Math.abs(V.currentTime - mark(shown)) < 0.05) run(); else V.addEventListener("seeked", run);
   }
   function finish() {
-    V.pause(); V.currentTime = goal; const n = target; shown = n; mode = "idle";
+    stopTick(); V.pause(); V.currentTime = goal; const n = target; shown = n; mode = "idle";
     if (loopsOk) showLoop(n); else on(V, true);
     if (target !== shown) go();
   }
-  let heal = 0;
-  function tick(now) {
-    requestAnimationFrame(tick);
-    if (mode === "trans" && !V.paused && V.currentTime >= goal - 0.04) finish();
-    // Selbstheilung (max. 1x/s): Browser pausieren stumme Videos gelegentlich von sich aus (Energiesparen, Tab verdeckt,
-    // Test-Browser) - ein stehender Loop oder ein haengender Uebergang wird einfach wieder angestossen.
-    if (now - heal > 1000 && !document.hidden) {
-      heal = now;
-      if (mode === "idle" && loopsOk && L && L.paused && L.readyState >= 2) L.play().catch(() => {});
-      if (mode === "trans" && V.paused && V.currentTime < goal - 0.04) V.play().catch(() => { V.currentTime = goal; finish(); });
-    }
+  // rAF-Tick nur waehrend eines Uebergangs (B15): Start in go(), Ende in finish(); die Markenerkennung bleibt frame-genau.
+  let rafId = 0, off = false;
+  function tick() {
+    rafId = 0;
+    if (mode !== "trans" || off) return;
+    if (!V.paused && V.currentTime >= goal - 0.04) { finish(); return; }
+    rafId = requestAnimationFrame(tick);
   }
+  function startTick() { if (!rafId) rafId = requestAnimationFrame(tick); }
+  function stopTick() { if (rafId) { cancelAnimationFrame(rafId); rafId = 0; } }
+  // Selbstheilung (1x/s, nicht bei verdecktem Tab): Browser pausieren stumme Videos gelegentlich von sich aus (Energiesparen,
+  // Test-Browser) - ein stehender Loop oder ein haengender Uebergang wird einfach wieder angestossen.
+  const healer = setInterval(() => {
+    if (off || document.hidden) return;
+    if (mode === "idle" && loopsOk && L && L.paused && L.readyState >= 2) L.play().catch(() => {});
+    if (mode === "trans" && V.paused && V.currentTime < goal - 0.04) V.play().catch(() => { V.currentTime = goal; finish(); });
+  }, 1000);
+  // Reduced Motion wird waehrend der Sitzung eingeschaltet (A16): Videos anhalten und entladen, Poster bleibt (Klasse nogl).
+  const rmq = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+  if (rmq && rmq.addEventListener) rmq.addEventListener("change", (e) => {
+    if (!e.matches || off) return;
+    off = true; stopTick(); clearInterval(healer);
+    for (const el of [V, L]) { if (!el) continue; try { el.pause(); on(el, false); el.removeAttribute("src"); el.load(); } catch (err) { /* egal */ } }
+    mode = "off"; stageEl.classList.remove("gl-ready"); stageEl.classList.add("nogl");
+    window.__setStage = (n) => { target = Math.max(0, Math.min(4, n | 0)); };
+  });
   V.addEventListener("loadedmetadata", () => { dur = V.duration || dur; });
-  V.addEventListener("canplay", () => { if (ready) return; ready = true; stageEl.classList.add("gl-ready"); go(); });
-  V.addEventListener("error", () => { stageEl.classList.add("nogl"); });
+  V.addEventListener("canplay", () => { if (ready || off) return; ready = true; stageEl.classList.add("gl-ready"); go(); });
+  V.addEventListener("error", () => { if (!off) stageEl.classList.add("nogl"); });
+  for (const el of [V, L]) { if (el) { el.disablePictureInPicture = true; el.disableRemotePlayback = true; } }
   if (L) {
     L.muted = true; L.playsInline = true; L.preload = "auto";
-    L.addEventListener("error", () => { loopsOk = false; on(L, false); on(V, true); if (mode === "loopwait") mode = "idle"; });
+    L.addEventListener("error", () => { if (off) return; loopsOk = false; on(L, false); on(V, true); if (mode === "loopwait") mode = "idle"; });
   }
   V.muted = true; V.playsInline = true; V.preload = "auto"; V.src = src("house-" + q); V.load();
   window.__setStage = (n) => { target = Math.max(0, Math.min(4, n | 0)); go(); };
-  window.__sceneDebug = () => ({ v: 3.1, target, shown, mode, loopsOk, loopN, t: +V.currentTime.toFixed(2), lt: L ? +L.currentTime.toFixed(2) : null, dur: +dur.toFixed(2), ready, q });
-  requestAnimationFrame(tick);
+  window.__sceneDebug = () => ({ v: 3.1, target, shown, mode, loopsOk, loopN, t: +V.currentTime.toFixed(2), lt: L ? +L.currentTime.toFixed(2) : null, dur: +dur.toFixed(2), ready, q, raf: !!rafId });
   warm(target);
 })();
