@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Excel Numbers Stored as Text Again? The 10 am Report Call</title><meta name="description" content="Your weekly report shows a total of zero because the numbers are text. A short story about a Thursday client call, and a calmer way to start the week.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/excel-numbers-stored-as-text-weekly-report"><meta property="og:title" content="Excel Numbers Stored as Text Again? The 10 am Report Call">
+<meta property="og:description" content="Your weekly report shows a total of zero because the numbers are text. A short story about a Thursday client call, and a calmer way to start the week."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Excel Numbers Stored as Text Again? The 10 am Report Call", "description": "Your weekly report shows a total of zero because the numbers are text. A short story about a Thursday client call, and a calmer way to start the week.", "datePublished": "2026-10-27", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/excel-numbers-stored-as-text-weekly-report"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Excel Numbers Stored as Text Again? The 10 am Report Call</h1><p class='muted'>2026-10-27</p><p>It is 9:52 on Thursday, and the client call starts in eight minutes.</p>
+<p>You open the weekly report. You built it yourself, and you've sent it every week for months. The total at the bottom says <strong>0</strong>.</p>
+<p>You look again. Zero. Above it, a column of figures that are plainly not zero: 412, 1,280, 97. They sit on the left side of their cells, like guests who arrived early and don't know where to stand. In the corner of each one is a tiny green triangle.</p>
+<p>Your stomach does the small drop it always does.</p>
+<h2>The report that worked last week</h2>
+<p>Imagine Mara. She is a freelance marketing analyst with four retainer clients, and every Thursday morning she sends one of them a tidy sheet: orders, ad spend, what came back.</p>
+<p>The export comes from a shop platform. It arrives as a CSV with a cheerful name like <code>export_final_v3</code>. Last week it behaved. This week, something changed that she can't see. Maybe a currency symbol slipped in, or a space after the number, or a comma where there used to be a dot.</p>
+<p>She can't see it, and that is the maddening part. The numbers look like numbers. Excel has decided they are words.</p>
+<p>So the sum is zero, the chart is flat, and the percentage column shows a row of <code>#VALUE!</code> like a small red fence.</p>
+<p>She has seen this before. She knows there is a fix. She has done it before, and she even remembers doing it, but not how. Was it the little yellow warning icon? Was it multiplying by one? Was it a find-and-replace on a character she couldn't even type?</p>
+<p>With seven minutes left, she tries three things and none of them quite work. One column fixes itself. Another one now shows dates from 1900.</p>
+<h2>What it quietly costs</h2>
+<p>Mara joins the call with her camera on and a calm face. The report is <em>mostly</em> right. She says, "I'll send the final version after lunch," in the voice of someone who has everything under control.</p>
+<p>She doesn't.</p>
+<p>The client is kind about it. That's almost worse. Nobody is angry, and nobody needs to be, because the small apology is already sitting in her chest. <em>A real analyst wouldn't have this problem.</em></p>
+<p>That's the part nobody says out loud. It isn't really about the numbers. It's the feeling of being a professional who still, every single week, starts with a stranger's mess. It's the 40 minutes after lunch that were supposed to be for something else. It's the creeping thought that if one weekly file can wobble like this, what else is quietly wrong in there?</p>
+<p>And under that, the quieter worry: <em>Is it me? Am I just bad at Excel?</em></p>
+<p>She isn't. The file is just messy in a new way each week, and she is the one who has to catch it.</p>
+<h2>The turning point</h2>
+<p>A week later, Mara is rinsing a mug in the kitchen when she realises something small and slightly embarrassing.</p>
+<p>She has fixed this problem about thirty times. Each time she treated it as a surprise, as if it were the first. The numbers-as-text, the stray spaces, the odd dates, the same sort of mess in a different coat. She never wrote it down, because it always felt like a one-off.</p>
+<p>It wasn't a one-off. It was a Thursday habit.</p>
+<p>And a habit like that doesn't need more willpower or a sharper eye. It needs a place where the cleaning happens the same way every time, before the report ever sees the file.</p>
+<p>That's the whole idea. She doesn't have to become a spreadsheet wizard. She just stops being the person who stands guard over the export at 9:52.</p>
+<h2>A normal Thursday, afterwards</h2>
+<p>Picture the same morning, a few weeks on.</p>
+<p>The export lands in the folder. Mara drops it through a small routine that she trusts. Before anything is changed, she can see what <em>would</em> change. Afterwards there is a short note on the screen: this many rows tidied, this many odd values flagged, nothing deleted without her knowing.</p>
+<p>Then she opens the report. The total says what a total should say.</p>
+<p>It's 9:10. She makes tea. She reads the numbers once, with her actual brain, looking for what they <em>mean</em> instead of why they're broken. There's a dip on Tuesday that's worth mentioning. A product is doing quietly better than expected.</p>
+<p>By the time the call begins, she has something to say.</p>
+<p>That's what you're really buying back. It isn't the saved minutes, though those are nice. It's the shift from "please let it work" to "I already know it worked". Your Thursday becomes a Thursday again, and not a small exam.</p>
+<h2>If this is your Thursday</h2>
+<p>If you recognise the green triangles, the left-aligned numbers and the total that says zero five minutes before a call, you don't have a skills problem. You have a recurring chore with no home.</p>
+<p>There's a toolkit for exactly that kind of chore. <strong>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</strong> helps you clean messy CSV and Excel exports: duplicates, dates, phone numbers, encoding, splitting, merging and validation. It does a dry run first, so you see what would change, and then gives you a change report afterwards. It does need Python on your computer. If that sounds like too much, it's fine to skip it.</p>
+<p>If it sounds like the Thursday you want, you can have a look here: <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit</a>. Like everything we sell, it comes with a 30-day money-back promise. If it doesn't help, you get a full refund, no questions.</p>
+<p>The export will be messy again next week. It just doesn't have to be your problem at 9:52.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
