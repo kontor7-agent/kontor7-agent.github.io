@@ -1,0 +1,65 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mi copia de seguridad dejó de funcionar y no me di cuenta</title><meta name="description" content="Un martes a las 11:00 un cliente pide un archivo de hace semanas y descubres que tu copia automática llevaba tiempo parada. Una historia que reconocerás.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/copia-de-seguridad-automatica-dejo-de-funcionar"><meta property="og:title" content="Mi copia de seguridad dejó de funcionar y no me di cuenta">
+<meta property="og:description" content="Un martes a las 11:00 un cliente pide un archivo de hace semanas y descubres que tu copia automática llevaba tiempo parada. Una historia que reconocerás."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/backup-log-rotation-scripts.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Mi copia de seguridad dej\u00f3 de funcionar y no me di cuenta", "description": "Un martes a las 11:00 un cliente pide un archivo de hace semanas y descubres que tu copia autom\u00e1tica llevaba tiempo parada. Una historia que reconocer\u00e1s.", "datePublished": "2026-10-27", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/backup-log-rotation-scripts.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/copia-de-seguridad-automatica-dejo-de-funcionar"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Mi copia de seguridad dejó de funcionar y no me di cuenta</h1><p class='muted'>2026-10-27</p><p>Son las once y diez de la mañana de un martes. Estás en el coworking, con el café a medias, y el cliente te habla por videollamada.</p>
+<p>—Oye, Marta, ¿puedes pasarme los archivos del logo de la versión de julio? La que tenía el trazo más fino. Es que imprenta quiere esa.</p>
+<p>Sonríes. Dices «claro, ahora mismo te lo busco». Lo dices con la voz tranquila de quien tiene todo en su sitio.</p>
+<p>Pero esta mañana tu carpeta de proyectos no tiene esa versión. Debió de pisarse con una posterior, y eso no es grave. Para eso tienes la copia de seguridad automática, la que configuraste con tanto cuidado un domingo de primavera.</p>
+<h2>El disco que sí estaba, pero no del todo</h2>
+<p>Conectas el disco externo mientras el cliente espera y hace como que mira otra cosa. Abres la carpeta de copias.</p>
+<p>La última es de hace seis semanas.</p>
+<p>Te quedas mirando la fecha. Piensas que quizá es un error de visualización. Actualizas la ventana. Sigue ahí, igual de quieta.</p>
+<p>—¿Marta? ¿Me oyes? —dice el cliente.</p>
+<p>—Sí, sí, un segundo. Se me está cargando.</p>
+<p>Mientes un poco, y te da vergüenza. No por la mentira, que es pequeña. Es por la imagen que tenías de ti misma: la persona que lo tiene controlado, la que no es de las que se olvidan de cosas.</p>
+<p>Resulta que sí eras de las que se olvidan. Solo que esta vez no te enteraste.</p>
+<h2>Nadie te avisó, y ese es el problema</h2>
+<p>Por la noche, en casa, intentas reconstruir qué pasó. Tal vez fue una actualización del sistema. O el disco se desconectó un día y la tarea ya no encontró dónde escribir. O cambiaste de carpeta y el programa siguió buscando la antigua. No lo sabes con certeza, y esa es la parte que más pesa.</p>
+<p>Lo que sí sabes es que durante seis semanas trabajaste con una tranquilidad falsa. Cada tarde cerrabas el portátil pensando «ya está guardado». Cada vez que tomabas un café y una revisión se pasaba de largo, tenías la sensación de que algo, en algún lugar, estaba haciendo su trabajo por ti.</p>
+<p>No hacía nada. Y no gritó. Eso es lo que más cuesta aceptar: no hubo ningún aviso, ningún mensaje rojo, ninguna señal. Solo silencio, que de lejos se parece mucho a «todo va bien».</p>
+<p>Al día siguiente rehaces el logo desde un PDF antiguo que encontraste en un correo. Tardas tres horas. No las facturas, claro. ¿Cómo le explicas a un cliente que cobras por haber perdido tu propio archivo?</p>
+<h2>La pregunta que no te dejaba dormir</h2>
+<p>Esa semana descubres otra cosa, más incómoda. Entre las copias que faltan hay documentos de dos clientes, un presupuesto que enviaste y una hoja con tus horas de septiembre. Nada irrecuperable, esta vez. Pero la pregunta se queda dando vueltas:</p>
+<p><em>¿Y si hubiera sido el disco duro del portátil, y no un logo?</em></p>
+<p>No quieres vivir con miedo, y tampoco necesitas un drama. Solo quieres lo que tienen los negocios con alguien que se ocupa de esas cosas: la certeza de que, si algo falla, alguien se entera ese mismo día. Y ese alguien tampoco eres tú, repasando carpetas a mano cada lunes, porque eso no se sostiene cuando trabajas sola y tienes clientes, facturas y mil cosas más.</p>
+<h2>Otra manera de empezar la semana</h2>
+<p>Imagina un lunes distinto.</p>
+<p>Abres el portátil a las nueve, con el café al lado. Antes de mirar el correo, ves una línea pequeña en un registro: <em>copia terminada, domingo, 02:14, sin errores</em>. La lees en cinco segundos. Es casi aburrida, y justo por eso te gusta.</p>
+<p>Si algún domingo el disco no estuviera conectado, esa línea te lo diría. No hace falta que lo descubras seis semanas después, delante de un cliente, con la cámara encendida.</p>
+<p>También sabes que las copias antiguas siguen ahí, ordenadas, y que no se come el disco entero porque alguien decidió cuánto tiempo guardar cada una. Y que cuando un cliente te pida la versión de julio, la respuesta será «dame un minuto» y de verdad será un minuto.</p>
+<p>No es magia. Es una rutina pequeña que hace ruido cuando falla y se calla cuando todo va bien. Eso es todo lo que pides.</p>
+<h2>Lo que cambia por dentro</h2>
+<p>Lo curioso es que lo que se afloja no es solo la preocupación por los archivos. Es esa sensación de fondo, la de que algo se te está escapando y todavía no sabes qué. Cuando una cosa deja de ser una duda, hay más espacio para pensar en el trabajo bueno: en el diseño, en la llamada de mañana, en subir tus tarifas.</p>
+<p>Seguramente seguirás siendo de las que se olvidan de cosas, como todo el mundo. La diferencia es que tu sistema no se olvide contigo.</p>
+<h2>Si te has reconocido en Marta</h2>
+<p>Marta es un personaje inventado, pero la escena puede que no te resulte lejana: una fecha vieja en una carpeta, un cliente esperando y ese vuelco en el estómago.</p>
+<p>Si te apetece cerrar ese hueco, en Blixwerk hay unos scripts de copia de seguridad y rotación de logs para Windows (PowerShell) y Linux (Bash). Hacen copias incrementales, guardan cada versión el tiempo que decidas, tienen modo de prueba para ver qué harían antes de tocar nada y dejan un registro de cada ejecución. El producto está en inglés. Y si no te ayuda, tienes 30 días para pedir el reembolso completo, sin preguntas.</p>
+<p>👉 <a href="https://blixwerkstudio.com/p/backup-log-rotation-scripts">Backup &amp; Log Rotation Scripts</a></p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Backup &amp; Log Rotation Scripts (PowerShell + Bash) – Incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. Dry-run mode and a logfile for every run. <p><a class='btn' href='/p/backup-log-rotation-scripts'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
