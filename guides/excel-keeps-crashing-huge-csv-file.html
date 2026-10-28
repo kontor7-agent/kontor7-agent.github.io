@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Excel Keeps Crashing on a Huge CSV? The Replacement Bus</title><meta name="description" content="The spinner, the &#x27;Not Responding&#x27; bar, a call at 9:30. A calm story for anyone whose Excel keeps crashing when they open a huge CSV file.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/excel-keeps-crashing-huge-csv-file"><meta property="og:title" content="Excel Keeps Crashing on a Huge CSV? The Replacement Bus">
+<meta property="og:description" content="The spinner, the &#x27;Not Responding&#x27; bar, a call at 9:30. A calm story for anyone whose Excel keeps crashing when they open a huge CSV file."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Excel Keeps Crashing on a Huge CSV? The Replacement Bus", "description": "The spinner, the 'Not Responding' bar, a call at 9:30. A calm story for anyone whose Excel keeps crashing when they open a huge CSV file.", "datePublished": "2026-10-28", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/excel-keeps-crashing-huge-csv-file"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Excel Keeps Crashing on a Huge CSV? The Replacement Bus</h1><p class='muted'>2026-10-28</p><p>It is 8:05 on a Monday, and the train you wanted is a replacement bus.</p>
+<p>The seat is damp. Your laptop sits on your knees, balanced against the backpack of the person next to you. Rain runs sideways down the window. On the screen is a CSV file your client sent on Friday afternoon with the words "Just a quick look before Monday?"</p>
+<p>It is 600 megabytes.</p>
+<p>You double-click it. Excel thinks about it. The title bar turns white and says <em>Not Responding</em>. The little circle spins. The bus takes a corner and your stomach goes with it.</p>
+<p>The call is at 9:30.</p>
+<h2>The spinner that decides your morning</h2>
+<p>Let's call you Ines. You are a freelance consultant who helps small online shops understand their numbers. You are good at the thinking part. People say so. But the thinking part always starts with a file, and the file always has to open first.</p>
+<p>You wait. You tell yourself it is just slow. You move your thumb over the trackpad as if that might help.</p>
+<p>Then the window disappears. No message. Just your desktop, and the quiet feeling that you did this to yourself.</p>
+<p>You try again. This time Excel does open. A message says the file is too large for the grid and some data was not loaded. You scroll to the bottom. The last row ends in the middle of a line, as if the sentence was cut off.</p>
+<p>You don't know which part is missing. That is the part that bothers you most. Not the crash, but the possibility that you are about to talk confidently about numbers that are only <em>most</em> of the numbers.</p>
+<h2>What it quietly costs</h2>
+<p>Nobody puts this on an invoice.</p>
+<p>There is the half hour you spend nursing a program that doesn't want to cooperate. There is the nervous text you draft to the client: "Could you send it in smaller pieces?" It sounds like an excuse, so you delete it. There is the quiet thought that other people at your stage have a proper setup, a colleague, a tool, something. You have a laptop and a bus seat.</p>
+<p>And there is the story you tell yourself afterwards. <em>A real professional wouldn't be fighting a file at 8:20 on a Monday.</em></p>
+<p>That story is not true. But it is loud.</p>
+<p>You try the usual escapes. You close every other program. You try opening it with a different app. You try to "just delete the columns you don't need," which you can't, because you can't open the thing you'd be deleting from. It is a locked door with the key inside the room.</p>
+<p>The bus stops. Someone gets off. Someone else gets on, shaking an umbrella over your keyboard.</p>
+<h2>The sentence you hadn't thought of</h2>
+<p>Here is the turning point, and it is not dramatic.</p>
+<p>On the bus, it occurs to you that the problem might not be the file. The file is just a lot of rows, plain text, nothing mysterious. The problem is that you keep asking a spreadsheet to <em>hold</em> all of it at once, when what you need is to <em>look at</em> it, tidy it and hand it back in a size that a normal Monday can handle.</p>
+<p>Excel has a row limit of just over a million. Your client's export has no idea about that. It just keeps going.</p>
+<p>You think of a friend who once said, almost in passing, that she never opens big exports by hand any more. She cleans them first, quietly, before a human has to see them. Fixing dates, removing duplicates, sorting out strange characters, splitting the file into pieces that open without drama. A small script does it, with a preview of what it <em>would</em> change before it touches anything.</p>
+<p>You hadn't thought of it as something for you. It sounded like something for people with job titles that include the word "engineer".</p>
+<p>But the idea stays with you. Not as a to-do. As a relief. <em>It doesn't have to start with a crash.</em></p>
+<h2>The call, anyway</h2>
+<p>You get through the 9:30. You open with a question instead of a number: "Can I confirm what period this export covers?" It buys you time and it is honest. You ask for the file in two parts. The client says, "Oh, of course, sorry, it's enormous, isn't it?"</p>
+<p>It turns out nobody was judging you. Nobody ever is, as much as you imagine.</p>
+<h2>An ordinary Monday, later</h2>
+<p>Picture a different version of that morning.</p>
+<p>The bus is still damp and the rain is still sideways. But the file has been dropped onto a tool the night before. It has been checked, tidied and split into pieces with a short report beside it: this many duplicate rows removed, these dates fixed, these phone numbers made consistent. Nothing was changed without you seeing it first.</p>
+<p>You open the first piece. It opens like any other file. You sip your coffee. You start thinking about the actual question your client asked, which is the part you are paid for.</p>
+<p>That is all. No heroics, just a file that behaves.</p>
+<h2>If this was your Monday</h2>
+<p>If you recognise the spinner, the white title bar and the flat feeling of "why is this still hard?", you might like a calmer way in. Blixwerk has a small toolkit that cleans messy CSV and Excel exports in minutes: dedupe, fix dates and phone numbers, sort out encoding, split, merge and validate. It does a dry run first and gives you a change report, so you stay in charge.</p>
+<p>It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p><a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
