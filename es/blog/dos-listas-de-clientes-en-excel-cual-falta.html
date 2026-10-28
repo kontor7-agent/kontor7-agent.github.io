@@ -1,0 +1,66 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dos listas de clientes en Excel y no sé cuáles me faltan</title><meta name="description" content="El gestor llama el jueves y tienes dos listas de clientes en Excel que no coinciden. Una historia sobre ordenar lo que falta sin perder la mañana.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/dos-listas-de-clientes-en-excel-cual-falta"><meta property="og:title" content="Dos listas de clientes en Excel y no sé cuáles me faltan">
+<meta property="og:description" content="El gestor llama el jueves y tienes dos listas de clientes en Excel que no coinciden. Una historia sobre ordenar lo que falta sin perder la mañana."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Dos listas de clientes en Excel y no s\u00e9 cu\u00e1les me faltan", "description": "El gestor llama el jueves y tienes dos listas de clientes en Excel que no coinciden. Una historia sobre ordenar lo que falta sin perder la ma\u00f1ana.", "datePublished": "2026-10-28", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/dos-listas-de-clientes-en-excel-cual-falta"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Dos listas de clientes en Excel y no sé cuáles me faltan</h1><p class='muted'>2026-10-28</p><p>Jueves, 9:20 de la mañana. El café se enfría junto al teclado y tienes dos ventanas de Excel abiertas, una al lado de la otra.</p>
+<p>En la izquierda está la lista de clientes a los que has facturado este año. En la derecha, la que usas para escribirles: correos, teléfonos, cuándo les mandaste el último presupuesto.</p>
+<p>A las once tienes llamada con tu gestor. Quiere saber con quién has trabajado de verdad. Hacienda, el SAT o como se llame en tu país está ahí, de fondo, como cada trimestre. Pero lo que te aprieta el pecho es otra cosa: <em>estas dos listas no cuentan la misma historia.</em></p>
+<h2>Lo que ves cuando miras las dos listas</h2>
+<p>Imaginemos a Carolina. Es diseñadora gráfica y trabaja sola desde el cuarto del fondo de su piso. Lleva seis años por su cuenta y hace mucho que dejó de acordarse de todos sus clientes de memoria.</p>
+<p>En una lista hay 74 nombres. En la otra, 69. No sabe si faltan cinco o si faltan más y se compensan con otros que sobran.</p>
+<p>Empieza a mirar fila por fila, con el dedo en la pantalla como cuando era niña y leía despacio. «Panadería Ruiz». Sí, está. «Estudio Vela». Aquí aparece como «Vela Estudio». ¿Es el mismo? Creo que sí. «Ana M. Ferrer» y «Ferrer, Ana María». Probablemente.</p>
+<p>A los diez minutos ya no sabe por dónde iba.</p>
+<h2>El coste que no sale en ninguna factura</h2>
+<p>Lo raro es que nadie te lo cuenta: esto no es un problema de Excel. Es un problema de dignidad pequeña.</p>
+<p>Porque cuando no sabes quién falta en una lista, sospechas cosas. ¿Habré dejado de facturar a alguien? ¿Hay un cliente al que escribí hace un año y desapareció de mi radar? ¿Le debo una respuesta a alguien que ya me había pagado?</p>
+<p>Carolina se acuerda de una vez que mandó una promoción a un cliente que ya no trabajaba con ella, y de otra en que se olvidó por completo de felicitar a uno de los buenos. Nada grave. Pero cada despiste le dejaba una sensación fea: <em>no soy tan profesional como parezco.</em></p>
+<p>Y mientras tanto, la mañana se va. La que tenía reservada para diseñar, para contestar a esa clienta nueva, para salir a caminar antes de comer.</p>
+<h2>La llamada de las once</h2>
+<p>A las once menos diez, Carolina decide hacer lo que hace casi siempre: improvisar. Copia unos cuantos nombres de una lista a otra, tacha otros con los ojos medio cerrados y se promete que luego lo revisa bien.</p>
+<p>El gestor llama. Es amable, como siempre. Le pregunta por un cliente que aparece en una lista y no en la otra.</p>
+<p>—Espera, que lo miro —dice ella.</p>
+<p>Y se oye a sí misma decir «espera» por cuarta vez en la llamada. Escucha el teclado, escucha su respiración. Sabe que él no le está juzgando. Aun así, siente el calor en las orejas.</p>
+<p>Cuelga y se queda mirando la pantalla. No está enfadada con el gestor. Está cansada de sentir que lleva su negocio con cinta adhesiva.</p>
+<h2>El momento en que algo cambia de sitio</h2>
+<p>Esa tarde, mientras recoge la taza fría, le viene un pensamiento sencillo, casi aburrido: <em>esto no tendría que hacerlo yo con los ojos.</em></p>
+<p>No hace falta ser programadora ni tener un máster en datos. Hace falta que alguien, o algo, compare las dos listas por ti, te diga con calma «estos están en una y no en la otra» y te deje decidir qué hacer con cada caso. Sin tocar tus originales. Sin sorpresas.</p>
+<p>Es una idea pequeña. Pero cuando la piensas, sientes que por fin cabe aire en la habitación.</p>
+<h2>Un jueves distinto</h2>
+<p>Ahora imagina otro jueves.</p>
+<p>Son las 9:20, el café sigue caliente porque nadie lo ha abandonado. Abres las dos listas, las dejas comparar y, en un rato corto, tienes delante algo parecido a una nota ordenada: estos clientes aparecen en las dos, estos solo en una, estos tal vez sean el mismo con el nombre escrito distinto.</p>
+<p>Tú decides. Revisas los dudosos con la cabeza clara, no con el dedo en la pantalla. Corriges lo que haya que corregir.</p>
+<p>A las once llega la llamada del gestor y lo único que dices es:</p>
+<p>—Sí, te lo mando ahora mismo.</p>
+<p>Cuelgas. Te sobran veinte minutos. Sales a la calle, compras pan, y por primera vez en la semana no vas pensando en listas.</p>
+<p>Así se siente tener los datos en orden: no es magia, es no cargar con un fondo de ruido que ni sabías que llevabas encima.</p>
+<h2>Si te has reconocido en Carolina</h2>
+<p>Carolina es un personaje ilustrativo, no una clienta real. Pero la escena seguro que te suena: dos listas, una duda y la sensación de que deberías tenerlo más controlado.</p>
+<p>Si quieres una forma tranquila de dejar de hacerlo a ojo, en Blixwerk hemos preparado <strong><a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a></strong>. Sirve para limpiar exportaciones desordenadas de CSV y Excel: duplicados, fechas, teléfonos, codificación, separar y unir columnas, validar. Antes de cambiar nada te enseña lo que haría (una simulación previa) y después te deja un informe de cambios. La herramienta y su guía están en inglés. Y si no te ayuda, tienes 30 días para pedir que te devolvamos el dinero, sin preguntas.</p>
+<p>Y si hoy no es el día, también está bien. Solo recuerda esto: no tienes que acordarte de todo. Para eso están los sistemas.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
