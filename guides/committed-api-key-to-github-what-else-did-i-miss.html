@@ -1,0 +1,69 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Committed an API Key to GitHub? What Else Did I Miss?</title><meta name="description" content="You pushed an API key to GitHub and fixed it in minutes. The real question is what else you missed. A quiet story from under the salon foils.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/committed-api-key-to-github-what-else-did-i-miss"><meta property="og:title" content="Committed an API Key to GitHub? What Else Did I Miss?">
+<meta property="og:description" content="You pushed an API key to GitHub and fixed it in minutes. The real question is what else you missed. A quiet story from under the salon foils."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Committed an API Key to GitHub? What Else Did I Miss?", "description": "You pushed an API key to GitHub and fixed it in minutes. The real question is what else you missed. A quiet story from under the salon foils.", "datePublished": "2026-10-28", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/committed-api-key-to-github-what-else-did-i-miss"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Committed an API Key to GitHub? What Else Did I Miss?</h1><p class='muted'>2026-10-28</p><p>The foils are cold on your scalp and the stylist has just said, "Twenty minutes, then we rinse."</p>
+<p>You reach for your phone, because twenty minutes is twenty minutes. There is one new email. The subject line starts with the word <em>Alert</em>, and it is from GitHub.</p>
+<p>Your stomach does something small and unpleasant.</p>
+<p>A secret was detected in your repository. An API key. The one you pasted into a config file on Thursday, "just for now, to see if it works". The one you meant to move into an environment variable before the commit.</p>
+<p>You did not move it before the commit.</p>
+<h2>The part that takes four minutes</h2>
+<p>Let's call you Mira. You build small web backends for two or three clients, mostly Node and Express, sometimes a bit of Python. You work alone. There is no security team, no colleague to say "oh, that happens to everyone".</p>
+<p>Sitting in the chair with a cape over your shoulders, you do the quick part. You open the provider's dashboard on your phone, revoke the key and create a new one. The stylist politely pretends not to notice your face.</p>
+<p>The key is dead. The alert is dealt with. Technically, the problem is over.</p>
+<p>But your pulse has not caught up with that.</p>
+<h2>The question underneath the question</h2>
+<p>The leaked key was never the real worry. The real worry sits right behind it, and it is quieter:</p>
+<p><em>If I did that, what else did I do?</em></p>
+<p>Is there another secret in an old branch? Did the staging server ever get locked down properly? Does that one route you wrote in a hurry in March check who is calling it? Did you ever test what happens when someone sends it something strange?</p>
+<p>You honestly don't know. That is the uncomfortable bit. You are not careless. You are careful in the places you remember to be careful. The gaps are exactly the places you forgot, and by definition you don't remember them.</p>
+<p>So the mind starts scrolling through the project like a hallway of closed doors, trying handles at random.</p>
+<h2>What it quietly costs</h2>
+<p>Nobody puts this on an invoice, but it has a price.</p>
+<p>It is the half-attention you give the client call at two o'clock, because part of you is still checking the repo in your head. It is the Saturday walk where you almost turn back to open the laptop. It is the slightly too vague answer when a client asks, "Is the API secure?" and you hear yourself say, "Yes, I think so."</p>
+<p><em>I think so.</em> Two words that make a professional feel like someone winging it.</p>
+<p>You rinse. You dry. You pay. You sit in the car outside with the engine off and the phone in your hand, and you do not drive for a minute.</p>
+<h2>The turning point is smaller than you expect</h2>
+<p>Here is what changes things, and it is not a heroic weekend of auditing.</p>
+<p>It is realising that you have been trying to answer "what did I miss?" from memory. Memory is the one tool that already failed you on Thursday.</p>
+<p>The answer was never going to be a bigger worry. It is a list. A plain, finite, written-down list that someone sensible has already thought through, so you are not inventing your own paranoia at 2 a.m. You go through it item by item, tick what is fine, note what isn't, and at the end you <em>know</em>. Not "I think so". Know.</p>
+<p>The unknown stops being a hallway of closed doors and becomes a page with a number at the bottom.</p>
+<h2>A different Monday</h2>
+<p>Picture the same week, with that list in your hands.</p>
+<p>It is Monday, around ten. Coffee is still warm. You open a single tracker, and most of the rows already have a calm little tick. Two are marked <em>to fix</em>. One of them is the route from March, and it takes you forty minutes, not a lost weekend. You were going to fix it anyway. Now you know it exists.</p>
+<p>The leaked key still happened. It is a tiny line in your notes now: <em>rotated, checked, done</em>. It is no longer a verdict on you as a developer.</p>
+<p>Then the client calls and asks the old question: "Is the API secure?"</p>
+<p>You can say, evenly, "I've been through a full review. Here's what I checked, and here's the short report." There is no pause where the doubt used to be. You sound like what you actually are, a professional who looks after their work.</p>
+<p>Afterwards you close the laptop at six. The evening is yours.</p>
+<h2>If you recognise yourself</h2>
+<p>That feeling, of fixing the visible thing and still wondering about the invisible ones, is exactly what we had in mind when we put together the <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong>. It is a 58-item review for Node/Express and Python APIs, with a PDF, an XLSX tracker, curl tests, a script that scans your auth routes, and a client report template. You work through it at your own pace and finish with a clear picture instead of a hunch.</p>
+<p>It is a tool for organising your review. It does not replace a professional security audit when your project calls for one. It is covered by a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>If this story felt a bit too familiar, you can <a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">take a look at the kit here</a>.</p>
+<p>And whatever you decide, the key is already revoked. That was the hard part. The rest can be calm.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
