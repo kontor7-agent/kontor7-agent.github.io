@@ -1,0 +1,72 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Separar la dirección en Excel: 5000 filas y una llamada</title><meta name="description" content="Tienes 5000 direcciones en una sola celda y el cliente espera a las 11. Una historia para quien no logra separarlas en columnas en Excel.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/separar-direccion-en-columnas-excel-5000-filas"><meta property="og:title" content="Separar la dirección en Excel: 5000 filas y una llamada">
+<meta property="og:description" content="Tienes 5000 direcciones en una sola celda y el cliente espera a las 11. Una historia para quien no logra separarlas en columnas en Excel."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Separar la direcci\u00f3n en Excel: 5000 filas y una llamada", "description": "Tienes 5000 direcciones en una sola celda y el cliente espera a las 11. Una historia para quien no logra separarlas en columnas en Excel.", "datePublished": "2026-10-28", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/separar-direccion-en-columnas-excel-5000-filas"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Separar la dirección en Excel: 5000 filas y una llamada</h1><p class='muted'>2026-10-28</p><p>Son las 10:12 de un martes y tienes una llamada a las 11.</p>
+<p>En la pantalla, una hoja de Excel con 5000 filas. En la columna B, las direcciones. Todas en una sola celda: calle, número, piso, código postal, ciudad. A veces con comas, a veces con guiones, a veces con nada.</p>
+<p><em>Calle Mayor 14, 2º B, 28013 Madrid.</em></p>
+<p><em>Av. de la Constitución, 3 - 41004 Sevilla.</em></p>
+<p><em>Pza Mayor s/n 37002 Salamanca.</em></p>
+<p>Te llamas Irene. Eres asistente virtual y llevas tres años trabajando por tu cuenta. Esta persona es una de esas, ilustrativa, que seguro conoces. Su cliente tiene una tienda online de plantas y necesita subir esa lista a la plataforma de envíos. La plataforma pide cada dato en su columna. Y tú, por más que miras la hoja, solo piensas una cosa:</p>
+<p><em>¿Cómo separo esto sin tocar 5000 filas una por una?</em></p>
+<h2>La tarde que ya te imaginas</h2>
+<p>Has probado lo que se te ha ocurrido. Has buscado en internet. Has abierto tres pestañas con respuestas que funcionan para la dirección número uno y se rompen en la dos. Una te corta el piso en dos mitades. Otra deja la ciudad pegada al código postal. Otra se come las filas donde alguien escribió "s/n".</p>
+<p>Has hecho la cuenta mental, que es la peor de todas. Si arreglas diez filas por minuto, y no llegas, son más de ocho horas. Una jornada entera. Y el cliente no sabe que existe ese problema; solo ve que hoy le dijiste "te lo paso a lo largo de la mañana".</p>
+<p>Te tiembla un poco la mano en el ratón. No es drama. Es esa mezcla de prisa y vergüenza pequeña de quien no quiere decir <em>no sé cómo hacerlo</em>, porque se supone que esto es justo lo que sabes hacer.</p>
+<h2>Lo que cuesta, y casi nadie cuenta</h2>
+<p>No es solo el tiempo. Es lo que viene detrás.</p>
+<p>Es abrir la llamada de las 11 con la cámara puesta y la sonrisa de "todo controlado", mientras por dentro haces cálculos de a qué hora cenarás. Es pensar en cobrar esas horas extra y no atreverte, porque "ha sido cosa tuya no saber". Es mirar el reloj en el supermercado, en la cola, con el móvil en la mano, por si el cliente escribe.</p>
+<p>Y es esa duda silenciosa: <em>¿una profesional de verdad lo habría resuelto en cinco minutos?</em></p>
+<p>No lo sabes. Pero la duda pesa más que el archivo.</p>
+<h2>La llamada</h2>
+<p>A las 11:02 el cliente, Álvaro, aparece en pantalla con una taza de café y un fondo lleno de macetas.</p>
+<p>—¿Qué tal la lista? —pregunta, simpático.</p>
+<p>Respiras. Y por primera vez esta mañana dices la verdad, sin adornos:</p>
+<p>—Las direcciones están todas en una celda y hay muchos formatos distintos. Si lo hago a mano me llevaría un día. Dame hasta mañana y te lo dejo limpio, con un resumen de lo que he cambiado.</p>
+<p>Él se encoge de hombros.</p>
+<p>—Sin problema. Mañana vale. Solo que no se me cuelen envíos mal.</p>
+<p>Eso es todo. Sin drama, sin sermón. Cuelgas y te quedas mirando el techo un segundo. Pasaste media hora sufriendo por una conversación que duró dos minutos.</p>
+<h2>El giro</h2>
+<p>Lo que cambia ahí no es la hoja de Excel. Es la forma de mirarla.</p>
+<p>De repente ves que este no es un problema tuyo, ni de tu cabeza, ni de que "no sepas lo suficiente". Es un problema repetitivo: mucha gente lo tiene, cada semana, con otras listas. Direcciones, teléfonos, nombres, fechas. Datos que llegan desordenados porque los escribieron personas distintas en momentos distintos.</p>
+<p>Y los problemas repetitivos tienen un rasgo bueno: se pueden dejar de resolver a mano.</p>
+<p>No hace falta que te lo expliquen paso a paso aquí. Basta con intuir que existe una forma más tranquila: una herramienta que hace el trabajo pesado, te enseña antes qué va a cambiar y, al terminar, te deja un informe claro de lo que tocó. Sin sorpresas. Sin tener que fiarte a ciegas.</p>
+<h2>Un martes distinto</h2>
+<p>Imagina el mismo martes, con otra mañana.</p>
+<p>A las 9:30 abres el archivo. Tomas un café de verdad, caliente, sentada. Lanzas la limpieza y mientras tanto contestas dos correos y riegas la planta de la ventana.</p>
+<p>Cuando vuelves, la hoja está en orden: calle en su columna, número en la suya, código postal, ciudad. Las filas raras, las pocas que no se pudieron separar con seguridad, aparecen marcadas aparte para que las mires tú, con calma, en cinco minutos y no en ocho horas.</p>
+<p>A las 11 tienes la llamada. Esta vez no hay nudo en el estómago. Compartes pantalla, dices "aquí lo tienes, y aquí el resumen de cambios", y Álvaro asiente.</p>
+<p>A las 12 has terminado. Sales a comer a una hora normal. A las seis cierras el portátil y la tarde es tuya.</p>
+<p>Eso es todo lo que cambia. No es magia. Es recuperar un día entero que tenía otro destino.</p>
+<h2>Si te has reconocido</h2>
+<p>Si alguna vez has mirado una columna de datos mezclados con ganas de llorar un poquito, no eres mala en tu trabajo. Estás haciendo a mano algo que nunca debió hacerse a mano.</p>
+<p>Para gente como tú existe <em>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</em>. Limpia exportaciones desordenadas de CSV y Excel: duplicados, fechas, teléfonos, codificación, separar y unir columnas, validar. Antes de tocar nada hace una simulación, y al final te da un informe de cambios. Es un kit en Python y está en inglés. Si no te ayuda, tienes 30 días para pedir el reembolso completo, sin preguntas.</p>
+<p>Puedes verlo aquí, cuando quieras: <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a></p>
+<p>Y si hoy solo necesitabas saber que no eres la única con 5000 filas y una llamada a las 11: no lo eres.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
