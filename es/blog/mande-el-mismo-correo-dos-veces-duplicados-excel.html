@@ -1,0 +1,61 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mandé el mismo correo dos veces por duplicados en Excel</title><meta name="description" content="Dos correos idénticos a tus clientes y la vergüenza en la cola del súper. Una historia sobre duplicados en Excel y cómo volver a respirar.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/mande-el-mismo-correo-dos-veces-duplicados-excel"><meta property="og:title" content="Mandé el mismo correo dos veces por duplicados en Excel">
+<meta property="og:description" content="Dos correos idénticos a tus clientes y la vergüenza en la cola del súper. Una historia sobre duplicados en Excel y cómo volver a respirar."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Mand\u00e9 el mismo correo dos veces por duplicados en Excel", "description": "Dos correos id\u00e9nticos a tus clientes y la verg\u00fcenza en la cola del s\u00faper. Una historia sobre duplicados en Excel y c\u00f3mo volver a respirar.", "datePublished": "2026-10-29", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/mande-el-mismo-correo-dos-veces-duplicados-excel"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Mandé el mismo correo dos veces por duplicados en Excel</h1><p class='muted'>2026-10-29</p><p>Jueves, 11:40. Estás en la cola del súper con una bolsa de naranjas y el móvil en la mano. Vibra una vez. Vibra otra. Es la tercera respuesta en diez minutos.</p>
+<p>«Hola Irene, creo que me lo has mandado dos veces 😊».</p>
+<p>«Me ha llegado repetido, ¿todo bien?».</p>
+<p>«Jajaja, ya lo había leído».</p>
+<p>Te quedas mirando la pantalla. La cajera te dice algo, pero no la oyes. Solo piensas en una cosa: <em>dos veces</em>. El correo con el aviso de tus nuevas fechas de reserva, el que llevabas semanas posponiendo, salió duplicado a una parte de tus clientes. Justo a los de siempre, los que más te importan.</p>
+<h2>El calor que te sube por el cuello</h2>
+<p>Pagas, sales y te sientas en un banco, con las naranjas en el regazo. Abres el portátil en el móvil como puedes y buscas el culpable. Tarda poco en aparecer.</p>
+<p>«Laura Gómez». Y más abajo, «laura gomez ». Y otra vez, «LAURA GÓMEZ», con otro correo, el antiguo, el que dejó de usar hace dos años. Tres filas para una sola persona. Tu lista, que empezó siendo una hoja ordenada, lleva años creciendo a trompicones: contactos de un evento, de una exportación vieja, de aquella hoja que te pasó un colaborador.</p>
+<p>No es que no lo supieras. Cada vez que la abrías, algo te decía que ahí había duplicados. Pero siempre había algo más urgente: una factura, una entrega, una llamada. «Ya la limpiaré cuando tenga un hueco».</p>
+<p>El hueco no llegó. Y ahora tus clientes lo han visto.</p>
+<p>Lo que más duele no es el error en sí. Es la sensación de que te has quedado a medio camino entre una persona organizada y alguien que va improvisando. Esa vocecita que dice: <em>una profesional de verdad no mandaría dos veces el mismo correo</em>.</p>
+<h2>Lo que nadie ve de un error pequeño</h2>
+<p>Por la tarde escribes un mensaje de disculpa. Lo borras. Lo reescribes más corto. Lo vuelves a borrar. Demasiado serio, demasiado ligero, demasiado explicativo. Al final mandas una línea simpática a quienes te contestaron y dejas a los demás en paz.</p>
+<p>Nadie se enfada. Eso es lo raro. Nadie te dice nada feo. Pero tú pasas la tarde con un nudo en el estómago y revisando la bandeja de salida cada diez minutos, como si el mensaje pudiera volver a salir solo.</p>
+<p>Y aparece el otro cálculo, el que haces en voz baja: si esto me pasa con un correo, ¿qué más se me está escapando? ¿A cuántos clientes no les llegó nada porque el correo estaba mal escrito? ¿A quién llamé dos veces por la misma cosa? ¿Hay alguien en esa lista que ya ni siquiera trabaja conmigo?</p>
+<p>No hay Hacienda ni SAT en esta historia, ni plazos, ni multas. Solo hay una lista de gente que confía en ti, y la incómoda sospecha de que no la estás cuidando como te gustaría.</p>
+<h2>El momento en que algo cambia</h2>
+<p>El viernes por la mañana, con el café todavía caliente, abres la hoja sin prisa. Ya no es una emergencia. Es solo tu lista, tus clientes, tu negocio.</p>
+<p>Y te pasa una idea sencilla por la cabeza: <em>esto no tendría que depender de mi atención a las once de la noche, ni de mi memoria, ni de mi buena suerte.</em></p>
+<p>No hace falta ser técnica. No hace falta aprender fórmulas nuevas ni pasar un fin de semana entero peleando con filtros. Lo que hace falta es que la limpieza deje de ser una tarea heroica y se convierta en un paso normal, como guardar un archivo. Algo que se repite igual cada vez, que te enseña qué va a cambiar antes de tocar nada, y que te deja un resumen claro de lo que ha hecho.</p>
+<p>Cuando lo piensas así, la vergüenza empieza a aflojar. Lo de ayer no fue un fallo de carácter. Fue una lista sin cuidar y un proceso que nunca existió.</p>
+<h2>Un lunes distinto</h2>
+<p>Imagina el próximo lunes. Son las nueve y diez. Tienes el café al lado y la lista de contactos abierta. La exportación nueva ya está limpia: cada persona aparece una vez, los nombres tienen el mismo formato, los correos antiguos están separados.</p>
+<p>Preparas el aviso de las nuevas fechas. Pulsas enviar. Y no pasa nada. Ni una respuesta con emoji sonriente, ni un «creo que me lo mandaste dos veces». Solo un par de personas que escriben para reservar.</p>
+<p>Sales a comprar naranjas y el móvil se queda en el bolsillo. Haces la cola sin mirar la pantalla. Es un detalle pequeño, pero es la diferencia entre ir con el estómago encogido y ir con la cabeza libre.</p>
+<p>Eso es lo que cambia cuando tus datos dejan de ser un riesgo escondido: no ganas horas espectaculares, ganas tranquilidad. Y la tranquilidad se nota en cómo escribes a tus clientes, en cómo hablas de tu trabajo y en cómo cierras el portátil.</p>
+<h2>Si te has reconocido en Irene</h2>
+<p>Irene es un personaje inventado, pero la escena seguro que te suena: una lista que fue creciendo sola, un envío que salió mal y esa vergüenza que dura más que el error.</p>
+<p>Si quieres dejar de vivir con esa sospecha, hay una herramienta pensada justo para esto: <strong>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</strong>. Limpia exportaciones desordenadas (duplicados, fechas, teléfonos, codificación) y te deja ver los cambios antes de aplicarlos. Está en inglés, y necesitas tener Python instalado. Tiene 30 días de garantía de devolución: si no te ayuda, te devolvemos el dinero sin preguntas.</p>
+<p>👉 <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Échale un vistazo a Clean Data in Minutes</a></p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
