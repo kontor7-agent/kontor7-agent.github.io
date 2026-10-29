@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inherited an API, Is It Secure? The Fuse Box Viewing</title><meta name="description" content="The developer left, the API is yours, and nobody can say if it&#x27;s secure. A quiet story about the doubt of inherited code, and how it eases.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/inherited-api-from-developer-who-left-is-it-secure"><meta property="og:title" content="Inherited an API, Is It Secure? The Fuse Box Viewing">
+<meta property="og:description" content="The developer left, the API is yours, and nobody can say if it&#x27;s secure. A quiet story about the doubt of inherited code, and how it eases."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Inherited an API, Is It Secure? The Fuse Box Viewing", "description": "The developer left, the API is yours, and nobody can say if it's secure. A quiet story about the doubt of inherited code, and how it eases.", "datePublished": "2026-10-29", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/inherited-api-from-developer-who-left-is-it-secure"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Inherited an API, Is It Secure? The Fuse Box Viewing</h1><p class='muted'>2026-10-29</p><p>It is Saturday, 10:40, and you are standing in a stranger's hallway.</p>
+<p>You came to see a flat. The agent is talking about parquet floors. You are looking at the small grey door under the stairs, because you opened it a minute ago and found the fuse box. Nothing in it was labelled. Eleven switches, no names.</p>
+<p>"The previous owner didn't leave much paperwork," the agent says, cheerfully. "But it's all been fine for years."</p>
+<p>And your stomach does something you recognise. Not because of the flat. Because of Monday.</p>
+<h2>The thing you inherited in March</h2>
+<p>Let's call you Jonas. Three weeks ago a client's developer left. He was kind about it, even left a note. The note said: <em>API is in the repo, deploy script is in the README, ask if anything breaks.</em></p>
+<p>He can't be asked now. He started somewhere new and his old email bounces.</p>
+<p>So the API is yours. It handles logins, customer records, a few payment-adjacent calls. It has been running for two years, and nobody has complained. That is the entire security report you have: nobody has complained.</p>
+<p>You don't know who wrote which route. You don't know why one endpoint takes an ID in the URL and trusts it. You don't know whether the staging keys in the old config are still alive somewhere. You have a feeling about that one folder named <code>old_</code> something. You have not opened it again since the first day.</p>
+<h2>What it quietly costs</h2>
+<p>Nobody is shouting. That is what makes it hard.</p>
+<p>It costs a little every day. You open the project on Tuesday morning and close it again after reading only the parts you need. You add a feature on top of a floor you haven't tested. When the client says, lightly, "we're fine on security, right?", you hear yourself say, "As far as I can tell," and the words taste like cardboard.</p>
+<p>It costs your Sunday lunch, too. You sit with people you love and half of you is in a folder, wondering what is behind the unlabelled switches.</p>
+<p>And there is a smaller shame under it. A real professional would just <em>know</em>. A real professional would have a way of looking. You are good at your work. But being good at building is not the same as having a calm, repeatable way of checking what someone else built.</p>
+<h2>The agent's cheerful voice</h2>
+<p>Back in the hallway, the agent is still talking. You hear yourself ask, almost without meaning to, "Could we have the electrics inspected before any offer?"</p>
+<p>"Oh, of course. Most people do."</p>
+<p>Most people do.</p>
+<p>You stand there with that sentence. Nobody here thinks it is strange or paranoid to say <em>I'd like someone to go through this properly before I trust it.</em> Nobody takes it as an insult to the previous owner. It is simply what you do with a thing you did not build and now live in.</p>
+<p>You have never given your inherited code the same courtesy.</p>
+<h2>The turning point, on the pavement</h2>
+<p>Outside, waiting for the tram, you open your notes app and type one line: <em>Review the API like a survey, not like a panic.</em></p>
+<p>That is all it takes. A survey has an order. It goes room by room. It writes down what it finds, including the boring <em>this is fine</em>. It does not need you to be a security genius. It needs a list, a calm hour, and somewhere to record what you saw, so that next month's version of you does not start from zero.</p>
+<p>Someone could even hand you that list. The thought is almost funny. You have been treating this as a personal test of nerve, when it can be a checklist job.</p>
+<h2>A Monday that feels different</h2>
+<p>Picture the next Monday.</p>
+<p>You open the project with coffee, not dread. There is a sheet beside it, and some of its rows are already ticked. A few say <em>needs a closer look</em>, with a date next to them. None of that is frightening. A short, honest list of things to fix is easier to carry than a large, fuzzy worry.</p>
+<p>When the client asks, "We're fine on security, right?", you do not reach for cardboard words. You say, "I've been through it properly. Here's what's solid, here's what I'm tightening this week." Your voice is level. They relax, because you do.</p>
+<p>And on Sunday, at lunch, you are at the table. Just at the table.</p>
+<h2>If you recognise yourself</h2>
+<p>If you have inherited an API and the honest answer to "is it secure?" is "I think so, nobody's complained", you are in good company. It says nothing about your skill. It means nobody gave you a way to look.</p>
+<p>We made the <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong> for that moment. It is a 58-item review kit with a PDF and an XLSX tracker, curl tests you can run yourself, an auth-route scanner script, and a client report template. It covers Node/Express and Python. It is a tool for organising your review, not a guarantee, and it does not replace a professional security audit when your situation calls for one. It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>If it sounds like the survey you have been meaning to book, you can <a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">take a look here</a>.</p>
+<p>Either way, label the switches. Future you will be grateful.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
