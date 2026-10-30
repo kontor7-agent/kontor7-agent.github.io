@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>No Rate Limiting on Your API? The Honey Stall Queue</title><meta name="description" content="Launch is Monday and your API has no rate limiting. A Saturday-morning story about the knot in your stomach, and how a calm review can loosen it.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/no-rate-limiting-api-launch-monday"><meta property="og:title" content="No Rate Limiting on Your API? The Honey Stall Queue">
+<meta property="og:description" content="Launch is Monday and your API has no rate limiting. A Saturday-morning story about the knot in your stomach, and how a calm review can loosen it."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "No Rate Limiting on Your API? The Honey Stall Queue", "description": "Launch is Monday and your API has no rate limiting. A Saturday-morning story about the knot in your stomach, and how a calm review can loosen it.", "datePublished": "2026-10-30", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/no-rate-limiting-api-launch-monday"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>No Rate Limiting on Your API? The Honey Stall Queue</h1><p class='muted'>2026-10-30</p><p>The queue at the honey stall is eleven people long, and you are number nine.</p>
+<p>It is Saturday, 9:20. Your tote bag is empty, your phone is in your hand, and you are not looking at honey. You are looking at the notes app where you keep your launch list. Every line is crossed out except one you typed at 2 a.m. on Thursday: <strong>rate limiting?</strong></p>
+<p>The question mark is the problem.</p>
+<p>You built the API for a small client, a physiotherapy practice that wants online booking. It works. Login works. Bookings work. The client has already told three patients that the new system starts on Monday.</p>
+<p>But nothing stops one script from hitting the login route ten thousand times. Nothing stops anyone from hammering the booking endpoint until the server gives up. You know this the way you know a tap is dripping. You hear it all the time now.</p>
+<h2>The thought that follows you round the market</h2>
+<p>You buy a jar of honey you don't need. You walk past the cheese stall, the bread stall, the man selling dahlias in buckets, and the whole way your head runs the same loop.</p>
+<p><em>Am I in trouble? Is this the kind of thing that ends a launch? Or the kind of thing everyone ships without and fixes in week two?</em></p>
+<p>You don't know. That is what makes it heavy. Not knowing the answer, and not knowing who to ask without admitting you didn't think of it sooner.</p>
+<p>You are a freelancer, so there is no security team down the corridor. No colleague to lean over and say, "Oh, that one's fine, just put it on the list." There is you, a laptop, and a client who trusts you because you sounded sure in the first meeting.</p>
+<p>So the worry comes in quietly and sits next to the other ones:</p>
+<ul>
+<li>What if there are three more things like this and you only noticed one?</li>
+<li>What if you spend the whole weekend patching, and Monday still feels shaky?</li>
+<li>What if the first thing the client ever sees from your work is an error page?</li>
+</ul>
+<p>None of it is dramatic. It is just a low, steady hum, and it costs you the weekend. You nod at your partner's story about the neighbour's fence and hear none of it.</p>
+<h2>What you are actually afraid of</h2>
+<p>It is rarely the one missing item. It is not having the whole picture.</p>
+<p>A missing rate limit is a fixable thing. You could probably add something sensible in an afternoon. What keeps you up is the suspicion that it is only the first thing you happened to notice. Without a list, every gap feels like a sign of ten more.</p>
+<p>And you can't tell the difference between <em>this is a normal gap, everyone has them</em> and <em>this is the one that matters</em>, because you have never looked at the whole thing in order, from start to finish, with someone else's checklist in hand.</p>
+<p>So you do what tired people do. You look at it in fragments, at odd hours, between other tasks, and you never get the feeling of <em>done</em>.</p>
+<h2>The turn, somewhere near the bread stall</h2>
+<p>You stop beside a table of sourdough, and a plain thought arrives.</p>
+<p>You don't need to feel certain about everything. You need to know what <em>everything</em> is.</p>
+<p>A finite list changes the shape of a worry. Fifty-odd things you can see are a smaller problem than an unnamed fog. Some will be fine already. Some will be a ten-minute fix. A few will be "not before Monday, but written down, with a date." And a written-down gap is a decision you made, not a surprise waiting for you.</p>
+<p>That is the difference between launching nervously and launching with your eyes open.</p>
+<p>You also realise something kinder. Having no rate limiting doesn't mean you are careless. It means you are one person who built a whole system alone, and nobody handed you the list.</p>
+<h2>A different Monday</h2>
+<p>Picture it.</p>
+<p>It is Monday, 8:40, and your coffee is still warm. The client messages: <em>Ready when you are.</em> You open the tracker. Most rows are green. Two are amber, with a note in your own words: <em>add after launch, due Thursday.</em> One was red on Saturday and isn't any more.</p>
+<p>No part of you is guessing.</p>
+<p>When the practice owner asks, a little nervously, "Is it all safe?", you don't say "I think so." You say what you checked, what you left for later, and why. You sound like someone who runs a real business, because you do.</p>
+<p>The launch happens. A patient books a Tuesday appointment. The server hums along. You go and make lunch.</p>
+<p>Nothing in that picture is heroic. It is just calm, and calm is what you were really shopping for this whole time.</p>
+<h2>Back to the honey</h2>
+<p>Walking home, the jar knocking against your hip, you decide the weekend is not for panic. It is for one slow, orderly pass through everything, rate limiting included, so that on Monday you know where you stand.</p>
+<p>If that sounds like what you need, there is a kit made for exactly this moment. <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong> is a 58-item API review kit: a PDF and an XLSX tracker, curl tests, an auth-route scanner script and a client report template, for Node/Express and Python. It was made with AI, checked automatically and refined by real use. It is a way to organise your review, not a guarantee and not a replacement for a professional audit when the stakes call for one. It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>If you recognise yourself in the queue at the honey stall, you can have a look here: <a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">REST API Security Checklist Kit</a></p>
+<p>Either way, put the phone away for a minute. Smell the bread. You are allowed to launch on Monday.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>

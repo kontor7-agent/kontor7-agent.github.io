@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pandas Won&#x27;t Convert CSV Prices? The Rental Flat Balcony</title><meta name="description" content="€1.299,00, $1,299.00, &#x27;approx 1299 EUR&#x27; and pandas says no. A holiday that isn&#x27;t one, and the calm of a price column that finally behaves.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/pandas-csv-prices-mixed-currency-formats-cant-convert"><meta property="og:title" content="Pandas Won&#x27;t Convert CSV Prices? The Rental Flat Balcony">
+<meta property="og:description" content="€1.299,00, $1,299.00, &#x27;approx 1299 EUR&#x27; and pandas says no. A holiday that isn&#x27;t one, and the calm of a price column that finally behaves."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Pandas Won't Convert CSV Prices? The Rental Flat Balcony", "description": "\u20ac1.299,00, $1,299.00, 'approx 1299 EUR' and pandas says no. A holiday that isn't one, and the calm of a price column that finally behaves.", "datePublished": "2026-10-30", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/pandas-csv-prices-mixed-currency-formats-cant-convert"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Pandas Won&#x27;t Convert CSV Prices? The Rental Flat Balcony</h1><p class='muted'>2026-10-30</p><p>The balcony table is sticky from someone else's breakfast. The laptop sits on a beach towel so it doesn't slide. Somewhere below, a child is shrieking happily in a pool you haven't been in yet.</p>
+<p>It's Wednesday, 14:10, day three of the week off. The week that was supposed to be a holiday.</p>
+<p>On the screen, a red line you know too well:</p>
+<p><code>ValueError: could not convert string to float</code></p>
+<p>You only opened the laptop to check one thing. A client's supplier sent a new price list that morning, and the project needs it in tomorrow's report. You told yourself it would take ten minutes.</p>
+<h2>The column that looks like numbers</h2>
+<p>You scroll through the price column. It looks fine from a distance. Up close, it is a small zoo.</p>
+<p><code>€1.299,00</code> sits next to <code>$1,299.00</code>. Below it: <code>1299 EUR</code>. Then <code>approx. 1 299</code>. Then <code>12,5</code>, which might be twelve and a half, or might be a thousand-separator typo. Then <code>n/a</code>, <code>TBC</code>, and a cell with a trailing space and a symbol you can't even name.</p>
+<p>One comma means two different things, depending on who typed the row. A dot does the same.</p>
+<p>You know this is solvable. You've solved it before, in some other project, in some other file you can no longer find. You vaguely remember a clever little cleanup. You don't remember where you saved it, or whether it quietly guessed wrong.</p>
+<p>That last part is the real knot in your stomach. It isn't the error. It's the thought of a wrong number going into a report and sitting there looking confident.</p>
+<h2>What the afternoon is quietly costing</h2>
+<p>So you do what everyone does. You search the error message. You open six tabs. One answer strips every comma. That would turn <code>12,5</code> into <code>125</code>, a tenfold mistake that would never raise an error. Another answer works for the first forty rows and then falls over.</p>
+<p>You fix one format. Another appears. You fix that. The first one comes back, because your fix touched it too.</p>
+<p>From the pool, someone calls your name. Dinner plans. A walk to the harbour. You say "five minutes," and you both know what that means.</p>
+<p>It isn't really about the prices. It's the feeling that the week you protected so carefully has been taken, one tiny cell at a time. It's the feeling that you are rebuilding the same small bridge every month and calling it work. And under all of it sits a quiet doubt: <em>am I the kind of person who should trust this number?</em></p>
+<p>Nobody talks about that part. Messy data is never an emergency. It's a slow leak in your evenings.</p>
+<h2>The moment it clicked</h2>
+<p>At 16:00, a message from your partner: <em>"Look up."</em></p>
+<p>You look up. The light has gone gold. A boat is crossing the bay. The pool is empty now, because everyone else went to dinner while you were arguing with a comma.</p>
+<p>And a plain thought arrives, not dramatic, just clear: <em>this is the third time I've solved this exact problem.</em></p>
+<p>Not a similar problem. This one. Prices in mixed formats, a CSV that won't behave, an afternoon gone. Each time you solved it, you solved it for one file and then lost it.</p>
+<p>It doesn't have to be like this. The fix isn't a smarter trick for this price list. It's never having to start from a blank editor again. It's a cleaning step you trust, that shows you what it <em>would</em> change before it changes anything, and gives you a list of every cell it touched, so the doubt has somewhere to go.</p>
+<p>You close the laptop. Not because it's done. Because you finally see what kind of problem it is.</p>
+<h2>A normal Wednesday, later</h2>
+<p>Picture a Wednesday a few weeks on. Same kind of file lands in your inbox, the supplier's usual chaos of symbols and separators and a stray "TBC".</p>
+<p>You don't open six tabs. You run the same step you always run. It does a dry run first, so nothing is changed behind your back. You read a short report: these rows were converted, these two look ambiguous, these three were empty on purpose.</p>
+<p>You check the two ambiguous ones with your own eyes, the way you'd double-check a total on a receipt. Then you let it through.</p>
+<p>The whole thing takes the time it takes to drink a coffee. The coffee is still warm when you're done.</p>
+<p>The red line doesn't appear. If something strange turns up, you see it in the report, in plain words, before it reaches anyone's spreadsheet. Your client gets the report on time. You never mention the commas, because they were never a drama.</p>
+<p>The evening is yours. The hours you used to lose to cleanup go to a walk, a film, dinner that isn't eaten over a keyboard.</p>
+<h2>If you saw yourself on that balcony</h2>
+<p>If you've ever lost a holiday afternoon, or a Monday morning, or a calm Friday to a price column that wouldn't turn into numbers, you are not bad at this. The data was simply messy, and you were doing the cleanup by hand again.</p>
+<p>There is a calmer way to handle it. <em>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</em> is built for exactly these moments. It cleans messy CSV and Excel exports: duplicates, dates, phone numbers, encoding, splitting, merging and validating. It does a dry run first and gives you a change report, so you can see what happened to your data. A 30-day money-back promise comes with it: if it doesn't help, you get a full refund, no questions.</p>
+<p>You can look at it here, whenever it suits you: <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a></p>
+<p>The pool will still be there. Go and get in it.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
