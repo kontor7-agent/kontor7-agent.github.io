@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Customer Saw Another&#x27;s Data in Your API? Oat Milk Queue</title><meta name="description" content="A customer saw someone else&#x27;s data through your API. How did you miss it? A calm story about the message, the fix and what changes after.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/customer-saw-another-customers-data-api"><meta property="og:title" content="Customer Saw Another&#x27;s Data in Your API? Oat Milk Queue">
+<meta property="og:description" content="A customer saw someone else&#x27;s data through your API. How did you miss it? A calm story about the message, the fix and what changes after."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Customer Saw Another's Data in Your API? Oat Milk Queue", "description": "A customer saw someone else's data through your API. How did you miss it? A calm story about the message, the fix and what changes after.", "datePublished": "2026-10-30", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/customer-saw-another-customers-data-api"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Customer Saw Another&#x27;s Data in Your API? Oat Milk Queue</h1><p class='muted'>2026-10-30</p><p>The message arrives at 8:41 on a Wednesday, while you are third in the queue at the market coffee stall.</p>
+<p>You are holding a reusable cup and your phone. The subject line says: <em>Is this supposed to happen?</em></p>
+<p>It is from a customer of the small booking tool you built last spring. She runs a dog-grooming studio. Under her message is a screenshot. It shows a list of appointments, and the names are not hers.</p>
+<p>The barista asks what you'd like. You say oat flat white. You don't hear yourself say it.</p>
+<h2>The sentence you read twice</h2>
+<p>She writes that she was changing a number in the address bar, out of curiosity, because she'd noticed the page had a number in it. Then the page showed someone else's calendar. First names, phone numbers, a note that says <em>nervous around clippers</em>.</p>
+<p>She isn't angry. She is polite, and that makes it worse. She says she thought you would want to know.</p>
+<p>You stand by the milk station and your thoughts run in the wrong order. <em>Which endpoint? Since when? How many people could have done this? Did I test that? I tested it. Didn't I?</em></p>
+<p>You did test it. You tested that logging in worked. You tested that a wrong password failed. You tested that the app showed the right calendar to the right person, because you were always logged in as the right person.</p>
+<p>Nobody had ever asked the question she accidentally asked: <em>what if I'm logged in, but I ask for someone else's thing?</em></p>
+<h2>The walk back to the desk</h2>
+<p>The coffee goes cold on the way home. You don't notice.</p>
+<p>At your desk, the logs come first. They say what they say. It is less dramatic than your stomach predicted and also more specific. You find the route. You find the single missing check, one that decides whether the thing being asked for belongs to the person asking.</p>
+<p>The fix takes a few minutes. You deploy it. You check it three times, because the first two don't feel like enough.</p>
+<p>Then comes the part nobody warns you about: the quiet after the fix. The code is right and you still feel wrong. The question that lingers isn't <em>how do I fix it?</em> It's <em>how did I miss this, and what else did I miss?</em></p>
+<p>That second question has no bottom. You can feel yourself opening other files, looking for the next one by hand, in a mood that isn't careful. It's frantic. Frantic reading finds some things and skips others.</p>
+<h2>What the customer deserves, and what you deserve</h2>
+<p>You write back to her before lunch. Plain words, no drama: what happened, that it is fixed, that you are looking at what else could be affected, and that you will tell her what you find. You thank her, and you mean it.</p>
+<p>Then you do the honest thing and look at your own process rather than your own character.</p>
+<p>You didn't miss this because you are careless. You missed it because your review lived in your head. It was a loose sense of <em>I think I covered the usual things</em>, assembled from whatever you remembered that week. A head does not hold a list. A head holds the parts that scared you last time.</p>
+<p>The parts that scared you were passwords and tokens. The part that bit you was ordinary and quiet: a correct login asking for the wrong record.</p>
+<p>There is a small relief in seeing that. The gap wasn't a flaw in you. It was a gap in having a written order of things to check, one that is the same every time and doesn't depend on how your week went.</p>
+<h2>The Wednesday that could have been different</h2>
+<p>Imagine the same morning, a few months from now.</p>
+<p>You are in the same queue. The same kind of message might arrive, because customers are curious and the internet is large. But before you launched the last feature, you sat down with a list. It was not a long, scary one. It was a calm, numbered thing you worked through once, ticking items off, with the awkward questions already written down so you didn't have to invent them under pressure.</p>
+<p>If a message came now, you would still feel your stomach move. But the next thought would be different. Not <em>did I test that?</em> but <em>I know what I checked, and I know where I wrote it down.</em></p>
+<p>That is the whole difference. Not perfection, which nobody can promise. Just a record you can open when someone asks, whether it's a customer, a boss, or you at 3 a.m. wondering.</p>
+<p>It also means that when a client asks, "Is our data safe with you?", you can answer with something other than a hopeful nod.</p>
+<h2>A gentler way to launch</h2>
+<p>You eventually go back for a fresh coffee. It's lukewarm by the time you've paid, but you drink it standing at the window, and your shoulders come down a little.</p>
+<p>The customer writes back mid-afternoon. She says thanks for the quick answer, and that she's heading to a groomer's appointment of her own, with a very small, very loud terrier. You laugh, which you did not expect to do today.</p>
+<p>Nothing about this day will end up in a highlight reel. But you decide that the next time, the checking won't wait for someone else's curiosity.</p>
+<p>If you recognise yourself in this scene, there is a kit built for exactly that gap. It is a 58-item REST API security review: a PDF checklist and a tracker spreadsheet, plus curl tests, a script that scans for auth-route gaps, and a client report template, for Node/Express and Python. It was made with AI, checked automatically and refined by real use. It supports your review. It does not replace a professional security audit when you need one. If it doesn't help, the 30-day money-back promise applies, no questions.</p>
+<p><strong><a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</a></strong></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
