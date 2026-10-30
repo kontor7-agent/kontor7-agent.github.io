@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Backup Ran, Files Are Empty? The Humming Freezer | Blixwerk</title><meta name="description" content="The script said it finished. The folder says 0 KB. A calm story about the green tick that lied, and what a backup you can actually trust feels like.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/backup-script-ran-but-backup-files-are-empty"><meta property="og:title" content="Backup Ran, Files Are Empty? The Humming Freezer | Blixwerk">
+<meta property="og:description" content="The script said it finished. The folder says 0 KB. A calm story about the green tick that lied, and what a backup you can actually trust feels like."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/backup-log-rotation-scripts.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Backup Ran, Files Are Empty? The Humming Freezer", "description": "The script said it finished. The folder says 0 KB. A calm story about the green tick that lied, and what a backup you can actually trust feels like.", "datePublished": "2026-10-30", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/backup-log-rotation-scripts.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/backup-script-ran-but-backup-files-are-empty"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Backup Ran, Files Are Empty? The Humming Freezer</h1><p class='muted'>2026-10-30</p><p>The chef lifts the freezer lid and the little light comes on. The motor hums. Everything about it says <em>working</em>.</p>
+<p>Then he pushes a finger into a bag of prawns and it gives. Soft. Not frozen. Not for hours.</p>
+<p>Inès is standing next to him with a coffee she hasn't touched. She came to the restaurant at ten on a Tuesday to hand over a set of menu illustrations. She is an illustrator, she works alone, and she has never had a reason to think about freezers.</p>
+<p>But she goes home that afternoon with one thought stuck in her head. <em>The light was on. The motor was running. And it still wasn't doing the one thing it was for.</em></p>
+<h2>The folder you hadn't opened in a while</h2>
+<p>She sits at her desk and, for no good reason, opens the backup folder.</p>
+<p>There is a script she set up last spring. A friend helped her with it, over a long coffee and a lot of copy-pasting. It runs every night. It has never shown an error. Whenever she thought about it, she pictured a small green tick somewhere and moved on.</p>
+<p>The folder is full of files. Dated, neatly, every night for months. That is the first relief.</p>
+<p>Then she sorts by size.</p>
+<p>0 KB. 0 KB. 0 KB.</p>
+<p>She scrolls. Her stomach goes quiet in the way it does when the lift drops a floor. Most of the last few months are zero. Folders with the right names and the right dates, and nothing inside them.</p>
+<p>The script ran. It really did. It just never copied anything.</p>
+<h2>What it quietly costs</h2>
+<p>Nothing has gone wrong yet. That is the strange part. No client is waiting, no file has vanished, no one knows.</p>
+<p>But Inès sits there doing a slow sum. Four years of illustration work. Source files with every layer. A client archive she promised to keep. A tax folder.</p>
+<p>And she thinks about all the small decisions she made <em>because</em> she believed she was covered. The drive she reformatted without a second thought. The old laptop she gave to her cousin. The "I'll tidy that up later" she said to herself, because later felt safe.</p>
+<p>There is a particular kind of embarrassment in this. Not the loud kind. The quiet kind, where you realise you have been running a real business on the strength of a feeling.</p>
+<p>She also notices something else. She had never <em>seen</em> the backup working. She had only seen the absence of bad news. A silent script can't tell you the difference between "fine" and "nothing happened".</p>
+<h2>The turning point was small</h2>
+<p>She doesn't panic, which surprises her. She copies the current project folder to an external drive by hand, drags it across, and watches the number climb. Real megabytes. Real seconds ticking by.</p>
+<p>Then she does what she should have done in the spring. She asks a different question. Not "did it run?" but "can I <em>see</em> what it did?"</p>
+<p>A good backup, she realises, is not one that runs quietly. It is one that leaves a trail. A short note for every run: what it looked at, what it copied, how much, how long it took. Something she can glance at on a Monday with her tea and know in five seconds, without opening a single folder.</p>
+<p>And before it touches anything real, it should be able to say what it <em>would</em> do. A rehearsal. A walk through the house with the lights on before anyone moves in.</p>
+<p>It isn't complicated. It is just honest. That is the whole change.</p>
+<h2>A normal Monday, afterwards</h2>
+<p>Picture it a few weeks later.</p>
+<p>Monday, quarter past nine. Inès opens her laptop, and before the emails, before the invoice she needs to send, she opens one small text file. Last night's run. Date, time, a list of what was saved, a total at the bottom that looks like a number she recognises.</p>
+<p>Six seconds. She closes it.</p>
+<p>She doesn't think about the backup for the rest of the day. That is exactly the point. Not because she's forgotten it, but because she can <em>see</em> it, and a thing you can see doesn't need to live in the back of your head.</p>
+<p>At some point that week she tidies an old project off her drive. Deletes a whole folder of rejected sketches, no hesitation. She feels the old lightness come back, the one she thought she'd had all along. This time there is something real underneath it.</p>
+<p>The freezer light is still on in the restaurant. But now the chef has a thermometer taped to the door, and he checks it every morning.</p>
+<h2>If you recognise the hum</h2>
+<p>Maybe your backup runs on its own too. Maybe you set it up once, on a good day, and trusted it ever since. Maybe it's fine. Probably it is.</p>
+<p>But it is worth opening that folder once, sorting by size, and seeing what is actually in there. If the numbers look right, you've bought yourself an easy afternoon. If they don't, you've found out on a quiet Tuesday and not on the worst day of your year.</p>
+<p>If you'd like a setup that shows its work, we made one. <strong><a href="https://blixwerkstudio.com/p/backup-log-rotation-scripts">Backup &amp; Log Rotation Scripts (PowerShell + Bash)</a></strong> takes incremental snapshot backups for Windows and Linux, with retention and log rotation built in. It has a dry-run mode so you can see what will happen before it happens, and a logfile for every run, so "did it work?" has an answer you can read. It comes with our 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>No rush. Just open the folder first.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Backup &amp; Log Rotation Scripts (PowerShell + Bash) – Incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. Dry-run mode and a logfile for every run. <p><a class='btn' href='/p/backup-log-rotation-scripts'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
