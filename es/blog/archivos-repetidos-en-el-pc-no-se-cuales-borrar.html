@@ -1,0 +1,67 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Archivos repetidos en el PC y no sé cuáles borrar | Blixwerk</title><meta name="description" content="Compartes pantalla en una videollamada y tu carpeta de Descargas se queda a la vista: miles de archivos repetidos y ninguna certeza de cuáles borrar.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/archivos-repetidos-en-el-pc-no-se-cuales-borrar"><meta property="og:title" content="Archivos repetidos en el PC y no sé cuáles borrar | Blixwerk">
+<meta property="og:description" content="Compartes pantalla en una videollamada y tu carpeta de Descargas se queda a la vista: miles de archivos repetidos y ninguna certeza de cuáles borrar."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/windows-file-organizer-powershell-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Archivos repetidos en el PC y no s\u00e9 cu\u00e1les borrar", "description": "Compartes pantalla en una videollamada y tu carpeta de Descargas se queda a la vista: miles de archivos repetidos y ninguna certeza de cu\u00e1les borrar.", "datePublished": "2026-10-30", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/windows-file-organizer-powershell-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/archivos-repetidos-en-el-pc-no-se-cuales-borrar"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Archivos repetidos en el PC y no sé cuáles borrar</h1><p class='muted'>2026-10-30</p><p>Martes, 11:10. Irene, diseñadora gráfica freelance, comparte pantalla en una videollamada con un cliente nuevo. Solo quiere enseñarle una propuesta de logotipo.</p>
+<p>Pero primero tiene que encontrarla.</p>
+<p>Abre la carpeta de Descargas y el cliente lo ve todo. Ve <code>logo_final.png</code>. Ve <code>logo_final (1).png</code>, <code>logo_final (2).png</code> y <code>logo_final_DEF_ahora_si.png</code>. Ve fotos con "- copia" al final y PDF con nombres que ya ni ella entiende. Ve una barra de desplazamiento tan pequeña que parece un hilo.</p>
+<p>En la esquina de la pantalla aparece un aviso de Windows: <em>"Almacenamiento casi lleno"</em>.</p>
+<p>—Tranquila, tómate tu tiempo —dice el cliente, con una amabilidad que le duele un poco.</p>
+<p>Irene sonríe y dice que es "el desorden creativo". Por dentro piensa otra cosa: <em>parezco una aficionada</em>.</p>
+<h2>Veinte minutos buscando lo que ya hiciste</h2>
+<p>La propuesta la encuentra al final. Era el tercer archivo con ese nombre, y no el que ella creía.</p>
+<p>La llamada termina bien. Pero la sensación se queda pegada, como cuando sales de casa y no estás segura de haber cerrado la puerta.</p>
+<p>Esa tarde decide que hoy sí lo arregla. Abre la carpeta, ordena por tamaño y empieza a mirar.</p>
+<p>Hay cuatro copias casi idénticas de un vídeo pesado. Hay fotos que descargó hace dos años. Hay facturas en PDF que quizá estén también en otra carpeta, o quizá no. Hay un archivo que se llama <code>datos.zip</code> y del que no tiene ni idea.</p>
+<p>Pone el cursor sobre uno y se queda quieta.</p>
+<p>¿Y si este es el que aprobó el cliente? ¿Y si borra la copia buena y se queda con la mala? ¿Y si lo necesita justo cuando la gestoría le pida algo del trimestre?</p>
+<p>Cierra la ventana. "Otro día", se dice.</p>
+<h2>El miedo no es al desorden, es a borrar mal</h2>
+<p>Nadie lo cuenta, pero casi nunca se trata de pereza. Si miles de archivos repetidos siguen ahí, es porque borrar da más miedo que convivir con ellos.</p>
+<p>Un archivo de más no hace ruido. Uno borrado por error, sí.</p>
+<p>Así que el ordenador se llena poco a poco. Cada búsqueda tarda un minuto más de lo que debería. Cada vez que un cliente dice "¿me lo reenvías?", se te encoge un poco el estómago. Y siempre queda esa vocecita: <em>una profesional de verdad tendría esto en orden</em>.</p>
+<p>No es verdad, claro. Quien trabaja por su cuenta hace de diseñadora, de administrativa, de comercial y de informática a la vez. Lo que se queda sin atender es lo que no grita. Hasta que un martes a las 11:10 lo ve alguien más.</p>
+<h2>La idea que lo cambió: mirar antes de tocar</h2>
+<p>Una semana después, Irene le cuenta el episodio a un amigo que programa. Esperaba un "qué desastre". Él se encoge de hombros.</p>
+<p>—Es que el problema no es borrar. Es borrar a ciegas. Si pudieras ver primero qué se movería, sin que se moviera nada, y deshacerlo después si algo no te gusta, ¿te daría tanto miedo?</p>
+<p>Irene se queda pensando. Nunca se le había ocurrido que el miedo tuviera arreglo. Siempre había creído que la solución era armarse de valor y una tarde libre.</p>
+<p>Pero no hacía falta valor. Hacía falta poder mirar con calma, con una lista delante, y saber que existe un camino de vuelta.</p>
+<h2>Un lunes distinto</h2>
+<p>Ahora imagina otro lunes, a las 9:05.</p>
+<p>Irene se sienta con su café. El ordenador arranca sin quejarse. Abre Descargas y, en vez de una pared de nombres, ve unas pocas carpetas con sentido: facturas, imágenes, proyectos en curso, archivo.</p>
+<p>Los duplicados no desaparecieron por arte de magia. Los revisó una vez, con una vista previa, y decidió ella. Lo que no quiso mover, se quedó donde estaba. Lo demás tiene un registro por si algún día hace falta volver atrás.</p>
+<p>A las 9:40 entra una videollamada. El cliente pide ver la última versión del cartel. Irene comparte pantalla y lo abre en diez segundos.</p>
+<p>Nadie comenta nada. Nadie tiene que decir "tranquila, tómate tu tiempo".</p>
+<p>Y eso es todo. No hay una gran transformación ni una vida nueva. Es solo la tranquilidad de abrir tu propio ordenador sin ponerte un poco a la defensiva.</p>
+<h2>Si te has reconocido en Irene</h2>
+<p>Si tienes miles de archivos repetidos y no sabes cuáles borrar, no eres desordenado. Tienes cuidado con lo que importa.</p>
+<p>Por si te sirve, en Blixwerk hicimos unos scripts pensados justo para eso: ordenar, renombrar, detectar duplicados y archivar carpetas desordenadas. Primero te enseñan lo que harían sin tocar nada, y dejan un registro en CSV para deshacerlo. Funcionan con PowerShell y Bash, incluyen una guía para programarlos y vienen en inglés. El kit se llama <a href="https://blixwerkstudio.com/p/windows-file-organizer-powershell-kit">Tame Your Downloads Folder – File Organizer &amp; Bulk Renamer Scripts</a>.</p>
+<p>Tiene 30 días de garantía: si no te ayuda, te devolvemos el dinero, sin preguntas.</p>
+<p>Y si hoy no es el día, también está bien. Pero quizá la próxima vez que compartas pantalla, tu carpeta de Descargas ya no sea la protagonista.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Tame Your Downloads Folder – File Organizer &amp; Bulk Renamer Scripts – Sort, rename, de-duplicate and archive messy folders with a preview mode and a CSV undo log. PowerShell + Bash, scheduler guide included. <p><a class='btn' href='/p/windows-file-organizer-powershell-kit'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>

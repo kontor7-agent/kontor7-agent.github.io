@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Long IDs Turn to 4.9E+12 in Excel? The Station Bakery</title><meta name="description" content="A 9:30 call, a CSV and order numbers that read 4.9E+12. A short story about long IDs, Excel, and getting your Monday morning back.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/excel-long-id-numbers-scientific-notation-csv-fix"><meta property="og:title" content="CSV Long IDs Turn to 4.9E+12 in Excel? The Station Bakery">
+<meta property="og:description" content="A 9:30 call, a CSV and order numbers that read 4.9E+12. A short story about long IDs, Excel, and getting your Monday morning back."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "CSV Long IDs Turn to 4.9E+12 in Excel? The Station Bakery", "description": "A 9:30 call, a CSV and order numbers that read 4.9E+12. A short story about long IDs, Excel, and getting your Monday morning back.", "datePublished": "2026-10-30", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/excel-long-id-numbers-scientific-notation-csv-fix"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>CSV Long IDs Turn to 4.9E+12 in Excel? The Station Bakery</h1><p class='muted'>2026-10-30</p><p>The queue at the station bakery is six people long, and you have eleven minutes.</p>
+<p>You are holding a coffee in one hand and your phone in the other. On the phone, a spreadsheet you opened on the train. Jonas, let's call him that, works as a virtual assistant for three small online shops. This morning's job is simple: send one client the list of last week's orders, with tracking numbers, before the 9:30 call.</p>
+<p>He scrolls to the tracking column. It should say 400123456789012. Instead every row says <strong>4.00123E+14</strong>.</p>
+<p>He scrolls further. Every row. All the same. A whole column of numbers that look like something from a physics exam.</p>
+<h2>The thought that arrives before the panic</h2>
+<p>The first thought is not "how do I fix this". It is: <em>Did I do this?</em></p>
+<p>That is the quiet part nobody mentions. When a file goes wrong, you don't blame the file. You blame yourself. You wonder whether you clicked something, saved over something, whether a real professional would have noticed sooner.</p>
+<p>The person in front of him orders two croissants and asks about the oat milk. Jonas moves one step forward and opens the original export again, just to check. In the raw file, the numbers are fine. Every digit is there. It was the spreadsheet that decided, on its own and without asking, to be helpful.</p>
+<p>That should be a relief. Somehow it isn't. Because now he has a different problem: he has no idea which of the other files on his laptop went through the same helpful treatment.</p>
+<h2>What it quietly costs</h2>
+<p>Last month, a different client had sent him a list of customer numbers. He had cleaned it up, saved it, and sent it back. Nobody complained. But standing here, with the coffee going lukewarm, he can't remember whether those numbers survived. Or whether two of them had quietly turned into the same rounded value and nobody noticed.</p>
+<p>This is what messy data really costs. Not the ten minutes of fixing. The doubt that comes afterwards. The small, nagging feeling that something you handed over might be slightly wrong, and that you would be the last to know.</p>
+<p>For someone who works alone, that doubt is expensive. You are the checking department. You are also the person who sends the file, takes the call, and apologises if it goes sideways.</p>
+<p>He pays for the coffee. Nine minutes left.</p>
+<h2>The call</h2>
+<p>The call starts at 9:30 on the dot. Jonas is at the station café table now, laptop open, earbuds in, one eye on the clock.</p>
+<p>The client, who runs a small shop selling printed stationery, is friendly. She asks about the parcels. She asks if the tracking list is ready.</p>
+<p>"Almost," he says. It is not a lie, but it is not quite the truth either.</p>
+<p>He shares his screen anyway, because hiding feels worse. And there they are: the numbers that look like scientific formulas. He hears himself say, "That's just how Excel shows them, give me a moment."</p>
+<p>She laughs. "Oh, it does that to me all the time. Honestly, I stopped trusting it."</p>
+<p>That sentence stays with him longer than the call itself. <em>I stopped trusting it.</em> How many people have quietly stopped trusting their own files, and just live with a low hum of "hopefully this is right"?</p>
+<h2>The moment it doesn't have to be like this</h2>
+<p>Later, on the train home, he doesn't open a spreadsheet. He just thinks.</p>
+<p>The problem was never that he was careless. The problem was that every messy export started from zero. Every Monday he did the same small rescue, by hand, from memory, a bit differently each time. Nothing was written down. Nothing was checked before it left the building.</p>
+<p>What if the cleaning were something he did once, and then simply <em>ran</em>? What if, before anything was changed, he could see what would change, and afterwards, what did? A short list. Plain words. <em>These rows, these fixes, nothing else touched.</em></p>
+<p>Not magic. Just a calm routine with a receipt.</p>
+<h2>A different Monday</h2>
+<p>Picture the same bakery queue a few weeks later.</p>
+<p>The export has already landed in a folder. Jonas orders his coffee without looking at his phone. By the time he sits down, the cleaned file is there, the long numbers intact, the dates the right way round, the duplicates gone, and a short change report sits beside it. He reads it the way you read a till receipt: quickly, with a small nod.</p>
+<p>He sends the file at 9:12. The call at 9:30 is about the client's new product line instead.</p>
+<p>The coffee is still hot. That is the whole difference, really. Not a productivity miracle. Just a coffee that is still hot, and a head that is not elsewhere.</p>
+<h2>If you recognise yourself</h2>
+<p>Maybe you don't work with tracking numbers. Maybe it's invoice references, customer IDs, barcodes, order numbers. The names change. The feeling is the same: a file that looked fine, a number that wasn't, and a few minutes of wondering what else slipped through.</p>
+<p>You don't need to become a different kind of person to stop feeling it. You need a routine that checks the boring things for you, shows its work, and lets you get on with the part of the job that is actually yours.</p>
+<p>If that sounds like the Monday you'd like, there is a small toolkit built for exactly this: <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a>. It cleans messy CSV and Excel exports, with a dry-run first and a change report afterwards, so you can see what it did before you trust it. It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>It won't make Mondays glamorous. It might just keep the coffee warm.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
