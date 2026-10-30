@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Dates Day and Month Swapped? The Corridor Chairs</title><meta name="description" content="You sent the report, then a client asked why you billed a day they were closed. Day and month swapped after a CSV import. A calm story, and a way out.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/csv-dates-day-and-month-swapped-after-import"><meta property="og:title" content="CSV Dates Day and Month Swapped? The Corridor Chairs">
+<meta property="og:description" content="You sent the report, then a client asked why you billed a day they were closed. Day and month swapped after a CSV import. A calm story, and a way out."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "CSV Dates Day and Month Swapped? The Corridor Chairs", "description": "You sent the report, then a client asked why you billed a day they were closed. Day and month swapped after a CSV import. A calm story, and a way out.", "datePublished": "2026-10-30", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/csv-dates-day-and-month-swapped-after-import"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>CSV Dates Day and Month Swapped? The Corridor Chairs</h1><p class='muted'>2026-10-30</p><p>You are sitting on a child-sized plastic chair outside Room 4B. It is 17:20 on a Tuesday. Parents' evening is running ten minutes late, and the corridor smells of floor polish and wet coats.</p>
+<p>Your phone buzzes. It's a client, and it's polite, which is worse.</p>
+<p><em>"Hi Priya, quick question on the hours summary. It shows work on 3 November. We were closed that day. Could you check?"</em></p>
+<p>You open your own report on the tiny screen. You stare at it. The dates look fine. Then you scroll and find a line for 11 March. You were on holiday on 3 November, and you know you didn't work in March at all that week.</p>
+<p>Then it clicks, slowly and unpleasantly. 03/11 was read as 11 March, and 11/03 as 3 November. Day and month have been swapped.</p>
+<h2>The knot you know</h2>
+<p>The export came out of your time tracker as a CSV. Your laptop is set to one date habit. The tracker had another. Somewhere between the download and the spreadsheet, the dates that <em>could</em> be read both ways got read the wrong way. The ones like 25/11, which can only be one thing, came through fine.</p>
+<p>That's the cruel part. Half the file looks right.</p>
+<p>The monthly totals were built on those dates. So some hours landed in the wrong month, a few sit on days that never happened, and your tidy pivot table is quietly wrong.</p>
+<p>You already sent that report. Yesterday. With a little <em>"all good on my side!"</em> at the bottom.</p>
+<p>It's a small embarrassment, and it's very specific. It isn't a disaster. It's the feeling of being a professional who doesn't quite trust her own numbers.</p>
+<h2>What it quietly costs</h2>
+<p>You think about what happens next, because you can't help it.</p>
+<p>Tonight you will open the file again and try to fix it by hand. You'll sort by date, squint at rows, and compare against your calendar. You'll change a few, then wonder whether you changed the right ones.</p>
+<p>Tomorrow you'll write an apology email that sounds calm and sure of itself. You'll rewrite it twice, because you don't want to sound careless, and you are not careless. You just got handed a file that looked right.</p>
+<p>And then, next month, the same export will arrive, and you'll have to remember what went wrong. You will remember only that it's something to do with dates.</p>
+<p>The real cost isn't the hour of fixing. It's the small, steady doubt: <em>can I put my name under this?</em></p>
+<h2>The door opens</h2>
+<p>"Priya? We're ready for you."</p>
+<p>You put the phone away. You spend six good minutes talking about reading levels and a friendship that's going fine. You walk back out into the corridor lighter than you walked in, because a teacher just said something kind about your child, and for six minutes nothing else existed.</p>
+<p>On the bus home you do something different. You don't open the spreadsheet. You think about what you actually want.</p>
+<p>You don't want to become a person who understands date formats. You don't want a weekend course on regional settings. You want to drop in the file and have the dates come out as real dates. You want to see, in plain words, <em>what changed</em>. And you want the original left alone, so that if something looks odd you can go back.</p>
+<p>That's all. It's a small wish. But it's the difference between <em>"I think this is right"</em> and <em>"I checked, and here's the list."</em></p>
+<h2>A different Tuesday</h2>
+<p>Picture the same week, with that wish granted.</p>
+<p>The export lands in your downloads folder. You run it through a cleaning step you set up once. It takes a moment. It gives you a tidy file and a short report: these rows were fixed, these were already fine, these two look odd, please check them yourself.</p>
+<p>You glance at the two odd ones. You know straight away that one is a typo and one is a genuine Sunday. You sort it out in half a minute.</p>
+<p>The report goes to the client with correct dates. Nobody writes back. Nobody asks about the 3rd of November. Your inbox stays gloriously dull.</p>
+<p>And you are in the corridor of Room 4B, or the supermarket queue, or wherever your Tuesday takes you, without a small cold feeling in your stomach.</p>
+<h2>If this sounds like your file</h2>
+<p>A swapped date is a very ordinary problem. It happens when a tool, a laptop and a country disagree about what 03/11 means. It says nothing about how careful you are.</p>
+<p>If you work with CSV or Excel exports often and want to stop fixing them by hand, there's a small Python toolkit built for exactly this kind of chore. It cleans dates, duplicates, phone numbers and encoding, and it can split, merge and validate files too. It has a dry-run mode, so you can see what <em>would</em> change before anything does, and it writes a change report afterwards. It does not replace your own judgement on the odd rows, but it gives you a clear list to judge from.</p>
+<p>You can look at it here: <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a>. If it doesn't help, there is a 30-day money-back promise, no questions asked.</p>
+<p>For tonight, maybe just go home, put the kettle on, and fix the file once, calmly. The 3rd of November was a good day off.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
