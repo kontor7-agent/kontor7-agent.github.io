@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Junk Header Rows Breaking Import? The Blood Test Queue</title><meta name="description" content="The export has report titles on top and a total line at the bottom, and your import keeps failing. A quiet story about a morning like that, and the way out.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/csv-junk-header-rows-total-line-breaking-import"><meta property="og:title" content="CSV Junk Header Rows Breaking Import? The Blood Test Queue">
+<meta property="og:description" content="The export has report titles on top and a total line at the bottom, and your import keeps failing. A quiet story about a morning like that, and the way out."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "CSV Junk Header Rows Breaking Import? The Blood Test Queue", "description": "The export has report titles on top and a total line at the bottom, and your import keeps failing. A quiet story about a morning like that, and the way out.", "datePublished": "2026-10-31", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/csv-junk-header-rows-total-line-breaking-import"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>CSV Junk Header Rows Breaking Import? The Blood Test Queue</h1><p class='muted'>2026-10-31</p><p>Jonas is sitting on a plastic chair in a blood test queue, number 41 on the little screen, number 33 being called. His phone is propped on his knee. He is not supposed to be working. He is working anyway.</p>
+<p>The client's message came in at 7:50: <em>"Can you load this month's sales file into the dashboard before the 11:00 call? Thanks!"</em></p>
+<p>He opened the attachment on his phone, just to check. The first thing he saw was not data.</p>
+<h2>Four lines that are not your data</h2>
+<p>Row one: <em>Monthly Sales Report</em>. Row two: <em>Exported by: admin</em>. Row three: a date range. Row four: nothing at all. The real column names start on row five, as if the file had cleared its throat first.</p>
+<p>He scrolls down, past hundreds of rows, to the bottom. Another blank line. Then a line that says <em>Total</em> with a number in the third column, sitting right where the next import will try to read it as a customer.</p>
+<p>He already knows what the import tool will say. It will say the first column doesn't match. Or worse, it will accept everything quietly and count the total line as an order. Then the dashboard will show twice the revenue for one confusing afternoon, and someone senior will ask why.</p>
+<p>Number 34. Number 35.</p>
+<h2>The small, stupid, expensive thing</h2>
+<p>Nobody warns you about this kind of problem. It isn't hard. That is exactly what makes it annoying.</p>
+<p>You delete the top four rows by hand. You delete the last two. You save it, import it, and it works. It takes about three minutes.</p>
+<p>Then next month the client's system exports the file again. This time there are five junk lines, because someone added a filter note. Or only two. The total line has moved, or it now says <em>Grand total</em>, or <em>Summe</em>. Your careful three minutes turn into twenty, and they always seem to land right before a call.</p>
+<p>The real cost isn't the twenty minutes. It's the small flinch every time a new file arrives. The half-second of <em>"what is it going to be this time?"</em> It's opening an attachment in a waiting room with your stomach slightly tight. It's the quiet worry that you'll miss something, that a row will slip through, and that you'll be the one who sent wrong numbers into a meeting.</p>
+<p>It also makes you feel a little unprofessional. You are the person who is supposed to be good with data, and you are squinting at a phone, counting rows with your thumb.</p>
+<h2>Number 38</h2>
+<p>Jonas does the sensible thing and closes the file. Not now. He'll do it from the laptop, after, with proper coffee.</p>
+<p>But as he sits there, he catches himself doing the maths of the whole year. Twelve months, twelve files, each one a little different. A few extra minutes here, a rushed evening there. And behind it the real thought, the one he doesn't say to anyone: <em>"Why am I still doing this by hand?"</em></p>
+<p>He remembers a colleague once describing her own routine. Nothing dramatic. She just said she never opens the raw export anymore. It goes in, a tidy version comes out, and a short list tells her what was changed. If something looks off, she sees it before anything touches the real data, not after.</p>
+<p>He had nodded politely and thought: <em>"Nice for her."</em></p>
+<p>Now, under the fluorescent light, with a paper wristband in his pocket and a screen counting down, it sounds less like a luxury and more like what any careful person would want. The file stays untouched. The cleaning happens somewhere safe. The report says: <em>four header lines removed, one total line removed, two blank rows removed, 412 rows kept.</em> And you get to read that, instead of hoping.</p>
+<p>It doesn't have to feel like defusing something every month.</p>
+<h2>The same Monday, another way</h2>
+<p>Imagine the same morning, a little different.</p>
+<p>The attachment arrives at 7:50. Jonas reads it on his phone and thinks: <em>"Fine. I'll run it when I'm at the desk."</em> He doesn't open it to count rows. He doesn't check the bottom. There's no flinch.</p>
+<p>At the desk, he drops the file in. A preview shows what would change, and nothing is saved yet. The junk lines at the top are marked. The total line at the bottom is marked. The 412 real rows are left exactly as they were. He glances at it for thirty seconds, nods, and confirms.</p>
+<p>The import goes through the first time. The dashboard shows the right number. He has twenty minutes before the call, so he makes tea and actually drinks it while it's hot.</p>
+<p>At 11:00 the client asks a question about last month's figures, and he answers without a pause, because he trusts what's on the screen. That trust is the whole thing. It's not speed. It's not having to double-check yourself at the end of every month.</p>
+<h2>When your name is called</h2>
+<p>Number 41 lights up. Jonas puts the phone away, stands, and walks toward the corridor. The needle takes four seconds. It's the most straightforward part of his morning.</p>
+<p>On the way out he thinks: next month, when that file arrives with its four odd lines on top and its odd total at the bottom, he'd like it to be a non-event.</p>
+<p>If you recognise yourself in this, a weekly export with titles on top, totals on the bottom, and a growing suspicion that the format will change again, there's a calmer way to handle it. We put together the <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a> for exactly those chores: dedupe, fix dates and phone numbers, sort out encoding, split, merge, validate. It does a dry run first and gives you a change report, so you see what happens before anything is touched. Paid products come with a 30-day money-back promise, so if it doesn't help, you get a full refund, no questions.</p>
+<p>No rush. The next file will come either way. It might just be a quieter one.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
