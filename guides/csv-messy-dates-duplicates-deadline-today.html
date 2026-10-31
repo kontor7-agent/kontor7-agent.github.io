@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Messy Dates and Duplicates, Due Today? The 9:05 Text</title><meta name="description" content="A CSV full of mixed dates and duplicates, and the client wants it by five. A short story about the knot in your stomach, and what a calmer Thursday feels like.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/csv-messy-dates-duplicates-deadline-today"><meta property="og:title" content="CSV Messy Dates and Duplicates, Due Today? The 9:05 Text">
+<meta property="og:description" content="A CSV full of mixed dates and duplicates, and the client wants it by five. A short story about the knot in your stomach, and what a calmer Thursday feels like."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#2a78d6;--acc2:#1f5fae;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "CSV Messy Dates and Duplicates, Due Today? The 9:05 Text", "description": "A CSV full of mixed dates and duplicates, and the client wants it by five. A short story about the knot in your stomach, and what a calmer Thursday feels like.", "datePublished": "2026-10-31", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/csv-messy-dates-duplicates-deadline-today"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>CSV Messy Dates and Duplicates, Due Today? The 9:05 Text</h1><p class='muted'>2026-10-31</p><h2>The text that arrived at 9:05</h2>
+<p>You are standing in the queue at the bakery, one person from the front, when your phone buzzes.</p>
+<p><em>"Hi Noor, quick one. Can you send the cleaned customer list by 5 today? The mailing goes out tomorrow. Thanks!!"</em></p>
+<p>Two exclamation marks. They always make it sound smaller than it is.</p>
+<p>You know the file. It arrived on Tuesday, and you opened it once, scrolled for four seconds and closed it again. Somewhere in there are dates written three different ways. Some are 03/04/2026, some 2026-4-3, and some are the words "third of April", typed by a human who was having a good day. Some customers appear twice. A few appear five times, each with a slightly different spelling of the same name.</p>
+<p>The woman behind the counter says, "What can I get you?"</p>
+<p>You hear yourself order a croissant you don't want.</p>
+<h2>The kind of Thursday that eats itself</h2>
+<p>Back at the kitchen table, laptop open, you tell yourself it's a small job. You've done it before. You'll have it sorted by lunch.</p>
+<p>By 10:30 you have fixed the first batch of dates and found a second batch that behaves differently. By 11:15 you are scrolling a column of 8,412 rows, squinting at two entries that might be the same person or might be a father and son with the same initial.</p>
+<p>That is the part nobody warns you about. The work isn't hard. It's <em>fiddly</em>, and fiddly work has no natural end. Every fix shows you the next problem, and every problem makes you doubt the last fix.</p>
+<p>Around noon you notice the thought you've been avoiding: <em>What if I delete the wrong rows and don't realise until the mailing goes out?</em></p>
+<p>That thought is heavier than the deadline. A late file is awkward. A wrong file with your name on it is a different kind of feeling. It's the quiet worry that you're a professional who is somehow still doing this by hand, with your fingers crossed.</p>
+<p>You eat the croissant standing up. It tastes of nothing.</p>
+<h2>What it quietly costs</h2>
+<p>You don't talk about this part. It isn't the two hours of cleaning. It's what surrounds them.</p>
+<p>It's the lunch you skip. It's the other client's email you leave unanswered because your head is full of date formats. It's the small, sour voice that says other people have this figured out, and that there's probably a proper way to do it that you never learned.</p>
+<p>And it's the <em>again</em>. You cleaned a file like this in March. You wrote some code, or clicked through some steps, and you were pleased with yourself. Then the next export arrived with one column renamed, the old fix didn't fit, and you started from zero. Every time it feels like the first time.</p>
+<p>At 2:40 you have a file that looks right. You can't say it <em>is</em> right. You have no list of what you changed. If the client asks, "Why are there 311 fewer rows?", you'll have to say, "I think those were duplicates."</p>
+<p><em>I think.</em> You hate that sentence.</p>
+<h2>The pause</h2>
+<p>At 3:10 you stop, mostly because your eyes hurt.</p>
+<p>You lean back and, for the first time all day, you don't look at the screen. You look at the window. A neighbour is carrying a ladder across the courtyard, slowly, without any hurry at all.</p>
+<p>And a plain thought comes up: <em>It doesn't have to be done like this.</em></p>
+<p>Not a clever thought. Just a tired, honest one. The problem isn't this file. The problem is that every messy export starts from nothing, and nothing carries over. There's no habit and no safety net. There's only you, one deadline and a lot of rows.</p>
+<p>What if the same careful routine ran every time? What if it showed you what it <em>would</em> change before touching anything? What if it handed you a plain list afterwards, so the answer to "what did you do?" was a page instead of a shrug?</p>
+<p>You don't have time to build that today. You deliver the file at 4:51, with a knot in your stomach, and write the email so it says as little as possible.</p>
+<p>The reply comes back in four minutes: <em>"Perfect, thanks!"</em></p>
+<p>You should feel relief. You mostly feel tired.</p>
+<h2>A different Thursday</h2>
+<p>Picture the same text at 9:05. Same two exclamation marks, same queue, same croissant.</p>
+<p>This time you read it, think <em>fine</em>, and put the phone away. You order what you actually want.</p>
+<p>At your desk you drop the file in. You check what the cleanup <em>would</em> do before anything is changed. You see the dates sorted into one format, the near-duplicates grouped, and the odd cases set aside for your eyes instead of being quietly decided for you. It takes minutes, not a morning.</p>
+<p>When it's done, there's a short report: what was fixed, what was merged, what was left alone. You glance through it with your coffee. If anyone asks about the 311 rows, you know the answer, and it's written down.</p>
+<p>You send the file at 10:20, and the email is warm instead of defensive. Then you answer the other client, the one you'd have left hanging. You take a proper lunch.</p>
+<p>Nothing dramatic happened. A messy file simply stopped being an emergency. That is the whole difference, and it's a bigger one than it sounds.</p>
+<h2>If you recognised yourself</h2>
+<p>If you've ever stared at a CSV at 11:15 thinking <em>there must be a better way than this</em>, there is a calmer one. It doesn't need to be clever, only repeatable.</p>
+<p>That's what we put into the <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a>. It dedupes, fixes dates, phones and encoding, splits, merges and validates, with a dry-run first and a change report after. It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>No rush. The next messy export will arrive eventually, and you'll get to decide how that Thursday feels.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
