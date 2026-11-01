@@ -2,7 +2,10 @@
 // Zwei <video>: #hl = Zustands-Loop (loop-n.mp4, Start = Ende = exakter Frame aus dem Hauptclip an Marke n, lokal mit MiniMax H3 gerendert),
 // #hv = Hauptclip (house-720/1080.mp4, Sturm → Sonne). Antwort: Hauptclip wird von Marke n bis Marke m gespielt (kurze Überblendung aus dem
 // Loop), dann übernimmt Loop m. „Zurück“ springt. Fehlen die Loops (404), verhält sich die Szene wie v3 (Hauptclip hält am Frame).
-// Schnittstelle unverändert: window.__setStage(n), Klasse gl-ready auf #stage, window.__sceneDebug().
+// Schnittstelle: window.__setStage(n), Klasse gl-ready auf #stage, window.__sceneDebug(); seit 01.11.2026 (WCAG 2.2.2, Pause-Schalter
+// im HUD, DESIGN-PLAN-FORMULAR C1) auch window.__scenePause()/__sceneResume(): Klasse paused auf #stage, Clip und Loop stehen,
+// Antworten springen zum Zielbild statt zu spielen, die Selbstheilung setzt aus. Beim Start wird die Klasse gelesen (sessionStorage
+// liest der Inline-Schalter im Worker, bevor dieses Modul lädt).
 (() => {
   const stageEl = document.getElementById("stage");
   const V = document.getElementById("hv"), L = document.getElementById("hl");
@@ -18,7 +21,9 @@
     stageEl.classList.add("nogl");
     let target = +(stageEl.getAttribute("data-stage") || 0);
     window.__setStage = (n) => { target = Math.max(0, Math.min(4, n | 0)); };
-    window.__sceneDebug = () => ({ v: 3.1, off: slowNet ? "slow-net" : "reduced-motion", target, shown: -1, mode: "off", loopsOk: false, loopN: -1, ready: false, q: null });
+    window.__scenePause = () => stageEl.classList.add("paused");     // Szene aus: nur der Poster-Drift (CSS) hängt an der Klasse
+    window.__sceneResume = () => stageEl.classList.remove("paused");
+    window.__sceneDebug = () => ({ v: 3.1, off: slowNet ? "slow-net" : "reduced-motion", target, shown: -1, mode: "off", loopsOk: false, loopN: -1, ready: false, q: null, paused: stageEl.classList.contains("paused") });
     return;
   }
   // Qualität nach CSS-Pixeln (nicht mal DPR): Handys bleiben bei 720p (KUNDENREISE 2: 1080p = 4,3 MB auf dem Handy)
@@ -26,6 +31,7 @@
   const src = (n) => `${base}${n}.mp4${ver ? "?v=" + ver : ""}`;
   const FR = [0, 0.26, 0.52, 0.78, 0.985];
   let dur = 5.17, target = +(stageEl.getAttribute("data-stage") || 0), shown = -1, goal = -1, mode = "idle", loopsOk = !!L, loopN = -1, ready = false;
+  let paused = stageEl.classList.contains("paused");
   const mark = (n) => FR[n] * dur;
   const on = (el, yes) => el && el.classList.toggle("on", yes);
   const warmed = new Set();
@@ -38,6 +44,7 @@
     const start = () => {
       L.removeEventListener("canplay", start);
       if (loopN !== n) return;
+      if (paused) { mode = "idle"; shown = n; return; }  // Loop liegt bereit, __sceneResume startet ihn
       L.currentTime = 0;
       L.play().then(() => { on(L, true); on(V, false); mode = "idle"; shown = n; setTimeout(() => { if (mode === "idle") V.pause(); }, 400); warm(n + 1); })
         .catch(() => { loopsOk = false; on(V, true); on(L, false); mode = "idle"; shown = n; });
@@ -46,6 +53,10 @@
   }
   function go() {
     if (!ready || target === shown || mode === "trans") return;
+    if (paused) {  // pausiert: zum Zielbild springen, nichts spielen (Loop holt __sceneResume nach)
+      V.pause(); V.currentTime = mark(target); shown = target; on(V, true); on(L, false); mode = "idle"; loopN = -1;
+      return;
+    }
     if (shown < 0 || target < shown || !loopsOk && mode !== "idle") {  // Start oder Zurück: springen
       V.pause(); V.currentTime = mark(target); shown = target; on(V, true);
       if (loopsOk) showLoop(target); else mode = "idle";
@@ -75,7 +86,7 @@
   // Selbstheilung (1x/s, nicht bei verdecktem Tab): Browser pausieren stumme Videos gelegentlich von sich aus (Energiesparen,
   // Test-Browser) - ein stehender Loop oder ein haengender Uebergang wird einfach wieder angestossen.
   const healer = setInterval(() => {
-    if (off || document.hidden) return;
+    if (off || document.hidden || paused) return;
     if (mode === "idle" && loopsOk && L && L.paused && L.readyState >= 2) L.play().catch(() => {});
     if (mode === "trans" && V.paused && V.currentTime < goal - 0.04) V.play().catch(() => { V.currentTime = goal; finish(); });
   }, 1000);
@@ -88,6 +99,27 @@
     mode = "off"; stageEl.classList.remove("gl-ready"); stageEl.classList.add("nogl");
     window.__setStage = (n) => { target = Math.max(0, Math.min(4, n | 0)); };
   });
+  // Pause/Weiter (Schalter im HUD): Clip und Loop anhalten; ein laufender Übergang endet sofort am Zielbild. Weiter startet den
+  // Loop des gezeigten Zustands (oder holt einen inzwischen gewählten Zustand nach). Der Poster-Drift hängt an der Klasse (CSS).
+  function pauseScene() {
+    paused = true; stageEl.classList.add("paused");
+    if (off) return;
+    stopTick();
+    if (mode === "trans") { shown = target; mode = "idle"; loopN = -1; try { V.currentTime = goal; } catch (e) { /* egal */ } }
+    if (mode === "loopwait") mode = "idle";
+    try { V.pause(); } catch (e) { /* egal */ }
+    if (L) { try { L.pause(); } catch (e) { /* egal */ } }
+  }
+  function resumeScene() {
+    paused = false; stageEl.classList.remove("paused");
+    if (off || !ready) return;
+    if (target !== shown) { go(); return; }
+    if (!loopsOk || !L) return;
+    if (loopN === shown && L.readyState >= 2) L.play().then(() => { on(L, true); on(V, false); }).catch(() => {});
+    else showLoop(shown);
+  }
+  window.__scenePause = pauseScene;
+  window.__sceneResume = resumeScene;
   V.addEventListener("loadedmetadata", () => { dur = V.duration || dur; });
   V.addEventListener("canplay", () => { if (ready || off) return; ready = true; stageEl.classList.add("gl-ready"); go(); });
   V.addEventListener("error", () => { if (!off) stageEl.classList.add("nogl"); });
@@ -98,6 +130,6 @@
   }
   V.muted = true; V.playsInline = true; V.preload = "auto"; V.src = src("house-" + q); V.load();
   window.__setStage = (n) => { target = Math.max(0, Math.min(4, n | 0)); go(); };
-  window.__sceneDebug = () => ({ v: 3.1, target, shown, mode, loopsOk, loopN, t: +V.currentTime.toFixed(2), lt: L ? +L.currentTime.toFixed(2) : null, dur: +dur.toFixed(2), ready, q, raf: !!rafId });
+  window.__sceneDebug = () => ({ v: 3.1, target, shown, mode, loopsOk, loopN, paused, vp: V.paused, lp: L ? L.paused : null, t: +V.currentTime.toFixed(2), lt: L ? +L.currentTime.toFixed(2) : null, dur: +dur.toFixed(2), ready, q, raf: !!rafId });
   warm(target);
 })();
