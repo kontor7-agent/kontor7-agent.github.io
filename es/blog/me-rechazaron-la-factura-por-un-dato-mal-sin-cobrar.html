@@ -1,0 +1,74 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Me rechazaron la factura por un dato mal y no cobro</title><meta name="description" content="Un correo de tres líneas, una factura rechazada por un dato y semanas sin cobrar. Una historia para quien trabaja por su cuenta y quiere cobrar con calma.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/me-rechazaron-la-factura-por-un-dato-mal-sin-cobrar"><meta property="og:title" content="Me rechazaron la factura por un dato mal y no cobro">
+<meta property="og:description" content="Un correo de tres líneas, una factura rechazada por un dato y semanas sin cobrar. Una historia para quien trabaja por su cuenta y quiere cobrar con calma."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/freelancer-project-invoice-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Me rechazaron la factura por un dato mal y no cobro", "description": "Un correo de tres l\u00edneas, una factura rechazada por un dato y semanas sin cobrar. Una historia para quien trabaja por su cuenta y quiere cobrar con calma.", "datePublished": "2026-11-01", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/freelancer-project-invoice-tracker-xlsx.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/me-rechazaron-la-factura-por-un-dato-mal-sin-cobrar"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Me rechazaron la factura por un dato mal y no cobro</h1><p class='muted'>2026-11-01</p><p>Son las 9:20 de un miércoles y estás en el andén, esperando un tren que lleva siete minutos de retraso. El móvil vibra. Es un correo del departamento de administración de tu cliente. Tres líneas.</p>
+<p>«Su factura ha sido rechazada. El dato fiscal no coincide con nuestros registros. Por favor, emita una nueva.»</p>
+<p>Lo lees una vez. Luego otra, más despacio, como si la segunda lectura pudiera cambiar algo. No cambia nada.</p>
+<p>Imaginemos a Dani, editor de vídeo por su cuenta. Entregó el trabajo hace tres semanas. El cliente estaba encantado. Hubo un «¡quedó genial!» y un emoji de aplausos. Y desde entonces, silencio y un dinero que no llega.</p>
+<h2>El error que nadie vio</h2>
+<p>Dani abre la factura en el móvil, con el sol dándole en la pantalla. Ahí está. Un dígito cambiado en un dato del cliente. Lo copió a mano de un correo viejo, con prisa, un viernes por la tarde.</p>
+<p>Un solo dígito. Y por ese dígito, la factura ha estado dando vueltas por alguna bandeja de entrada ajena durante semanas, sin que nadie le avisara.</p>
+<p>Porque eso es lo que más escuece. No es el error en sí; errores tenemos todos. Es que nadie dijo nada. La factura entró en una cola, alguien la miró tarde, la apartó, y el correo de rechazo llegó cuando Dani ya había dejado de mirar el calendario.</p>
+<p>En el tren, de pie, hace cuentas de cabeza. Esas semanas de retraso significan que el alquiler de este mes lo pagará con lo que quedaba del trabajo anterior. Que no se ha comprado el disco duro que necesita. Que el lunes, cuando su pareja pregunte «¿ya te han pagado lo de ese vídeo?», dirá «casi» con una sonrisa que no se cree ni él.</p>
+<h2>Lo que cuesta de verdad</h2>
+<p>No es solo el dinero parado. Es todo lo que viene pegado.</p>
+<p>Es la vergüenza de escribir otra vez al cliente para decir «perdona, me equivoqué yo». Es la duda de si, además, la nueva factura tendrá que esperar otro turno en la cola de pagos. Es ese pensamiento tonto, pero insistente: <em>qué poco profesional parezco</em>.</p>
+<p>Es también revisar el resto. Porque si falló una, ¿cuántas más tienen algo mal? Dani no lo sabe. Tiene facturas en una carpeta, otras en el correo enviado, una en un PDF con un nombre como «factura_def2_BUENA». No tiene un sitio donde mirar y decir: esta salió, esta está pagada, esta sigue pendiente, esta la tienen que corregir.</p>
+<p>Y así pasan los días con una mezcla de prisa y vergüenza. Una mala combinación para trabajar con la cabeza fría.</p>
+<h2>La llamada de las once</h2>
+<p>A media mañana, Dani se lo traga y llama a administración. Le atiende una voz amable, de esas que llevan todo el día corrigiendo cosas de otros.</p>
+<p>—Ah, sí, es muy frecuente —le dice—. Con que nos envíes la corregida entramos en el siguiente ciclo de pagos.</p>
+<p>Frecuente. La palabra le cae encima como un cubo de agua tibia. No era una catástrofe. No era un fallo imperdonable. Era un dato mal copiado en una empresa que recibe cientos de facturas y que, simplemente, no tenía forma de avisar antes.</p>
+<p>Dani cuelga y se queda mirando la pantalla. Y entonces le llega la idea, no como un rayo, sino como un suspiro: <em>esto no tiene por qué pasarme así</em>.</p>
+<p>No el error. Los errores seguirán apareciendo alguna vez. Lo que no tiene por qué repetirse es enterarse tres semanas tarde, no saber en qué punto está cada factura y dejar que el dinero dependa de la memoria de un viernes a las seis.</p>
+<h2>Un lunes distinto</h2>
+<p>Imagina otra versión de esa mañana.</p>
+<p>Es lunes. Te sientas con el café, abres un único archivo y en diez minutos lo ves todo. Los datos de cada cliente están guardados una sola vez, bien, y de ahí salen las facturas, no de un correo viejo copiado a mano. Cada factura tiene su número, su fecha de vencimiento y una marca que te dice si va bien, si se retrasa o si lleva días sin moverse.</p>
+<p>Si una factura lleva una semana sin noticias, lo sabes tú primero, no un correo de rechazo. Escribes un mensaje corto y tranquilo: «Hola, ¿ha llegado bien mi factura?». Sin apuro, porque no hay nada que esconder.</p>
+<p>Cierras el portátil y sigues con tu día. No porque nada pueda fallar, sino porque, si algo falla, lo ves pronto y con tiempo.</p>
+<p>Eso es todo lo que cambia. No te vuelves otra persona. Solo dejas de llevar el dinero en la cabeza.</p>
+<h2>Esa misma tarde</h2>
+<p>Dani manda la factura corregida antes de comer. Esta vez revisa el dato dos veces y escribe en el correo: «Adjunto la factura con el dato corregido. Gracias por avisar». Corto, amable, sin pedir perdón tres veces.</p>
+<p>Luego abre una hoja en blanco y empieza a apuntar lo que tiene en el aire: cliente, importe, fecha de envío, estado. Se da cuenta de que le lleva menos de media hora y de que le sienta mejor que cualquier promesa de «a partir de ahora, más cuidado».</p>
+<p>Porque la calma no viene de ser perfecto. Viene de ver.</p>
+<p>Si te has reconocido en el andén, con el correo de tres líneas en la mano, quizá te sirva algo así: un solo archivo en Excel donde tus clientes, tus proyectos, tus horas y tus facturas viven juntos, con números de factura automáticos, fechas de vencimiento y avisos de lo que se ha retrasado. Se llama <a href="https://blixwerkstudio.com/p/freelancer-project-invoice-tracker-xlsx">Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker</a> (está en inglés), trae datos de ejemplo y una guía en PDF, y tiene garantía de devolución de 30 días: si no te ayuda, te devolvemos el dinero, sin preguntas.</p>
+<p>No arregla un dígito mal copiado por arte de magia. Pero te deja ver, cada lunes, qué está pendiente y qué ya está en camino.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker (Excel) – Excel tracker for clients, projects, hours and invoices: auto invoice numbers, due dates, overdue flags, dashboard. Sample data + PDF guide. <p><a class='btn' href='/p/freelancer-project-invoice-tracker-xlsx'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
