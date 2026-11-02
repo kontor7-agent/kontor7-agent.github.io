@@ -1,0 +1,75 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Miedo a que un usuario vea los datos de otro en mi API</title><meta name="description" content="Faltan tres días para el lanzamiento y una duda te ronda: ¿y si un usuario ve los datos de otro? Una historia para respirar antes de salir.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/miedo-usuario-vea-datos-de-otro-api-produccion"><meta property="og:title" content="Miedo a que un usuario vea los datos de otro en mi API">
+<meta property="og:description" content="Faltan tres días para el lanzamiento y una duda te ronda: ¿y si un usuario ve los datos de otro? Una historia para respirar antes de salir."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Miedo a que un usuario vea los datos de otro en mi API", "description": "Faltan tres d\u00edas para el lanzamiento y una duda te ronda: \u00bfy si un usuario ve los datos de otro? Una historia para respirar antes de salir.", "datePublished": "2026-11-02", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/miedo-usuario-vea-datos-de-otro-api-produccion"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Miedo a que un usuario vea los datos de otro en mi API</h1><p class='muted'>2026-11-02</p><p>Es viernes, las 11:20, y estás en un coworking de Valencia con el café ya frío. En la pantalla hay una terminal y, al lado, el navegador con la app del cliente: una pequeña aplicación de reservas para una red de gimnasios. El lunes sale a producción.</p>
+<p>Llevas semanas con ella. Funciona. El login funciona, las reservas funcionan, el panel se ve limpio. El cliente te ha escrito dos veces esta mañana con emojis de cohete.</p>
+<p>Y tú tienes una frase clavada en la cabeza desde anoche: <em>¿y si un usuario puede ver los datos de otro?</em></p>
+<h2>La duda que no sale en el presupuesto</h2>
+<p>Nadie te la ha preguntado. El cliente no sabe que existe. En la reunión de seguimiento habló de colores, de la pantalla de pago y de si el botón de «Reservar» podía ser un poco más grande.</p>
+<p>Pero tú sabes que detrás de cada pantalla hay una dirección, y que esa dirección lleva un número. Que tú, desde tu sesión, ves <em>tus</em> reservas. Y que hay una pregunta incómoda que no has hecho en voz alta: si cambias ese número por otro, ¿qué pasa?</p>
+<p>Lo has probado dos o tres veces. Con una cuenta de prueba, con otra. Te ha salido bien. Pero «me ha salido bien tres veces» no es lo mismo que «lo he mirado todo». Hay cuarenta y tantas rutas. Algunas las escribiste en marzo, otras a las once de la noche, y una la copiaste de un proyecto anterior sin releerla.</p>
+<p>Así que haces lo que hace casi todo el mundo: abres un par de rutas, pruebas un par de cosas, te dices que seguramente está bien y cierras el portátil con un nudo pequeño en el estómago.</p>
+<h2>Lo que cuesta no saberlo</h2>
+<p>No es un drama. Es algo más sordo.</p>
+<p>Es que el sábado, en la comida con tu familia, estás a medias. Que miras el móvil cuando suena una notificación, aunque sea del grupo del fútbol. Que el domingo por la tarde te sorprendes pensando en rutas y números, mientras alguien te pregunta si quieres más tortilla.</p>
+<p>Es que, si algo saliera mal, no sería solo un fallo técnico. Sería una llamada del cliente. Sería explicar que los datos de alguien, de gente real con nombre y teléfono, estuvieron a un cambio de número de distancia de otra persona. Y sería la sensación de «no soy tan profesional como parecía».</p>
+<p>Y lo más injusto: esa duda no mide si tu trabajo es bueno. Mide solo que nadie te ha dado una forma tranquila de comprobarlo.</p>
+<h2>El mensaje de una compañera</h2>
+<p>A las 12:10 te escribe Irene, una colega que también trabaja por su cuenta, desde Sevilla. Le habías contado de pasada que tenías «un mal presentimiento tonto» con el lanzamiento.</p>
+<p>«¿Tienes una lista de lo que miras antes de salir? —pregunta—. Yo antes lo hacía de memoria y siempre se me quedaba alguna ruta sin tocar».</p>
+<p>Te quedas mirando la pantalla. No, no tienes una lista. Tienes memoria, buena intención y una carpeta de notas que se llama «cosas pendientes (final)».</p>
+<p>Y de pronto caes en algo sencillo: el nudo no venía de que tu API fuera mala. Venía de que no tenías cómo <em>saber</em> que estaba bien. Eran dos problemas distintos, y solo uno de ellos hacía que el domingo se te fuera de las manos.</p>
+<h2>Cuando miras ruta por ruta</h2>
+<p>Esa tarde cambias la manera de mirar. No «a ver si encuentro algo raro», sino ruta por ruta, con un orden, marcando lo que ya has comprobado y dejando a la vista lo que todavía no. Sin prisa. Con un papel, o una hoja, donde queda escrito qué has probado y qué no.</p>
+<p>No es magia. Es lo mismo que haces cuando repasas una factura antes de enviarla: no porque desconfíes de ti, sino porque quieres cerrar el tema.</p>
+<p>A las siete encuentras una ruta que no habías mirado. Una sola. La arreglas en veinte minutos. Te ríes un poco, entre aliviada y fastidiada, porque era justo la que habías copiado del proyecto anterior.</p>
+<p>Pero lo importante no es que apareciera. Lo importante es que ahora sabes dónde estás parada. Ya no es «creo que está bien». Es «he revisado esto, esto y esto, y aquí lo tengo anotado».</p>
+<h2>Un lunes distinto</h2>
+<p>El lunes por la mañana el lanzamiento sale. Pones el café al lado del portátil, abres el panel y miras cómo entran las primeras reservas. Nada espectacular. Gente apuntándose a una clase de spinning.</p>
+<p>Te llega un mensaje del cliente: «¡Funciona!». Contestas con un pulgar arriba y vuelves a tu pantalla.</p>
+<p>No estás en alerta. No tienes el estómago encogido. Si alguien te preguntara cómo has comprobado la seguridad de lo que entregaste, no tendrías que inventar una respuesta ni cambiar de tema. Abrirías tu hoja y la enseñarías.</p>
+<p>A las doce cierras la terminal y sales a comer sin el teléfono en la mano. Es un tipo de paz muy pequeña, pero se nota enseguida.</p>
+<h2>Si te has reconocido en el viernes de las 11:20</h2>
+<p>Si tienes un lanzamiento cerca y esa misma frase dando vueltas, quizá no necesites más miedo ni más prisa. Quizá solo necesites una forma ordenada de mirar.</p>
+<p>Por eso existe <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong>: una lista de 58 puntos para repasar una API antes de salir, con un seguimiento en hoja de cálculo, pruebas con curl, un script que ayuda a localizar rutas sin protección y una plantilla de informe para enseñarle al cliente lo que has revisado. Está pensado para Node/Express y Python, y el producto está en inglés. Incluye 30 días de garantía: si no te ayuda, te devolvemos el dinero, sin preguntas.</p>
+<p>No sustituye a una auditoría profesional ni a la opinión de un especialista; es una ayuda para que tu propia revisión sea más completa y más tranquila.</p>
+<p>👉 <a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">Echa un vistazo al kit aquí</a></p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
