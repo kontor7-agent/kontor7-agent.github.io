@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Supplier Minimum Order Too High? The Hallway Pallet</title><meta name="description" content="The supplier says minimum 300 units and you stand in the stockroom doorway, unsure. A calm story about ordering stock without guessing.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/how-much-stock-to-order-supplier-minimum-order-quantity"><meta property="og:title" content="Supplier Minimum Order Too High? The Hallway Pallet">
+<meta property="og:description" content="The supplier says minimum 300 units and you stand in the stockroom doorway, unsure. A calm story about ordering stock without guessing."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/small-business-inventory-reorder-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Supplier Minimum Order Too High? The Hallway Pallet", "description": "The supplier says minimum 300 units and you stand in the stockroom doorway, unsure. A calm story about ordering stock without guessing.", "datePublished": "2026-11-02", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/small-business-inventory-reorder-tracker-xlsx.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/how-much-stock-to-order-supplier-minimum-order-quantity"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Supplier Minimum Order Too High? The Hallway Pallet</h1><p class='muted'>2026-11-02</p><h2>The email you read standing up</h2>
+<p>It is 8:20 on a Thursday morning. The shop doesn't open for forty minutes. Ines is standing in the stockroom doorway with her coat still on, reading the supplier's reply on her phone.</p>
+<p><em>Minimum order quantity: 300 units. Price per piece drops at 500.</em></p>
+<p>She sells linen aprons and tea towels. Some weeks she sells twenty of a pattern. Some weeks she sells four. Three hundred of anything feels like a bet she hasn't been told the odds of.</p>
+<p>She looks at the shelf. The mustard stripe is almost gone. The grey check has been sitting there since spring. She doesn't know exactly how many of either. She knows roughly. Roughly is what she has always run on.</p>
+<h2>Two bad answers</h2>
+<p>There are two easy answers, and she has tried both before.</p>
+<p>The first is to order the minimum and hope. Last time, that left a stack of boxes in the hallway at home. They stayed there for months. She stepped around them every morning, and each time they said the same thing: <em>that was money.</em></p>
+<p>The second is to order less, wherever the supplier allows it. Then the best seller runs out in the busiest week, and she writes the apology emails. That costs something too. It's just quieter, because you never see the sale that didn't happen.</p>
+<p>So the question in her head isn't really "how much stock should I order?" It is: <em>am I about to get this wrong again?</em></p>
+<p>Nobody talks about that part. The worry isn't the maths. It's the feeling that everyone else seems to know, and you are guessing with real money.</p>
+<h2>The part that sits in your chest</h2>
+<p>Minimum order quantities are strange for a small shop. They are set for businesses that move stock in bulk. You are one person with a van-sized stockroom and a bank balance that notices every large invoice.</p>
+<p>So the number on the supplier's email lands differently. It isn't a quantity. It's a week of sleep. It's the rent. It's "can I afford to be wrong?"</p>
+<p>If you recognise that, you are not bad at this. You are making a big decision with half the picture. Most of what you'd need to decide well is in your head, scattered across a notebook, a few order emails and a feeling about last autumn.</p>
+<h2>Tuesday, a quieter kind of morning</h2>
+<p>Picture the same email, a few weeks from now, arriving on a different kind of morning.</p>
+<p>It is a Monday. The kettle has just clicked off. Ines opens one file, and it shows her what she has on the shelf today. It also shows what has been going out each month, and which patterns are slipping towards the line where she'd normally start to worry.</p>
+<p>She doesn't have to remember. The mustard stripe is flagged. The grey check isn't. Beside each one is a plain number: how long what she has will last at the pace she actually sells.</p>
+<p>The supplier's minimum is still 300. That hasn't changed. But now she is not asking "is this a lot?" She is asking "is this a lot <em>for me</em>, given what I really sell?"</p>
+<p>Maybe the answer is to take the full 300 of the mustard stripe, because it moves. Maybe it's to skip the grey check and put the money elsewhere. Maybe it's to ask the supplier whether two patterns can share one order. Whatever she chooses, she is choosing with the numbers in front of her, not a hunch.</p>
+<p>That's the whole difference. Not a perfect decision. A seen one.</p>
+<h2>What changes in the body</h2>
+<p>When you can see your stock, something loosens that you didn't realise was tight.</p>
+<p>You stop dreading the supplier's emails. You stop avoiding the stockroom door. A pallet arriving is a plan arriving, not a surprise.</p>
+<p>You also stop carrying the second, heavier worry: that a customer will order the thing you've run out of, and you'll find out from their email instead of from your own shelf. The shop begins to feel like something you run, not something that happens to you.</p>
+<p>On a normal Monday, that means ten quiet minutes with a coffee. You glance at what's low, you note what to order, and you close the file. The rest of the day belongs to the shop, the customers and the work you actually enjoy.</p>
+<h2>Back in the doorway</h2>
+<p>Back on that Thursday, Ines doesn't reply to the supplier straight away. She takes her coat off. She counts the shelf properly, writes the numbers down, and decides she can answer before lunch rather than before panic.</p>
+<p>It is a small thing. But it is the first time in a while that the number on the email feels like a question she can work with.</p>
+<p>If that doorway feels familiar, you don't need a bigger gut feeling. You need your own stock numbers where you can see them, so the next order is one you chose.</p>
+<p>That is what the <strong>Never Sold Out by Surprise – Inventory &amp; Reorder Tracker</strong> is for. It is an Excel workbook with reorder alerts, stock value and a simple dashboard. There's a filled-in sample so you can see how it behaves, and a blank template for your own products, plus a short PDF guide. No subscription, and a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p><a href="https://blixwerkstudio.com/p/small-business-inventory-reorder-tracker-xlsx">See the Inventory &amp; Reorder Tracker</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Never Sold Out by Surprise – Inventory &amp; Reorder Tracker (Excel) – Excel inventory tracker with automatic reorder alerts, stock value and dashboard. Sample + blank template, PDF guide. No subscription. <p><a class='btn' href='/p/small-business-inventory-reorder-tracker-xlsx'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
