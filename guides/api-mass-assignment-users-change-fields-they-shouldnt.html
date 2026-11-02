@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Worried About API Mass Assignment? The Badge Desk Pen</title><meta name="description" content="Users could change fields they shouldn&#x27;t in your API? A calm story about mass assignment worry, a conference badge desk and the relief of a clear review.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/api-mass-assignment-users-change-fields-they-shouldnt"><meta property="og:title" content="Worried About API Mass Assignment? The Badge Desk Pen">
+<meta property="og:description" content="Users could change fields they shouldn&#x27;t in your API? A calm story about mass assignment worry, a conference badge desk and the relief of a clear review."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Worried About API Mass Assignment? The Badge Desk Pen", "description": "Users could change fields they shouldn't in your API? A calm story about mass assignment worry, a conference badge desk and the relief of a clear review.", "datePublished": "2026-11-02", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/api-mass-assignment-users-change-fields-they-shouldnt"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Worried About API Mass Assignment? The Badge Desk Pen</h1><p class='muted'>2026-11-02</p><p>Mara stands at the registration desk of a small regional dev conference. It is 8:40 on a Thursday and her lanyard is still in the box. The volunteer in front of her is handing out badges. Each badge has a name, a company and a coloured stripe: green for attendee, blue for speaker, black for organiser.</p>
+<p>A man ahead of her is filling in a paper form. At the bottom is a line that says <em>Ticket type</em>. It was meant for the volunteers. He looks at it, shrugs, and writes <em>Organiser</em>. The volunteer glances up, says nothing, and prints a black stripe.</p>
+<p>Nobody is angry. Nobody even notices. The form simply asked, so he answered.</p>
+<p>Mara laughs, then stops. Her stomach does something small and cold.</p>
+<h2>The line on your own form</h2>
+<p>Yesterday she shipped a profile update endpoint for a client. It's a small thing. A user changes their display name and their phone number. The code takes whatever arrives in the request and saves it to the user record.</p>
+<p><em>Whatever arrives.</em></p>
+<p>She stands there holding a paper cup of conference coffee, running the user record through her head. Name. Email. Phone. Role. Plan. Verified. Credits.</p>
+<p>The app's own screen only ever sends two of those fields. But nobody is forcing a browser to send only two fields. Anyone who looks at the request can add a line of their own, the way the man added <em>Organiser</em>.</p>
+<p>She isn't sure it works that way in her code. That is the whole problem. She isn't sure.</p>
+<h2>What the worry costs</h2>
+<p>The keynote starts. Mara hears none of it.</p>
+<p>She opens her laptop under the table and scrolls through the handler. She thinks it's probably fine. Then she scrolls to the model and thinks it's probably not fine. Then she remembers the client demo on Monday, where their product owner likes to click around "just to see what happens."</p>
+<p>There is a particular kind of tiredness that comes from a doubt you can't size. It isn't a bug. A bug you could fix. It's a maybe, and a maybe follows you to lunch, to the train home and into the shower on Saturday.</p>
+<p>She starts a message to the client: <em>Quick question about the profile endpoint.</em> She deletes it. She doesn't want to write <em>I'm not sure my own code is safe</em> to someone who pays her to be sure.</p>
+<p>She starts a different message to herself instead, a list of everything she might have missed. It gets long. It gets vague. <em>Auth stuff? Roles? Check other endpoints too?</em> It reads like a to-do list written by someone holding their breath.</p>
+<h2>The turn</h2>
+<p>At the coffee break she watches the badge desk again. A different volunteer has taken over. She doesn't do anything clever. She just has a card in front of her that says which fields come from the attendee and which ones are hers alone.</p>
+<p>Name: theirs. Company: theirs. Stripe: <em>hers.</em></p>
+<p>Nothing else about the desk changed. The pen was still on the table. Someone who wanted to could still write <em>Organiser</em>. But the desk no longer took the stripe from the form. It decided the stripe itself.</p>
+<p>Mara puts down her cup.</p>
+<p>The doubt hadn't come from the code being impossible. It had come from the review being formless. She was trying to hold the whole question in her head, with a client waiting and a keynote droning on. Nobody can hold "is my API okay?" in their head.</p>
+<p>But you can hold a list. A short question per door, asked in the same order every time. <em>Which fields can this request touch? Which ones should it never touch? Where do I check?</em> A calm, boring list that someone else already thought through, so she doesn't have to invent it at 8:40 on a Thursday.</p>
+<h2>The after</h2>
+<p>Picture the Monday demo with that list behind you.</p>
+<p>The product owner is clicking around, as usual. Mara is not watching his cursor. She's drinking her tea, which is still warm. She has a tracker with every route in it and a note beside each one: <em>checked, here's how.</em> If a question comes up, she doesn't say "I'll get back to you." She says "yes, I've looked at that," and means it.</p>
+<p>There's also a short report she can send. It doesn't say "trust me." It says what was reviewed and what was found. It reads like the work of a professional, because it is.</p>
+<p>The knot loosens. Not because the world became risk-free, since no checklist promises that, but because the maybe now has edges. You know what you looked at. You know what's left. You can close the laptop and actually hear the keynote.</p>
+<h2>If you recognise the pen</h2>
+<p>If you've ever shipped an endpoint and then wondered whether a user could slip in a field you never meant to offer, you know this feeling. It doesn't mean you're a careless developer. It means nobody gave you a clear way to look.</p>
+<p>We built the <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong> for exactly that moment. It has 58 items in a PDF, an XLSX tracker, curl tests, an auth-route scanner script for Node/Express and Python, and a client report template. It's a review kit, not a guarantee, and it doesn't replace a professional security audit when one is warranted.</p>
+<p>If it doesn't help, there's a 30-day money-back promise: full refund, no questions.</p>
+<p><a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">See the REST API Security Checklist Kit</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>

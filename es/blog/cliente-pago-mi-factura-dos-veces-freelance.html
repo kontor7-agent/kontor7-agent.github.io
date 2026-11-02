@@ -1,0 +1,75 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mi cliente pagó mi factura dos veces y no sé qué hacer</title><meta name="description" content="Jueves, 10:15: dos ingresos iguales en tu cuenta. Una historia sobre el cliente que pagó dos veces tu factura y cómo recuperar la calma.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/cliente-no-me-paga-la-factura"><meta name="robots" content="noindex,follow"><meta property="og:title" content="Mi cliente pagó mi factura dos veces y no sé qué hacer">
+<meta property="og:description" content="Jueves, 10:15: dos ingresos iguales en tu cuenta. Una historia sobre el cliente que pagó dos veces tu factura y cómo recuperar la calma."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/freelancer-project-invoice-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Mi cliente pag\u00f3 mi factura dos veces y no s\u00e9 qu\u00e9 hacer", "description": "Jueves, 10:15: dos ingresos iguales en tu cuenta. Una historia sobre el cliente que pag\u00f3 dos veces tu factura y c\u00f3mo recuperar la calma.", "datePublished": "2026-11-02", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/freelancer-project-invoice-tracker-xlsx.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/cliente-pago-mi-factura-dos-veces-freelance"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Mi cliente pagó mi factura dos veces y no sé qué hacer</h1><p class='muted'>2026-11-02</p><p>Es jueves, las 10:15, y estás en la cola de la cafetería del coworking con el móvil en la mano. Solo querías mirar si ya había entrado el pago de Ferrán, el de la tienda de bicicletas.</p>
+<p>Ha entrado. Y ha entrado otra vez.</p>
+<p>Dos ingresos iguales, de 840, con unos minutos de diferencia. El mismo concepto. El mismo nombre.</p>
+<p>Te quedas quieta con el café a medio pedir. Alguien detrás de ti dice "cuando quieras" y tú dices "perdona", pero no te mueves.</p>
+<h2>Primero, una alegría pequeña y vergonzosa</h2>
+<p>La verdad es que lo primero que sientes no es preocupación. Es un alivio ridículo. Este mes ha sido flojo y llevas días haciendo cuentas mentales en el autobús. Por un segundo, esos 840 de más parecen una tregua.</p>
+<p>Luego llega la segunda voz, la que te conoce mejor: <em>eso no es tuyo</em>.</p>
+<p>Y una tercera, más incómoda: <em>¿y si fui yo? ¿Le mandé la factura dos veces?</em></p>
+<p>Pagas el café y te sientas en tu mesa con el portátil cerrado. No lo abres todavía. Abrirlo significa empezar a buscar, y ya sabes cómo va eso.</p>
+<h2>La búsqueda que nadie ve</h2>
+<p>Hay una parte de trabajar por tu cuenta de la que nadie habla en las charlas de emprendimiento. Es esa media hora en la que te conviertes en detective de tu propio negocio.</p>
+<p>Abres el correo y buscas "Ferrán factura". Salen cuatro mensajes. Uno es del presupuesto, otro de una corrección, y hay dos con un PDF adjunto. ¿Son la misma factura o son dos? Uno de los nombres de archivo termina en "_v2". Tú misma no recuerdas por qué.</p>
+<p>Salta a la carpeta del ordenador. Allí hay una hoja de cálculo que empezaste en enero con muy buena intención. La última fila rellena es de agosto. Después de eso, tu sistema es una mezcla de memoria, correos y la esperanza de que el banco te lo ponga fácil.</p>
+<p>Y mientras tanto, la pregunta de fondo: ¿cómo le escribes a un cliente para decirle "creo que me has pagado de más" sin parecer desordenada? Porque eso es lo que de verdad te pesa. No son los 840. Es la imagen de ti misma que aparece en esa conversación: alguien que no sabe lo que ha facturado.</p>
+<p>Te imaginas a Ferrán leyendo tu mensaje y pensando "vaya, no lo tiene claro". Quizá no piense nada de eso. Pero a las 10:40 de un jueves, con el café enfriándose, lo piensas tú por él.</p>
+<h2>Lo que el desorden cuesta sin hacer ruido</h2>
+<p>No es un drama. Nadie se arruina por un pago doble. Pero se te va la mañana, y con ella la concentración que tenías reservada para el vídeo que entregas el viernes.</p>
+<p>Se te va también algo más difícil de medir: la sensación de llevar tu negocio con las manos firmes. Ese pequeño "no sé exactamente qué está pasando con mi dinero" se acumula. Se queda contigo en la cola del súper, en la cena, en el trimestre cuando toca mirar números para Hacienda y piensas que algún día, de verdad, pondrás todo en orden.</p>
+<p>Un pago de más es solo un síntoma. Lo que duele es no tener un sitio donde mirar y ver la respuesta en diez segundos.</p>
+<h2>El momento en que cambia la pregunta</h2>
+<p>Hay una tarde, unas semanas después de esta mañana, en que le cuentas la historia a una amiga que también trabaja por su cuenta. Se ríe con cariño y te dice: "Yo tengo todo en una sola hoja. Clientes, facturas, qué está pagado y qué no. Miro y ya lo sé."</p>
+<p>No te da un discurso. Solo lo dice como quien comenta que usa una libreta buena.</p>
+<p>Y algo se te mueve por dentro. Te das cuenta de que llevabas tiempo creyendo que el problema era tu memoria, o tu falta de disciplina. Que cada vez que dudabas de una factura era un defecto tuyo. Y quizá no. Quizá faltaba, simplemente, un lugar donde cada factura tuviera su fila, su fecha y su estado, para que no tuvieras que reconstruirlo todo desde cero cada vez que algo no cuadra.</p>
+<h2>Un jueves distinto</h2>
+<p>Imagina el mismo jueves, la misma cafetería, el mismo móvil. Ves los dos ingresos de 840.</p>
+<p>La alegría pequeña sigue ahí, claro, eres humana. Pero la segunda pregunta ya no te deja en suspenso. Abres tu hoja, buscas a Ferrán, y ves una sola factura, con su número, su fecha y su marca de "pagada". Ahora sabes con certeza que lo que has recibido de más es eso, de más.</p>
+<p>Y el mensaje sale solo, con tono tranquilo: "Hola, Ferrán, creo que se ha duplicado un pago. ¿Lo revisamos juntos?" Sin disculpas innecesarias. Sin ese nudo en el estómago. Cómo se resuelva después, es una conversación entre vosotros dos, y si tienes dudas de fondo con las cuentas, para eso está tu gestor. Lo tuyo era tener claro qué había pasado.</p>
+<p>Cierras el correo y abres el proyecto de verdad. Son las 10:25. Todavía te da tiempo de empezar bien el día.</p>
+<p>El resto de la semana tiene el mismo aire. Los lunes ya no empiezan con una búsqueda de pistas, sino con una mirada rápida: qué se ha cobrado, qué vence, a quién le toca un aviso amable. Diez minutos, un café y a trabajar.</p>
+<h2>Si te has reconocido en la cola del café</h2>
+<p>Si alguna vez has dudado de si una factura era tuya, de si te habían pagado o de cuánto te debía realmente un cliente, no estás sola ni solo. Es lo normal cuando el sistema vive en la cabeza y en la bandeja de entrada.</p>
+<p>Para quien quiera un sitio donde tener clientes, proyectos, horas y facturas juntos, con números de factura automáticos, vencimientos y avisos de lo atrasado, existe <strong><a href="https://blixwerkstudio.com/p/freelancer-project-invoice-tracker-xlsx">Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker</a></strong>. Es una plantilla de Excel, con datos de ejemplo y una guía en PDF; el producto está en inglés. Y si no te ayuda, tienes 30 días para pedir que te devuelvan el dinero, sin preguntas.</p>
+<p>No arregla que un cliente se despiste con una transferencia. Pero te da un sitio donde mirar para que eso sea una anécdota y no una mañana perdida.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker (Excel) – Excel tracker for clients, projects, hours and invoices: auto invoice numbers, due dates, overdue flags, dashboard. Sample data + PDF guide. <p><a class='btn' href='/p/freelancer-project-invoice-tracker-xlsx'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
