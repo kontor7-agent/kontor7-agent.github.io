@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Swagger Docs Exposed in Production? The Spare Key Label</title><meta name="description" content="Your Swagger page is public and a message just landed. A calm story about the knot in your stomach, and how to stop guessing while you stand in a queue.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/swagger-docs-exposed-in-production"><meta property="og:title" content="Swagger Docs Exposed in Production? The Spare Key Label">
+<meta property="og:description" content="Your Swagger page is public and a message just landed. A calm story about the knot in your stomach, and how to stop guessing while you stand in a queue."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Swagger Docs Exposed in Production? The Spare Key Label", "description": "Your Swagger page is public and a message just landed. A calm story about the knot in your stomach, and how to stop guessing while you stand in a queue.", "datePublished": "2026-11-02", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/swagger-docs-exposed-in-production"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Swagger Docs Exposed in Production? The Spare Key Label</h1><p class='muted'>2026-11-02</p><h2>Saturday, 10:40, between the herbs and the tomatoes</h2>
+<p>Tomas is holding a tray of basil at the garden centre when his phone buzzes.</p>
+<p>It's a developer friend. <em>Hey, probably intentional, but your /swagger page is open to the whole internet. Just checking.</em></p>
+<p>Tomas reads it twice. The basil tray gets heavier.</p>
+<p>He built that API himself. Eight months of evenings, one small client, one app that people actually use now. Swagger was the thing that made it feel real. A tidy page with every route neatly listed, so the front-end freelancer could see what to call.</p>
+<p>He never turned it off. He didn't even think about it.</p>
+<p>Now he's standing next to a display of watering cans, thinking: <em>Am I in trouble?</em></p>
+<h2>The thought that arrives uninvited</h2>
+<p>It isn't one thought. It's a small crowd.</p>
+<p>What exactly can someone see on that page? Every route? Every field? The admin ones too? Did anyone already look? For how long has it been open? Does the client know? Should he tell them before they hear it from someone else?</p>
+<p>He pays for the basil and doesn't remember doing it.</p>
+<p>In the car park he opens the page on his phone, as if it might look different from outside. It looks exactly as helpful as it always did. That's the strange part. It's a very friendly page. It's friendly to everyone.</p>
+<h2>What it quietly costs</h2>
+<p>The weekend doesn't collapse. It just goes slightly grey.</p>
+<p>He's at his sister's lunch, nodding at the right moments. In his head he's rereading the code. Was that route behind login? He thinks so. He's almost sure. <em>Almost</em> is the word that follows him through the afternoon.</p>
+<p>That's the real price of this kind of worry. It isn't the exposed page. It's not knowing how big the question is. A public docs page can be a small thing, or it can be a clue pointing at something bigger, and from where Tomas stands, he can't tell which. So his mind gives him the worst version, for free, on repeat.</p>
+<p>He thinks about the client. About the email he'd have to write. About how a person who builds things alone doesn't have a security team down the hall to say, <em>oh, that, yes, we know, it's fine.</em></p>
+<p>Nobody is down the hall. There's just him, and a half-eaten slice of cake.</p>
+<h2>The turning point is small and a bit boring</h2>
+<p>On Sunday evening, Tomas does something undramatic. He stops asking <em>am I in trouble?</em> and asks a smaller question: <em>what would I check, in what order, if I did this properly?</em></p>
+<p>The moment he has an order, the crowd in his head gets quieter.</p>
+<p>Because here is what he realises. The docs page was never the whole story. It was a label on the spare key. Fair to ask why the label is visible. But the real question is what the door does when someone tries it without a key. Does it open? Does it ask who you are? Does it ask <em>again</em> for each room?</p>
+<p>He had been treating the whole thing like a verdict. It was a list. Lists can be worked through, ticked off, and written down, so that next time there's no gap between a friend's text and a calm answer.</p>
+<p>He doesn't need to become a security expert overnight. He needs the review he'd give a client's API, handed to himself, with a start and an end.</p>
+<h2>A different Monday</h2>
+<p>Picture the same message arriving a few weeks later.</p>
+<p>Monday, 9:05. Coffee on the desk. The friend writes: <em>your docs page is public, just FYI.</em></p>
+<p>Tomas smiles. Not because nothing could go wrong, but because he knows what he already looked at. The routes that matter have been tried without credentials. The odd ones have been noted. The one thing he decided to leave open is written down as a decision, with a reason, instead of lurking as an accident.</p>
+<p>He replies, <em>Thanks, I know. It's on my list, and here's what's behind it.</em> Then he closes the chat and goes back to the work he actually enjoys.</p>
+<p>No grey weekend. No rereading code at a family lunch. No draft email to the client that begins, <em>Something has come to my attention…</em></p>
+<p>Just a normal Monday, which is the whole point.</p>
+<h2>If you recognise yourself in Tomas</h2>
+<p>Maybe your page isn't Swagger. Maybe it's an <code>/api-docs</code>, a debug route, a forgotten test endpoint. The feeling is the same: a small public thing, and a large private <em>what if</em>.</p>
+<p>This isn't a reason to panic. It's a reason to have an order of things to check, so the doubt has somewhere to go besides your sleep.</p>
+<p>That's what we built the <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong> for. It's a 58-item review you work through at your own pace: a PDF and an XLSX tracker, curl tests you can run yourself, an auth-route scanner script, and a client report template, for Node/Express and Python. It doesn't replace a professional security audit, and it won't promise you a perfect score. It gives you a clear list, so you know what you looked at and what you decided.</p>
+<p>If it doesn't help, there's a 30-day money-back promise, no questions.</p>
+<p>You can take a look here: <a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">REST API Security Checklist Kit</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
