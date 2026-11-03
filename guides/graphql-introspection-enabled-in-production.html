@@ -1,0 +1,73 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GraphQL Introspection On in Production? The Tyre Pump</title><meta name="description" content="A message at the petrol station: your GraphQL schema is open to anyone. Now you wonder what else you left on. A story about calm after the launch.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/graphql-introspection-enabled-in-production"><meta property="og:title" content="GraphQL Introspection On in Production? The Tyre Pump">
+<meta property="og:description" content="A message at the petrol station: your GraphQL schema is open to anyone. Now you wonder what else you left on. A story about calm after the launch."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "GraphQL Introspection On in Production? The Tyre Pump", "description": "A message at the petrol station: your GraphQL schema is open to anyone. Now you wonder what else you left on. A story about calm after the launch.", "datePublished": "2026-11-03", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/graphql-introspection-enabled-in-production"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>GraphQL Introspection On in Production? The Tyre Pump</h1><p class='muted'>2026-11-03</p><p>Thursday, 12:40. You are standing at a petrol station with a half-eaten sandwich in one hand and your phone in the other.</p>
+<p>The tyre pump beside you hisses. You are supposed to be checking the pressure before the drive to a client meeting. Instead you are reading a message from a friend who builds front ends.</p>
+<p><em>"Hey, no pressure, but I opened your API in a schema explorer for fun. The whole thing loads. Every type, every field. Is that meant to be public?"</em></p>
+<p>You read it twice. Introspection. You turned it on during development because the tooling loved it. Somewhere between the staging deploy and the Friday release, nobody turned it off. Nobody even wrote it on a list.</p>
+<h2>The sandwich goes cold</h2>
+<p>Your first thought is a flat, hot <em>oh no</em>.</p>
+<p>Your second thought is worse: <em>what else did I leave on?</em></p>
+<p>You stand there while a van pulls up behind you. You try to remember. The debug flag. The error messages. The admin route you added for a quick test. Did you ever check what the API returns when someone asks for something that isn't theirs?</p>
+<p>You don't know. That is the real feeling. It isn't the schema. It's that you can't answer the question with certainty.</p>
+<p>You open the laptop on the passenger seat, right there in the car. You start clicking through the code. Twenty minutes later you have found nothing dramatic and fixed one thing. And yet your chest is no lighter, because finding nothing is not the same as knowing.</p>
+<h2>The meeting you half attended</h2>
+<p>The client meeting is friendly. Coffee, a slide deck, someone asking about your timeline.</p>
+<p>You nod in the right places. Behind your eyes a second meeting is running: <em>Is this the only thing? Would I even know?</em></p>
+<p>On the drive home you replay it. A schema being visible isn't automatically a disaster. You know that. It's a map, not a key. But a map is what makes the next question easy for someone curious, and you can't shake the thought that you launched without ever deciding what should be visible. You didn't decide. You just shipped.</p>
+<p>That is the quiet cost nobody mentions. It isn't the incident. It's the low hum afterwards. The glance at the logs before bed. The Sunday lunch where you're only half there. The feeling that you are a person who builds things for other people and can't quite vouch for them.</p>
+<h2>What the friend's message actually said</h2>
+<p>That evening you reread the message, and this time you read it differently.</p>
+<p>Your friend didn't write <em>you've been hacked</em>. He wrote <em>is that meant to be public?</em> A fair, ordinary question. The kind a colleague, a client or a customer's security person will ask one day, perhaps less kindly.</p>
+<p>And you realise you have no good answer ready, not because the work is bad, but because the checking was never a thing you did on purpose. It lived in your head, as a vague <em>I think I handled that</em>.</p>
+<p>That is the turning point. The problem was never a missing clever trick. It was that there was no list. No place where "is this meant to be public?" had a box next to it, with a tick or a note saying <em>decided, and here is why</em>.</p>
+<h2>A different kind of Monday</h2>
+<p>Picture the same API, three weeks later.</p>
+<p>Nothing about it is more glamorous. But on Monday morning you open one document. Every line has a status: checked, fixed, or knowingly accepted. When a client asks, <em>"Is your API secure?"</em>, you don't tense up. You send a short, tidy summary of what was reviewed and what was found.</p>
+<p>The petrol station moment, had it happened now, would be a two-minute reply: <em>"Thanks for the heads-up, that one is on my list and already decided."</em> Then you'd finish the sandwich.</p>
+<p>That is all calm is here. Not a perfect system. A system you can <em>see</em>.</p>
+<p>You would still find things. Everybody does. But you'd find them on a Tuesday afternoon with a coffee, not in a car park with your heart beating in your ears.</p>
+<h2>If you recognise the car park</h2>
+<p>One honest note first. The kit below is built around REST APIs (Node/Express and Python), not GraphQL specifically, and it won't turn off your introspection for you. What it does is give you the habit that was missing: a structured pass through the things an API tends to leave open, with a tracker, some simple tests and a report you can hand to a client.</p>
+<p>If the question <em>"what else did I forget?"</em> has ever followed you home, it might be a gentle next step. It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p><strong><a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</a></strong> – a 58-item review kit with a PDF and XLSX tracker, curl tests, an auth-route scanner script and a client report template. It supports your own review and does not replace a professional security audit.</p>
+<p>The tyre pressure, by the way, was fine. It usually is. It is just nicer to know.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
