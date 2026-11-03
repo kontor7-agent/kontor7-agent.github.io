@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Names ALL CAPS and lowercase Mixed? The Lanyard Box</title><meta name="description" content="Half the names in the export shout, half whisper. A calm story about the badge printer, the registration table, and a Monday where names just look right.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/csv-names-inconsistent-capitalization-uppercase-lowercase"><meta property="og:title" content="CSV Names ALL CAPS and lowercase Mixed? The Lanyard Box">
+<meta property="og:description" content="Half the names in the export shout, half whisper. A calm story about the badge printer, the registration table, and a Monday where names just look right."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "CSV Names ALL CAPS and lowercase Mixed? The Lanyard Box", "description": "Half the names in the export shout, half whisper. A calm story about the badge printer, the registration table, and a Monday where names just look right.", "datePublished": "2026-11-04", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/csv-names-inconsistent-capitalization-uppercase-lowercase"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>CSV Names ALL CAPS and lowercase Mixed? The Lanyard Box</h1><p class='muted'>2026-11-04</p><p>It is 8:40 on a Thursday morning, and Mara is standing at a folding table in a hotel foyer with a box of lanyards at her feet.</p>
+<p>The conference starts at ten. She is the freelance organiser, which means she is also the person who prints the badges, tapes down the cable and knows where the spare pens are.</p>
+<p>The first badge slides out of the little printer. <strong>ANNA SCHMIDT.</strong></p>
+<p>The second: <strong>peter müller.</strong></p>
+<p>The third: <strong>Katrin o'brien.</strong></p>
+<p>The fourth: <strong>JEAN-LUC DUBOIS</strong>, in letters so large the company name has been pushed off the edge.</p>
+<p>She holds them up in a row, like a bad hand of cards. Her stomach does the small drop she knows well.</p>
+<h2>The export that looked fine</h2>
+<p>She had opened the registration file on Tuesday. It had come from the ticket platform, with a few late sign-ups added by hand from emails. She had scrolled through it, seen names in cells, and thought: good, done.</p>
+<p>She had not looked at it the way a guest would look at their own badge.</p>
+<p>Some people had typed their names in capitals because the form field felt like a government form. Some had typed in lowercase from a phone, thumb in a hurry. Some had been entered by a colleague, with a capital where it should be and not where it shouldn't. Every row was <em>correct</em>. None of the rows matched.</p>
+<p>Now the first guests are twenty minutes away, and a man from the sponsor's team is walking toward the table with a friendly face and a lanyard already in hand.</p>
+<p>"Morning! Am I on the list?"</p>
+<p>"You are," Mara says. She turns his badge over so he can't read it. "Give me one second."</p>
+<h2>The small shame nobody mentions</h2>
+<p>Here is the part she would never say out loud to the organisers she compares herself to. It isn't the badges. It is the thought underneath them.</p>
+<p><em>A real company would have caught this.</em></p>
+<p>A real company would have a person for data. A real company would not be holding a pen over a sticker sheet, writing "Peter Müller" by hand because the printer shouted at him. She is a one-woman business, and every small mess like this one quietly argues that she isn't running a proper one.</p>
+<p>It has a cost beyond today. It is the Tuesday night she keeps meaning to check the file and doesn't. It is the way she dreads sending anything to the whole list, because the greeting might read "Hello ANNA" or "Hello peter", and clients notice that kind of thing, even when they are kind about it.</p>
+<p>It is also the hour she'll lose now. Stickers, a pen, an apology for each wrong badge, and a quiet promise to herself that next time will be different.</p>
+<p>That promise has been made before.</p>
+<h2>The sticker sheet and the thought that stuck</h2>
+<p>She writes eleven badges by hand. Her handwriting is fine, but it is not a badge. By ten past nine the doors are open and people are drifting in, taking their lanyards and smiling. Nobody says a word about the capitals. Nobody ever does, which is somehow worse. They just see it and file it away.</p>
+<p>Around eleven, in the gap between the first talk and the coffee break, she sits down with a lukewarm tea and looks at the file again. Not at the data, but at the shape of the problem.</p>
+<p>It wasn't a hard problem. It was the same small one every time: a name is a name, however it was typed, and nothing in her process ever tidied them into one calm style before they went out into the world. The work wasn't difficult, it was <em>repeated</em>. And repeated work, she realises, is exactly the kind that should never reach her at 8:40 on the morning of the event.</p>
+<p>It doesn't have to be a heroic fix. It just has to happen <em>before</em>, quietly, with a clear note of what changed, so that she can glance at it and trust it. She wants names that look like names, a list of anything odd to check by eye, and nothing touched without her seeing it first.</p>
+<p>She writes it on the back of a lanyard card, in pen. <em>Tidy before printing. Look before it changes.</em></p>
+<h2>A normal Monday, afterwards</h2>
+<p>Picture the next event instead. Not a dramatic one. A Monday, ten days out.</p>
+<p>The registration export lands in her inbox. She makes tea first, which she never used to do. She drops the file into a small routine that she trusts, and a minute later there is a short report on her screen: these names were adjusted, these two look unusual, these three could be the same person. She scans it the way you scan a shopping list.</p>
+<p>She approves it, prints a single test badge, and holds it up.</p>
+<p><strong>Anna Schmidt.</strong> <strong>Peter Müller.</strong> <strong>Katrin O'Brien.</strong></p>
+<p>They look like people someone was glad to expect.</p>
+<p>Then she closes the laptop and goes for a walk, because the morning of the event is no longer where this gets solved. It was solved on a quiet Monday, and the foyer on Thursday is just a foyer, with a box of lanyards and a bowl of mints.</p>
+<h2>If this was your Thursday</h2>
+<p>If you have ever stared at a list where half the names shout and half whisper, you're not careless. You are one person doing the work of a back office. That's all.</p>
+<p>For the days when you want the cleaning to happen quietly, with a preview before anything changes and a report afterwards, there is the <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a>. It includes a dry-run mode and a change report, and it carries our 30-day money-back promise. If it doesn't help, you get a full refund, no questions asked.</p>
+<p>No rush. Just something to have ready for the next export.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
