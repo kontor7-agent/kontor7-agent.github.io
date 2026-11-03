@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Can Users See Each Other&#x27;s Records? IDOR and Locker 14</title><meta name="description" content="Your API checks that someone is logged in, but does it check whose record they open? A quiet story about that doubt, and how to put it down.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/api-lets-users-see-other-users-records-idor"><meta property="og:title" content="Can Users See Each Other&#x27;s Records? IDOR and Locker 14">
+<meta property="og:description" content="Your API checks that someone is logged in, but does it check whose record they open? A quiet story about that doubt, and how to put it down."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Can Users See Each Other's Records? IDOR and Locker 14", "description": "Your API checks that someone is logged in, but does it check whose record they open? A quiet story about that doubt, and how to put it down.", "datePublished": "2026-11-03", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/api-lets-users-see-other-users-records-idor"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Can Users See Each Other&#x27;s Records? IDOR and Locker 14</h1><p class='muted'>2026-11-03</p><p>It's 8:15 on a Saturday, and you are standing in a hostel corridor holding a small metal key with a plastic fob. The fob says 14.</p>
+<p>You are on a weekend away. The first one in months. You put your jacket in the locker, turn the key, and walk off toward breakfast.</p>
+<p>Then, halfway down the stairs, a thought lands from nowhere.</p>
+<p>What if the lockers only check that you have <em>a</em> key?</p>
+<p>Not <em>your</em> key. Just a key. Any key, any locker.</p>
+<p>You stop on the step. A man with a rucksack squeezes past you. And you realise you are no longer thinking about the hostel at all.</p>
+<p>You are thinking about <code>/orders/1043</code>.</p>
+<h2>The URL you built in March</h2>
+<p>A small shop owner asked you for an order portal. Customers log in, they see their orders. You built it carefully. Login works. Tokens work. You checked the login three times.</p>
+<p>But did you ever check what happens when a logged-in customer asks for order 1044 instead of 1043?</p>
+<p>You can see the code in your head. A request arrives, the token is valid, the order is fetched by number, the order is returned. Nothing in that picture asks <em>whose</em> order it is.</p>
+<p>Maybe it does. Maybe you wrote that line and forgot. Maybe you wrote it on three routes and not the fourth.</p>
+<p>You honestly don't know. That's the part that sits in your stomach next to the croissant you haven't eaten yet.</p>
+<h2>The doubt nobody sees</h2>
+<p>Nobody has complained. No customer has written "I can see someone else's address." The shop owner thinks you are the person who handles that sort of thing. She sent you a thank-you emoji last month.</p>
+<p>That emoji is now heavy.</p>
+<p>You sit at the breakfast table with your phone and open the laptop in your head instead. You play the bad version: a stranger changes one number, sees a name and a street, tells the owner. The owner calls you. Your voice goes careful and quiet on the phone.</p>
+<p>And you notice what the doubt is really costing. Not money, not yet. It's the weekend. You are in a pleasant place with a nice coffee and you are somewhere else.</p>
+<p>You also notice you can't answer the question by worrying harder. You have been trying since the stairs.</p>
+<h2>The phone call you'd rather not make</h2>
+<p>So you think about what a professional does here.</p>
+<p>Not a genius. Not someone who has memorised every way an API can go wrong. Just someone who, before handing a system to a client, sits down once with a list and asks the plain questions. Who is asking? What are they asking for? Does it belong to them?</p>
+<p>You realise you have never had that list. You have had good habits and a vague feeling of having been careful. In the middle of a Saturday, a vague feeling is not very comforting.</p>
+<p>It doesn't have to be like this.</p>
+<p>The doubt isn't a sign you are bad at your job. It's a sign you care whether the person behind order 1044 stays private. That deserves something firmer than a feeling.</p>
+<h2>A different Monday</h2>
+<p>Picture the Monday after.</p>
+<p>You open the project with a coffee. There's a short list next to it, one you didn't have to invent. You go through it the way you'd check your bag before leaving the house. Some things are already fine. One or two are not, and you find them on a quiet Monday morning rather than in an angry email.</p>
+<p>You fix them. You tick them off. The question that followed you down the hostel stairs gets an actual answer.</p>
+<p>Then, when the shop owner asks, "Is it all safe?", you don't say "I think so." You can say what you checked and what you found. Your voice stays level. That's a very different phone call.</p>
+<p>And the next Saturday belongs to you again.</p>
+<h2>Back at the lockers</h2>
+<p>You finish breakfast. You walk back up the stairs and try your key on locker 14. It opens, of course. You check the lock on 15 out of pure curiosity. Your key does nothing there.</p>
+<p>Someone made sure of that, long before you arrived. A small boring detail in a small metal door, and it's the reason nobody worries about their jacket.</p>
+<p>That's all you want for your API: a boring detail, built in on purpose, that you can stop thinking about.</p>
+<h2>If that's you</h2>
+<p>If you recognised the stairs, the URL, the emoji that feels heavy, there is a calm way to put this down. The <a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</a> is a 58-item review kit for Node/Express and Python: a PDF, an XLSX tracker, curl tests, an auth-route scanner script and a client report template. It's made to turn "I hope it's fine" into "I looked." It comes with a 30-day money-back promise, so if it doesn't help, you get a full refund, no questions.</p>
+<p>It won't replace a professional security audit for a system that needs one. It's a clear, organised first pass that is yours to run.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
