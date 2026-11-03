@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Messy Excel, 40 Columns, Needed Today? The Foil Timer</title><meta name="description" content="A client sends a 40-column Excel mess at 10 am and wants it today. A quiet story about the afternoon that doesn&#x27;t have to disappear into one file.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/messy-excel-file-40-columns-needs-cleaning-today"><meta property="og:title" content="Messy Excel, 40 Columns, Needed Today? The Foil Timer">
+<meta property="og:description" content="A client sends a 40-column Excel mess at 10 am and wants it today. A quiet story about the afternoon that doesn&#x27;t have to disappear into one file."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Messy Excel, 40 Columns, Needed Today? The Foil Timer", "description": "A client sends a 40-column Excel mess at 10 am and wants it today. A quiet story about the afternoon that doesn't have to disappear into one file.", "datePublished": "2026-11-03", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/messy-excel-file-40-columns-needs-cleaning-today"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Messy Excel, 40 Columns, Needed Today? The Foil Timer</h1><p class='muted'>2026-11-03</p><p>The foil timer on the shelf says 22 minutes.</p>
+<p>Jonas has a towel round his shoulders, a cold coffee, and half his head wrapped in silver. It is Thursday, 10:07. He booked this appointment weeks ago, a rare hour that belongs to nobody but him.</p>
+<p>Then his phone buzzes on the armrest.</p>
+<p><em>Hi Jonas, attached is the export from our old system. Can you get it cleaned up and ready for the import? We need it today. Thanks!</em></p>
+<p>He opens the attachment with one wet thumb. Forty columns. He scrolls sideways, and the sideways keeps going.</p>
+<p>The first column is called "Name". The fourth is also called "Name", with a space after it. Dates sit in three formats. One phone number has a country code, another has brackets, and a third has the word "mobile" typed into the cell. Somewhere around column 23 there are three columns that seem to hold the same thing, each filled in on a different day by a different person.</p>
+<p>The stylist asks if he wants another coffee. He says yes, and does not hear himself say it.</p>
+<h2>The sentence that sits in your chest</h2>
+<p><em>We need it today.</em></p>
+<p>There is nothing rude in it. The client is not shouting. That is the odd part. The message is friendly, and your stomach still drops, because you know what "today" means with a file like this.</p>
+<p>It means the afternoon you planned for your own work is gone. It means cleaning by hand, a bit at a time, with that low worry running underneath: <em>did I fix all of them, or just the ones I could see?</em></p>
+<p>You cannot really say that worry out loud. You are the person they hired so they would not have to think about this. You can hardly write back, "I am not sure I caught every duplicate."</p>
+<p>So you say yes. You always say yes. Then you quietly pay for it.</p>
+<h2>The afternoon that eats itself</h2>
+<p>Jonas knows how the rest of the day goes, because he has lived it before.</p>
+<p>He gets home at 11:40 with damp hair and a sandwich. He sorts the file by one column, then another. He fixes the dates and finds two that fall on the thirty-first of a month with only thirty days. He deletes an obvious duplicate row and then wonders whether it was a real second customer with the same name.</p>
+<p>At 15:30 he is still going. The call he promised a different client he would prepare for gets five minutes, standing up. At 17:00 the file looks better, and he sends it with a short, confident note. Then he spends the evening quietly waiting for a reply that begins with "Small thing, but..."</p>
+<p>Nothing in that day is a disaster. It is just a day gone, plus the feeling of having done careful work with no way to prove it was careful.</p>
+<p>That feeling costs more than the hours do. It is the reason a simple request can make a capable person feel, for a moment, like someone winging it.</p>
+<h2>The shift in the chair</h2>
+<p>The timer ticks down to 14. Jonas looks at his phone, then at his own reflection, half silver, half himself.</p>
+<p>He thinks about the last time a file like this arrived. He remembers handling it a different way: a short, repeatable pass, first a look at what <em>would</em> change, then the change itself, then a plain list of everything that had been touched. He remembers the odd calm of reading that list instead of trusting his memory.</p>
+<p>Nothing about that memory is dramatic. It is a quiet one. He did not feel clever. He felt <em>finished</em>, and he could say exactly what he had done.</p>
+<p>It does not have to be an afternoon. It can be a small, boring, checkable job.</p>
+<p>He types one-handed: <em>Got it. You'll have it back by 15:00, with a short note on what was changed.</em></p>
+<p>He puts the phone face down. He drinks the coffee, which is now warm.</p>
+<h2>What a Thursday looks like when it's handled</h2>
+<p>Here is the after, the one worth wanting.</p>
+<p>The file arrives and you open it. You still see the forty columns, and your stomach does not drop. You know roughly what this takes: a first look, a quiet run, a read-through of what moved. You do the real work of checking the odd cases, the ones that need a human eye, and the rest is already behind you.</p>
+<p>You are back at your desk by 11:30. You send the cleaned file at 13:15, with a short list of changes for the client to skim. They write back, "This is great, thank you." You smile at the screen and open your own work.</p>
+<p>The afternoon you planned is still there. The call you promised to prepare for gets your full attention. At six you close the laptop and it stays closed.</p>
+<p>No one praised you for the hour you did not lose. It was just yours, which is the whole point.</p>
+<h2>A gentle next step</h2>
+<p>If Jonas's Thursday sounds familiar, there is a small toolkit made for exactly this kind of job. <strong>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</strong> helps you dedupe, fix dates, phones and encoding, split, merge and validate. It has a dry-run mode so you see what <em>would</em> change, and a change report so you can say what <em>did</em>. It needs Python, so it suits people who are comfortable running a script.</p>
+<p>It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p><a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Take a look at the CSV &amp; Excel Cleaning Toolkit</a></p>
+<p>The foil timer rings. Jonas doesn't flinch.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
