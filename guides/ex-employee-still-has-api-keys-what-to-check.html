@@ -1,0 +1,83 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ex-Employee Still Has Your API Keys? The Returned Laptop</title><meta name="description" content="A laptop comes back in a padded envelope and one question stays: who still holds the keys? A calm story for small teams after someone leaves.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/ex-employee-still-has-api-keys-what-to-check"><meta property="og:title" content="Ex-Employee Still Has Your API Keys? The Returned Laptop">
+<meta property="og:description" content="A laptop comes back in a padded envelope and one question stays: who still holds the keys? A calm story for small teams after someone leaves."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Ex-Employee Still Has Your API Keys? The Returned Laptop", "description": "A laptop comes back in a padded envelope and one question stays: who still holds the keys? A calm story for small teams after someone leaves.", "datePublished": "2026-11-03", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/ex-employee-still-has-api-keys-what-to-check"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Ex-Employee Still Has Your API Keys? The Returned Laptop</h1><p class='muted'>2026-11-03</p><p>The courier knocks at 9:10 on a Tuesday, just as you are pouring the first coffee.</p>
+<p>A padded envelope. Inside, a grey laptop with a sticker of a cartoon fox on the lid, and a handwritten note: <em>All wiped, good luck with everything! – Jonas.</em></p>
+<p>You smile. Jonas was good. He built most of the shop's backend over two years, and he left on friendly terms. There was a card, a small gift, a hug at the door.</p>
+<p>You set the laptop on the kitchen counter and look at it.</p>
+<p>Then a quieter thought arrives, the one you didn't have during the goodbye.</p>
+<p><em>What else did he take with him that doesn't fit in an envelope?</em></p>
+<h2>The question nobody asks at a farewell</h2>
+<p>You are not suspicious of Jonas. That is what makes it awkward. Nothing in you thinks he would do anything wrong.</p>
+<p>But the thought doesn't care about trust. It just sits there, politely, next to the coffee.</p>
+<p>He set up the payment connection. He set up the email service. There was some kind of key for the shipping provider, and another for the thing that sends the order confirmations. Where do those live? Who else has seen them? Did they ever get pasted into a chat to "just get it working"?</p>
+<p>You realise you can't answer a single one of those questions. Not because anything is wrong. Because nobody ever wrote it down.</p>
+<p>You open the laptop lid anyway, as if the answer might be on the screen. A blank login window looks back at you.</p>
+<h2>The list in your head</h2>
+<p>By ten o'clock you are at your desk with a half-written note. It has three lines:</p>
+<ul>
+<li>payment thing</li>
+<li>email thing</li>
+<li>ask someone?</li>
+</ul>
+<p>You know what the note really says. It says: <em>I run a real business, and I don't know where its doors are.</em></p>
+<p>That feeling is not about Jonas at all. It is about the way small teams grow. One person says "I'll sort it," and for two years they do. Then they leave, and the sorting leaves with them. What remains is a shop that works and a nagging sense that you are standing on a floor you never inspected.</p>
+<p>You think about who you could ask. The freelancer who helps on Fridays? She is lovely, but you'd feel strange handing her that much weight. Your cousin who "does IT"? He would say <em>just change everything</em>, and then you'd be in a different kind of panic.</p>
+<p>And there is the quiet cost. You catch yourself checking the order dashboard more often than usual. At lunch you scroll the support inbox for anything odd. At the supermarket queue at six, the thought comes back, so you stand there holding a bag of oranges, running through doors you cannot name.</p>
+<p>Nothing has gone wrong. That is the strangest part. You are tired from something that hasn't happened.</p>
+<h2>The turning point is smaller than you think</h2>
+<p>On Thursday you do something modest. You stop trying to solve it in your head and ask a different question.</p>
+<p>Not <em>am I in danger?</em> but <em>what would a careful person check, in what order, when someone leaves?</em></p>
+<p>That question has a shape. A careful person doesn't panic and doesn't shrug. They go through a list. One thing at a time, each marked done or not done. A list that exists before the worry does, so the worry has somewhere to go.</p>
+<p>You realise the problem was never that you lacked technical talent. You lacked a page.</p>
+<p>A page that says: here is what we have, here is who can reach it, here is what we looked at and when. A page you can hand to the Friday freelancer, or to a customer who someday asks, <em>Is your system safe?</em>, or simply keep for yourself so your own head stops holding it all.</p>
+<p>The relief isn't dramatic. It is the feeling of a window being opened in a stuffy room.</p>
+<h2>A normal Monday, afterwards</h2>
+<p>Picture it, a few weeks on.</p>
+<p>It is Monday, 8:30. You make coffee. Somewhere in a folder there is a checklist with ticks next to the things that matter. Some items say <em>done</em>, a couple say <em>later, and here's why</em>. Nothing is a mystery any more.</p>
+<p>When the next person joins, or leaves, you don't feel your stomach tighten. You open the page, and there is a calm, ordinary routine for it, a bit like locking up the shop at night.</p>
+<p>The laptop goes back to being just a laptop. You wipe the fox sticker off the lid, and it goes to the Friday freelancer, who is delighted.</p>
+<p>At six o'clock, in the supermarket queue, you think about dinner. Only dinner.</p>
+<h2>If you recognise yourself</h2>
+<p>This story is made up, but the feeling usually isn't. If someone has just left your team, or you've inherited an API you didn't build, and a small voice keeps asking what you've missed, you might like something to work through instead of carrying it in your head.</p>
+<p>The <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong> is a 58-item review kit: a PDF checklist, an XLSX tracker, curl tests, an auth-route scanner script and a client report template, for Node/Express and Python. It is made for exactly that moment: a clear page, and a record that you looked. It is an organising aid, not a replacement for a professional security review. If it doesn't help, there is a 30-day money-back promise, no questions.</p>
+<p>You can look at it here: <a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">REST API Security Checklist Kit</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
