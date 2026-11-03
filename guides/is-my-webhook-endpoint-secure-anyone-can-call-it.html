@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Is My Webhook Endpoint Secure? The Propped Side Door</title><meta name="description" content="A brick holds the hall&#x27;s side door open, and you realise your webhook URL works the same way. A calm story about not knowing who can knock.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/is-my-webhook-endpoint-secure-anyone-can-call-it"><meta property="og:title" content="Is My Webhook Endpoint Secure? The Propped Side Door">
+<meta property="og:description" content="A brick holds the hall&#x27;s side door open, and you realise your webhook URL works the same way. A calm story about not knowing who can knock."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Is My Webhook Endpoint Secure? The Propped Side Door", "description": "A brick holds the hall's side door open, and you realise your webhook URL works the same way. A calm story about not knowing who can knock.", "datePublished": "2026-11-03", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/is-my-webhook-endpoint-secure-anyone-can-call-it"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Is My Webhook Endpoint Secure? The Propped Side Door</h1><p class='muted'>2026-11-03</p><p>The side door of the village hall is held open with a brick.</p>
+<p>It is Saturday, 10:20. Mira is carrying a folding table across the parquet floor for the repair café, and the hall smells of floor polish and toast. A man with a toaster under his arm walks in through the side door, nods, and sets it down. Nobody asks his name. Nobody should. It's a repair café.</p>
+<p>"Anyone could just walk in here," says Hanne, who runs the kettle. She laughs. "That's the point."</p>
+<p>Mira laughs too. Then her stomach does something small and unpleasant.</p>
+<h2>The address she gave away on Thursday</h2>
+<p>On Thursday she had finished a job for a client who sells ceramics online. When an order comes in, the shop sends a message to a web address Mira built, and her little service reacts: it marks the order as paid, sends the confirmation, and tells the warehouse shelf to count one less.</p>
+<p>It worked on the first try. She sent a happy message, the client sent back a clapping emoji, and she closed the laptop feeling like a professional.</p>
+<p>Now she stands in a village hall holding a folding table, and the thought arrives complete: <em>that address is a door. What did I put on it?</em></p>
+<p>She can't remember writing anything that asks who is knocking. She remembers the address being long and ugly. She remembers thinking nobody would guess it. That is exactly what Hanne's brick is: a plan that depends on nobody trying the handle.</p>
+<h2>The question you can't ask out loud</h2>
+<p>You know this feeling if you've built anything that talks to the internet. It isn't panic. It's a low hum that follows you around a Saturday.</p>
+<p>You smile at the toaster man. You help someone find an extension lead. Underneath, a quiet voice keeps asking: if somebody sent my endpoint a message that <em>looked</em> like an order, would it believe them? Could a stranger mark something as paid? Would I even know?</p>
+<p>You can't ask your client, because the whole reason they hired you is that they don't have to wonder. You can't really ask a friend either, because the question sounds like "did I do my job properly?" and nobody enjoys saying that out loud.</p>
+<p>So you do what most people do. You open the code on your phone between cups of tea, scroll, and squint. It looks fine. It always looks fine when you wrote it yourself.</p>
+<h2>Why "it works" isn't the same as "it's safe"</h2>
+<p>The cruel part is that everything is quiet. No error and no angry email. Orders keep arriving, the clapping emoji is still the last message in the thread.</p>
+<p>A door that anyone can open looks exactly like a door nobody has opened yet.</p>
+<p>That is what costs you the weekend. The worry doesn't come from anything that went wrong. It comes from not knowing, and not knowing has no end. You could check forever and still feel unfinished, because you were never sure what "checked" would even look like.</p>
+<h2>The moment it stops being a feeling</h2>
+<p>At 11:45, Hanne hands Mira a mug and says, "You've been staring at that brick for ten minutes."</p>
+<p>Mira tells her. Not in technical words, just: "I gave someone an address that does important things, and I'm not sure it checks who's calling."</p>
+<p>Hanne thinks about it. "When we lock up here, I don't <em>feel</em> whether it's locked. I walk the same round every time. Side door, back door, cellar, windows. Same order. Then I know."</p>
+<p>That's the whole turning point, and it fits in a sentence: Hanne doesn't trust her feelings about the doors. She trusts a round she walks the same way every time.</p>
+<p>Mira had been trying to <em>feel</em> her way to certainty. What she needed was a list to walk, one that tells her what to try, in what order, and what a good answer looks like. Then "is it secure?" stops being a fog and becomes a handful of small doors, each with a yes or a no.</p>
+<h2>A different Monday</h2>
+<p>Picture the Monday after that.</p>
+<p>Mira sits down with her coffee, not her dread. She walks the round. Some doors are fine. One isn't, and she finds it in ten minutes instead of in a bad message from a client three months from now. She fixes it, ticks it, and sees the row turn from a question into a finished thing.</p>
+<p>Then she writes the client a short, calm note saying what was checked and what was changed. It's the kind of note that makes a client think: <em>good, someone is minding the doors.</em> She doesn't have to defend herself, and she doesn't have to hope.</p>
+<p>The next Saturday she carries a folding table across the parquet floor and thinks about nothing but where it goes.</p>
+<p>The brick, by the way, is gone. Hanne swapped it for a proper door-closer. It took five minutes and a screwdriver.</p>
+<h2>If you recognise the brick</h2>
+<p>If you have an address out there that does real things, and you can't say for sure who's allowed to call it, you don't need to be scared. You need a round to walk.</p>
+<p>That is what the <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong> is for. It's a 58-item review you can work through at your own pace: a PDF and an XLSX tracker so you can see what's done, curl tests to try the handles yourself, a script that looks over your auth routes, and a report template for telling a client what you checked. It covers Node/Express and Python. It's a way to organise a review, not a replacement for a security professional, and if it doesn't help, the 30-day money-back promise covers you, no questions.</p>
+<p><a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">See the checklist kit here</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
