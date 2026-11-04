@@ -1,0 +1,73 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Full Name in One Column? The Print Counter Moment | Blixwerk</title><meta name="description" content="400 names in one column, a printer waiting and a welcome letter that says &#x27;Dear Berg, Anna van der&#x27;. A calm story about splitting messy names in a CSV.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/split-first-and-last-name-messy-csv"><meta property="og:title" content="Full Name in One Column? The Print Counter Moment | Blixwerk">
+<meta property="og:description" content="400 names in one column, a printer waiting and a welcome letter that says &#x27;Dear Berg, Anna van der&#x27;. A calm story about splitting messy names in a CSV."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Full Name in One Column? The Print Counter Moment", "description": "400 names in one column, a printer waiting and a welcome letter that says 'Dear Berg, Anna van der'. A calm story about splitting messy names in a CSV.", "datePublished": "2026-11-04", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/split-first-and-last-name-messy-csv"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Full Name in One Column? The Print Counter Moment</h1><p class='muted'>2026-11-04</p><p>It is 8:20 on a Friday morning, and you are standing at the counter of the print shop on the corner. The machine behind it hums. The woman at the till is polite, patient and clearly has a queue forming behind you.</p>
+<p>You are an event organiser. One person, one laptop, one charity fun run on Sunday. The welcome letters have to be printed today. Each one should start with <em>Dear Anna,</em> and each bib label needs a first name in big letters.</p>
+<p>The registration export from the booking site has one column called <strong>Name</strong>. You open it on the counter's little monitor so she can see what you need.</p>
+<p>The first rows look fine. Then you scroll.</p>
+<h2>Four hundred ways to write a person</h2>
+<p><em>MÜLLER, Hans.</em> <em>Dr. Jonas Weber.</em> <em>maria garcia lopez.</em> <em>Anna van der Berg.</em> <em>Priya</em> on her own, with nothing after it. <em>Tom &amp; Jess Hartley</em>, which is two people in one cell. One entry has a trailing space. One has a double space in the middle. One has a name in capitals and a surname in lowercase, as if the person typed it in a hurry on a train.</p>
+<p>You do the mental maths. Four hundred rows. If you fix them by hand at, say, thirty seconds each, you will still be here when the shop closes.</p>
+<p>The woman at the till says, kindly, "Do you want to come back later?"</p>
+<p>You do not have a later. The race is in two days. The letters go out by post, or they don't go out at all.</p>
+<h2>The quiet cost nobody mentions</h2>
+<p>Here is the part you would not say out loud to the woman at the counter.</p>
+<p>You are not worried about the names. You are worried about what a wrong name says about you. Last year a runner replied to your letter with a polite note: <em>It's Van der Berg, not Berg.</em> It was a tiny correction. It still stayed with you for weeks. Because you want people to open an envelope and feel looked after, not processed.</p>
+<p>So you split names carefully, and slowly, and by hand. You copy, paste, retype, check, lose your place and start again. The cost is not only the hour. It is the low hum of doubt that follows you home: <em>Did I get Dr. Weber's title into the surname? Did Priya get a letter that says 'Dear ,'?</em></p>
+<p>You think of yourself as someone who runs a proper event. Yet here you are, with a USB stick and a queue behind you, pasting names into cells like it is 2004.</p>
+<h2>The sentence that changes the morning</h2>
+<p>You step aside to let the next customer through. You sit on the little bench by the window, and you do something you have not done before. You stop trying to <em>fix the file</em> and ask a different question.</p>
+<p><em>What if I never touched these rows by hand at all?</em></p>
+<p>Not a cleverer spreadsheet trick you have to remember. Not a formula you will forget by next month. Just a small, repeatable routine that takes a messy column, makes a sensible guess at first and last name, and shows you exactly what it would change before it changes anything. A short list, the kind you can read with a coffee: these rows were split, these were left alone because they looked odd, this one has two people in it.</p>
+<p>You would still be the one who decides. The <em>Tom &amp; Jess</em> row would still wait for you. But the other three hundred and ninety-odd would simply be done.</p>
+<p>It is not a dramatic thought. It is more like a window being opened in a stuffy room.</p>
+<h2>A normal Monday, afterwards</h2>
+<p>Picture the Monday after the race.</p>
+<p>The export arrives from the booking site, as it always does, messy and cheerful. You open your laptop at the kitchen table. The kettle is on. You run the same small routine you ran last time. You read the change report in two minutes, nod at the three rows it flagged for a human eye, and fix them. Then the file is ready.</p>
+<p>The thank-you emails start with the right first name. <em>Priya</em> gets hers without a stray comma. <em>Anna van der Berg</em> is still Anna van der Berg.</p>
+<p>You close the laptop at half past nine and drink the tea while it is still warm. Nobody replies to correct you. The only message in your inbox is from a runner asking whether the finish-line photos are up yet.</p>
+<p>That is the whole change. Not a new business, just a messy column that stopped being your problem.</p>
+<h2>If you recognise the counter</h2>
+<p>Maybe your version is not a print shop. Maybe it is a membership list, a customer export or a newsletter file with one column called <em>Name</em> and four hundred opinions about how to write it. The feeling is the same: a small, nagging dread that a simple job will eat your morning and leave you feeling like an amateur.</p>
+<p>If that is you, there is a gentle next step. The <strong>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</strong> handles exactly this kind of chore: splitting names, fixing dates and phone numbers, removing duplicates, sorting out encoding. It runs a dry-run first and gives you a change report, so you see what would happen before it happens. It is made with AI, checked automatically and refined by real use. It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p><a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Have a look at the CSV Cleaning Toolkit</a></p>
+<p>Your names deserve to be written properly, and your mornings deserve to be yours.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
