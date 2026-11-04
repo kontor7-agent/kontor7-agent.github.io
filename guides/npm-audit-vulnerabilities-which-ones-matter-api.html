@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>npm Audit Shows Vulnerabilities? The Weekly Fire Alarm</title><meta name="description" content="npm audit shows a wall of red on your API and the weekly alarm test starts beeping. A calm story about telling real risk from noise.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/npm-audit-vulnerabilities-which-ones-matter-api"><meta property="og:title" content="npm Audit Shows Vulnerabilities? The Weekly Fire Alarm">
+<meta property="og:description" content="npm audit shows a wall of red on your API and the weekly alarm test starts beeping. A calm story about telling real risk from noise."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "npm Audit Shows Vulnerabilities? The Weekly Fire Alarm", "description": "npm audit shows a wall of red on your API and the weekly alarm test starts beeping. A calm story about telling real risk from noise.", "datePublished": "2026-11-05", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/npm-audit-vulnerabilities-which-ones-matter-api"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>npm Audit Shows Vulnerabilities? The Weekly Fire Alarm</h1><p class='muted'>2026-11-05</p><p>It's Wednesday, 10:00, and the fire alarm test goes off in the coworking space. Same as every Wednesday. Everyone stops talking for eight seconds. Then the beeping ends and the room goes on.</p>
+<p>You don't. You're staring at your terminal.</p>
+<pre><code>47 vulnerabilities (3 low, 20 moderate, 18 high, 6 critical)
+</code></pre>
+<p>You only ran <code>npm audit</code> because the client's launch is on Friday. You were being responsible. Now the screen is a wall of red and your coffee has gone lukewarm next to the keyboard.</p>
+<p>This is an illustrative scene. Let's call the developer Jonas. He's a freelancer, building a booking API for a small chain of physiotherapy studios. He's been doing this for four years. Alone. No security team, no colleague to lean over and ask.</p>
+<h2>Forty-seven things, and no way to rank them</h2>
+<p>Jonas scrolls. Package names he has never heard of. Paths like <code>node_modules/something/node_modules/something-else</code>. Words like <em>prototype pollution</em> and <em>ReDoS</em>. Some say "fix available." Some say "no fix available." One says that fixing it "will install a breaking change."</p>
+<p>The thought in his head is very quiet and very specific: <em>Which of these can actually hurt me, and which are just noise?</em></p>
+<p>He doesn't know. That's the uncomfortable part. He builds careful things, and still he can't tell whether this list is a house fire or a smoke detector with a dying battery.</p>
+<p>So he does what many of us do. He opens three browser tabs, reads a forum thread from 2021, and gets more confused. One person says ignore everything that isn't critical. Another says everything is critical. A third says the tool is useless.</p>
+<h2>What it quietly costs</h2>
+<p>Nobody sees this part. The hour gone before lunch. The sentence he rehearses for the client call: "Yes, it's secure." Can he say that? Honestly?</p>
+<p>He also thinks about the physio studios. Real people, real appointment names, a few phone numbers. Not a bank. But not nothing either. And it's his name on the invoice.</p>
+<p>So the cost isn't really the hour. It's the low hum under the whole week. The feeling of being a developer who ships things he can't fully vouch for. The urge to either panic-update everything on a Thursday night, or close the terminal and hope.</p>
+<p>Both feel wrong. Neither feels professional.</p>
+<h2>The part where the alarm stops</h2>
+<p>At 10:40 a woman from the design desk, who has been listening to him sigh for half an hour, asks if he wants tea. Not about the code. Just tea.</p>
+<p>He says yes. And while the kettle runs, a different thought arrives, almost by accident.</p>
+<p>The alarm test doesn't scare anyone. Everybody in that room knows what it is. Somebody once sat down and decided: this sound means <em>test</em>, that sound means <em>leave</em>, and here is the door. Nobody has to work it out in the moment.</p>
+<p>What if the audit list could feel like that? Not a verdict on his worth. Just a list, sitting beside a few clear questions: Is this package even reachable from the outside? Does it touch user input? Does anything in the API itself, the login, the permissions, the data it returns, matter more than any single dependency?</p>
+<p>Because here is what quietly dawns on him. The wall of red is only one view of his API's safety. A noisy and rather narrow one. It doesn't tell him whether one customer can open another customer's record. It doesn't tell him whether the error messages say too much. It doesn't tell him whether a stale token still works.</p>
+<p>The list was never the whole picture. He'd been asking it to be.</p>
+<h2>An ordinary Friday, afterwards</h2>
+<p>Picture the same week, with a calmer shape.</p>
+<p>Monday, Jonas runs the audit and looks at it the way you'd look at the post. Some of it matters, some of it waits, some of it is a note for the next maintenance slot. He has a place to write that down, and a reason beside every line.</p>
+<p>He has also checked the things the audit never shows: who can see what, what the API says when it breaks, what is open to the world that shouldn't be. Not with dread. With a list, one item at a time, ticked off.</p>
+<p>On Friday the client asks, a little nervously, "Are we okay to go live?" Jonas doesn't hesitate and doesn't oversell. He says what he checked, what he deliberately left for later, and why. He can attach a short report. The client nods. The call ends in six minutes.</p>
+<p>He closes the laptop. The studios open on Monday and the alarm test next door is just a sound again.</p>
+<p>That's the whole difference. Not a perfect API. A reviewed one, with a paper trail and a clear head.</p>
+<h2>If you recognised yourself in Jonas</h2>
+<p>Maybe you've got your own wall of red on a screen right now. Maybe you're not sure which of your own forty-seven things deserve your Thursday night.</p>
+<p>We made the <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong> for exactly that spot. It's 58 review items as a PDF plus an XLSX tracker, curl tests you can run yourself, an auth-route scanner script, and a client report template, for Node/Express and Python. It was made with AI, checked automatically and refined by real use. It's a tool for organising your review, so it supports your own judgement and doesn't replace a professional security audit.</p>
+<p>If it doesn't help, there's a 30-day money-back promise, no questions asked.</p>
+<p><a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">See the REST API Security Checklist Kit</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
