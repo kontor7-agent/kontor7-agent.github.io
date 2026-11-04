@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DtypeWarning Mixed Types in pandas CSV? The Chess Clock</title><meta name="description" content="The same yellow DtypeWarning on every CSV import, in a school hall on a Saturday. A story for anyone tired of mixed-type columns and re-running scripts.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/pandas-dtypewarning-mixed-types-csv-import"><meta property="og:title" content="DtypeWarning Mixed Types in pandas CSV? The Chess Clock">
+<meta property="og:description" content="The same yellow DtypeWarning on every CSV import, in a school hall on a Saturday. A story for anyone tired of mixed-type columns and re-running scripts."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "DtypeWarning Mixed Types in pandas CSV? The Chess Clock", "description": "The same yellow DtypeWarning on every CSV import, in a school hall on a Saturday. A story for anyone tired of mixed-type columns and re-running scripts.", "datePublished": "2026-11-04", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/pandas-dtypewarning-mixed-types-csv-import"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>DtypeWarning Mixed Types in pandas CSV? The Chess Clock</h1><p class='muted'>2026-11-04</p><p>The hall smells of floor polish and instant coffee. Somewhere behind you a chess clock slaps down, and a small voice says, "Check."</p>
+<p>You're Jonas. You're here for your nephew's tournament, with a laptop balanced on a folding table between a tray of flapjacks and a stack of score sheets. You promised yourself you'd just watch.</p>
+<p>But Priya, who runs a small online shop and pays you for the data side, messaged at 9:12. <em>Can I have the order export cleaned by Monday? Sorry, I know it's the weekend.</em></p>
+<p>So you opened the file. And there it is again, in yellow.</p>
+<p><code>DtypeWarning: Columns (7) have mixed types.</code></p>
+<h2>The warning you've learned to scroll past</h2>
+<p>You've seen it a dozen times. Column 7 is the customer reference. Most of it is numbers, and then somewhere in row 40,000-something a reference like "A-1042" turns up. A postcode with a space in it. An empty cell that's really a dash.</p>
+<p>The script doesn't crash. It runs, it prints its little yellow complaint, and it carries on. That's the part that bothers you. Failing loudly would at least be honest. This just carries on and hands you a column that is part numbers and part text, and you don't know which rows quietly went wrong.</p>
+<p>Last month a join silently matched nothing. You spent an hour finding out why. The culprit was a single "1042" that was a number on one side and text on the other.</p>
+<p>So you do what you always do. You tweak the import. You re-run. The warning changes shape, or goes away, or comes back with a different column number. You tell yourself it's fine, then open the output and scroll through it, just to be sure.</p>
+<p>A boy two tables over has been staring at one position for six minutes. You know exactly how he feels.</p>
+<h2>What it actually costs</h2>
+<p>It isn't the five minutes per file. It's the low hum behind everything.</p>
+<p>It's the Saturday you can't fully give to the hall, because part of your mind is still in column 7. It's the small doubt when you send Priya the cleaned file. <em>Is it right? Did anything slip through?</em> It's the quiet sense that you're a professional who still fixes things by trial and error.</p>
+<p>You think of the other jobs, too. Each client's export has its own little quirks. Each time you patch the import by hand and promise yourself you'll write it down properly. Each time, the notes live in a file called "fix_final2" that you can't find three weeks later.</p>
+<p>Priya never sees any of this. She sees a file that arrives on Monday. You see the hours around it.</p>
+<h2>A very small turning point</h2>
+<p>At 10:40 there's a break between rounds. Your nephew comes over, solemn, holding a paper cup of squash with both hands.</p>
+<p>"I lost," he says. "But I know where. I played the fast move instead of checking."</p>
+<p>He says it without drama. Then he goes back to the board and sets the pieces up again, calmly, in the same order, the same way every time.</p>
+<p>You watch him and a thought arrives, plain and a bit embarrassing. <em>He has a routine for resetting the board. You don't have one for resetting a messy file.</em></p>
+<p>You don't need to be cleverer about column 7. What you need is for the checking to be the same every time, so it stops depending on how awake you are. Look at the file first, change nothing yet, see what would be changed, keep a record of what was. Then go home.</p>
+<p>None of that is hard. It just has to exist somewhere other than your head.</p>
+<h2>A different Monday</h2>
+<p>Picture the same export arriving on a Monday at 8:50, with coffee still too hot to drink.</p>
+<p>You drop the file in. You read a short report: these references were mixed, these dates were swapped, these phone numbers were tidied, nothing else touched. You glance down the list and everything on it is something you'd have done yourself. You approve it.</p>
+<p>There's no yellow text and no re-running. You aren't scrolling through 40,000 rows to reassure yourself.</p>
+<p>You send Priya the file with a line you can honestly stand behind: <em>Here's the clean version, and here's what changed.</em> She replies with a thumbs-up and an unrelated question about shipping. That's all.</p>
+<p>The rest of the morning belongs to something else. A proposal, maybe, or a walk, or a long lunch you don't spend half-checking a spreadsheet.</p>
+<h2>Back in the hall</h2>
+<p>At 11:15 the next round begins. Chairs scrape, someone whispers "good luck" far too loudly, and the clocks start.</p>
+<p>You close the laptop. Priya's file can wait until you've got a calmer way to deal with it. For the first time all morning you watch an entire game from start to finish, and it turns out to be a good one.</p>
+<h2>If this is your Saturday too</h2>
+<p>If you recognise the yellow warning, the re-runs and the quiet doubt, a small, repeatable routine might be worth more than another clever fix. We made the <em>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</em> for exactly this kind of repeat chore. It dedupes, fixes dates, phones and encoding, splits, merges and validates. It runs a dry-run first and gives you a change report, so you can see what would happen before anything is touched.</p>
+<p>It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p><a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Have a look at the toolkit here</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
