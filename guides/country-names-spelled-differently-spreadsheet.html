@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Country Names Spelled Differently in Excel? The Globe</title><meta name="description" content="Germany, Deutschland, DE and &#x27;germany &#x27; in one column. A calm story about country names spelled differently in a spreadsheet, and the end of the dread.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/country-names-spelled-differently-spreadsheet"><meta property="og:title" content="Country Names Spelled Differently in Excel? The Globe">
+<meta property="og:description" content="Germany, Deutschland, DE and &#x27;germany &#x27; in one column. A calm story about country names spelled differently in a spreadsheet, and the end of the dread."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Country Names Spelled Differently in Excel? The Globe", "description": "Germany, Deutschland, DE and 'germany ' in one column. A calm story about country names spelled differently in a spreadsheet, and the end of the dread.", "datePublished": "2026-11-06", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/country-names-spelled-differently-spreadsheet"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Country Names Spelled Differently in Excel? The Globe</h1><p class='muted'>2026-11-06</p><p>It's Tuesday, 14:05. You're in a rented phone booth at the coworking space, the kind with a door that doesn't quite close. On the shelf behind the screen sits a small, slightly dusty globe someone left there years ago.</p>
+<p>Your client, a small tea importer, has joined the call. You share your screen. You've built them a sales-by-country overview, and you were proud of it this morning.</p>
+<p>Then she leans forward on camera and says, "Why are there four Americas?"</p>
+<p>You look. She's right. <strong>USA. United States. U.S.A. United States of America.</strong> Underneath them, in the same column, sit <strong>Germany</strong>, <strong>Deutschland</strong>, <strong>DE</strong> and one that is just <strong>germany</strong> with a space after it, invisible to the eye and very visible to the pivot table.</p>
+<p>Your stomach does the small drop you know well.</p>
+<p>"That's… the export," you say. "I'll tidy it up."</p>
+<p>She nods kindly. That's almost worse.</p>
+<h2>The column nobody chose</h2>
+<p>Nobody typed those spellings on purpose. The shop's checkout let customers type their country by hand for two years. A marketplace export used two-letter codes. A newsletter tool preferred full names. A customer in Vienna wrote <em>Österreich</em>, another wrote <em>Austria</em>, and a third wrote <em>Autria</em> and still got her parcel, because the postman is cleverer than any spreadsheet.</p>
+<p>So the data is honest, but it isn't consistent. And a total by country is only as good as the weakest spelling in the column.</p>
+<p>You finish the call. You say the right things. You promise a corrected version by the end of the day.</p>
+<p>Then you sit in the booth for a moment longer, looking at the globe, feeling like someone who was handed a very tidy-looking mess.</p>
+<h2>What it quietly costs</h2>
+<p>The fix itself isn't dramatic. It's the afternoon it eats.</p>
+<p>You filter the column and scroll. You find the one with the trailing space. You find <em>Untied States</em>. You find a cell that says <em>UK</em> above one that says <em>United Kingdom</em> and one that says <em>England</em>, and you stop, because that last one is a decision, not a typo, and you don't want to make it alone at 15:30 with a deadline.</p>
+<p>You do a find-and-replace, then another. You notice that the totals shift slightly each time, and you can't quite remember what you changed first.</p>
+<p>That's the part nobody mentions. It isn't just the hours. It's the small doubt afterwards. <em>Did I fix everything? Did I break something? If she asks again, can I say exactly what I touched?</em></p>
+<p>By five you have a clean-looking report. You send it with a cheerful note. You also close the laptop with a faint worry that it'll come back next month, when the next export arrives with fresh creative spellings.</p>
+<p>And it will. Exports always do.</p>
+<h2>The quiet turning point</h2>
+<p>A week later you're talking to a friend who works with data, at a kitchen table with two mugs of tea going cold.</p>
+<p>You tell her the story, half laughing, about the four Americas. She doesn't laugh. She nods the way people nod when they've been there.</p>
+<p>"Do you still fix those by hand?" she asks.</p>
+<p>You say yes, and that it's just part of the job.</p>
+<p>"It doesn't have to be," she says. "The same mess, the same cleanup, every month. That's something a small script can do while you drink your tea. And it can show you what it <em>would</em> change before it changes anything."</p>
+<p>That last sentence stays with you. Not <em>fast</em>. Not <em>clever</em>. Just: <strong>before it changes anything.</strong> The thing you were missing wasn't speed. It was being able to see the changes and trust them.</p>
+<h2>An ordinary Tuesday, later</h2>
+<p>Picture the same Tuesday, a few months on.</p>
+<p>The export lands in your folder at 08:50. You run your cleanup the way you'd start a kettle. You glance at the change report: a short list of what was merged, what was trimmed, and what it wasn't sure about and left for you to decide.</p>
+<p>One line says <em>England</em> was left alone. Good. That one is yours to decide, and now you're deciding it with a coffee, not with a deadline breathing down your neck.</p>
+<p>At 14:05 you're in the same phone booth, the same globe on the shelf, the same client on the screen. You share your overview. One America. One Germany. One Austria, even the one from Vienna.</p>
+<p>She scrolls, says "That looks right," and moves straight on to the question she actually called about: which markets are worth a bigger order next season.</p>
+<p>That's the whole difference. The call is about her business again, not about your column.</p>
+<p>You finish at three. The afternoon is still there. You use it for something that has nothing to do with spreadsheets.</p>
+<h2>If this sounds like your Tuesday</h2>
+<p>If you keep fixing the same spellings by hand, and you keep a quiet worry about what you might have missed, there is a gentler way to do it.</p>
+<p>The <strong><a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a></strong> cleans messy CSV and Excel exports: duplicates, dates, phone numbers, encoding, splitting, merging and validating. It does a dry run first and gives you a change report, so you can see what happens before it happens.</p>
+<p>It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions asked.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
