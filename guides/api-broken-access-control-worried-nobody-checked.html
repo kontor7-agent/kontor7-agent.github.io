@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>API Broken Access Control? The Umbrella Basket | Blixwerk</title><meta name="description" content="Rain, a café basket full of umbrellas, and one quiet worry: nobody ever checked who can open what in your API. A calm story for a Thursday.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/api-broken-access-control-worried-nobody-checked"><meta property="og:title" content="API Broken Access Control? The Umbrella Basket | Blixwerk">
+<meta property="og:description" content="Rain, a café basket full of umbrellas, and one quiet worry: nobody ever checked who can open what in your API. A calm story for a Thursday."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "API Broken Access Control? The Umbrella Basket", "description": "Rain, a caf\u00e9 basket full of umbrellas, and one quiet worry: nobody ever checked who can open what in your API. A calm story for a Thursday.", "datePublished": "2026-11-05", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/api-broken-access-control-worried-nobody-checked"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>API Broken Access Control? The Umbrella Basket</h1><p class='muted'>2026-11-05</p><h2>The Basket by the Door</h2>
+<p>It is 11:05 on a Thursday and it is raining sideways. You ducked into the café on the corner with your laptop bag over your head, and now you are standing at the door, dripping, looking at a wicker basket full of umbrellas.</p>
+<p>A sign says <em>Borrow one, bring it back.</em> No names. No tickets. A man in a grey coat picks the biggest one and walks out. Nobody stops him. Nobody would.</p>
+<p>You smile. Then the smile slips, because a thought you've been carrying for three weeks has just found its words.</p>
+<p><em>Does my API work like that basket?</em></p>
+<h2>The Thought Nobody Asked You About</h2>
+<p>Let's call you Jonas. You're a freelance developer. Six months ago you built the backend for a small physiotherapy booking app. Login works. Tokens work. The client is happy. The app has real people in it now, with real names and real appointment times.</p>
+<p>Nobody has ever asked you whether user 41 can open the record of user 42.</p>
+<p>You know what the term for this is. <em>Broken access control.</em> You've read the headlines. You've nodded along in meetings. And you've never actually sat down and checked, because the thing worked, the demo went well, and the next project was already waiting.</p>
+<p>So you order a flat white and take the corner table by the window. You open the laptop. You stare at the route files.</p>
+<p>The thought is simple and it's heavy: <em>I think it's fine. But I have never looked.</em></p>
+<h2>What It Costs, Quietly</h2>
+<p>Nothing has gone wrong. That's the strange part. No email, no alert, no angry client.</p>
+<p>But the doubt has been costing you anyway.</p>
+<p>It costs you the first ten minutes of every call with that client, when you listen for the word <em>security</em> and brace. It costs you a small flinch when the app gets a mention in a newsletter. It costs you a Sunday afternoon where you were physically on the sofa and mentally inside a controller file.</p>
+<p>And it costs you something harder to name. You're the person who built it. You'd like to feel like a professional who knows what's in there, not someone hoping.</p>
+<p>The coffee arrives. You don't touch it. You open one route, then another, scrolling, half-checking, half-flinching. It's not a plan. It's just worry with a keyboard.</p>
+<h2>The Question Behind the Question</h2>
+<p>Then you notice something. You don't actually have a problem with your code. You have a problem with having no way to look at it.</p>
+<p>You can't say whether it's fine, because you don't know what "checked" would even mean. Which routes count? Which ones matter most? What does "done" look like? Without an answer, the worry has no edges. It just sits there, as big as you let it be.</p>
+<p>And a worry with no edges is exhausting. A worry with a list is something else. It's a Tuesday task.</p>
+<p>The woman at the next table is sliding her umbrella back into the basket, carefully, as if someone might check. You almost laugh. People are decent about umbrellas. Software is not that polite, and it doesn't need to be. It only needs someone to have looked.</p>
+<h2>What Changes When Someone Has Looked</h2>
+<p>Picture a different Monday.</p>
+<p>You open the project at nine. There is a short list beside it, ticked off, with notes in your own handwriting. Some boxes say <em>fine</em>. One says <em>fixed, retested</em>. One says <em>not applicable, and here's why</em>.</p>
+<p>When the client asks, on a call, whether the app is safe to grow, you don't tense up. You don't promise the moon either. You say what you checked, what you changed, and what you'd look at next. Your voice is level. The call ends four minutes early.</p>
+<p>The doubt hasn't become a certainty. It has become a known size. You can put it down on the table and walk away from it.</p>
+<p>You close the laptop at six. Your evening is just an evening.</p>
+<p>Nothing in that picture requires you to be a security expert. It requires a calm, structured pass, done once, written down. After that, the quiet is real instead of borrowed.</p>
+<h2>Back at the Door</h2>
+<p>The rain thins to a drizzle. You pay, and you stop by the basket again. This time you pick the umbrella with the bent handle, the one nobody else wanted, and you tell the barista you'll bring it back tomorrow.</p>
+<p>On the walk home you make one decision, and it's a small one. You won't solve all of it today. You'll just stop carrying it without a list.</p>
+<p>If you recognise yourself in Jonas, there is a gentle next step. The <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong> is a 58-item review kit: a PDF and an XLSX tracker, curl tests, an auth-route scanner script, and a client report template, for Node/Express and Python. It's built to give the worry edges, so you can see what you've checked and what is left. It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>It does not replace a professional security audit, and it won't decide anything for you. It simply gives you a place to start and a way to show your work.</p>
+<p><a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">Have a look at the checklist kit here</a></p>
+<p>The umbrella goes back in the basket tomorrow. The worry can go back in a list today.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
