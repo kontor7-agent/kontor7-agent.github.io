@@ -1,0 +1,85 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Many Old Backups Should I Keep? The Garden Café</title><meta name="description" content="The drive is nearly full and every old backup feels like a safety net you&#x27;re scared to cut. A quiet Wednesday-morning story about finally knowing what to keep.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/how-many-old-backups-should-i-keep"><meta property="og:title" content="How Many Old Backups Should I Keep? The Garden Café">
+<meta property="og:description" content="The drive is nearly full and every old backup feels like a safety net you&#x27;re scared to cut. A quiet Wednesday-morning story about finally knowing what to keep."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/backup-log-rotation-scripts.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How Many Old Backups Should I Keep? The Garden Caf\u00e9", "description": "The drive is nearly full and every old backup feels like a safety net you're scared to cut. A quiet Wednesday-morning story about finally knowing what to keep.", "datePublished": "2026-11-05", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/backup-log-rotation-scripts.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/how-many-old-backups-should-i-keep"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>How Many Old Backups Should I Keep? The Garden Café</h1><p class='muted'>2026-11-05</p><p>It's 10:35 on a Wednesday, and Marta is sitting in a garden-centre café with a flat white she hasn't touched.</p>
+<p>She came for a lemon tree. Her partner wanted one for the balcony. But on the way to the plants her phone buzzed with a message from her laptop: <em>Backup drive: 97% full.</em></p>
+<p>She's a freelance video editor. Her backup drive is a grey box the size of a paperback, and it has been quietly eating her projects for three years. Now it's nearly full, and she's standing between two shelves of herbs, thinking about folders.</p>
+<h2>The folders with dates in their names</h2>
+<p>She knows what's on that drive. There's a folder for every week since spring 2023. Some are tiny. Some are enormous. Some are probably identical to the one next to them.</p>
+<p>She also knows she should delete some. Obviously. That's what you do when a drive is full.</p>
+<p>But which ones?</p>
+<p>The thought arrives the way it always does: <em>What if I delete the one I need?</em></p>
+<p>Not the newest one. The newest one is fine. It's the one from eight weeks ago. The one from before the client changed the whole intro and then, three weeks later, changed it back. She remembers that. She remembers saying "I still have the old cut" with a lot more confidence than she felt.</p>
+<p>Do you keep four copies? Twelve? Everything from this year? Everything forever, and buy a bigger drive?</p>
+<p>She types the question into her phone, right there at the café table: <em>how many old backups should I keep.</em> The answers are all slightly different. Some say it depends. Some sound very sure of themselves, with rules she can't remember by the time she scrolls back up.</p>
+<p>She puts the phone face down.</p>
+<h2>What it quietly costs</h2>
+<p>The frustrating part is that nothing is on fire. The drive works. The files are there. Nobody is waiting on her.</p>
+<p>But there's a small, grey tax on every day she doesn't decide. She doesn't trust the backups enough to relax, and she doesn't trust herself enough to clean them up. So the drive stays full, and the worry stays in the background, like a tap dripping in another room.</p>
+<p>Last month she paid for extra cloud storage "just for now." She didn't check what it would cost over a year. She didn't want to look.</p>
+<p>And once, on a call, a client asked, "Can we go back to the version from the start of the month?" Marta said, "Of course, give me a minute," and then spent forty minutes opening folders with the screen share off, hoping nobody could hear her breathing.</p>
+<p>It turned out fine. It always turns out fine. That's exactly why it never gets fixed.</p>
+<h2>The sentence at the next table</h2>
+<p>At the next table, two women in gardening gloves are talking about their allotment. One of them says, "I don't decide what to pull up every week. I decided once. Seedlings out after a fortnight, the rest stays till the first frost. Now I just follow it."</p>
+<p>Marta isn't listening on purpose. But the sentence lands anyway.</p>
+<p><em>I decided once.</em></p>
+<p>She has been treating every old backup as its own small decision. Keep this one? Delete that one? What if? Forty folders, forty tiny decisions, and every one of them carries a little fear.</p>
+<p>What if the fear was never about the folders? What if she just never had a rule?</p>
+<p>Not a clever rule. A plain one. Something like: the last few days stay close, a handful of weekly ones, a few monthly ones further back, and then the oldest ones quietly leave. Written down once. Followed without her.</p>
+<p>And before anything gets removed, something that shows her what <em>would</em> be removed, so she can look, nod, and say yes. Or no.</p>
+<p>The tension in her shoulders drops half a centimetre. She hadn't noticed it was there.</p>
+<h2>A different Wednesday</h2>
+<p>She imagines it. Not a big dramatic transformation, just a normal week.</p>
+<p>The backup runs while she's asleep or at lunch. A short log file sits next to it saying what happened: what was copied, what was tidied, what was left alone. She glances at it on Monday with her coffee. Two lines. Everything's fine.</p>
+<p>The drive never creeps up to 97% because old copies step aside on their own, on a schedule she chose once on a calm day.</p>
+<p>The next time a client says, "Can we go back to the start of the month?", she says, "Sure," and opens one folder. She knows exactly which one. Her voice doesn't change.</p>
+<p>That's it. No heroics. Just a drive that is allowed to be nearly full without it meaning anything.</p>
+<h2>The lemon tree</h2>
+<p>She finishes the flat white, which is cold now, and buys the lemon tree. It's smaller than she imagined, in a plastic pot, with one stubborn yellow fruit hanging on.</p>
+<p>In the car park she doesn't delete anything. She doesn't need to. For the first time in weeks she isn't arguing with herself about it.</p>
+<p>She just opens a note on her phone and types one line: <em>Decide the rule once. Let the machine follow it.</em></p>
+<p>That's the whole shift. The drive was never the problem. The never-quite-decided was.</p>
+<h2>If this sounds like your grey box</h2>
+<p>If you recognise the dripping tap, the full drive you're scared to touch, the folders you keep "just in case," there is a calmer way to run it.</p>
+<p><a href="https://blixwerkstudio.com/p/backup-log-rotation-scripts">Backup &amp; Log Rotation Scripts (PowerShell + Bash)</a> are made for exactly this: incremental snapshot backups, retention that clears out the oldest copies for you, log rotation, and scheduling for Windows and Linux. There's a dry-run mode, so you can see what would happen before anything is deleted, and a logfile for every run, so you always know what happened.</p>
+<p>It won't make the decision for you about what your work is worth keeping. But it lets you make that decision once, and then get on with your Wednesday.</p>
+<p>The lemon tree, by the way, is doing fine.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Backup &amp; Log Rotation Scripts (PowerShell + Bash) – Incremental snapshot backups, retention, log rotation and scheduling for Windows and Linux. Dry-run mode and a logfile for every run. <p><a class='btn' href='/p/backup-log-rotation-scripts'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
