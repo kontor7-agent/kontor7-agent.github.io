@@ -1,0 +1,74 @@
+<!doctype html><html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Falsche Menge geliefert? Lieferschein, Donnerstag 10:25</title><meta name="description" content="Der Lieferant schickt 180 statt 240 Gläser, und die Excel-Liste stimmt nicht mehr. Eine Geschichte über Wareneingang und den Moment danach.">
+<link rel="canonical" href="https://blixwerkstudio.com/de/blog/lieferant-falsche-menge-geliefert-lagerbestand-stimmt-nicht"><meta property="og:title" content="Falsche Menge geliefert? Lieferschein, Donnerstag 10:25">
+<meta property="og:description" content="Der Lieferant schickt 180 statt 240 Gläser, und die Excel-Liste stimmt nicht mehr. Eine Geschichte über Wareneingang und den Moment danach."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/small-business-inventory-reorder-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/de/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Falsche Menge geliefert? Lieferschein, Donnerstag 10:25", "description": "Der Lieferant schickt 180 statt 240 Gl\u00e4ser, und die Excel-Liste stimmt nicht mehr. Eine Geschichte \u00fcber Wareneingang und den Moment danach.", "datePublished": "2026-11-05", "inLanguage": "de", "image": "https://blixwerkstudio.com/img/small-business-inventory-reorder-tracker-xlsx.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/de/blog/lieferant-falsche-menge-geliefert-lagerbestand-stimmt-nicht"}</script></head><body>
+<header><a class="brand" href="/de">Blixwerk</a><nav><a href="/de">Produkte</a><a href="/de/blog">Blog</a><a href="/de/rechner">Gratis-Rechner</a><a href="/">English</a></nav></header>
+<main><article><h1>Falsche Menge geliefert? Lieferschein, Donnerstag 10:25</h1><p class='muted'>2026-11-05</p><p>Donnerstag, 10:25 Uhr. Der Paketdienst hat die Palette vor das Hoftor gestellt und ist schon wieder weg. Mareike steht davor, den Lieferschein in der einen Hand, den Cuttermesser-Griff in der anderen.</p>
+<p>Sie macht Chutneys und Marmeladen. Ein kleiner Online-Shop, dazu zwei Wochenmärkte, ein paar Feinkostläden in der Umgebung. Und sie hat 240 Gläser bestellt.</p>
+<p>Sie zählt die Kartons. Sechs Stück, jeder mit 30 Gläsern. Das sind 180.</p>
+<p>Auf dem Lieferschein steht trotzdem 240.</p>
+<h2>Der Moment, in dem die Zahl nicht mehr stimmt</h2>
+<p>Sie liest die Zeile noch einmal. Dann die Bestellbestätigung auf dem Handy. 240. Dann wieder den Lieferschein. 240. Dann die Kartons. Sechs.</p>
+<p>In ihrem Kopf läuft sofort der Film an. Wo ist der siebte und achte Karton? Hat der Fahrer einen vergessen? Ist das Lager des Händlers schuld? Oder hat sie selbst falsch bestellt, in dieser Woche, in der sie alles nebenbei gemacht hat?</p>
+<p>Das Schlimmste ist gar nicht der Ärger. Es ist dieses leise Ziehen im Magen: Ich weiß nicht, was ich jetzt eigentlich habe.</p>
+<p>Denn in ihrer Excel-Liste steht für die Gläser eine Zahl. Eine Zahl, die sie vor drei Wochen zuletzt angefasst hat. Seitdem sind Bestellungen reingekommen, auf dem Samstagsmarkt ist etwas weggegangen, und zwischendurch hat sie einmal Gläser für Muster abgezweigt. Aufgeschrieben hat sie davon nur die Hälfte.</p>
+<p>Und jetzt soll sie dazu noch die Lieferung eintragen, die offiziell größer ist, als sie tatsächlich war.</p>
+<h2>Was so ein Fehler leise kostet</h2>
+<p>Sie trägt die Kartons in den Werkraum. Ihr Telefon klingelt, eine Kundin vom Hofladen fragt, ob die Zwiebel-Feigen-Konfitüre bis nächste Woche in zwanzig Stück zu haben ist.</p>
+<p>„Ja, klar“, sagt Mareike. Sie sagt es schnell, und sie weiß beim Auflegen nicht, ob es stimmt.</p>
+<p>Denn die Frage ist nicht nur, ob die Gläser da sind. Die Frage ist auch, ob genug Zucker da ist, genug Deckel, genug Etiketten. Alles hängt an Zahlen, denen sie gerade nicht traut.</p>
+<p>So sieht das aus, wenn ein Lieferant sich verzählt. Du verlierst nicht nur ein paar Gläser. Du verlierst das Gefühl, dass du dein eigenes Lager im Griff hast. Und das fühlt sich plötzlich an, als würdest du nicht richtig arbeiten, sondern nur hinterherrennen.</p>
+<p>Sie schreibt dem Händler eine Mail. Freundlich, aber mit einem Knoten im Hals: „Laut Lieferschein 240, angekommen sind 180. Können Sie das bitte prüfen?“</p>
+<p>Dann sitzt sie da und überlegt, was sie eigentlich beweisen kann. Hat sie ein Foto von der Palette gemacht? Nein. Hat sie den Stand vor der Lieferung festgehalten? Auch nicht. Sie hat eine Liste mit einer Zahl und das ungute Gefühl, dass die Liste nicht mehr die Wahrheit sagt.</p>
+<h2>Der Satz, der alles ändert</h2>
+<p>Am Abend ruft ihre Schwester an, die in einer Arztpraxis arbeitet. Mareike erzählt von den Gläsern, halb als Witz, halb als Seufzer.</p>
+<p>„Bei uns wird jede Lieferung sofort abgehakt“, sagt die Schwester. „Was bestellt wurde, was kam, was fehlt. Und der Bestand ändert sich nur an einer Stelle. Dann weiß man auch bei einer falschen Lieferung genau, woran man ist.“</p>
+<p>Mareike sagt nichts. Es ist kein Zaubertrick, es ist fast banal. Aber genau das trifft sie: Das Problem war gar nicht der Händler. Der Händler hat sich verzählt, das kann passieren. Das Problem war, dass ihre eigene Liste keinen Platz für so einen Tag hatte.</p>
+<p>Sie schaut auf die Excel-Datei auf dem Küchentisch. Dreizehn Spalten, drei davon mit Notizen wie „ca.“ und „müsste passen“. Dass das so nicht mehr trägt, weiß sie schon länger. Heute hat sie es zum ersten Mal ausgesprochen.</p>
+<h2>Und dann: ein ganz normaler Donnerstag</h2>
+<p>Stell dir denselben Tag noch einmal vor.</p>
+<p>Die Palette steht vor dem Tor. Mareike zählt die Kartons, sechs, nimmt den Lieferschein und trägt ein, was wirklich angekommen ist. Zwei Minuten. Die Differenz steht da, schwarz auf weiß: 60 Gläser fehlen. Sie macht ein Foto von der Palette, hängt es an die Mail an den Händler und schreibt ruhig, was los ist. Ohne Herzklopfen, weil sie ihre Zahlen kennt.</p>
+<p>Das Telefon klingelt. Die Kundin vom Hofladen fragt nach den zwanzig Gläsern. Mareike wirft einen Blick auf den Bildschirm und sagt: „Ja, die kann ich dir bis Dienstag liefern.“ Und sie weiß, dass es stimmt.</p>
+<p>Sie macht sich einen Kaffee. Draußen ist es noch kühl, der Kessel im Werkraum blubbert leise. Der Fehler des Händlers ist immer noch ein Ärgernis, aber er ist jetzt ein kleines, klares Problem. Kein Nebel mehr, der sich über den ganzen Betrieb legt.</p>
+<p>Das ist der eigentliche Unterschied. Nicht, dass nie etwas schiefgeht. Sondern dass du, wenn etwas schiefgeht, sofort weißt, was es bedeutet.</p>
+<h2>Wenn du dich wiedererkennst</h2>
+<p>Vielleicht ist es bei dir kein Glas. Vielleicht sind es Garnrollen, Kaffeebohnen, Druckpapier oder Ersatzteile. Der Lieferant hat sich verzählt, und plötzlich ist dein Bestand nur noch eine Vermutung.</p>
+<p>Wenn du dir für solche Tage einen ruhigeren Ort für deine Zahlen wünschst, haben wir bei Blixwerk eine Excel-Vorlage gebaut: <strong>Never Sold Out by Surprise – Inventory &amp; Reorder Tracker</strong>. Sie zeigt dir Bestand und Lagerwert, meldet dir, wann es Zeit zum Nachbestellen ist, und kommt mit Beispieldaten, einer leeren Vorlage und einer PDF-Anleitung. Kein Abo. Die Vorlage selbst ist auf Englisch, die Bedienung ist aber schnell verstanden. Und falls sie dir nicht hilft, bekommst du innerhalb von 30 Tagen dein Geld zurück, ohne Fragen.</p>
+<p><a href="https://blixwerkstudio.com/p/small-business-inventory-reorder-tracker-xlsx">Den Inventory &amp; Reorder Tracker ansehen</a></p>
+<p><em>Eine beispielhafte Geschichte, geschrieben mit KI-Unterstützung.</em></p><div class='cta'><strong>Kommt dir bekannt vor?</strong> Never Sold Out by Surprise – Inventory &amp; Reorder Tracker (Excel) – Excel inventory tracker with automatic reorder alerts, stock value and dashboard. Sample + blank template, PDF guide. No subscription. <p><a class='btn' href='/p/small-business-inventory-reorder-tracker-xlsx'>Ansehen</a></p></div></article></main>
+<footer><p>Produkte, Rechner und Artikel von Blixwerk entstehen mit KI-Unterstützung durch ein automatisiertes System und werden vor der Veröffentlichung automatisch geprüft.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>

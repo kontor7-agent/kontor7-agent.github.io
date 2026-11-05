@@ -1,0 +1,81 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login Reveals Which Emails Exist? The Screen-Share Pause</title><meta name="description" content="A client types a made-up email into your login page and reads the error aloud. Is that a security problem? A calm story about that pause on a Tuesday call.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/login-endpoint-reveals-registered-emails-security-problem"><meta property="og:title" content="Login Reveals Which Emails Exist? The Screen-Share Pause">
+<meta property="og:description" content="A client types a made-up email into your login page and reads the error aloud. Is that a security problem? A calm story about that pause on a Tuesday call."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Login Reveals Which Emails Exist? The Screen-Share Pause", "description": "A client types a made-up email into your login page and reads the error aloud. Is that a security problem? A calm story about that pause on a Tuesday call.", "datePublished": "2026-11-05", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/login-endpoint-reveals-registered-emails-security-problem"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Login Reveals Which Emails Exist? The Screen-Share Pause</h1><p class='muted'>2026-11-05</p><p>It's Tuesday, 10:20 in the morning, and you are sharing your screen.</p>
+<p>The call is supposed to be a friendly walkthrough. Your client's new operations manager, Katrin, joined late. She has a coffee and a notepad. She asked if she could "just click around a bit."</p>
+<p>You said of course. You built this thing. You are proud of it.</p>
+<p>She types a made-up email address into the login form. Something like <em>test123@nothing.example</em>. Then a random password.</p>
+<p>The page answers: <strong>"No account found with this email."</strong></p>
+<p>Katrin reads it aloud, slowly. Then she types your client's email, the real one, with another wrong password.</p>
+<p><strong>"Incorrect password."</strong></p>
+<p>She looks up from the notepad. "Interesting," she says. "So I can tell who has an account."</p>
+<p>Nobody says anything for about three seconds. Those are very long seconds.</p>
+<h2>The thought you can't say out loud</h2>
+<p>Your face stays friendly. Your head does not.</p>
+<p><em>Is that a problem? Everyone does that. Don't they? I think the big sites don't. Is it a real hole, or is she just being thorough? Did I just show a client a flaw in something I billed them for?</em></p>
+<p>You say, "Good catch. Let me look into that and come back to you."</p>
+<p>It sounds professional. It is also a small lie of calm, because inside you are searching your memory for where you read about this. Was it a blog post? A forum thread? Something half-remembered about "user enumeration"?</p>
+<p>The call ends politely. You close the laptop lid halfway and stare at the wall.</p>
+<h2>What it quietly costs</h2>
+<p>The flaw, if it is one, isn't what keeps you up. It's the not knowing.</p>
+<p>You don't know how serious it is. You don't know whether to apologise or to explain. You don't know if Katrin will mention it to the client's owner, or whether the next question will be, "What else did you miss?"</p>
+<p>So you do what many people do. You open six tabs. One says it's critical. One says it's a minor annoyance. One says it depends. You read the word "depends" three times, and you feel more alone than before.</p>
+<p>That afternoon you are a little slower with everything else. An invoice sits half-written. A message to another client waits until tomorrow. A single sentence from a stranger on a call has taken the shine off a project you were happy with that morning.</p>
+<h2>The answer, in a sentence or two</h2>
+<p>Here is the honest, undramatic version. It is a real, recognised weakness, though usually not an emergency. A login page that says which emails exist hands a stranger a free way to build a list of your users, which can make guessing, phishing and targeted attacks easier. How much it matters depends on what your product is. For a hobby tool it is small. For a service where simply being a member says something private, it counts for more.</p>
+<p>The usual fix is also undramatic: give the same neutral answer either way, and think about the sign-up and password-reset screens too, because they can leak the same thing.</p>
+<p>That's it. It's not a disaster. It's a thing you can name, weigh and fix.</p>
+<h2>The turning point</h2>
+<p>What strikes you, a day later, over a cold coffee, is that the problem was never really the message on the login form.</p>
+<p>The problem was that Katrin found it, and you didn't. You had no list to hold up against your work. You had a feeling of "it's probably fine" and a hope that nobody would click around.</p>
+<p>A developer with a list isn't surprised on a screen-share. They have already looked. They can say, "Yes, I checked that one. Here's what I decided and why." Or, "That's on my list to tighten before launch." Either answer is calm. Either one sounds like someone who runs a real business.</p>
+<p>The difference between the two Tuesdays isn't talent. It's whether the questions were asked before the client asked them.</p>
+<h2>A different Tuesday</h2>
+<p>Picture the same call, a few weeks on, with a different project.</p>
+<p>Katrin, or someone like her, types a made-up email. The page gives the same neutral reply no matter what. She tries a few more things. Nothing interesting happens. She says, "Okay, that seems tidy."</p>
+<p>You don't feel triumphant. You feel quiet. Your shoulders stay where they are. You take a sip of coffee while it's still warm.</p>
+<p>After the call you send a short report: what was reviewed, what was fixed, what is left as a known, accepted choice. The client reads it and replies with one line. <em>"Thanks, this is helpful."</em></p>
+<p>Then you get on with your day. The invoice gets finished before lunch.</p>
+<h2>If that first Tuesday sounds familiar</h2>
+<p>If you've ever had a small pause like Katrin's and felt the floor tilt, a checklist is a gentle way to put it back. It won't make you perfect. It will make you the person who already looked.</p>
+<p><strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong> is a 58-item review kit: a PDF and an XLSX tracker, curl tests, an auth-route scanner script and a client report template, for Node/Express and Python. It covers login behaviour like the story above, alongside the other questions clients tend to ask. It supports your own review and does not replace a professional security audit. There is a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>You can take a look here: <a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">REST API Security Checklist Kit</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
