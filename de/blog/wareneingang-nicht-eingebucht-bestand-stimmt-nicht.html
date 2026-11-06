@@ -1,0 +1,74 @@
+<!doctype html><html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wareneingang nicht eingebucht? Der Karton unterm Tresen</title><meta name="description" content="Die Ware ist da, im System steht sie nicht – und der Bestand stimmt nicht mehr. Eine Geschichte über Wareneingang, Ruhe und den Dienstag danach.">
+<link rel="canonical" href="https://blixwerkstudio.com/de/blog/wareneingang-nicht-eingebucht-bestand-stimmt-nicht"><meta property="og:title" content="Wareneingang nicht eingebucht? Der Karton unterm Tresen">
+<meta property="og:description" content="Die Ware ist da, im System steht sie nicht – und der Bestand stimmt nicht mehr. Eine Geschichte über Wareneingang, Ruhe und den Dienstag danach."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/lagerbestand-nachbestellung-excel-vorlage.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/de/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Wareneingang nicht eingebucht? Der Karton unterm Tresen", "description": "Die Ware ist da, im System steht sie nicht \u2013 und der Bestand stimmt nicht mehr. Eine Geschichte \u00fcber Wareneingang, Ruhe und den Dienstag danach.", "datePublished": "2026-11-06", "inLanguage": "de", "image": "https://blixwerkstudio.com/img/lagerbestand-nachbestellung-excel-vorlage.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/de/blog/wareneingang-nicht-eingebucht-bestand-stimmt-nicht"}</script></head><body>
+<header><a class="brand" href="/de">Blixwerk</a><nav><a href="/de">Produkte</a><a href="/de/blog">Blog</a><a href="/de/rechner">Gratis-Rechner</a><a href="/">English</a></nav></header>
+<main><article><h1>Wareneingang nicht eingebucht? Der Karton unterm Tresen</h1><p class='muted'>2026-11-06</p><p>Dienstag, 10:15 Uhr. Jule steht in ihrem kleinen Wollladen, das Telefon zwischen Schulter und Ohr. Auf dem Bildschirm vor ihr: ihre Bestandsliste. In der Zeile „Merinogarn, Petrol“ steht eine 0.</p>
+<p>„Ich wollte nur fragen, ob das Petrol noch mal kommt“, sagt die Kundin am anderen Ende. „Im Shop steht ausverkauft.“</p>
+<p>Jule sagt freundlich, sie schaue kurz nach. Dann sieht sie es. Neben dem Tresen, halb unter einem Stapel Papiertüten, steht ein Karton. Er ist offen. Obenauf liegt der Lieferschein. Er ist seit Freitag da.</p>
+<p>Petrol, 24 Knäuel. Sie hat sie nie eingebucht.</p>
+<h2>Der Freitag, an dem alles gleichzeitig kam</h2>
+<p>Sie erinnert sich genau. Der Paketbote stand mit zwei Kartons im Laden, im Hintergrund wartete jemand an der Kasse, und das Handy summte wegen einer Bestellung. Jule hat die Kartons in die Ecke gestellt. „Mache ich nachher“, hat sie gedacht.</p>
+<p>Nachher war Samstag, Markttag. Sonntag war Sonntag. Und am Montag hat sie den Laden aufgeschlossen und das Rad einfach weiterdrehen lassen.</p>
+<p>Der Lieferschein lag unter einer Kaffeetasse und fühlte sich dort sicher an. Er war aber nur vergessen.</p>
+<h2>Was so ein kleiner Fehler leise kostet</h2>
+<p>„Ausverkauft“ im Shop heißt: Drei Bestellungen sind nicht reingekommen. Vielleicht vier. Man weiß es nicht, und genau das ist das Unangenehme. Niemand beschwert sich. Die Leute klicken einfach weg und kaufen woanders.</p>
+<p>Das Gegenstück kennt Jule auch. Im Frühjahr hatte die Liste noch eine 12 stehen, im Regal lagen aber nur vier. Sie musste einer Kundin schreiben, dass sie ihr Garn leider doch nicht schicken kann. Das schrieb sie dreimal um, bevor sie auf „Senden“ drückte.</p>
+<p>Irgendwann hört man auf, der eigenen Liste zu glauben. Dann zählt man nach, wenn niemand zuschaut. Man öffnet Schubladen, die man schon kennt, und fragt sich leise, ob man wirklich einen Laden führt oder nur hinterherrennt.</p>
+<p>Das Schlimmste ist nicht der Umsatz. Es ist das Gefühl, dass die Zahlen auf dem Bildschirm ein anderes Geschäft beschreiben als das, in dem man gerade steht.</p>
+<h2>Der Moment am Karton</h2>
+<p>Sie legt dem Gespräch zuliebe eine Pause ein. „Es ist tatsächlich da“, sagt sie zur Kundin. „Ich schicke es Ihnen heute noch raus.“</p>
+<p>Die Kundin lacht erleichtert. Jule legt auf und setzt sich auf den Hocker neben dem Karton. Sie atmet aus.</p>
+<p>Es ist nicht dramatisch. Niemand ist wütend. Aber sie merkt, wie müde sie davon ist. Davon, dass ihr Kopf der einzige Ort ist, an dem der Wareneingang wirklich stattfindet. Wenn sie abgelenkt ist, passiert er nicht. Und wenn er nicht passiert, stimmt nichts mehr.</p>
+<p>Sie denkt an den Satz ihrer Schwester: „Du bist doch keine Maschine.“ Stimmt. Aber ihr Lager sollte auch nicht von einer Maschine abhängen, die Jule heißt und freitags um 12:30 Uhr drei Dinge gleichzeitig tut.</p>
+<p>Da kommt ihr ein ruhiger Gedanke. Er ist weder Vorsatz noch Neujahrsplan, nur ein Gedanke: Es könnte einen festen Platz dafür geben. Eine Stelle, an der jede Lieferung ankommt, in zwei Minuten, bevor man sie wegstellt. Keine Technik, die man erst lernen muss. Nur eine Gewohnheit, die das Papier nicht mehr unter Kaffeetassen verschwinden lässt.</p>
+<h2>Und danach?</h2>
+<p>Stellen wir uns einen Dienstag vor, ein paar Wochen später.</p>
+<p>Jule schließt den Laden um 9:30 Uhr auf. Der Paketbote kommt mit zwei Kartons. Diesmal stellt sie sie nicht in die Ecke. Lieferschein, Karton, Eintrag, Regal. Es dauert, bis der Wasserkocher klickt.</p>
+<p>Dann klingelt das Telefon. Eine Kundin fragt nach Petrol. Jule wirft einen Blick auf die Liste und sagt: „Ja, 24 Knäuel, ich lege Ihnen zwei zurück.“ Kein „Moment, ich schaue kurz“, kein Durchwühlen der Ecken.</p>
+<p>Später sieht sie auf einen Blick, bei welchen Farben es knapp wird und was sie bei ihrem Lieferanten bald nachbestellen sollte. Es überrascht sie nicht mehr. Der Samstag auf dem Markt gehört wieder dem Markt. Und wenn sie abends zumacht, geht sie nicht noch einmal gedanklich durchs Lager.</p>
+<p>Die Zahlen beschreiben wieder den Laden, in dem sie steht. Das ist kein großer Triumph. Es ist eine Sorge weniger.</p>
+<h2>Wenn du dich wiedererkennst</h2>
+<p>Vielleicht hast du keinen Wollladen. Vielleicht verkaufst du Kerzen, Tee, Ersatzteile oder Drucke. Aber vielleicht kennst du den Karton, der „kurz“ stehen blieb, und die Liste, der du nicht mehr traust.</p>
+<p>Dann ist ein einfaches Lagerbuch vielleicht das Naheliegendste: Artikel, Zu- und Abgänge, ein Meldebestand, bei dem du rechtzeitig Bescheid bekommst, und eine Übersicht, die dir sagt, was du bei welchem Lieferanten nachlegen solltest.</p>
+<p>Genau dafür haben wir den <strong>Lagerbestand &amp; Nachbestell-Tracker</strong> gebaut, eine Excel-Vorlage auf Deutsch mit Artikelstamm, Meldebestand, Bestellvorschlägen je Lieferant und einem Dashboard. Beispieldaten sind schon drin, du kannst also sofort sehen, wie es aussieht, und dann deine eigenen Artikel eintragen.</p>
+<p>Wenn er dir nicht hilft, bekommst du innerhalb von 30 Tagen dein Geld zurück, ohne Fragen.</p>
+<p><a href="https://blixwerkstudio.com/p/lagerbestand-nachbestellung-excel-vorlage">Den Lagerbestand &amp; Nachbestell-Tracker ansehen</a></p>
+<p>Und falls der Karton heute noch irgendwo steht: Mach ihn auf. Dann merkst du, wie viel leichter der Rest wird.</p>
+<p><em>Eine beispielhafte Geschichte, geschrieben mit KI-Unterstützung.</em></p><div class='cta'><strong>Kommt dir bekannt vor?</strong> Lagerbestand &amp; Nachbestell-Tracker (Excel, Deutsch) – Excel-Vorlage: Artikelstamm, Zu-/Abgänge, Meldebestand, Bestellvorschläge je Lieferant und Dashboard. Mit Beispieldaten. <p><a class='btn' href='/p/lagerbestand-nachbestellung-excel-vorlage'>Ansehen</a></p></div></article></main>
+<footer><p>Produkte, Rechner und Artikel von Blixwerk entstehen mit KI-Unterstützung durch ein automatisiertes System und werden vor der Veröffentlichung automatisch geprüft.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>

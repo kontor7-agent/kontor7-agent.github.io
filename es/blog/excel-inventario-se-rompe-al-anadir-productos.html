@@ -1,0 +1,75 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mi Excel de inventario se rompe y no me fío de las cifras</title><meta name="description" content="Lunes, 9:10, y el total del Excel no coincide con lo que ves en el estante. Una historia para quien ya no se fía de su inventario al añadir productos.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/excel-inventario-se-rompe-al-anadir-productos"><meta property="og:title" content="Mi Excel de inventario se rompe y no me fío de las cifras">
+<meta property="og:description" content="Lunes, 9:10, y el total del Excel no coincide con lo que ves en el estante. Una historia para quien ya no se fía de su inventario al añadir productos."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/small-business-inventory-reorder-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Mi Excel de inventario se rompe y no me f\u00edo de las cifras", "description": "Lunes, 9:10, y el total del Excel no coincide con lo que ves en el estante. Una historia para quien ya no se f\u00eda de su inventario al a\u00f1adir productos.", "datePublished": "2026-11-06", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/small-business-inventory-reorder-tracker-xlsx.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/excel-inventario-se-rompe-al-anadir-productos"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Mi Excel de inventario se rompe y no me fío de las cifras</h1><p class='muted'>2026-11-06</p><p>Es lunes, las 9:10. Marta acaba de abrir la persiana de su tienda de velas y jabones artesanales, todavía con el abrigo puesto y el café sin probar. Enciende el portátil. El Excel de inventario se abre despacio, como si él tampoco tuviera ganas de empezar la semana.</p>
+<p>Ha llegado el pedido de cera de soja. Lo apunta. Añade tres fragancias nuevas que lanzó el viernes. Y entonces la celda del total se pone a hacer cosas raras: un <code>#REF!</code> en una columna, un cero donde debería haber cuarenta, y una suma que no incluye las últimas filas.</p>
+<p>Marta se queda mirando la pantalla. Después mira el estante. Cuenta con el dedo: las velas de lavanda son once, no veintidós.</p>
+<p>Piensa: <em>¿y si llevo semanas vendiendo cosas que ya no tengo?</em></p>
+<h2>La cifra que ya no crees</h2>
+<p>No es un drama. Nadie se hunde por un Excel que falla. Pero algo se desgasta en silencio.</p>
+<p>Cada vez que añades un producto, lo haces con un poco de miedo. Insertas una fila y rezas para que las fórmulas la sigan. Copias la de arriba, cambias el nombre, y te queda la duda de si has arrastrado algo que no debías.</p>
+<p>Con el tiempo, el archivo se vuelve un animal delicado. Hay una pestaña que no tocas. Hay una columna con un color que ya no recuerdas qué significa. Hay un «copia_buena_FINAL2» que, en realidad, no sabes si es la buena.</p>
+<p>Y lo peor no es el error. Lo peor es que dejas de fiarte de los números. Así que haces lo que haces siempre: vas al estante, cuentas a mano y corriges. Una tarde de sábado, una hora entre pedidos, una caja abierta en el suelo.</p>
+<p>El Excel dejó de ser una ayuda. Es una tarea más.</p>
+<h2>La llamada de la clienta</h2>
+<p>A las 11:30 suena el teléfono de la tienda. Es una clienta que quiere seis velas de lavanda para unos regalos de empresa. «Para el jueves, si puede ser.»</p>
+<p>Marta mira el Excel. Dice veintidós. Mira el estante. Hay once.</p>
+<p>—Déjame que lo compruebe y te escribo antes de comer, ¿vale?</p>
+<p>Cuelga. Se queda un momento con la mano sobre el teléfono. Le da una vergüenza pequeña, de esas que no se cuentan. Tiene un negocio con su nombre en la puerta y no sabe, con seguridad, qué hay dentro.</p>
+<p>No es que no trabaje. Trabaja mucho. Es que parte de ese trabajo se le va en comprobar su propio trabajo.</p>
+<h2>El momento en que algo encaja</h2>
+<p>Esa tarde, mientras empaqueta un pedido, Marta le cuenta el problema a la vecina del local de al lado, que vende plantas. No espera nada. Solo lo suelta.</p>
+<p>La vecina se encoge de hombros.</p>
+<p>—Yo tenía lo mismo. Cada vez que metía un producto nuevo, algo se descolocaba. Hasta que dejé de arreglar mi hoja y empecé a usar una que ya estuviera pensada para crecer.</p>
+<p>No le da más detalles. No hacen falta. Marta se queda con una idea sencilla, casi tonta de lo obvia: <em>quizá el problema no soy yo ni mis dedos torpes con las fórmulas. Quizá estoy pidiéndole a un archivo improvisado que aguante lo que no se diseñó para aguantar.</em></p>
+<p>Es un alivio raro. Como cuando descubres que la puerta que no abría se empujaba en vez de tirar.</p>
+<h2>Un lunes distinto</h2>
+<p>Imagina el mismo lunes, pero con otra textura.</p>
+<p>Llegas a la tienda. Dejas el abrigo. Abres el archivo y no contienes la respiración. Escribes que ha entrado la cera de soja, y la cifra cambia donde tiene que cambiar. Añades las tres fragancias nuevas y simplemente aparecen, sin que nada se descuadre.</p>
+<p>Hay una zona que te avisa de lo que se está acabando. No tienes que ir a buscarlo entre cuarenta filas: te lo dice el propio archivo, con calma, antes de que sea un problema. Y hay una cifra que antes ni mirabas: cuánto dinero tienes parado en el estante.</p>
+<p>Cuando suena el teléfono y alguien pide seis velas de lavanda, no pides un minuto. Dices «sí, te llegan el jueves» o «te puedo dar cuatro ahora y el resto la semana que viene». Con voz tranquila. Con la voz de quien sabe lo que tiene.</p>
+<p>Y el sábado ya no es para contar cajas. Es para lo que tú quieras.</p>
+<p>Eso es todo lo que cambia: dejas de dudar. No hace falta nada más espectacular. La mayor parte de la calma de un negocio pequeño está en dejar de preguntarte, cada hora, si los números son verdad.</p>
+<h2>Si te has reconocido en Marta</h2>
+<p>Si cada vez que añades un producto se te encoge un poco el estómago, no necesitas ser más ordenado ni aprender fórmulas avanzadas. Quizá solo necesitas una base que ya esté preparada para crecer contigo.</p>
+<p>Para eso hicimos <strong>Never Sold Out by Surprise – Inventory &amp; Reorder Tracker (Excel)</strong>: un inventario en Excel con avisos automáticos de reposición, valor del stock y un panel de resumen. Incluye una versión con datos de ejemplo, una plantilla en blanco y una guía en PDF. Sin suscripción, y con 30 días de garantía: si no te ayuda, te devolvemos el dinero, sin preguntas. La plantilla y la guía están en inglés.</p>
+<p>Puedes verla con calma aquí: <a href="https://blixwerkstudio.com/p/small-business-inventory-reorder-tracker-xlsx">Never Sold Out by Surprise – Inventory &amp; Reorder Tracker</a></p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Never Sold Out by Surprise – Inventory &amp; Reorder Tracker (Excel) – Excel inventory tracker with automatic reorder alerts, stock value and dashboard. Sample + blank template, PDF guide. No subscription. <p><a class='btn' href='/p/small-business-inventory-reorder-tracker-xlsx'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
