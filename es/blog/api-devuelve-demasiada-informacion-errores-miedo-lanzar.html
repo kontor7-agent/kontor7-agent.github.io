@@ -1,0 +1,75 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mi API devuelve demasiado en los errores y temo lanzarla</title><meta name="description" content="Sábado en un apartamento de vacaciones que no lo es: un error de tu API enseña más de lo que debería y el lanzamiento es el lunes. Una historia ilustrativa.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/api-devuelve-demasiada-informacion-errores-miedo-lanzar"><meta property="og:title" content="Mi API devuelve demasiado en los errores y temo lanzarla">
+<meta property="og:description" content="Sábado en un apartamento de vacaciones que no lo es: un error de tu API enseña más de lo que debería y el lanzamiento es el lunes. Una historia ilustrativa."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Mi API devuelve demasiado en los errores y temo lanzarla", "description": "S\u00e1bado en un apartamento de vacaciones que no lo es: un error de tu API ense\u00f1a m\u00e1s de lo que deber\u00eda y el lanzamiento es el lunes. Una historia ilustrativa.", "datePublished": "2026-11-06", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/api-devuelve-demasiada-informacion-errores-miedo-lanzar"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Mi API devuelve demasiado en los errores y temo lanzarla</h1><p class='muted'>2026-11-06</p><p>Es sábado, las 10:20, y llevas tres días diciendo que estás de vacaciones.</p>
+<p>El apartamento de la costa tiene una mesa plegable, una ventana con vistas a un aparcamiento y un ventilador que gira con la fuerza justa para mover los papeles. Tu pareja se ha ido a la playa con la sombrilla. Tú has dicho: «Cinco minutos, solo miro una cosa».</p>
+<p>La cosa es tu API. El lunes por la mañana la usará por primera vez el cliente de verdad. Llevas semanas con ella. Funciona. Los datos entran, los datos salen, los tests pasan.</p>
+<p>Pero esta mañana, desde el móvil, has mandado una petición mal hecha. Sin querer, con el pulgar torpe. Y la respuesta que vuelve es un error.</p>
+<p>No es un error cualquiera. Es largo. Trae rutas de carpetas de tu ordenador. Trae el nombre de una tabla. Trae un trozo de la consulta, tal cual, con sus comillas.</p>
+<p>Te quedas mirando la pantalla pequeña. Piensas: <em>esto lo puede leer cualquiera.</em></p>
+<h2>El nudo que no sale en la factura</h2>
+<p>No hay ninguna alarma. Nadie te ha escrito. Pero algo se te ha puesto en el estómago, justo debajo de las costillas, y ya no se mueve.</p>
+<p>Cierras el móvil. Lo abres otra vez. Lo cierras.</p>
+<p>Sabes que el lunes tienes que hablar con el cliente con la voz tranquila de alguien que sabe lo que hace. Y ahora mismo no estás seguro de que sea verdad. Esa es la parte que casi nadie cuenta: no es solo miedo a que pase algo. Es la sensación de ser un impostor con un contrato firmado.</p>
+<p>Abres el portátil. Buscas «mi API devuelve demasiada información en los errores». Lees un artículo, luego otro. Cada uno te lleva a tres temas más. Cabeceras, registros, autenticación, límites. Una lista infinita de cosas que <em>quizá</em> deberías haber mirado.</p>
+<p>A las once y media tienes catorce pestañas abiertas y ninguna certeza. Has descubierto que no sabes qué es lo que no sabes.</p>
+<p>El ventilador sigue girando. Desde la playa llega, muy lejos, el ruido de alguien jugando a las palas.</p>
+<h2>Lo que te cuesta de verdad</h2>
+<p>Hagamos la cuenta sin números, que no hacen falta.</p>
+<p>Te cuesta la mañana de sábado. Te cuesta que, cuando vuelva tu pareja con la piel salada y las ganas de comer algo, tú sigas con cara de reunión. Te cuesta el domingo, que ya ves venir igual. Y te cuesta, el lunes, una llamada en la que dirás «todo bien» con un hilo de duda por debajo.</p>
+<p>No es dramático. Es pequeño y constante, y por eso pesa tanto. Una preocupación que no explota nunca pero tampoco se va.</p>
+<p>Y lo peor: no sabes si estás exagerando. Quizá ese error es lo más normal del mundo. Quizá es un agujero enorme. Sin una manera tranquila de comprobarlo, las dos cosas parecen igual de posibles.</p>
+<h2>El momento en que cambia el aire</h2>
+<p>Lo que te baja los hombros no es una solución genial. Es una idea muy simple: <em>no tienes que acordarte de todo. Solo tienes que repasar una lista hecha por alguien que ya pensó en ello.</em></p>
+<p>Piensa en cómo repasa un piloto antes de despegar. No porque sea torpe. Precisamente porque no lo es, y sabe que el cerebro a las once de la mañana, con nervios, no es un buen sitio donde guardar cosas importantes.</p>
+<p>Una lista ordena el miedo. Lo convierte en filas. Esto lo he mirado, esto no, esto lo miro ahora. El nudo grande se queda en una cola de tareas pequeñas, y las tareas pequeñas se pueden hacer con un café al lado.</p>
+<p>Eso es todo lo que cambia. No te vuelves experto en una tarde. Dejas de llevar la cuenta en la cabeza.</p>
+<h2>Un lunes distinto</h2>
+<p>Imagina ahora el lunes.</p>
+<p>Te levantas sin el estómago encogido. Hay café, hay luz entrando por una ventana que ya no es la del aparcamiento. Abres la hoja donde has ido marcando cosas. La mayoría están hechas. Dos o tres tienen una nota: «lo hablo con el cliente», «lo dejo para la segunda versión». Y eso también está bien. Saber lo que queda pendiente es muy distinto a no saber qué hay.</p>
+<p>Llega la llamada. El cliente pregunta, con tono amable, si la API está revisada. Y tú no tienes que improvisar ni inflar nada. Puedes decir lo que has mirado y lo que no, con calma, como un profesional que lleva su negocio. Que es justo lo que eres.</p>
+<p>Por la tarde, cuando alguien escriba para pedir algo, no sentirás ese pequeño sobresalto. Cerrarás el portátil a una hora razonable. El sábado, ese sábado raro, quedará como una anécdota: «aquel día que me asusté con un error».</p>
+<h2>Si te has reconocido</h2>
+<p>Si esta escena te resulta familiar, quizá te venga bien no empezar de cero cada vez que lanzas algo.</p>
+<p>Hemos preparado <em>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</em>: 58 puntos de revisión en PDF y hoja de seguimiento en XLSX, con pruebas con curl, un script que busca rutas sin autenticación y una plantilla de informe para tu cliente, para Node/Express y Python. El producto está en inglés, y la mayoría de los términos técnicos ya los usas en inglés a diario.</p>
+<p>Tiene una garantía de devolución de 30 días: si no te ayuda, te devolvemos el dinero, sin preguntas. Y no sustituye a una auditoría profesional si tu proyecto la necesita; es una forma ordenada de revisar lo tuyo.</p>
+<p>Puedes verlo aquí, sin prisa: <a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</a></p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
