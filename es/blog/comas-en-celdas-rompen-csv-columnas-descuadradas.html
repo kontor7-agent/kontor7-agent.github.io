@@ -1,0 +1,74 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Las comas en mis celdas rompen el CSV: martes en el tren</title><meta name="description" content="Las direcciones llevan comas y tu CSV se descuadra con el tren a veinte minutos de llegar. Una historia sobre dejar de arreglar celdas a mano.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/comas-en-celdas-rompen-csv-columnas-descuadradas"><meta property="og:title" content="Las comas en mis celdas rompen el CSV: martes en el tren">
+<meta property="og:description" content="Las direcciones llevan comas y tu CSV se descuadra con el tren a veinte minutos de llegar. Una historia sobre dejar de arreglar celdas a mano."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Las comas en mis celdas rompen el CSV: martes en el tren", "description": "Las direcciones llevan comas y tu CSV se descuadra con el tren a veinte minutos de llegar. Una historia sobre dejar de arreglar celdas a mano.", "datePublished": "2026-11-06", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/comas-en-celdas-rompen-csv-columnas-descuadradas"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Las comas en mis celdas rompen el CSV: martes en el tren</h1><p class='muted'>2026-11-06</p><p>Son las 8:42 de un martes y el cercanías va medio dormido. Paula, diseñadora de interiores autónoma, tiene el portátil abierto sobre las rodillas y una taza de café que se enfría en el posavasos del asiento.</p>
+<p>El plan era sencillo. Exportar su lista de clientes, subirla al programa nuevo de facturas y llegar a la reunión de las 10:30 con todo en su sitio. Veinte minutos de trabajo, pensó. Media hora como mucho.</p>
+<p>Pulsa «Importar». El programa se queda pensando un segundo y devuelve un mensaje rojo: <em>fila 14: número de columnas incorrecto</em>.</p>
+<h2>La fila 14 no era la única</h2>
+<p>Abre el archivo. Y ahí está. El nombre del cliente en la primera columna, bien. El correo, bien. Pero la dirección, «Calle Mayor, 12, 3º B», ha repartido su contenido entre tres columnas. El código postal se ha mudado al sitio del teléfono. Y el teléfono ha caído en una columna que ni siquiera tiene título.</p>
+<p>Piensa en la fila 15. Después en la 16. Baja con la rueda del ratón y ve que esto no es un error suelto. Es un patrón. Cada comida de la empresa, cada «Reformas Ruiz, S.L.», cada nota tipo «llamar por la tarde, no antes de las 5» tiene una coma escondida dentro, y cada coma ha cortado la celda en dos.</p>
+<p>Son 412 filas. El tren acaba de pasar por la estación donde siempre se baja una chica con un violín.</p>
+<h2>Lo que no se dice en voz alta</h2>
+<p>Lo raro es que Paula no se enfada con el archivo. Se enfada consigo misma.</p>
+<p>Piensa que debería tener esto en orden. Que una profesional de verdad no se encuentra con la lista de clientes rota veinte minutos antes de una reunión. Que seguro que otras personas autónomas tienen su base de datos limpia, con sus columnas alineadas y sus teléfonos en un solo formato, y que ella, que sabe elegir la luz exacta para un salón, no sabe qué le pasa a una tabla.</p>
+<p>Y mientras tanto la lista no es un capricho. Es la lista de quién le debe qué. Si el programa no la importa, las facturas de octubre se quedan en un limbo de carpetas, y ella ya sabe lo que eso significa: otra semana sin saber con certeza quién ha pagado.</p>
+<p>Empieza a arreglar a mano. Selecciona una celda, borra una coma, mueve un trozo, vuelve a pegar. La fila 14 queda bien. La 15 también. Cuando va por la 31, el altavoz anuncia que la próxima parada es la suya.</p>
+<p>No ha llegado ni al diez por ciento.</p>
+<h2>Esa frase que se repite en la cabeza</h2>
+<p>Cierra el portátil a medias, con el archivo aún abierto, y mira por la ventana el polígono industrial que pasa a toda velocidad. Hay una frase que le da vueltas desde hace meses y que hoy suena más fuerte:</p>
+<p><em>«Siempre acabo arreglando esto yo, a mano, justo cuando no tengo tiempo.»</em></p>
+<p>No es solo hoy. Es la exportación del banco que se abre con las columnas torcidas. Es el listado de la tienda online que trae los nombres con tres espacios. Es el Excel que alguien le manda con las fechas escritas de cuatro formas distintas. Cada vez un pequeño susto, cada vez una hora que no estaba en ningún presupuesto.</p>
+<p>Y en algún punto, entre la estación de la chica del violín y la suya, le llega otra idea. Menos dramática, más tranquila.</p>
+<p><em>¿Y si esto no tuviera que depender de mí a las nueve de la mañana, con el café frío?</em></p>
+<h2>Un martes que empieza distinto</h2>
+<p>Imagina otra versión de ese mismo martes. Lo imaginamos nosotros, para que lo reconozcas.</p>
+<p>En esa versión, Paula llega a la estación con las manos libres. El archivo ya pasó antes por un paso sencillo, el viernes, mientras recogía la mesa. Alguien, o algo, miró las comas escondidas, respetó las celdas que debían seguir enteras y le dejó una pequeña nota con lo que había tocado y lo que no. Nada de sorpresas, nada de «¿qué habrá cambiado?».</p>
+<p>El martes, el programa de facturas se traga las 412 filas sin una sola queja. Ella ve aparecer la lista, cliente a cliente, con la dirección en su sitio y el teléfono donde toca. Pide un café de verdad en la cafetería de la esquina, no el de la taza fría. Y entra a la reunión sabiendo exactamente quién le debe qué.</p>
+<p>No hay nada heroico en esa mañana. Precisamente por eso sienta tan bien.</p>
+<h2>Lo que cambia cuando deja de ser tu problema</h2>
+<p>Lo que se gana no es solo tiempo, aunque el tiempo cuenta. Es la sensación de que tus datos te obedecen. De que una coma en una dirección no puede estropearte el día. De que, si mañana te llega otro archivo raro de un cliente, de un banco o de una plataforma, no vas a ponerte a hacer cirugía celda por celda.</p>
+<p>Es, en el fondo, parte de sentirte profesional: no por tener un sistema perfecto, sino por tener uno que no te deja tirada.</p>
+<p>Y si tú también has pasado por una fila 14 con el reloj en contra, no hace falta que lo resuelvas hoy con más paciencia o más café. Hay herramientas hechas justo para esto.</p>
+<h2>Un siguiente paso, si te has reconocido</h2>
+<p>Si esta escena te suena, en Blixwerk hemos preparado <strong>Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</strong>. Limpia exportaciones desordenadas de CSV y Excel: duplicados, fechas, teléfonos, codificación, columnas partidas. Antes de tocar nada te enseña lo que cambiaría y después te deja un informe de cambios. El producto está en inglés. Lleva nuestra garantía de 30 días: si no te ayuda, te devolvemos el dinero, sin preguntas.</p>
+<p>Puedes verlo con calma aquí: <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit</a></p>
+<p>Y si hoy tu tren sigue en marcha y la fila 14 sigue ahí, respira. Es solo una coma. Ya habrá un martes más tranquilo.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
