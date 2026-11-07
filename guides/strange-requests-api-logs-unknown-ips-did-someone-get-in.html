@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strange API Log Requests, Did Someone Get In? The Shuttle</title><meta name="description" content="Odd requests from unknown IPs in your API logs, and a conference shuttle bus you can&#x27;t enjoy. A story about the calm of knowing what was actually checked.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/strange-requests-api-logs-unknown-ips-did-someone-get-in"><meta property="og:title" content="Strange API Log Requests, Did Someone Get In? The Shuttle">
+<meta property="og:description" content="Odd requests from unknown IPs in your API logs, and a conference shuttle bus you can&#x27;t enjoy. A story about the calm of knowing what was actually checked."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Strange API Log Requests, Did Someone Get In? The Shuttle", "description": "Odd requests from unknown IPs in your API logs, and a conference shuttle bus you can't enjoy. A story about the calm of knowing what was actually checked.", "datePublished": "2026-11-07", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/strange-requests-api-logs-unknown-ips-did-someone-get-in"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Strange API Log Requests, Did Someone Get In? The Shuttle</h1><p class='muted'>2026-11-07</p><p>The shuttle bus from the hotel to the conference centre takes eleven minutes. Jonas has been on it for four, and he has not looked out of the window once.</p>
+<p>He is holding his phone low, between his knees, the way you hold something you don't want your neighbour to read. On the screen is a log excerpt he pulled up while brushing his teeth. Lines of it. Requests to <code>/api/admin/users</code>. Requests to <code>/api/v1/export</code>. A path ending in <code>.env</code>. All from IP addresses he has never seen, all at 03:12 and 03:13, all with a user agent that says nothing useful.</p>
+<p>The man next to him is eating a croissant from a napkin. Jonas can smell the butter. His own stomach has closed like a fist.</p>
+<p><em>Did someone get in?</em></p>
+<h2>The question you can't ask out loud</h2>
+<p>Jonas is a freelance developer. He built the booking API for a small physiotherapy group last spring, and he still looks after it for a monthly fee that is, honestly, a little low. There are no colleagues to turn to. There is no security team and no one to say, "Oh, that's just scanners, ignore it."</p>
+<p>There is only him, a bus, and a talk on cloud costs that starts in nineteen minutes.</p>
+<p>He scrolls. Most of the requests got a 404. Some got a 401. One got a 200, and he stops on it, thumb hovering. Then he realises it was the health-check endpoint. His own. His thumb relaxes a little.</p>
+<p>But a little isn't enough. A 404 means <em>nothing was there</em>. It doesn't mean <em>nothing was possible</em>. He knows the difference, and that's the trouble. He knows just enough to know how much he can't be sure of.</p>
+<p>The bus turns a corner. A woman in a lanyard laughs at something on her phone. Jonas types a message to the physio clinic's owner, deletes it, types it again, deletes it again. What would it even say? <em>Hi, odd traffic, probably fine?</em> Probably fine is not a sentence you send to someone whose patients' appointment times live in your database.</p>
+<h2>What it quietly costs</h2>
+<p>Here is what nobody puts in the invoice.</p>
+<p>He will sit in the talk on cloud costs and take no notes. At the coffee break he will stand near the pastries, refreshing a log viewer on conference Wi-Fi. At lunch he will say "yes, busy, good" to a stranger and mean none of it.</p>
+<p>The odd traffic itself may be nothing. The internet is full of things knocking on doors at three in the morning, rattling handles, moving on. Jonas knows this. But <em>knowing it in general</em> and <em>knowing it about your own API</em> are two different kinds of knowing, and only one of them lets you enjoy a croissant.</p>
+<p>The cost is the day. A day he paid for, with a train ticket and a badge, spent half-present.</p>
+<h2>The turn, somewhere between stops</h2>
+<p>The bus stops outside the centre. Everyone shuffles toward the doors. Jonas stays in his seat for a second, letting them pass.</p>
+<p>And he thinks something small and a bit uncomfortable: <em>I have never actually gone through this thing properly.</em></p>
+<p>He has fixed things. He has patched, tidied, added a check here and there when something occurred to him in the shower. But he has never sat down with a complete list and worked it through, item by item, writing down what he found. Every worry about this API has been answered from memory. And memory, at 03:12 on a Wednesday, is not much of a witness.</p>
+<p>That's the realisation. The logs aren't the problem. Odd logs will always arrive. The problem is that he has nothing to hold them <em>against</em>. No list to say: this was checked, this wasn't, this is fine, this needs an afternoon.</p>
+<p>He steps off the bus. The air smells of wet pavement and coffee. For the first time that morning, the fist loosens a notch, not because anything is solved, but because he has finally named what's missing.</p>
+<h2>A different Wednesday</h2>
+<p>Picture the same bus, a few weeks on.</p>
+<p>Same logs, different morning. A burst of strange requests from unknown addresses, a handful of paths no honest client would ever try. Jonas sees them over breakfast and thinks: <em>ah, there they are again.</em></p>
+<p>Because now there is a document. He knows which doors exist, which ones need a key, and which keys went where. When he looks at a request for <code>/api/admin/users</code>, he doesn't wonder whether that door is open. He remembers checking it, and he can point to the line where he wrote it down.</p>
+<p>He still reads the logs. He's not careless. But the reading has a floor under it. If something truly odd turned up, he'd know where to start, and he'd have something calm and organised to show the clinic's owner instead of a shrug.</p>
+<p>The bus takes eleven minutes. He looks out of the window. There's a heron on the canal, standing in the shallows like it has all day.</p>
+<p>At the break he eats the croissant. It's very good.</p>
+<h2>If you recognise yourself</h2>
+<p>Maybe you're on a bus, in a queue or at a kitchen counter with a log excerpt on your phone and that particular closed-fist feeling. You don't need to panic, and you don't need to become a security expert by lunchtime. What helps is having a proper, complete review to work through. It turns "I think it's fine" into "I checked, and here's what I found."</p>
+<p>That's what we built the <strong><a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</a></strong> for. It's a 58-item review kit with a PDF, an XLSX tracker, curl tests, an auth-route scanner script and a client report template, for Node/Express and Python. It doesn't replace a professional penetration test, and it won't tell you whether a specific request was an attack. It gives you a calm, written way to find out where you stand. There's a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>The logs will keep arriving. Your morning doesn't have to.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
