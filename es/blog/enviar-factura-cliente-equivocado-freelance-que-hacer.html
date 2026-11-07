@@ -1,0 +1,84 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mandé la factura al cliente equivocado: ¿y ahora qué?</title><meta name="description" content="Enviaste una factura al cliente que no era y te late el pecho en plena cafetería. Una historia para respirar antes de escribir el correo.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/cliente-no-me-paga-la-factura"><meta name="robots" content="noindex,follow"><meta property="og:title" content="Mandé la factura al cliente equivocado: ¿y ahora qué?">
+<meta property="og:description" content="Enviaste una factura al cliente que no era y te late el pecho en plena cafetería. Una historia para respirar antes de escribir el correo."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/freelancer-project-invoice-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Mand\u00e9 la factura al cliente equivocado: \u00bfy ahora qu\u00e9?", "description": "Enviaste una factura al cliente que no era y te late el pecho en plena cafeter\u00eda. Una historia para respirar antes de escribir el correo.", "datePublished": "2026-11-07", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/freelancer-project-invoice-tracker-xlsx.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/enviar-factura-cliente-equivocado-freelance-que-hacer"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Mandé la factura al cliente equivocado: ¿y ahora qué?</h1><p class='muted'>2026-11-07</p><p>Son las 9:12 de un martes y estás en la barra de una cafetería, con el café sin tocar. El móvil vibra sobre el mármol. Es un correo de Raúl, de la clínica dental:</p>
+<p>«Hola, Irene. Me ha llegado una factura de 1.450 € por una web que no hemos encargado. ¿Es un error?»</p>
+<p>Lo lees una vez. Lo lees otra. Notas el calor que sube por el cuello.</p>
+<p>Sí. Es un error. Esa factura era para Norte Estudio, el cliente del rediseño. Raúl es de Norte Dental. Los dos tienen «Norte» en el nombre. Los dos están en tu agenda de contactos, uno debajo del otro. Ayer, con prisa, elegiste el equivocado.</p>
+<p>Irene es un personaje inventado, pero quizá tú ya estés dentro de la escena.</p>
+<h2>El pitido en la cabeza</h2>
+<p>Lo primero que sientes no es culpa. Es vergüenza, de la que te hace mirar a los lados aunque nadie te mire.</p>
+<p>Empiezan los pensamientos, uno detrás de otro, sin orden.</p>
+<p><em>¿Qué pensará Raúl de mí? Me ha contratado dos veces para pequeños arreglos. ¿Va a creer que no tengo ni idea de lo que hago?</em></p>
+<p><em>¿Y Norte Estudio? Esperan esa factura. Si no les llega, ¿cuándo pagan?</em></p>
+<p><em>¿Qué hago con el número de factura que ya salió? ¿Y si se me lía todo?</em></p>
+<p>Te das cuenta de que estás tecleando una respuesta con las manos temblando. «Perdona, perdona mil veces, qué vergüenza, soy un desastre…». La borras. Demasiado. Parece que has cometido un delito, no un error de dirección.</p>
+<p>Respiras. Pides otro café, por hacer algo con las manos.</p>
+<h2>Lo que nadie cuenta del trabajo en solitario</h2>
+<p>Cuando trabajas en una empresa, hay alguien que revisa. Una persona de administración, un compañero que dice «oye, esto no cuadra». Tú no tienes a nadie.</p>
+<p>Tú eres diseño, atención al cliente, cobros y, a veces, la persona que se equivoca de destinatario. Y también la que tiene que dar la cara después.</p>
+<p>Eso es lo que pesa de verdad. No el fallo en sí, que le pasa a cualquiera, sino la sensación de que todo depende de que no te despistes nunca. Un martes cualquiera, con el cerebro lleno de entregas, un nombre parecido basta.</p>
+<p>Y debajo hay otra pregunta, más callada: <em>¿Cuántas otras cosas se me están escapando sin que me dé cuenta?</em></p>
+<h2>Una respuesta corta y tranquila</h2>
+<p>Vuelves a la pantalla. Esta vez escribes despacio, como si hablaras con alguien que te cae bien:</p>
+<p>«Hola, Raúl. Tienes razón, esa factura no era para vosotros. Se envió por error a vuestra dirección. Por favor, ignórala. Disculpa las molestias y gracias por avisar tan rápido.»</p>
+<p>Tres frases. Sin drama, sin una disculpa de cinco párrafos. Lo relees. Suena a una profesional que ha tenido un despiste, no a alguien que se hunde.</p>
+<p>Lo envías.</p>
+<p>Luego, a Norte Estudio, con el documento correcto. Lo que toque hablar con tu gestora sobre cómo queda registrado ese movimiento, eso es otra conversación, para ella y para ti, y no la vas a resolver en una cafetería.</p>
+<p>Solo queda esperar. Y mientras esperas, te llega esta idea:</p>
+<p><em>No es el error lo que me ha dejado sin aire. Es no tener nada que me enseñe de un vistazo qué he enviado, a quién y cuándo.</em></p>
+<h2>El giro, sin fuegos artificiales</h2>
+<p>Raúl contesta a los diez minutos: «Sin problema, ¡ya está! Un abrazo». Y ya está. El mundo no se acaba. La vergüenza se queda un rato más, como un invitado que no sabe irse, pero se va.</p>
+<p>Esa tarde, en casa, no abres la bandeja de entrada. Abres un papel en blanco y piensas en cómo querrías que fuera un martes normal.</p>
+<p>No quieres una herramienta enorme. No quieres cursos ni un programa con cuarenta pestañas. Quieres un sitio donde cada cliente tenga su línea, cada proyecto su nombre completo y cada factura su número, su fecha y su estado. Un sitio donde, antes de enviar nada, puedas ver con claridad <em>quién es quién</em>.</p>
+<p>Nada más. Solo eso: ver.</p>
+<h2>Un martes distinto</h2>
+<p>Imagina el mismo martes, unas semanas después.</p>
+<p>Llegas a la cafetería, pides lo de siempre. Abres el portátil y, en lugar de la bandeja de entrada, ves una sola pantalla. Los clientes ordenados. Lo que está enviado, lo que está pagado, lo que vence esta semana. Norte Dental en una fila, Norte Estudio en otra, cada uno con su proyecto al lado.</p>
+<p>Preparas la factura de hoy. Te lleva dos minutos. Compruebas el nombre, el proyecto, el importe. Todo está donde debe. Pulsas enviar sin que se te encoja el estómago.</p>
+<p>El móvil vibra. Es un mensaje de tu hermana preguntando por el domingo. Respondes con una sonrisa, no con un sobresalto.</p>
+<p>No es que no vayas a equivocarte nunca. Es que, si pasa, sabrás encontrarlo rápido, corregirlo con calma y seguir con tu día. Esa tranquilidad es lo que cambia de verdad.</p>
+<h2>Si te has reconocido</h2>
+<p>Si alguna vez has sentido ese calor en el cuello al ver que una factura fue a parar a quien no era, o simplemente vives con el miedo silencioso a que pase, quizá te sirva algo sencillo.</p>
+<p>Hemos hecho una plantilla de Excel pensada para eso: clientes, proyectos, horas y facturas en un solo lugar, con números de factura automáticos, fechas de vencimiento y avisos de lo que está vencido. Incluye datos de ejemplo y una guía en PDF para tu primera victoria en menos de cinco minutos. La plantilla está en inglés, pero se entiende a la primera.</p>
+<p>Se llama <strong>Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker (Excel)</strong> y la tienes aquí, sin prisa: <a href="https://blixwerkstudio.com/p/freelancer-project-invoice-tracker-xlsx">verla en Blixwerk</a>. Tiene 30 días de garantía: si no te ayuda, te devolvemos el dinero, sin preguntas.</p>
+<p>Organiza tus papeles; las decisiones fiscales y legales siguen siendo tuyas y de tu gestor.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Get Paid On Time – Freelance Invoice, Hours &amp; Client Tracker (Excel) – Excel tracker for clients, projects, hours and invoices: auto invoice numbers, due dates, overdue flags, dashboard. Sample data + PDF guide. <p><a class='btn' href='/p/freelancer-project-invoice-tracker-xlsx'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
