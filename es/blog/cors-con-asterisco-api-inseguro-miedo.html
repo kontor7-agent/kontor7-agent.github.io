@@ -1,0 +1,73 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Puse CORS con asterisco en mi API y me da miedo: lunes</title><meta name="description" content="Pusiste CORS con asterisco para que funcionara y ahora te ronda la duda. Una historia para quien lanza su API pronto y no está del todo tranquilo.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/cors-con-asterisco-api-inseguro-miedo"><meta property="og:title" content="Puse CORS con asterisco en mi API y me da miedo: lunes">
+<meta property="og:description" content="Pusiste CORS con asterisco para que funcionara y ahora te ronda la duda. Una historia para quien lanza su API pronto y no está del todo tranquilo."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Puse CORS con asterisco en mi API y me da miedo: lunes", "description": "Pusiste CORS con asterisco para que funcionara y ahora te ronda la duda. Una historia para quien lanza su API pronto y no est\u00e1 del todo tranquilo.", "datePublished": "2026-11-07", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/cors-con-asterisco-api-inseguro-miedo"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Puse CORS con asterisco en mi API y me da miedo: lunes</h1><p class='muted'>2026-11-07</p><p>Lunes, 9:10. El metro de Bilbao va lleno y Nerea sostiene el móvil con una mano y la barra con la otra. En la pantalla, el chat con su cliente: «¿Seguimos para el viernes con el lanzamiento?».</p>
+<p>Ella escribe «sí, todo en marcha». Y siente cómo se le encoge el estómago.</p>
+<p>Porque hay una línea en su código. Una sola. La puso el jueves pasado, a las seis de la tarde, cuando el navegador no paraba de gritarle en rojo que su propia API le prohibía el paso. Buscó, copió, probó con un asterisco y, por fin, todo en verde. Cerró el portátil y se fue a cenar.</p>
+<p>Desde entonces, esa línea la sigue a todas partes.</p>
+<h2>Lo que no dices en voz alta</h2>
+<p>En el trabajo no se lo ha contado a nadie. ¿A quién? Es freelance. No hay un compañero de al lado al que girar la pantalla y preguntarle: «Oye, ¿esto está mal?».</p>
+<p>Hay foros, claro. En uno leyó que el asterisco es un desastre. En otro, que depende de lo que sirva la API. En un tercero, que «eso no es lo importante». Tres respuestas, tres tonos, ninguna que hable de <em>su</em> API, con <em>sus</em> rutas y <em>su</em> cliente.</p>
+<p>Y mientras tanto, el pensamiento pequeño y pegajoso: <em>¿y si me estoy engañando? ¿Y si lo lanzo y a la semana me escribe alguien con un «oye, he visto una cosa»?</em></p>
+<p>No es pánico. Es algo más cansado. Es no poder disfrutar del café porque una parte de la cabeza sigue revisando una línea de código.</p>
+<h2>El precio de la duda</h2>
+<p>Lo curioso es lo que cuesta esa duda sin que se note en ninguna factura.</p>
+<p>El sábado, en casa de sus padres, estuvo medio ausente durante la comida. Su madre le preguntó si le pasaba algo. «Cosas del trabajo», dijo, y pinchó otro trozo de tortilla.</p>
+<p>El domingo por la noche abrió el repositorio «solo un momento» y lo cerró una hora después sin haber decidido nada. Cambió el asterisco por un dominio, lo volvió a cambiar, lo dejó como estaba. Daba vueltas sin un criterio. Revisaba lo que se le ocurría, y lo que no se le ocurría, por definición, no lo revisaba.</p>
+<p>Ese es el fondo del asunto: no sabía qué <em>no</em> estaba mirando.</p>
+<p>Y había otra cosa, más incómoda. Si el cliente le preguntaba «¿está revisada la seguridad?», Nerea no tenía qué enseñarle. Tenía una sensación, y las sensaciones no se mandan por correo. Se sentía un poco impostora: alguien que construye cosas que funcionan, pero no sabe decir con calma hasta dónde ha mirado.</p>
+<h2>El momento en que cambia el aire</h2>
+<p>El metro se detiene en Moyúa. Sale un montón de gente, ella se sienta, y escribe en el buscador algo distinto a lo de siempre. No «CORS asterisco peligroso», sino algo como «cómo revisar mi API antes de lanzarla, con orden».</p>
+<p>Lo que le llama la atención no es una solución mágica. Es la idea de que quizá el problema nunca fue esa línea. Quizá el problema era no tener una lista. Un recorrido hecho por otra gente, pensado para que no dependa de acordarse de todo un lunes a las nueve de la mañana.</p>
+<p>Piensa en cómo lo hace cuando factura: no recuerda de memoria qué datos lleva una factura, tiene una plantilla y la sigue. ¿Por qué con la API iba a ser distinto?</p>
+<p>Lo curioso es que la duda no desaparece de golpe. Cambia de forma. Pasa de «¿estará mal?» a «vale, esto lo miro, esto lo compruebo, esto lo anoto». Una niebla se convierte en una lista con casillas. Algunas casillas quizá le digan «esto está bien». Otras, «esto toca arreglarlo antes del viernes». Las dos respuestas son un alivio, porque ya no son una sospecha.</p>
+<h2>Un lunes normal, después</h2>
+<p>Imagínala una semana más tarde. Lunes, 9:10, otra vez en el metro, pero con el móvil en el bolsillo y la mirada en la ventana.</p>
+<p>El cliente vuelve a preguntar si todo está listo. Esta vez ella contesta con una frase corta y tranquila: «Está revisada. Te mando un resumen de lo que he comprobado y lo que he ajustado».</p>
+<p>No hay épica. Hay un documento ordenado que dice qué se miró, qué estaba bien y qué se cambió. Su cliente lo lee con el café en la mano, asiente y pasa a otro tema. Y ese asentimiento vale más que cualquier elogio.</p>
+<p>El viernes, el lanzamiento llega como llegan los días normales. A las seis cierra el portátil y no vuelve a abrirlo hasta el lunes. El domingo, en la comida, no mira el móvil. Su madre le sirve más tortilla y no pregunta nada.</p>
+<p>No es que no pueda pasar nunca nada: ninguna lista promete eso. Es que ya no hay una parte de ella montando guardia en silencio.</p>
+<h2>Si te has reconocido en ella</h2>
+<p>Si tienes una línea en tu código que te ronda como una piedra en el zapato, no estás haciendo nada raro. Es lo que pasa cuando trabajas solo y nadie te dice «sí, eso está bien» o «eso mejor cámbialo».</p>
+<p>Para esos momentos hemos preparado el <em>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</em> (está en inglés): 58 puntos de revisión con PDF y hoja de seguimiento en XLSX, pruebas con curl, un script que repasa las rutas con autenticación y una plantilla de informe para enseñar a tu cliente. Pensado para Node/Express y Python. Si no te ayuda, tienes 30 días para pedir el reembolso completo, sin preguntas.</p>
+<p>Puedes verlo aquí, sin prisa: <a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">Launch Without the 2 a.m. Doubt</a></p>
+<p>No sustituye a una auditoría profesional ni a nadie que conozca tu sistema a fondo. Es una forma ordenada de mirar lo tuyo.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
