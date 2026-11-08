@@ -1,0 +1,73 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contraseñas en texto plano y pánico antes de lanzar mi app</title><meta name="description" content="Con el tinte puesto abres tu base de datos y ves las contraseñas en texto plano. Una historia sobre el pánico antes de lanzar y cómo se calma.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/contrasenas-texto-plano-panico-lanzar-app"><meta property="og:title" content="Contraseñas en texto plano y pánico antes de lanzar mi app">
+<meta property="og:description" content="Con el tinte puesto abres tu base de datos y ves las contraseñas en texto plano. Una historia sobre el pánico antes de lanzar y cómo se calma."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Contrase\u00f1as en texto plano y p\u00e1nico antes de lanzar mi app", "description": "Con el tinte puesto abres tu base de datos y ves las contrase\u00f1as en texto plano. Una historia sobre el p\u00e1nico antes de lanzar y c\u00f3mo se calma.", "datePublished": "2026-11-08", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/contrasenas-texto-plano-panico-lanzar-app"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Contraseñas en texto plano y pánico antes de lanzar mi app</h1><p class='muted'>2026-11-08</p><p>Lucía lleva el tinte puesto y papel de aluminio en media cabeza. Es jueves, las 11:20, y está sentada en la peluquería de su barrio con el móvil en la mano.</p>
+<p>No debería estar mirando el trabajo. Pero la peluquera ha ido a por una toalla y a Lucía se le ha ocurrido abrir el panel de la base de datos, "solo un segundo".</p>
+<p>Ahí está. La tabla de usuarios. Una columna que se llama <code>password</code>. Y dentro, legibles, sin ningún disfraz, las contraseñas de las quince personas que han probado su app en la beta.</p>
+<p><em>hola123. barcelona2020. mimosa.</em></p>
+<p>Se le encoge el estómago. La peluquera vuelve, le pregunta si quiere agua, y Lucía contesta que sí sin oír la pregunta.</p>
+<h2>El lanzamiento que ya tiene fecha</h2>
+<p>Lucía es desarrolladora freelance. Lleva ocho meses construyendo una pequeña app de reservas para un cliente, una clínica de fisioterapia. El lanzamiento es el lunes. Ya hay un correo enviado a los pacientes. Ya hay una factura con el segundo pago pendiente de "cuando esté en producción".</p>
+<p>En la beta, guardar las contraseñas así le pareció un atajo razonable. "Ya lo arreglo luego", pensó. Luego pasaron los meses.</p>
+<p>Ahora el luego es el lunes.</p>
+<p>Y lo peor no es solo la columna. Es que, al verla, empieza a abrirse una lista invisible en su cabeza. ¿Y las rutas de la API? ¿Y quién puede ver los datos de quién? ¿Y las claves que dejó en aquel archivo? ¿Y si alguien escribe algo raro en un formulario?</p>
+<p>No sabe cuántas cosas más hay. Esa es la parte que pesa: no el problema que ve, sino los que no sabe que tiene.</p>
+<h2>Lo que cuesta no decirlo en voz alta</h2>
+<p>Lucía no se lo cuenta a nadie. Ni al cliente, que confía en ella. Ni a su amiga Carmen, que también programa, porque le daría vergüenza. Lleva años cobrando por ser "la que sabe".</p>
+<p>En la silla, con el aluminio en la cabeza, hace cuentas de lo que está en juego. No de dinero, o no solo. Son los pacientes de una clínica de barrio. Es su nombre en un proyecto. Es la sensación de ser una profesional de verdad y no alguien que improvisa y reza.</p>
+<p>El fin de semana ya se lo ve venir: dos días mirando foros, abriendo veinte pestañas, leyendo consejos contradictorios, sin saber cuándo parar. Durmiendo mal el domingo. Mirando el móvil el lunes a las ocho, esperando que no pase nada.</p>
+<p>La peluquera le pregunta si el calor del secador está bien. Lucía dice que sí. Está pensando en otra cosa.</p>
+<h2>El momento en que cambia la pregunta</h2>
+<p>Sale de la peluquería con el pelo de un color nuevo y la cabeza igual. Camina hacia casa. En la esquina del mercado se para y piensa algo distinto.</p>
+<p>El problema no es que haya mil cosas por revisar. El problema es que nadie le ha puesto un principio y un final.</p>
+<p>Una piloto no revisa el avión de memoria, con el corazón en la garganta. Tiene una lista. Marca, pasa a lo siguiente, y al terminar sabe que ha terminado. Esa certeza es lo que le falta a Lucía. No más miedo ni más valentía, sino una lista corta, ordenada, que le diga "esto sí, esto ya, esto falta".</p>
+<p>Se da cuenta de que lo que quiere comprar no es seguridad absoluta. Nadie puede prometérsela. Quiere dejar de revisar a ciegas.</p>
+<h2>Un lunes distinto</h2>
+<p>Imagina el lunes de otra manera.</p>
+<p>Se levanta a las siete y media. Hace café. Abre el portátil y hay una hoja con las casillas marcadas, y las dos o tres que quedaron pendientes están anotadas con su fecha, sin drama. Sabe qué comprobó y cómo. Si el cliente le pregunta "¿esto es seguro?", no tiene que tragar saliva: puede enseñarle qué revisó, con calma, como quien enseña un presupuesto bien hecho.</p>
+<p>El lanzamiento sigue siendo un lanzamiento. Habrá un pequeño nudo, pero un nudo normal, de los que se aflojan solos a media mañana. Después comerá sin mirar el móvil.</p>
+<p>Eso es todo lo que Lucía quiere: llegar al lunes con la cabeza en su sitio.</p>
+<h2>Si te reconoces en la silla de Lucía</h2>
+<p>Lucía es un personaje inventado, pero la escena seguramente te suena: la columna que no querías ver, la lista que no tiene fin, la fecha que se acerca.</p>
+<p>Si estás ahí, puede que te sirva algo que ordene el repaso. Nosotros hicimos <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong>: 58 puntos de revisión en PDF y en hoja de seguimiento XLSX, pruebas con curl, un script que busca rutas sin autenticación y una plantilla de informe para tu cliente, para Node/Express y Python. El producto está en inglés. Y si no te ayuda, tienes 30 días para pedir el reembolso completo, sin preguntas.</p>
+<p>No te promete que nada pueda fallar jamás. Solo te ayuda a saber qué has mirado y qué te queda.</p>
+<p>👉 <a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">Echa un vistazo al kit aquí</a></p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
