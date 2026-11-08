@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scraped Through Your API Pagination? The Lifeboat Hut</title><meta name="description" content="Someone pulled all your data through your API and you missed the pagination limit. A story about the Monday that feels like a verdict, and the calmer one after.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/api-scraped-no-pagination-limit"><meta property="og:title" content="Scraped Through Your API Pagination? The Lifeboat Hut">
+<meta property="og:description" content="Someone pulled all your data through your API and you missed the pagination limit. A story about the Monday that feels like a verdict, and the calmer one after."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/api-security-review-checklist-kit.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Scraped Through Your API Pagination? The Lifeboat Hut", "description": "Someone pulled all your data through your API and you missed the pagination limit. A story about the Monday that feels like a verdict, and the calmer one after.", "datePublished": "2026-11-08", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/api-security-review-checklist-kit.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/api-scraped-no-pagination-limit"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>Scraped Through Your API Pagination? The Lifeboat Hut</h1><p class='muted'>2026-11-08</p><p>The phone buzzes against the railing at 10:40 on a Saturday morning. You are standing on a slipway at a lifeboat station open day, holding a paper cup of tea and a child's sticky hand that is not yours. You are only there because your sister volunteers.</p>
+<p>The message is from a client. <em>"Can you call me? Someone seems to have downloaded our entire customer list."</em></p>
+<p>The tea goes lukewarm in your hand. The whole list, through the API you built.</p>
+<h2>The sentence you replay</h2>
+<p>Let's call you Jonas. You build small backends for small businesses. Mostly it is you, a laptop and a handful of clients who trust you to know what you are doing.</p>
+<p>You walk to the side of the boathouse, where the wind is loud and nobody can hear you, and you call back. Your client is calm, which is worse. He says the hosting provider noticed an odd burst of traffic overnight. One address asked for page after page, quickly, until there was nothing left to ask for.</p>
+<p>You open the laptop on an upturned crate. The logs are right there. The requests are neat and polite and endless, and nothing in your code told them to stop.</p>
+<p>You know exactly what you missed. You can see it in about forty seconds. A list endpoint that cheerfully handed over whatever size of page it was asked for. It was never a clever attack, only a door you forgot had no limit on it.</p>
+<p>Nobody died. You say that to yourself twice. But the thought underneath is the one nobody says out loud: <em>I'm supposed to be the professional here.</em></p>
+<h2>What it quietly costs</h2>
+<p>The rest of the open day passes in a blur of lifejackets and raffle tickets. A volunteer shows a crowd how the launch tractor works. You nod in the right places.</p>
+<p>In your head you are drafting the email to the client, then deleting it. Too apologetic. Too technical. Too defensive.</p>
+<p>You think about the people on that list. Ordinary customers who gave their details to a small shop and assumed that was the end of the story.</p>
+<p>You think about Monday. You think about whether this client will stay, whether the next one will hear about it, and whether "I'm sure it's fine" will ever sound honest to you again.</p>
+<p>That is the cost people don't count. Not just the incident, but the way it loosens your trust in your own work. Every endpoint you have ever shipped starts to look slightly suspicious. At night you lie awake running through the other doors you might have left open.</p>
+<h2>The part that surprised you</h2>
+<p>On Sunday you fix the obvious thing. It takes less time than the worry did. You also write to the client, plainly and without drama. What happened, what you changed, what you are checking next. You do not hide, and you do not grovel.</p>
+<p>Then, late in the afternoon, sitting on the back step with the laptop warm on your knees, you notice something. The hole was not a flaw in you. It was a gap in how you looked.</p>
+<p>You had been reviewing from memory. Authentication checked, because you always check authentication. Input checked, because you remember that one. But the quiet questions, like <em>what happens if someone just asks for more, and keeps asking?</em>, depended on whether you happened to think of them on a given Thursday.</p>
+<p>Memory is a poor security plan. It is also a very human one.</p>
+<p>The relief is small, but it is real. It doesn't have to depend on remembering. A review can be a list you walk through, the same way every time, whether you are tired or rushed or distracted by a launch date. The list does not get embarrassed. It just asks.</p>
+<h2>A different Monday</h2>
+<p>Picture a Monday a few weeks on.</p>
+<p>You are at the kitchen table with coffee. A new client project is nearly ready to go live. Last time, this was the morning your stomach would have tightened.</p>
+<p>This time you open the review, a plain list, and go through it line by line. Some items pass in seconds. One makes you stop and fix something small. You tick it off and move on.</p>
+<p>By ten, you have a short written record of what was checked and what was changed. If the client asks, "Is it secure?", you will not answer with a nervous "I think so." You will have something real to put in front of them, calmly, in your own words.</p>
+<p>The afternoon is yours. You walk to the shop, and for once your phone stays in your pocket and the next buzz is only a text about dinner.</p>
+<p>Nothing about the work got easier. You just stopped carrying every doubt alone, in your head, at the worst possible moment.</p>
+<h2>If you recognise the slipway</h2>
+<p>Maybe you have had your own phone call. Or maybe you have only felt the cold flicker of <em>did I forget something obvious?</em> before a launch.</p>
+<p>If that is you, there is a gentle next step. The <strong>Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit</strong> is a 58-item review for Node/Express and Python: a PDF and an XLSX tracker, curl tests, an auth-route scanner script and a client report template. It does not make decisions for you. It gives your review a shape, so it stops living only in your memory.</p>
+<p>There is a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p><a href="https://blixwerkstudio.com/p/api-security-review-checklist-kit">Take a look at the API Security Review Checklist Kit</a></p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Launch Without the 2 a.m. Doubt – REST API Security Checklist Kit – 58-item API review kit: PDF + XLSX tracker, curl tests, auth-route scanner script and client report template for Node/Express and Python. <p><a class='btn' href='/p/api-security-review-checklist-kit'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>

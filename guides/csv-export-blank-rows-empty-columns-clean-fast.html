@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Export Full of Blank Rows? The Jammed Photocopier</title><meta name="description" content="Blank rows and empty columns in every CSV export? A Thursday morning, a jammed printer, and a calmer way to start the week.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/csv-export-blank-rows-empty-columns-clean-fast"><meta property="og:title" content="CSV Export Full of Blank Rows? The Jammed Photocopier">
+<meta property="og:description" content="Blank rows and empty columns in every CSV export? A Thursday morning, a jammed printer, and a calmer way to start the week."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "CSV Export Full of Blank Rows? The Jammed Photocopier", "description": "Blank rows and empty columns in every CSV export? A Thursday morning, a jammed printer, and a calmer way to start the week.", "datePublished": "2026-11-08", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/csv-export-blank-rows-empty-columns-clean-fast"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>CSV Export Full of Blank Rows? The Jammed Photocopier</h1><p class='muted'>2026-11-08</p><p>The printer in the shared office jams at 10:15, just as Jonas hits "print" on the one page he needs for the call.</p>
+<p>He is standing beside it with the tray open and toner on his thumb. Back at his desk, the laptop is still showing the thing he has been avoiding since nine: this week's export from the shop's order system.</p>
+<p>He has opened it so many Thursdays that he knows what is coming. Row 2 is empty. So is row 3. Then a few real orders. Then another gap, as if someone had been cutting the file with blunt scissors. On the right there are four columns with a header and nothing under it. Column K has been blank since spring, and nobody can say why it exists.</p>
+<p>The call with the shop owner is at 11:00. She wants the numbers.</p>
+<h2>The little ritual nobody asked for</h2>
+<p>Jonas is a freelancer. He pulls the data for a few small shops, tidies it, and sends a summary that makes sense to someone who does not live in spreadsheets.</p>
+<p>The tidying is the part nobody sees. Nobody has ever said, "Thanks for deleting the empty rows." Nobody pays an extra line item for "removed columns that were never there." It is just the toll he pays before the real work can start.</p>
+<p>So he does it by hand. Select, delete, scroll. Select, delete, scroll. He has a rhythm, and he is a little proud of it, which is the embarrassing part.</p>
+<p>The real cost is the small doubt that comes with it. Did he catch every gap? Is that row 412 really empty, or did it have a single cell with a note in it? Two weeks ago a total came out wrong, and he found out only because the owner mentioned it kindly, the way you mention spinach in someone's teeth.</p>
+<p>He fixed it in ten minutes. He thought about it for three days.</p>
+<h2>What it quietly costs</h2>
+<p>No single Thursday is a disaster. That is why it never gets fixed.</p>
+<p>It is twenty minutes here, forty there. It is the pre-call knot, the one that has nothing to do with the call itself. It is the feeling of being a professional who still, somehow, does the same hand-scrubbing as in his first month. Some weeks he catches himself starting the cleanup before he has even looked at what the data says. His curiosity has been replaced by janitorial work.</p>
+<p>And it bleeds into the rest of the week. He quotes a little less than he should, because he knows how much of the job is invisible. He tells himself he will automate it "when things are quieter." Things are never quieter.</p>
+<h2>The jam</h2>
+<p>Back at the printer, a colleague from the design studio down the hall appears with a butter knife for some reason and a lot of calm. She pulls out a crumpled sheet in one smooth motion. The printer hums. The page comes out.</p>
+<p>"It's always the same spot," she says. "Once you know where it sticks, it's not a drama anymore."</p>
+<p>She goes back to her desk. Jonas stands there holding a warm page, and the sentence follows him back to his chair.</p>
+<p>Always the same spot.</p>
+<p>His export has the same spot every week. The gaps appear where they always appear. The empty columns are the same empty columns. He has been treating a predictable problem as a fresh surprise, week after week, and meeting it with his hands.</p>
+<p>It does not have to be a ritual. It could be a thing that just happens, quietly, before he sits down. And he could still see what changed before he trusts it.</p>
+<h2>The same Thursday, later</h2>
+<p>Picture that Thursday again, a few weeks on.</p>
+<p>The export lands. He opens it only after it has already been tidied, and beside it sits a short note of what was removed: this many blank rows, these empty columns, nothing touched that held real data. He reads it the way you read a receipt, in ten seconds, and nods.</p>
+<p>At 10:15 he is not at the printer. He is at the window with a coffee that is still hot, looking at the actual numbers. He has noticed that one product sells in bursts on Fridays. He has time to wonder why, and to think of something useful to say.</p>
+<p>The call at eleven starts the way a call should: with the answer already in the room. The owner asks a question, and he does not say "let me check and get back to you." He just tells her.</p>
+<p>On Monday, nobody remembers the cleanup, and that is how it should feel. Admin that works is invisible.</p>
+<h2>If this is your Thursday</h2>
+<p>If you recognise the scroll-and-delete rhythm, the gap in row 3, the column that has been empty since spring, you are not sloppy. You are doing a repeatable job by hand because nobody handed you a better way.</p>
+<p>There is a calmer way. We put together a Python toolkit for exactly these chores: dedupe, fix dates and phone numbers, sort out encoding, split and merge, validate. It runs a dry run first and gives you a change report, so you can see what it would do before it does it. It comes with our 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>If you would like to see it, here it is: <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a>.</p>
+<p>The printer will still jam sometimes. Your export doesn't have to.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
