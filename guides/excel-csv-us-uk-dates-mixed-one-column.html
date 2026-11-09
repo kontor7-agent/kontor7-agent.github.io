@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>US and UK Dates Mixed in Excel? The Hallway Calendar</title><meta name="description" content="Is 03/04 March or April? A Monday client call, one CSV column with US and UK dates mixed, and the quiet relief of knowing what changed.">
+<link rel="canonical" href="https://blixwerkstudio.com/guides/excel-csv-us-uk-dates-mixed-one-column"><meta property="og:title" content="US and UK Dates Mixed in Excel? The Hallway Calendar">
+<meta property="og:description" content="Is 03/04 March or April? A Monday client call, one CSV column with US and UK dates mixed, and the quiet relief of knowing what changed."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "US and UK Dates Mixed in Excel? The Hallway Calendar", "description": "Is 03/04 March or April? A Monday client call, one CSV column with US and UK dates mixed, and the quiet relief of knowing what changed.", "datePublished": "2026-11-09", "inLanguage": "en", "image": "https://blixwerkstudio.com/img/csv-cleaning-toolkit-python.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/guides/excel-csv-us-uk-dates-mixed-one-column"}</script></head><body>
+<header><a class="brand" href="/">Blixwerk</a><nav><a href="/">Products</a><a href="/guides">Blog</a><a href="/tools">Free tools</a><a href="/de">Deutsch</a><a href="/es">Español</a></nav></header>
+<main><article><h1>US and UK Dates Mixed in Excel? The Hallway Calendar</h1><p class='muted'>2026-11-09</p><p>At 9:12 on Monday morning, Marek shares his screen and regrets it almost at once.</p>
+<p>The client, a small online shop owner, wants to know why last quarter's orders don't match her bookkeeping. Marek says, "Give me a second, I'll sort by date."</p>
+<p>He clicks the column header. The rows jump. March sits next to November. A row from the 2nd of April lands between two rows from the 3rd of March. Somewhere in the middle, 13/03/2026 sits beside 03/13/2026, and both look perfectly confident.</p>
+<p><em>Which one is wrong?</em> The thought arrives in his head, loud and cold. <em>Or are they both right, and I'm the problem?</em></p>
+<p>The client waits politely. Marek's cursor circles the column like a fly around a lamp.</p>
+<h2>The calendar in the hallway</h2>
+<p>There is a calendar on the wall of Marek's hallway. His cousin in Chicago sent it two Christmases ago, with a note: <em>so you don't forget us.</em> Every birthday on it is written the American way, month first.</p>
+<p>His mother, reading it, once phoned his aunt on the wrong day. She was three weeks early and a little offended on everyone's behalf.</p>
+<p>That is the whole problem, really. A date like 04/05 isn't wrong, it's just ambiguous. It means one thing to one person and another to someone else. Both are sure.</p>
+<p>Now put them in the same column.</p>
+<p>The shop's platform exports in US style, because the software was built there. The bank statement the client sends is UK style, because the account is in Manchester. Someone pasted the two together in January, and nobody has looked closely since.</p>
+<p>The dates from the 13th onwards give themselves away. The first twelve days of every month do not. They sit quietly in the sheet, looking like dates, waiting to be believed.</p>
+<h2>What it costs when nobody sees it</h2>
+<p>Marek ends the call with a promise: "I'll send you a clean version this afternoon."</p>
+<p>Then he sits there with the sentence still in his mouth. He knows what "clean" means here. It means opening the file and going row by row, asking each ambiguous date where it came from. It means a pencil, a second monitor, and an afternoon that was meant for something else.</p>
+<p>There is a second cost, less visible. If he gets it wrong, an order from the 4th of May ends up filed as the 5th of April. It lands in the wrong quarter, and the client's accountant asks a polite, puzzling question in a few months. He would be the one who has to answer it.</p>
+<p>He has no wish to stand in front of anyone and say, <em>I think it's probably right.</em></p>
+<p>So he does what careful people do. He checks everything, twice. The lunch he planned to take at the park bench becomes a sandwich at the desk. By three o'clock his eyes are tired, and he is no more certain than at 9:12.</p>
+<h2>The line that changed the afternoon</h2>
+<p>Around half past three, Marek stops and asks himself a different question.</p>
+<p>He has stopped asking <em>which of these dates is wrong?</em> Now he asks, <em>why am I deciding this by eye, one row at a time, when each row already tells me where it came from?</em></p>
+<p>Every export has a source. Every source has a habit. The ambiguity was never really in the dates. It was in how they had been mixed together and left to look alike.</p>
+<p>He doesn't need to be cleverer. He needs a calm, repeatable way to say, <em>this part is American, that part is British, and show me exactly what you changed before you change anything.</em></p>
+<p>That last part matters most to him. Not speed, though speed is welcome. What he wants is the ability to look before anything is touched, and to keep a record of it afterwards.</p>
+<h2>A different Monday</h2>
+<p>Picture the same call, a few weeks later.</p>
+<p>It is 9:12 again. The client shares her worry. Marek has the file open from the night before, and he is not holding his breath.</p>
+<p>"Let me sort by date," he says, and clicks.</p>
+<p>The rows fall into a line. March follows February, April follows March. If the client asks about the 4th of May, there is only one 4th of May, and it sits where it should.</p>
+<p>She asks, "How do you know it's right?"</p>
+<p>He doesn't say <em>trust me.</em> He says, "I have a list of every date that was changed and why. Do you want to see it?"</p>
+<p>She says, "No, that's fine." The word <em>fine</em> sounds different when you have offered the proof and the other person didn't need it.</p>
+<p>The call ends at 9:31. Marek closes the laptop and makes tea. The kettle clicks off. The afternoon is still his.</p>
+<h2>If this was your Monday</h2>
+<p>Maybe you aren't Marek. Maybe you are the one who merges an export from the shop, one from the bank, and one from a client who writes dates however they like. You know that small drop in the stomach when a column refuses to sort.</p>
+<p>It doesn't mean you are careless. It means a tool somewhere assumed what a date meant, and nobody asked it to say so.</p>
+<p>If that feeling is familiar, there is a Python toolkit we made for exactly these chores: <a href="https://blixwerkstudio.com/p/csv-cleaning-toolkit-python">Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python)</a>. It helps with dates, duplicates, phone numbers, encoding and a few other usual suspects. It runs a dry run first and gives you a change report, so you can see what would happen before it does. It comes with a 30-day money-back promise: if it doesn't help, you get a full refund, no questions.</p>
+<p>It won't change what your data means. You still decide that. It just means you don't have to decide it row by row.</p>
+<p><em>An illustrative story, written with AI assistance.</em></p><div class='cta'><strong>Sounds familiar?</strong> Clean Data in Minutes – CSV &amp; Excel Cleaning Toolkit (Python) – Clean messy CSV/Excel exports in minutes: dedupe, fix dates, phones, encoding, split, merge, validate. Dry-run + change report. <p><a class='btn' href='/p/csv-cleaning-toolkit-python'>Take a look</a></p></div></article></main>
+<footer><p>Blixwerk products and guides are created with AI assistance by an automated system and checked automatically before publishing.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>

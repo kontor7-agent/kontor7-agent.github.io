@@ -1,0 +1,75 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mi tienda no tiene referencias y no sé qué stock tengo</title><meta name="description" content="Una clienta pregunta por una taza y no sabes si queda. Un martes en una tienda sin referencias, y cómo se siente tener el stock claro.">
+<link rel="canonical" href="https://blixwerkstudio.com/es/blog/mi-tienda-no-tiene-referencias-no-se-que-stock-tengo"><meta property="og:title" content="Mi tienda no tiene referencias y no sé qué stock tengo">
+<meta property="og:description" content="Una clienta pregunta por una taza y no sabes si queda. Un martes en una tienda sin referencias, y cómo se siente tener el stock claro."><meta property="og:type" content="website"><meta property="og:image" content="https://blixwerkstudio.com/img/small-business-inventory-reorder-tracker-xlsx.png">
+<link rel="alternate" type="application/rss+xml" title="Blixwerk Blog" href="/es/feed.xml"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfb"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141517"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#fcfcfb;--panel:#fff;--ink:#14161a;--ink2:#4b4f57;--line:#e6e5e1;--acc:#1f5fae;--acc2:#174a87;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--panel:#1d1f22;--ink:#f2f2f0;--ink2:#b9bbc0;--line:#2e3135;--acc:#5a9ff0;--acc2:#7fb5f5;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}header,main,footer{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:750;font-size:20px;text-decoration:none;color:var(--ink)}nav a{margin-left:16px;text-decoration:none}
+header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;margin:-11px 0 -11px 4px;white-space:nowrap}
+h1{font-size:34px;line-height:1.2;margin:20px 0 8px}h2{font-size:24px;margin:28px 0 8px}.lead{color:var(--ink2);font-size:19px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block}.card .b{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700}.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--acc2);color:#fff}.muted{color:var(--ink2);font-size:15px}
+article{max-width:760px}article img{max-width:100%;border-radius:10px}pre,code{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+pre{padding:12px;overflow:auto}code{padding:1px 4px}table{border-collapse:collapse}td,th{border:1px solid var(--line);padding:6px 8px}
+.cta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;color:var(--ink2);font-size:14px}footer a{margin-right:14px}
+form{display:grid;gap:10px;max-width:560px}input,textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+button{font:inherit}
+.hp{position:absolute;left:-9999px}
+.hero{padding:36px 0 8px}.hero h1{font-size:40px;max-width:820px}.hero .lead{max-width:720px}.row{display:flex;gap:10px;flex-wrap:wrap}.btn2{background:transparent;color:var(--acc);border:1px solid var(--acc)}.btn2:hover{color:#fff}.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0 8px}.pillar{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px}.pillar:hover{border-color:var(--acc)}.pillar span{color:var(--ink2);font-size:15px}.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:10px 0 24px}.gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.hub{list-style:none;padding:0}.hub li{padding:10px 0;border-bottom:1px solid var(--line)}.trust{color:var(--ink2);font-size:14px;border-top:1px solid var(--line);padding-top:12px}@media (max-width:640px){.hero h1{font-size:30px}}
+@media (prefers-color-scheme:dark){.btn,.btn:hover,.btn2:hover{color:var(--bg)}}
+.lcb{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px;line-height:1;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lcb i{width:28px;height:28px;border-radius:8px;background:var(--ink);flex:none}.lcb small{color:var(--ink2);font-weight:400;font-size:15px}
+header.lch nav a{color:var(--ink);font-size:15px;line-height:22px}header.lch nav a.pill{border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:40px;margin-top:-9px;margin-bottom:-9px}
+@media (max-width:479px){.lcb small{display:none}header.lch nav a:not(.pill){display:none}}
+@media (max-width:359px){header.lch{gap:8px;flex-wrap:nowrap}.lcb{gap:8px}header.lch nav a.pill{font-size:14px;padding:0 12px}}
+h1,h2,h3{overflow-wrap:break-word}
+footer.lcf{font-size:15px;line-height:22px}footer.lcf a{display:inline-block;padding:12px 6px;margin:-12px 8px -12px -6px;color:var(--ink2);text-decoration:underline}
+footer.lcf a:last-of-type{margin-right:0}footer.lcf .sep{color:var(--line);margin:0 2px}footer.lcf p{margin:8px 0}footer.lcf .dis{color:var(--ink2);font-size:14px;line-height:20px}
+</style><meta name="google-site-verification" content="ywRhyUsDDxoyC3mTapRXPV5IG6YoLD07h9eWHib3RX0"><meta name="google-site-verification" content="8SqvlXEJUugQyozxIYKhrA5TV3XywGROX4juJvh1Ep0"><meta name="msvalidate.01" content="BCA37307CD1533E03181652B2489F2D1"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Mi tienda no tiene referencias y no s\u00e9 qu\u00e9 stock tengo", "description": "Una clienta pregunta por una taza y no sabes si queda. Un martes en una tienda sin referencias, y c\u00f3mo se siente tener el stock claro.", "datePublished": "2026-11-09", "inLanguage": "es", "image": "https://blixwerkstudio.com/img/small-business-inventory-reorder-tracker-xlsx.png", "author": {"@type": "Organization", "name": "Blixwerk"}, "publisher": {"@type": "Organization", "name": "Blixwerk"}, "mainEntityOfPage": "https://blixwerkstudio.com/es/blog/mi-tienda-no-tiene-referencias-no-se-que-stock-tengo"}</script></head><body>
+<header><a class="brand" href="/es">Blixwerk</a><nav><a href="/es">Productos</a><a href="/es/blog">Blog</a><a href="/es/calculadoras">Calculadoras gratis</a><a href="/">English</a></nav></header>
+<main><article><h1>Mi tienda no tiene referencias y no sé qué stock tengo</h1><p class='muted'>2026-11-09</p><p>Son las 11:20 de un martes y suena el teléfono de la tienda. Es una clienta que vio en Instagram la taza azul, la pequeña, la de borde irregular.</p>
+<p>—¿Os queda alguna?</p>
+<p>Te quedas con el auricular en la mano. Miras la estantería. Hay tazas azules, sí. Pero ¿cuál es la pequeña y cuál la mediana? ¿Y la que está en el cajón de abajo, la de la última tanda, cuenta o ya estaba vendida?</p>
+<p>—Un momento, que lo miro —dices. Y tu voz suena más segura de lo que estás.</p>
+<h2>Todo está en tu cabeza (y en tres sitios más)</h2>
+<p>Imagina a Lucía, que lleva una tienda pequeña de cerámica y velas. Es un personaje inventado, pero quizá le reconozcas la cara.</p>
+<p>Lucía no puso referencias a los productos. Al principio eran cuatro cosas y se las sabía de memoria. Luego llegaron los colores, los tamaños, las ediciones limitadas, los pedidos de la web, lo que se vende en el mostrador. Hoy tiene una libreta con rayas torcidas, un Excel que abrió en marzo y una nota del móvil que dice «pedir más velas lavanda??».</p>
+<p>Cuando alguien pregunta «¿tienes esto?», ella no consulta nada. Hace un viaje mental por la tienda, cuenta con los ojos y responde con un «creo que sí».</p>
+<p>Ese «creo que sí» pesa más de lo que parece.</p>
+<h2>El coste que no sale en ninguna factura</h2>
+<p>Nadie te lo cuenta, pero no saber qué tienes cuesta de formas muy discretas.</p>
+<p>Cuesta la venta que prometes y luego tienes que deshacer, con ese correo de disculpa que escribes con el estómago encogido. Cuesta el pedido al proveedor que haces «por si acaso», y que deja dinero dormido en una caja del trastero. Y cuesta lo contrario: el día que descubres que se acabó justo lo que más se vendía, una semana después de que se acabara.</p>
+<p>Cuesta también algo más callado. Cuesta la sensación de que tu tienda es de verdad, pero tú la llevas como si fuera un secreto que solo tú entiendes. Si te pones enferma, nadie sabría qué hay en esas cajas. Si quisieras irte tres días, no podrías.</p>
+<p>Lucía lo sabe. No lo dice en voz alta. Pero cada vez que la puerta suena y entra alguien con una pregunta concreta, se le acelera un poco el pulso.</p>
+<h2>Lo que pasó con la taza azul</h2>
+<p>Aquel martes, Lucía dejó el teléfono sobre el mostrador y fue a mirar. Encontró dos tazas azules pequeñas. Una tenía un asa algo torcida y no estaba segura de querer venderla. Volvió y dijo:</p>
+<p>—Sí, te guardo una.</p>
+<p>La clienta pasó esa tarde. Todo salió bien. Pero cuando cerró la puerta, Lucía se quedó de pie en medio de la tienda, con la sensación de haber esquivado algo otra vez.</p>
+<p>Fue entonces cuando pensó, sin dramatismo, casi con cansancio: «No tiene por qué ser así».</p>
+<p>No necesitaba un sistema enorme. No necesitaba aprender nada complicado ni convertirse en una persona de almacenes. Necesitaba que cada cosa tuviera un nombre corto y propio, y un sitio donde se supiera cuántas quedan y cuándo conviene pedir más. Nada más. Un solo lugar donde mirar, en vez de cuatro.</p>
+<h2>Un martes distinto</h2>
+<p>Imagina el mismo teléfono, la misma hora, la misma clienta.</p>
+<p>—¿Os queda la taza azul pequeña?</p>
+<p>Miras la pantalla un segundo. Ahí está: quedan tres. Y, junto a ellas, esa otra línea que antes nunca existía: las velas de lavanda están bajando y ya toca pensar en el pedido.</p>
+<p>—Sí, te guardo una ahora mismo. ¿Pasas hoy o mañana?</p>
+<p>Cuelgas. Y lo que notas no es euforia. Es algo más pequeño y más valioso: el pecho suelto, los hombros un poco más bajos.</p>
+<p>El resto de la mañana fluye distinto. Haces el pedido al proveedor sin dudar si es poco o demasiado. Ya no abres la libreta con miedo. El sábado no te preguntarás si lo que vendiste en el mercadillo cuadra con lo que tienes en casa. Y por la noche, cuando cierras, lo único que cierras es la tienda.</p>
+<p>No es magia. Es poder responder con tranquilidad a una pregunta sencilla.</p>
+<h2>Si te has reconocido en Lucía</h2>
+<p>Si estás leyendo esto con una taza azul (o su equivalente) en la cabeza, quizá solo necesitas dejar de llevar el stock de memoria.</p>
+<p>Hemos hecho una plantilla de Excel pensada para tiendas pequeñas: <strong>Never Sold Out by Surprise – Inventory &amp; Reorder Tracker</strong>. Te avisa cuando algo se acerca al mínimo, te muestra el valor de lo que tienes guardado y trae un panel con lo importante. Incluye un ejemplo ya relleno y una versión en blanco para empezar con lo tuyo, y una guía en PDF. Sin suscripción. Está en inglés, pero es sencilla de seguir. Tiene 30 días de garantía: si no te ayuda, te devolvemos el dinero, sin preguntas.</p>
+<p>Puedes verla aquí, cuando te venga bien: <a href="https://blixwerkstudio.com/p/small-business-inventory-reorder-tracker-xlsx">Never Sold Out by Surprise – Inventory &amp; Reorder Tracker</a>.</p>
+<p>Y si hoy no es el día, no pasa nada. Quédate con esta idea: tu tienda merece que sepas qué hay en ella.</p>
+<p><em>Una historia ilustrativa, escrita con ayuda de IA.</em></p><div class='cta'><strong>¿Te suena?</strong> Never Sold Out by Surprise – Inventory &amp; Reorder Tracker (Excel) – Excel inventory tracker with automatic reorder alerts, stock value and dashboard. Sample + blank template, PDF guide. No subscription. <p><a class='btn' href='/p/small-business-inventory-reorder-tracker-xlsx'>Ver la plantilla (en inglés)</a></p></div></article></main>
+<footer><p>Los productos, calculadoras y artículos de Blixwerk se crean con ayuda de IA mediante un sistema automatizado y se revisan automáticamente antes de publicarse.</p><p><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/contact">Contact</a>
+<span>© 2026 Blixwerk</span></p></footer><script>(function(){try{var q=new URLSearchParams(location.search),r=document.referrer,h=location.hostname;try{r=r?new URL(r):null}catch(e){r=null}var d={k:"view",p:location.pathname,ref:r?(r.hostname===h?"":r.hostname):"",s:q.get("s")||""};if("view"==="click"&&r&&r.hostname===h)d.p=r.pathname;navigator.sendBeacon("https://blixwerk-count.blixwerk.workers.dev/h",JSON.stringify(d))}catch(e){}})();</script></body></html>
